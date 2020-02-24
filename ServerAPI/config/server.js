@@ -38,10 +38,10 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Define Routes
-const RootRoutes = require('../app/routes/index');
+const ProcessoRoutes = require('../app/routes/processo');
 
-// Webapp Root Routes
-app.use('/', RootRoutes);
+app.use('/processo', ProcessoRoutes);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -55,7 +55,7 @@ app.use((err, req, res, next) => {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.jsonp({title: "Error!", message: "Some error occurred."});
 });
 
 // Module Export
