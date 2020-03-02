@@ -1,5 +1,5 @@
 {
-  "name": "filmes",
+  "name": "equivalencias",
   "version": "1.0.0",
   "description": "",
   "main": "app",
@@ -7,8 +7,8 @@
     "test": "nodemon app",
     "start": "node app"
   },
-  "author": "Miguel Solans",
-  "license": "ISC",
+  "author": "Diogo Araújo, Diogo Nogueira, Miguel Solans",
+  "license": "Equivalencias",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

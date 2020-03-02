@@ -1,6 +1,7 @@
 /* models/person
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
  * Author: Miguel Solans
- * Notes: Prize Model
  */
 
 const mongoose = require('mongoose');
