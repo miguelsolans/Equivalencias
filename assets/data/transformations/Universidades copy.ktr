@@ -490,10 +490,10 @@
     <encoding/>
     <fields>
       <field>
-        <name>﻿Código Instit.</name>
+        <name>CodInstit</name>
         <type>Integer</type>
         <format>#</format>
-        <currency>£</currency>
+        <currency/>
         <decimal>.</decimal>
         <group>,</group>
         <length>15</length>
@@ -501,35 +501,24 @@
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Código Curso</name>
+        <name>CodCurso</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
+        <currency/>
+        <decimal/>
         <group>,</group>
         <length>4</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
       <field>
-        <name>Nome da Instituição</name>
+        <name>NomeInstit</name>
         <type>String</type>
         <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>86</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-      <field>
-        <name>Nome do Curso</name>
-        <type>String</type>
-        <format/>
-        <currency>£</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <length>49</length>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>70</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
       </field>
@@ -564,7 +553,7 @@
     <compare>
       <condition>
         <negated>N</negated>
-        <leftvalue>Nome da Instituição</leftvalue>
+        <leftvalue>NomeInstit</leftvalue>
         <function>IS NOT NULL</function>
         <rightvalue/>
       </condition>
@@ -715,7 +704,7 @@
     <unique_rows>N</unique_rows>
     <fields>
       <field>
-        <name>﻿Código Instit.</name>
+        <name>CodInstit</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -723,7 +712,7 @@
         <presorted>N</presorted>
       </field>
       <field>
-        <name>Nome da Instituição</name>
+        <name>NomeInstit</name>
         <ascending>Y</ascending>
         <case_sensitive>N</case_sensitive>
         <collator_enabled>N</collator_enabled>
@@ -762,11 +751,11 @@
     <error_description/>
     <fields>
       <field>
-        <name>﻿Código Instit.</name>
+        <name>CodInstit</name>
         <case_insensitive>Y</case_insensitive>
       </field>
       <field>
-        <name>Nome da Instituição</name>
+        <name>NomeInstit</name>
         <case_insensitive>Y</case_insensitive>
       </field>
     </fields>
@@ -819,8 +808,8 @@
     <write_retry_delay>10</write_retry_delay>
     <mongo_fields>
       <mongo_field>
-        <incoming_field_name>﻿Código Instit.</incoming_field_name>
-        <mongo_doc_path>CodInstit</mongo_doc_path>
+        <incoming_field_name>CodInstit</incoming_field_name>
+        <mongo_doc_path/>
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
@@ -829,28 +818,8 @@
         <allow_null>N</allow_null>
       </mongo_field>
       <mongo_field>
-        <incoming_field_name>Código Curso</incoming_field_name>
-        <mongo_doc_path>CodCurso</mongo_doc_path>
-        <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
-        <update_match_field>N</update_match_field>
-        <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
-        <json_field>N</json_field>
-        <allow_null>N</allow_null>
-      </mongo_field>
-      <mongo_field>
-        <incoming_field_name>Nome da Instituição</incoming_field_name>
-        <mongo_doc_path>NomeInstit</mongo_doc_path>
-        <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
-        <update_match_field>N</update_match_field>
-        <modifier_update_operation>N/A</modifier_update_operation>
-        <modifier_policy/>
-        <json_field>N</json_field>
-        <allow_null>N</allow_null>
-      </mongo_field>
-      <mongo_field>
-        <incoming_field_name>Nome do Curso</incoming_field_name>
-        <mongo_doc_path>Curso</mongo_doc_path>
+        <incoming_field_name>NomeInstit</incoming_field_name>
+        <mongo_doc_path/>
         <use_incoming_field_name_as_mongo_field_name>Y</use_incoming_field_name_as_mongo_field_name>
         <update_match_field>N</update_match_field>
         <modifier_update_operation>N/A</modifier_update_operation>
