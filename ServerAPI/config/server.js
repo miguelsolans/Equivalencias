@@ -40,9 +40,11 @@ app.use(bodyParser.json());
 // Define Routes
 const ProcessoRoutes = require('../app/routes/processo');
 const UniversidadeRoutes = require('../app/routes/universidade');
+const UserRoutes = require('../app/routes/user');
 
 app.use('/processo', ProcessoRoutes);
 app.use('/universidade', UniversidadeRoutes);
+app.use('/user', UserRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
