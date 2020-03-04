@@ -1,3 +1,9 @@
+/* models/processo
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
+
 const mongoose = require('mongoose');
 
 const equivalencias = new mongoose.Schema({

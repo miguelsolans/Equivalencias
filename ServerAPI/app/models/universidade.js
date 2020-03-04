@@ -1,3 +1,9 @@
+/* models/universidade
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
+
 const mongoose = require('mongoose');
 
 const cursoSchema = new mongoose.Schema({
@@ -10,7 +16,6 @@ const cursoSchema = new mongoose.Schema({
         required: true
     }
 });
-
 
 const universidadeSchema = new mongoose.Schema({
     CodInstit: {
