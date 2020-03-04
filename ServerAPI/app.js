@@ -1,6 +1,3 @@
-/* Entry Point
- * Author: Miguel Solans
- */
 require('dotenv').config();
 
 const app     = require('./config/server');
