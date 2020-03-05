@@ -1,5 +1,5 @@
 {
-  "name": "filmes",
+  "name": "equivalencias",
   "version": "1.0.0",
   "description": "",
   "main": "app",
@@ -7,7 +7,7 @@
     "test": "nodemon app",
     "start": "node app"
   },
-  "author": "Miguel Solans",
+  "author": "Diogo Araújo, Diogo Nogueira, Miguel Solans",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
