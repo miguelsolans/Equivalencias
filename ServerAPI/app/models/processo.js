@@ -10,7 +10,7 @@ const equivalencias = new mongoose.Schema({
     ucRealizada: {type: String, required: true},
     ects: {type: Number, required: true},
     nota: {type: Number, required: true},
-    percent: {type: Number, required: true}, // Não é a mesma coisa que a nota???
+    percent: {type: Number, required: true},
     ucEquiv: {type: String, required: true},
     anoUcEquiv: {type: String, required: true},
     semUcEquiv: {type: String, required: true}
@@ -48,6 +48,6 @@ const processoSchema = new mongoose.Schema({
     equivalencias: [equivalencias]
 });
 
-const Processo = mongoose.model('processos', processoSchema, 'processos');
+const Processo = mongoose.model('equivalencias', processoSchema, 'equivalencias');
 
 module.exports = Processo;

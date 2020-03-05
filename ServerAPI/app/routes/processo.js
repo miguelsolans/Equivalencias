@@ -7,10 +7,18 @@ const Processos = require('../controllers/processos');
  * Get Students Enrolled
  */
 router.get('/', (req, res) => {
+    let query = req.query;
 
-    Processos.list()
-        .then(data => res.jsonp(data))
-        .catch(err => res.jsonp(err));
+    if(query.year) {
+        console.log(`GET / ?year=${query.year}`);
+        Processos.searchByYear(query.year)
+            .then(data => res.jsonp(data))
+            .catch(err => res.jsonp(err));
+    } else {
+        Processos.list()
+            .then(data => res.jsonp(data))
+            .catch(err => res.jsonp(err));
+    }
 
 });
 

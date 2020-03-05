@@ -7,7 +7,6 @@ const Users = require('../controllers/users');
 router.get('/:username', (req, res) => {
     console.log(`GET / ${req.params.username}`);
 
-    bcrypt.
     Users.searchUser(req.params.username)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));

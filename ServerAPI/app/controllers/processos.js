@@ -20,3 +20,10 @@ module.exports.new = ({_id, processo, idAluno, nomeAluno, instProv, cursoProv}) 
 module.exports.delete = (id) => {
     return Processo.findByIdAndDelete(id);
 };
+
+module.exports.searchByYear = (year) => {
+    let start = new Date(year, 0, 1),
+        end = new Date(year + 1, 0, 1);
+
+    return Processo.find({ data: { $gte: start, $lt: end} });
+};
