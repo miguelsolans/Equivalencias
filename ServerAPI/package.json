@@ -18,6 +18,7 @@
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.4",
-    "passport-jwt": "^4.0.0"
+    "passport-jwt": "^4.0.0",
+    "pdfmake": "^0.1.65"
   }
 }

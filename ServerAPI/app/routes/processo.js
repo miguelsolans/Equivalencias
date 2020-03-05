@@ -3,6 +3,12 @@ const router  = express.Router();
 
 const Processos = require('../controllers/processos');
 
+const pdf = require('../utils/pdf');
+
+router.get('/generate', (req, res) => {
+    pdf.makePdf();
+
+});
 /**
  * Get Students Enrolled
  */
