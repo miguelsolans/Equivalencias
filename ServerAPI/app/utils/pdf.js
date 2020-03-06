@@ -16,9 +16,19 @@ const fonts = {
 const printer = new pdf(fonts);
 const fs = require('fs');
 
+const formatEquiv = (equiv) => {
+    let ol = [];
+    equiv.forEach(e => {
+        ol.push(`${e.ucEquiv}, com ${e.nota} valores, por equivalência a ${e.ucRealizada};`)
+    });
+    return ol;
+};
 
-module.exports.makePdf = () => {
-    const docDefinition = {
+
+module.exports.makePdf = (student, courses) => {
+
+    let orderContent = formatEquiv(student.equivalencias);
+    const document = {
         content: [
             {
                 image: 'app/public/images/EEUMLOGO.png',
@@ -26,22 +36,25 @@ module.exports.makePdf = () => {
                 height: 102,
                 alignment: "center"
             },
-            "Analisado o requerimento do aluno Carlos Miguel Rebelo Solans, 41841, para concessão de equivalências, sou de parecer que lhe sejam concedidas as seguintes equivalências:",
-
             {
-                ol: [
-                    "Opção A4 (OpA4)(2019/2020º ano, Desenvolvimento de Aplicações Web 1º sem.), com 10 valores, por equivalência a Multimédia e Desenvolvimento Web;"
-                ]
+                lineHeight: 3,
+                text:' '
+            },
+            `Analisado o requerimento do aluno ${student.nomeAluno}, ${student.idAluno}, para concessão de equivalências, sou de parecer que lhe sejam concedidas as seguintes equivalências: `,
+            {
+                lineHeight: 3,
+                text:' '
+            },
+            {
+                ol: orderContent
             }
         ]
     };
 
-    const options = {
-        // ...
-    };
+    const options = { };
 
-    const pdfDoc = printer.createPdfKitDocument(docDefinition, options);
-    pdfDoc.pipe(fs.createWriteStream('document.pdf'));
+    const pdfDoc = printer.createPdfKitDocument(document, options);
+    pdfDoc.pipe(fs.createWriteStream(`${student.idAluno}.pdf`));
     pdfDoc.end();
 
 };

@@ -28,6 +28,18 @@ router.get('/', (req, res) => {
 
 });
 
+router.post('/:id/generate', (req, res) => {
+    let idAluno = req.params.id;
+
+
+    Processos.findOneStudent( idAluno )
+        .then(data => {
+            console.log(data.equivalencias);
+            pdf.makePdf(data);
+        })
+        .catch(err => res.jsonp(err));
+});
+
 /**
  * Create a new Student
  */
