@@ -3,6 +3,9 @@
  * Generate PDF utils
  */
 
+"use strict";
+
+
 const pdf = require('pdfmake');
 
 const fonts = {

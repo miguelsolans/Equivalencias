@@ -9,22 +9,22 @@ const mongoose = require('mongoose');
 const cursoSchema = new mongoose.Schema({
     codCurso: {
         type: Number,
-        required: true
+        required: [true, "Deve especificar o código de curso segundo a atribuição da Universidade"]
     },
     nomeCurso: {
         type: String,
-        required: true
+        required: [true, "Deve especificar o nome do curso segundo a atribuição da Universidade"]
     }
 });
 
 const universidadeSchema = new mongoose.Schema({
     codInstit: {
         type: Number,
-        required: true
+        required: [true, "Deve especificar o código da Universidade estipulado pela DGES"]
     },
     nomeInstit: {
         type: String,
-        required: true
+        required: [true, "Deve especificar o nome da Instituição a adicionar"]
     },
     cursos: [cursoSchema]
 });
