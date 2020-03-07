@@ -6,7 +6,9 @@ const Processos = require('../controllers/processos');
 const pdf = require('../utils/pdf');
 
 router.get('/generate', (req, res) => {
-    pdf.makePdf();
+    let path = pdf.makePdf();
+
+    console.log(path);
 
 });
 /**
@@ -31,13 +33,41 @@ router.get('/', (req, res) => {
 router.post('/:id/generate', (req, res) => {
     let idAluno = req.params.id;
 
+    // pdf.makePdf();
+    //
+    // const fname = req.body.fname;
+    // const lname = req.body.lname;
+    //
+    // const documentDefinition = {
+    //     content: [
+    //         `Hello ${fname} ${lname}` ,
+    //         'Nice to meet you!'
+    //     ]
+    // };
+    //
+    // const pdfDoc = pdfMake.createPdf(documentDefinition);
+    // pdfDoc.getBase64((data)=>{
+    //     res.writeHead(200,
+    //         {
+    //             'Content-Type': 'application/pdf',
+    //             'Content-Disposition':'attachment;filename="filename.pdf"'
+    //         });
+    //
+    //     const download = Buffer.from(data.toString('utf-8'), 'base64');
+    //     res.end(download);
+    // });
+
 
     Processos.findOneStudent( idAluno )
         .then(data => {
-            console.log(data.equivalencias);
-            pdf.makePdf(data);
+            console.log("DATA FETCHED...Passing to utils now");
+            // console.log(data.equivalencias);
+            let result = pdf.makePdf(data);
+
+            console.log(result ? "Successfully generated" : "Some error occurred...");
+
         })
-        .catch(err => res.jsonp(err));
+        .catch(err => console.log(err));
 });
 
 /**

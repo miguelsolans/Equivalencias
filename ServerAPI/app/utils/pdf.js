@@ -5,8 +5,8 @@
 
 "use strict";
 
-
-const pdf = require('pdfmake');
+const fs      = require('fs');
+const pdf     = require('pdfmake');
 
 const fonts = {
     Roboto: {
@@ -17,7 +17,7 @@ const fonts = {
     }
 };
 const printer = new pdf(fonts);
-const fs = require('fs');
+
 
 const formatEquiv = (equiv) => {
     let ol = [];
@@ -27,8 +27,13 @@ const formatEquiv = (equiv) => {
     return ol;
 };
 
-
-module.exports.makePdf = (student, courses) => {
+/**
+ *
+ * @param student information with the same field names as in Data Model
+ * @returns true if created, false otherwise
+ */
+module.exports.makePdf = (student) => {
+    let path = `app/files/${student.idAluno}.pdf`;
 
     let orderContent = formatEquiv(student.equivalencias);
     const document = {
@@ -74,19 +79,9 @@ module.exports.makePdf = (student, courses) => {
         },
     };
 
-    const options = { };
+    const pdfDoc = printer.createPdfKitDocument(document, { /* ... */ });
 
-    const pdfDoc = printer.createPdfKitDocument(document, options);
-    pdfDoc.pipe(fs.createWriteStream(`app/files/${student.idAluno}.pdf`));
-    pdfDoc.end();
+    pdfDoc.pipe(fs.createWriteStream(path));
 
+    return pdfDoc.end();
 };
-
-
-
-/*
-const PDF = pdfMake.createPdf({
-        pageMargins: [8.5, 8.5, 8.5, 8.5],
-        content: Content
-    }).download('TEST.pdf');
- */
