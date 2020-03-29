@@ -32,7 +32,7 @@ const formatEquiv = (equiv) => {
  * @param student information with the same field names as in Data Model
  * @returns true if created, false otherwise
  */
-module.exports.makePdf = (student) => {
+module.exports.makePdf = (student, author) => {
     let path = `app/files/${student.idAluno}.pdf`;
 
     let orderContent = formatEquiv(student.equivalencias);
@@ -56,6 +56,9 @@ module.exports.makePdf = (student) => {
             {
                 ol: orderContent,
                 style: "subjects"
+            },
+            {
+                text: `Gerado por ${author.fullName} (${author.email}) em `
             }
         ],
         styles: {

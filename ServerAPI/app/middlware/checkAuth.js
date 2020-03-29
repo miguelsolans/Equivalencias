@@ -13,7 +13,11 @@ module.exports = (req, res, next) => {
                 if(!user){
                     res.jsonp( {title: "Error!", message: "Invalid credentials"} );
                 } else {
-                    req.decodedUser = user.username;
+                    req.decodedUser = {
+                        username: user.username,
+                        fullName: user.fullName,
+                        email: user.email
+                    };
 
                     console.log(`${req.decodedUser} logged on`);
 

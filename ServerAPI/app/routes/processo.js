@@ -38,7 +38,7 @@ router.post('/:id/generate', checkAuth, (req, res) => {
         .then(data => {
             console.log("DATA FETCHED...Passing to utils now");
             // console.log(data.equivalencias);
-            let result = pdf.makePdf(data);
+            let result = pdf.makePdf(data, req.decodedUser);
 
             let msgOutput = result ? "Successfully generated" : "Some error occurred...";
 
