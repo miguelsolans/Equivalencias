@@ -3,19 +3,16 @@ const Users = require('../controllers/users');
 
 module.exports = (req, res, next) => {
 
-    console.log("Auth...");
-
     try {
         const token = req.cookies.userToken;
-        console.log(token);
+
         const decodedToken = jwt.verify(token, process.env.AUTH_SECRET, { algorithm: 'RS256' });
 
-
-        Users.searchUser(decodedToken)
+        Users.searchUser(decodedToken.username)
             .then(user => {
-                if(!user.length)
+                if(!user){
                     res.jsonp( {title: "Error!", message: "Invalid credentials"} );
-                else {
+                } else {
                     req.decodedUser = user.username;
 
                     console.log(`${req.decodedUser} logged on`);

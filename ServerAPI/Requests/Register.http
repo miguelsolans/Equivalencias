@@ -3,3 +3,5 @@ POST http://localhost:3030/user/register
 Content-Type: application/json
 
 { "username": "miguelsolans", "password": "IAmForgetful", "email": "dev.miguelsolans@gmail.com", "fullName": "Carlos Miguel Rebelo Solans" }
+
+###

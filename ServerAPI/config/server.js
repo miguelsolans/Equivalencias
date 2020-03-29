@@ -5,6 +5,8 @@ const express       = require('express');
 const app           = express();
 // Body Parser
 const bodyParser    = require('body-parser');
+// Cookie Parser
+const cookieParser  = require('cookie-parser');
 // Morgan For Request Status
 const logger        = require('morgan');
 // MongoDB
@@ -38,6 +40,9 @@ app.use(bodyParser.urlencoded({
 
 // To read it in JSON
 app.use(bodyParser.json());
+
+// Use cookies
+app.use(cookieParser());
 
 // Define Routes
 const ProcessoRoutes = require('../app/routes/processo');

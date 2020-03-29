@@ -34,8 +34,6 @@ router.get('/auth', checkAuth, (req, res) => {
 router.post('/:id/generate', checkAuth, (req, res) => {
     let idAluno = req.params.id;
 
-    console.log(req.decodedUser);
-
     Processos.findOneStudent( idAluno )
         .then(data => {
             console.log("DATA FETCHED...Passing to utils now");
