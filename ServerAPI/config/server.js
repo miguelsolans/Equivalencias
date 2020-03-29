@@ -20,7 +20,9 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
     });
 
 // Display Request Status
-// app.use(logger('dev'));
+const env = process.argv[2];
+if(env === 'dev')
+    app.use( logger(env) );
 
 // Tell node where public files are located
 app.use(express.static('./app/public'));

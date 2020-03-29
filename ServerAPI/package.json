@@ -4,8 +4,8 @@
   "description": "",
   "main": "app",
   "scripts": {
-    "test": "nodemon app",
-    "start": "node app"
+    "test": "nodemon app dev",
+    "start": "node app production"
   },
   "author": "Diogo Araújo, Diogo Nogueira, Miguel Solans",
   "license": "ISC",
@@ -20,5 +20,12 @@
     "nodemon": "^1.19.4",
     "passport-jwt": "^4.0.0",
     "pdfmake": "^0.1.65"
+  },
+  "nodemonConfig": {
+    "verbose": true,
+    "ignore": [
+      "app/public/*",
+      "app/files/*"
+    ]
   }
 }

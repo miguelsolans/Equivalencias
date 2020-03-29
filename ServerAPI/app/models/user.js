@@ -13,6 +13,15 @@ const userScheme = new mongoose.Schema({
     email: {
         type: String,
         required: true
+    },
+    deletable: {
+        type: Boolean,
+        required: true,
+        default: true
+    },
+    fullName: {
+        type: String,
+        required: true
     }
 });
 

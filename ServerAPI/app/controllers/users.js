@@ -1,10 +1,11 @@
 const User = require('../models/user');
 
-module.exports.newUser = ({username, password, email}) => {
+module.exports.newUser = ({username, password, email, fullName}) => {
     const newUser = new User({
         username: username,
         password: password,
-        email: email
+        email: email,
+        fullName: fullName
     });
 
     return newUser.save();

@@ -1,0 +1,21 @@
+// User Authentication
+POST http://localhost:3030/user/login
+Content-Type: application/json
+Accept: application/json
+
+{ "username": "miguelsolans", "password": "IAmForgetful"}
+
+> {%
+client.global.set("userToken", response.headers.userToken);
+ %}
+
+###
+
+// Generate a PDF output
+POST localhost:3030/processo/A86579/generate
+Header-field: userToken
+Content-Type: application/json
+Accept: application/json
+
+
+###

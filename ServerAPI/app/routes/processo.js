@@ -5,16 +5,13 @@ const Processos = require('../controllers/processos');
 
 const pdf = require('../utils/pdf');
 
-router.get('/generate', (req, res) => {
-    let path = pdf.makePdf();
+const checkAuth = require('../middlware/checkAuth');
 
-    console.log(path);
 
-});
 /**
  * Get Students Enrolled
  */
-router.get('/', (req, res) => {
+router.get('/', checkAuth, (req, res) => {
     let query = req.query;
 
     if(query.year) {
@@ -30,33 +27,14 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/:id/generate', (req, res) => {
+router.get('/auth', checkAuth, (req, res) => {
+    res.render("<h3>Hello World</h3>");
+});
+
+router.post('/:id/generate', checkAuth, (req, res) => {
     let idAluno = req.params.id;
 
-    // pdf.makePdf();
-    //
-    // const fname = req.body.fname;
-    // const lname = req.body.lname;
-    //
-    // const documentDefinition = {
-    //     content: [
-    //         `Hello ${fname} ${lname}` ,
-    //         'Nice to meet you!'
-    //     ]
-    // };
-    //
-    // const pdfDoc = pdfMake.createPdf(documentDefinition);
-    // pdfDoc.getBase64((data)=>{
-    //     res.writeHead(200,
-    //         {
-    //             'Content-Type': 'application/pdf',
-    //             'Content-Disposition':'attachment;filename="filename.pdf"'
-    //         });
-    //
-    //     const download = Buffer.from(data.toString('utf-8'), 'base64');
-    //     res.end(download);
-    // });
-
+    console.log(req.decodedUser);
 
     Processos.findOneStudent( idAluno )
         .then(data => {
@@ -64,10 +42,11 @@ router.post('/:id/generate', (req, res) => {
             // console.log(data.equivalencias);
             let result = pdf.makePdf(data);
 
-            console.log(result ? "Successfully generated" : "Some error occurred...");
+            let msgOutput = result ? "Successfully generated" : "Some error occurred...";
 
+            res.jsonp( {title: "Success!", message: msgOutput} );
         })
-        .catch(err => console.log(err));
+        .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
 });
 
 /**
