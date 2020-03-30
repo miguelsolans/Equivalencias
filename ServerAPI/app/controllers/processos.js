@@ -11,7 +11,11 @@ module.exports.list = (query, projection) => {
 };
 
 module.exports.findOneStudent = (id) => {
-    return Processo.findOne({idAluno: id})
+    return Processo.findOne({idAluno: id});
+};
+
+module.exports.findProcessById = (id) => {
+    return Processo.findOne( {processo: id} );
 };
 
 module.exports.new = ({_id, processo, idAluno, nomeAluno, instProv, cursoProv}) => {
@@ -30,4 +34,25 @@ module.exports.searchByYear = (year) => {
         end = new Date(year + 1, 0, 1);
 
     return Processo.find({ data: { $gte: start, $lt: end} });
+};
+
+// // semUcEquiv: STRING,
+//     // anoUcEquiv: STRING,
+//     // ucEquiv: STRING,
+//     // percent: NUMBER,
+//     // nota: NUMBER,
+//     // ects: NUMBER,
+//     // ucRealizada: STRING
+module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada}) => {
+    const subject = {
+        semUcEquiv: semUcEquiv,
+        anoUcEquiv: anoUcEquiv,
+        ucEquiv: ucEquiv,
+        percent: percent,
+        nota: nota,
+        ects: ects,
+        ucRealizada: ucRealizada,
+    };
+    // equivalencias
+    return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
 };

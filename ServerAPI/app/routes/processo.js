@@ -5,16 +5,13 @@ const Processos = require('../controllers/processos');
 
 const pdf = require('../utils/pdf');
 
-router.get('/generate', (req, res) => {
-    let path = pdf.makePdf();
+const checkAuth = require('../middlware/checkAuth');
 
-    console.log(path);
 
-});
 /**
  * Get Students Enrolled
  */
-router.get('/', (req, res) => {
+router.get('/', checkAuth, (req, res) => {
     let query = req.query;
 
     if(query.year) {
@@ -30,50 +27,31 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/:id/generate', (req, res) => {
+router.get('/:id/processes', checkAuth, (req, res) => {
+    // Listar os processos de um aluno
+    let idAluno = req.params.id;
+});
+
+router.post('/:id/generate', checkAuth, (req, res) => {
     let idAluno = req.params.id;
 
-    // pdf.makePdf();
-    //
-    // const fname = req.body.fname;
-    // const lname = req.body.lname;
-    //
-    // const documentDefinition = {
-    //     content: [
-    //         `Hello ${fname} ${lname}` ,
-    //         'Nice to meet you!'
-    //     ]
-    // };
-    //
-    // const pdfDoc = pdfMake.createPdf(documentDefinition);
-    // pdfDoc.getBase64((data)=>{
-    //     res.writeHead(200,
-    //         {
-    //             'Content-Type': 'application/pdf',
-    //             'Content-Disposition':'attachment;filename="filename.pdf"'
-    //         });
-    //
-    //     const download = Buffer.from(data.toString('utf-8'), 'base64');
-    //     res.end(download);
-    // });
-
-
-    Processos.findOneStudent( idAluno )
+    Processos.findProcessById( idAluno )
         .then(data => {
             console.log("DATA FETCHED...Passing to utils now");
-            // console.log(data.equivalencias);
-            let result = pdf.makePdf(data);
 
-            console.log(result ? "Successfully generated" : "Some error occurred...");
+            let result = pdf.makePdf(data, req.decodedUser);
 
+            let msgOutput = result ? "Successfully generated" : "Some error occurred...";
+
+            res.jsonp( {title: "Success!", message: msgOutput} );
         })
-        .catch(err => console.log(err));
+        .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
 });
 
 /**
  * Create a new Student
  */
-router.post('/', (req, res) => {
+router.post('/', checkAuth, (req, res) => {
     const info = req.body;
 
     console.log(info);
@@ -87,7 +65,7 @@ router.post('/', (req, res) => {
 /**
  * Delete a student given by his ID
  */
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
 
     Processos.delete(req.params.id)
@@ -99,8 +77,19 @@ router.delete('/:id', (req, res) => {
 /**
  * Add Subjects to Student
  */
-router.put('/', (req, res) => {
+router.put('/:id', checkAuth, (req, res) => {
+    // semUcEquiv: STRING,
+    // anoUcEquiv: STRING,
+    // ucEquiv: STRING,
+    // percent: NUMBER,
+    // nota: NUMBER,
+    // ects: NUMBER,
+    // ucRealizada: STRING
     console.log("UPDATE Student");
+
+    Processos.addSubjects(req.params.id, req.body)
+        .then(data => res.jsonp(data))
+        .catch(err => res.jsonp(err));
 });
 
 

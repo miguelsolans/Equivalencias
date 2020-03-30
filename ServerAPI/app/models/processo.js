@@ -17,7 +17,11 @@ const equivalencias = new mongoose.Schema({
     },
     nota: {
         type: Number,
-        required: [true, "Deve definir uma nota para a equivalencia do aluno"]
+        required: [true, "Deve definir uma nota (0 a 20) para a equivalencia do aluno"]
+    },
+    anoLetivo: {
+        type: String,
+        required: [true, "Deve especificar o ano letivo referente à equivalência, sob formato (AAAA/AAAA)"],
     },
     percent: {
         type: Number,

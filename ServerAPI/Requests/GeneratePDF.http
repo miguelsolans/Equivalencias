@@ -1,0 +1,75 @@
+// User Authentication
+POST http://localhost:3030/user/login
+Content-Type: application/json
+Accept: application/json
+
+{ "username": "miguelsolans", "password": "IAmForgetful"}
+
+> {%
+client.global.set("userToken", response.headers.userToken);
+ %}
+
+###
+// Create a new Process
+POST http://localhost:3030/processo
+Header-field: userToken
+Content-Type: application/json
+Accept: application/json
+
+{
+	"_id": "13253",
+	"processo": "13253",
+	"idAluno": "41841",
+	"nomeAluno": "Carlos Miguel Rebelo Solans",
+	"instProv": "Instituto Politécnico do Cávado e do Ave",
+	"cursoProv": "Licenciatura em Engenharia de Sistemas Informáticos"
+}
+
+###
+// Add new subjects
+PUT http://localhost:3030/processo/13253
+Header-field: userToken
+Content-Type: application/json
+Accept: application/json
+
+{
+  "semUcEquiv": "1º semestre",
+  "anoUcEquiv": "2019/2018",
+  "ucEquiv": "Desenvolvimento de Aplicações Web",
+  "nota": 19,
+  "ects": 3,
+  "ucRealizada": "Multimédia e Tecnologia Web"
+}
+
+###
+//
+PUT http://localhost:3030/processo/13253
+Header-field: userToken
+Content-Type: application/json
+Accept: application/json
+
+{
+  "semUcEquiv": "1º semestre",
+  "anoUcEquiv": "2019/2018",
+  "ucEquiv": "Gestão de Processo de Software",
+  "nota": 13,
+  "ects": 6,
+  "ucRealizada": "Gestão de Projetos de Engenharia"
+}
+
+###
+
+// Generate a PDF output
+POST localhost:3030/processo/13253/generate
+// Header-field: userToken
+Content-Type: application/json
+Accept: application/json
+
+
+###
+
+// Delete afterwards so this test can be ran again
+DELETE localhost:3030/processo/13253
+
+
+###
