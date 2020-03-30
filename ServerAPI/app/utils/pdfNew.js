@@ -25,19 +25,14 @@ const buildTable = (data, columns) => {
         text: e.ucRealizada,
     }, {
         text: e.ects,
-        alignment: 'center'
     }, {
-        text: e.nota,
-        alignment: 'center'
+        text: e.nota
     }, {
         text: e.semUcEquiv,
     }, {
         text: e.ects,
-        alignment: 'center'
-
     }, {
-        text: e.nota,
-        alignment: 'center'
+        text: e.nota
     }]));
 
     return body;
@@ -68,10 +63,10 @@ module.exports.makePdf = (student, author) => {
     let path = `app/files/${student.processo}.pdf`;
 
     const document = {
-        pageSize: 'A4',
-        pageOrientation: 'portrait',
+        // pageSize: 'A4',
+        // pageOrientation: 'portrait',
         // Left, Top, Right, Bottom
-        pageMargins: [ 70, 50, 70, 40 ],
+        // pageMargins: [ 70, 90, 70, 0.6 ],
         content: [
             {
                 columns: [
@@ -106,74 +101,54 @@ module.exports.makePdf = (student, author) => {
                 style: "tableEquiv",
                 table: {
                     headerRows: 2,
-                    widths: ['*', 25, 25, '*', 25, 25],
                     body: buildTable(student.equivalencias, [
                         [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: 'UC da(o) Licenciatura/Mestrado/Doutoramento em XX', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
                         [
                             {text: 'Designação', style: 'tableHeader', alignment: 'center'},
                             {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
                             {text: 'Nota', style: 'tableHeader', alignment: 'center'},
-
                             {text: 'Designação', style: 'tableHeader', alignment: 'center'},
                             {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
                             {text: 'Nota', style: 'tableHeader', alignment: 'center'}
                         ]]
                     ),
-                },
+                }
             },
             {
-                style: 'body',
-                text: `Universidade do Minho, ${todayDate.getDate()} de ${month(todayDate)} de ${todayDate.getFullYear()}
-                \nA(O) Diretor(a) de Curso da(o) Licenciatura/Mestrado/Doutoramento em XXX`
+                style: 'footer',
+                text: `Universidade do Minho, DD de ${month(todayDate)} de ${todayDate.getFullYear()}`
             },
-            {
-                style: 'signature',
-                text: 'Assinatura'
-            }
         ],
         styles: {
             header: {
                 bold: true,
                 italic: false,
-                fontSize: 12,
+                fontSize: 11,
                 alignment: "center",
                 margin: 30
             },
             body: {
                 bold: false,
                 italic: false,
-                fontSize: 10,
-                margin: 30,
-                alignment: "left"
-            },
-            tableEquiv: {
-                fontSize: 10
-            },
-            footer: {
-                bold: false,
-                italic: false,
-                fontSize: 10,
+                fontSize: 9,
                 margin: 30
             },
             subjects: {
                 margin: [ 5, 20, 10, 20 ]
             },
             headerTable: {
+                // margin: [0, 5, 0, 15],
                 fillColor: "#f2f2f2",
                 color: "#000",
-                fontSize: 10
+                fontSize: 9
             },
             tableHeader: {
                 color: '#000',
                 bold: true
-            },
-            signature: {
-                color: '#7F7F7F',
-                margin: 10
             }
         },
     };
-
+    
     const pdfDoc = printer.createPdfKitDocument(document, { /* ... */ });
 
     pdfDoc.pipe(fs.createWriteStream(path));

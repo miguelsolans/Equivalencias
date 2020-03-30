@@ -27,13 +27,18 @@ router.get('/', checkAuth, (req, res) => {
 
 });
 
+router.get('/:id/processes', checkAuth, (req, res) => {
+    // Listar os processos de um aluno
+    let idAluno = req.params.id;
+});
+
 router.post('/:id/generate', checkAuth, (req, res) => {
     let idAluno = req.params.id;
 
-    Processos.findOneStudent( idAluno )
+    Processos.findProcessById( idAluno )
         .then(data => {
             console.log("DATA FETCHED...Passing to utils now");
-            // console.log(data.equivalencias);
+
             let result = pdf.makePdf(data, req.decodedUser);
 
             let msgOutput = result ? "Successfully generated" : "Some error occurred...";
@@ -72,8 +77,19 @@ router.delete('/:id', checkAuth, (req, res) => {
 /**
  * Add Subjects to Student
  */
-router.put('/', checkAuth, (req, res) => {
+router.put('/:id', checkAuth, (req, res) => {
+    // semUcEquiv: STRING,
+    // anoUcEquiv: STRING,
+    // ucEquiv: STRING,
+    // percent: NUMBER,
+    // nota: NUMBER,
+    // ects: NUMBER,
+    // ucRealizada: STRING
     console.log("UPDATE Student");
+
+    Processos.addSubjects(req.params.id, req.body)
+        .then(data => res.jsonp(data))
+        .catch(err => res.jsonp(err));
 });
 
 

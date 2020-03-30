@@ -5,3 +5,8 @@ Content-Type: application/json
 { "username": "miguelsolans", "password": "IAmForgetful", "email": "dev.miguelsolans@gmail.com", "fullName": "Carlos Miguel Rebelo Solans" }
 
 ###
+
+POST http://localhost:3030/user/login
+Content-Type: application/json
+
+{ "username": "miguelsolans", "password": "IAmForgetful"}
