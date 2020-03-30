@@ -28,32 +28,32 @@ router.post('/login', (req, res, next) => {
 
             if(!user){
                 res.jsonp({title: "Error", message: `User ${userAuth.username} does not exists`});
+            } else {
+                bcrypt.compare(userAuth.password, user.password)
+                    .then(result => {
+                        if(!result) {
+                            res.jsonp( {title: "error", message: "Invalid password!"} );
+                        } else {
+                            const token = jwt.sign({
+                                    username: user.username
+                                },
+                                process.env.AUTH_SECRET, { expiresIn: process.env.AUTH_TOKEN_TIMETOLIVE },
+                                { algorithm: process.env.AUTH_TOKEN_ALGORITHM }
+                            );
+
+                            const cookieOptions = {
+                                httpOnly: true
+                            };
+
+                            res.cookie('userToken', token, cookieOptions);
+
+                            res.jsonp( {title: "Success!", message: "User logged on successfully", token: token} );
+                        }
+
+
+                    })
+                    .catch(err => res.jsonp(err));
             }
-
-            bcrypt.compare(userAuth.password, user.password)
-                .then(result => {
-                    if(!result) {
-                        res.jsonp( {title: "error", message: "Invalid password!"} );
-                    } else {
-                        const token = jwt.sign({
-                                username: user.username
-                            },
-                            process.env.AUTH_SECRET, { expiresIn: process.env.AUTH_TOKEN_TIMETOLIVE },
-                            { algorithm: process.env.AUTH_TOKEN_ALGORITHM }
-                        );
-
-                        const cookieOptions = {
-                            httpOnly: true
-                        };
-
-                        res.cookie('userToken', token, cookieOptions);
-
-                        res.jsonp( {title: "Success!", message: "User logged on successfully", token: token} );
-                    }
-
-
-                })
-                .catch(err => res.jsonp(err));
         })
         .catch(err => res.jsonp(err));
 
