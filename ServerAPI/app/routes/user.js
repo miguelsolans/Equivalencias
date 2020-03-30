@@ -3,10 +3,11 @@ const router  = express.Router();
 const bcrypt  = require('bcryptjs');
 const jwt     = require('jsonwebtoken');
 
+const checkAuth = require('../middlware/checkAuth');
 const Users = require('../controllers/users');
 
 
-router.get('/:username', (req, res) => {
+router.get('/:username', checkAuth, (req, res) => {
     console.log(`GET / ${req.params.username}`);
 
     Users.searchUser(req.params.username)
@@ -82,7 +83,7 @@ router.post('/register', (req, res) => {
 });
 
 
-router.delete('/', (req, res) => {
+router.delete('/', checkAuth, (req, res) => {
 
     Users.destroyUser(req.body.username)
         .then(data => res.jsonp(data))

@@ -18,14 +18,28 @@ const fonts = {
 };
 const printer = new pdf(fonts);
 
+const buildTable = (data, columns) => {
+    let body = columns;
 
-const formatEquiv = (equiv) => {
-    let ol = [];
-    equiv.forEach(e => {
-        ol.push(`${e.ucEquiv}, com ${e.nota} valores, por equivalência a ${e.ucRealizada};`)
-    });
-    return ol;
+    // body.push(columns);
+
+    data.forEach( e => body.push([{
+        text: e.ucRealizada,
+    }, {
+        text: e.ects,
+    }, {
+        text: e.nota
+    }, {
+        text: e.semUcEquiv,
+    }, {
+        text: e.ects,
+    }, {
+        text: e.nota
+    }]));
+
+    return body;
 };
+
 
 /**
  * Returns Month String given a date
@@ -34,14 +48,14 @@ const formatEquiv = (equiv) => {
  */
 const month = (date) => {
     let monthNames = ["janeiro", "fevereiro", "março", "abril", "maio", "junho",
-        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"]
+        "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
     return monthNames[ date.getMonth() ];
 };
 
 
 /**
- *
+ * Generates data output PDF
  * @param student information with the same field names as in Data Model
  * @returns true if created, false otherwise
  */
@@ -49,8 +63,6 @@ module.exports.makePdf = (student, author) => {
     let todayDate = new Date();
 
     let path = `app/files/${student.idAluno}.pdf`;
-
-    let orderContent = formatEquiv(student.equivalencias);
 
     const document = {
         content: [
@@ -94,8 +106,8 @@ module.exports.makePdf = (student, author) => {
                         // designação, ECTs, Nota
 
                     ],*/
-                    body: [
-                        [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {},{}, {}, {text: 'UC da(o) Licenciatura/Mestrado/Doutoramento em XX', style: 'tableHeader', colSpan: 3, alignment: 'center'}],
+                    body: buildTable(student.equivalencias, [
+                        [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: 'UC da(o) Licenciatura/Mestrado/Doutoramento em XX', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
                         [
                             {text: 'Designação', style: 'tableHeader', alignment: 'center'},
                             {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
@@ -103,19 +115,29 @@ module.exports.makePdf = (student, author) => {
                             {text: 'Designação', style: 'tableHeader', alignment: 'center'},
                             {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
                             {text: 'Nota', style: 'tableHeader', alignment: 'center'}
-                        ],
-                        // ['Sample value 1', 'Sample value 2', 'Sample value NOTA'],
-                        // [{rowSpan: 3, text: 'rowSpan set to 3\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor'}, 'Sample value 2', 'Sample value 3'],
-                        // ['', 'Sample value 2', 'Sample value 3'],
-                        // ['Sample value 1', 'Sample value 2', 'Sample value 3'],
-                        // ['Sample value 1', {colSpan: 2, rowSpan: 2, text: 'Both:\nrowSpan and colSpan\ncan be defined at the same time'}, ''],
-                        // ['Sample value 1', '', ''],
-                    ]
+                        ]]
+                    ),
+
+                    // body: [
+                    //     [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: 'UC da(o) Licenciatura/Mestrado/Doutoramento em XX', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
+                    //     [
+                    //         {text: 'Designação', style: 'tableHeader', alignment: 'center'},
+                    //         {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
+                    //         {text: 'Nota', style: 'tableHeader', alignment: 'center'},
+                    //         {text: 'Designação', style: 'tableHeader', alignment: 'center'},
+                    //         {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
+                    //         {text: 'Nota', style: 'tableHeader', alignment: 'center'}
+                    //     ],
+                    //     [
+                    //         {text: "Multimédia e Desenvolvimento Web"}, {text: 3}, {text: 18},
+                    //         {text: "Desenvolvimento de Aplicações Web Web"}, {text: 5}, {text: 19}
+                    //     ],
+                    // ]
                 }
             },
             {
                 style: 'footer',
-                text: `Universidade do Minho, DD de MM de ${todayDate.getFullYear()}`
+                text: `Universidade do Minho, DD de ${todayDate} de ${todayDate.getFullYear()}`
             }
 
 

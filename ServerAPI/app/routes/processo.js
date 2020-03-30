@@ -27,10 +27,6 @@ router.get('/', checkAuth, (req, res) => {
 
 });
 
-router.get('/auth', checkAuth, (req, res) => {
-    res.render("<h3>Hello World</h3>");
-});
-
 router.post('/:id/generate', checkAuth, (req, res) => {
     let idAluno = req.params.id;
 
@@ -50,7 +46,7 @@ router.post('/:id/generate', checkAuth, (req, res) => {
 /**
  * Create a new Student
  */
-router.post('/', (req, res) => {
+router.post('/', checkAuth, (req, res) => {
     const info = req.body;
 
     console.log(info);
@@ -64,7 +60,7 @@ router.post('/', (req, res) => {
 /**
  * Delete a student given by his ID
  */
-router.delete('/:id', (req, res) => {
+router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
 
     Processos.delete(req.params.id)
@@ -76,7 +72,7 @@ router.delete('/:id', (req, res) => {
 /**
  * Add Subjects to Student
  */
-router.put('/', (req, res) => {
+router.put('/', checkAuth, (req, res) => {
     console.log("UPDATE Student");
 });
 
