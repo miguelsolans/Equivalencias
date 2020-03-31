@@ -38,6 +38,17 @@ const equivalencias = new mongoose.Schema({
     semUcEquiv: {
         type: String,
         required: [true, "Deve especificar o semestre da UC equivalente"]
+    },
+    // Meta Data Information for control purposes
+    // Save username 
+    createdBy: {
+        type: String,
+        required: true
+    },
+    createdWhen: {
+        type: Date,
+        default: Date.now(),
+        required: true
     }
 });
 
@@ -47,6 +58,10 @@ const processoSchema = new mongoose.Schema({
         required: true
     },
     processo: {
+        type: String,
+        required: true
+    },
+    initiatedBy: {
         type: String,
         required: true
     },

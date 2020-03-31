@@ -18,9 +18,9 @@ module.exports.findProcessById = (id) => {
     return Processo.findOne( {processo: id} );
 };
 
-module.exports.new = ({_id, processo, idAluno, nomeAluno, instProv, cursoProv}) => {
+module.exports.new = ({_id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
 
-    const newProcess = new Processo({_id, processo, idAluno, nomeAluno, instProv, cursoProv});
+    const newProcess = new Processo({_id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy});
 
     return newProcess.save();
 };
@@ -43,7 +43,7 @@ module.exports.searchByYear = (year) => {
 //     // nota: NUMBER,
 //     // ects: NUMBER,
 //     // ucRealizada: STRING
-module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada}) => {
+module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada, createdBy}) => {
     const subject = {
         semUcEquiv: semUcEquiv,
         anoUcEquiv: anoUcEquiv,
@@ -52,6 +52,7 @@ module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, no
         nota: nota,
         ects: ects,
         ucRealizada: ucRealizada,
+        createdBy: createdBy
     };
     // equivalencias
     return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
