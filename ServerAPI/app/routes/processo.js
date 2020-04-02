@@ -54,9 +54,9 @@ router.post('/:id/generate', checkAuth, (req, res) => {
 router.post('/', checkAuth, (req, res) => {
     const info = req.body;
 
-    console.log(info);
+    info.initiatedBy = req.decodedUser.username;
 
-    Processos.new(req.body)
+    Processos.new(info)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));
 
@@ -85,7 +85,9 @@ router.put('/:id', checkAuth, (req, res) => {
     // nota: NUMBER,
     // ects: NUMBER,
     // ucRealizada: STRING
-    console.log("UPDATE Student");
+    const subject = req.body;
+
+    subject.createdBy = req.decodedUser.username;
 
     Processos.addSubjects(req.params.id, req.body)
         .then(data => res.jsonp(data))
