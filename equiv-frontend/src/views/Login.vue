@@ -1,16 +1,49 @@
 <template>
-    <v-form ref="form">
-        <img src="../assets/Logo.png" style="width:auto; height: 50px;  align-content: center">
-        <v-text-field label="Username"
-                      name="username"
-                      id="username"
-                      v-model="username"
-                      type="text" required>
-
-        </v-text-field>
-        <v-text-field label="Password" name="password" id="password" v-model="password" type="password" required></v-text-field>
-        <v-btn class="mx-2" dark color="teal" @click="onLogin">Login</v-btn>
-    </v-form>
+    <v-container>
+        <v-layout row wrap>
+            <v-flex xs12 sm8 offset-sm2 align-center justify-center>
+                <v-card class="elevation-12">
+                    <v-toolbar dark color="primary">
+                        <v-toolbar-title>Sign In</v-toolbar-title>
+                    </v-toolbar>
+                    <v-card-text>
+                        <v-container>
+                            <form>
+                                <v-layout row>
+                                    <v-flex xs12>
+                                        <v-text-field
+                                                name="emailid">
+                                        </v-text-field>
+                                    </v-flex>
+                                </v-layout>
+                                <v-layout row>
+                                    <v-flex xs12>
+                                        <v-text-field
+                                                name="password">
+                                        </v-text-field>
+                                    </v-flex>
+                                </v-layout>
+                                <v-layout row xs12>
+                                    <v-flex>
+                                        <v-btn flat block color="primary"
+                                               @click.prevent="validateBeforeSubmit">
+                                            Sign In
+                                        </v-btn>
+                                    </v-flex>
+                                    <v-flex>
+                                        <v-btn flat block
+                                               @click.prevent="clear">
+                                            Clear
+                                        </v-btn>
+                                    </v-flex>
+                                </v-layout>
+                            </form>
+                        </v-container>
+                    </v-card-text>
+                </v-card>
+            </v-flex>
+        </v-layout>
+    </v-container>
 </template>
 
 <script>
@@ -24,8 +57,8 @@
         },
         methods: {
             onLogin () {
-                fetch('http://localhost:3030/user/miguelsolans', {
-                    method: 'GET',
+                fetch('http://localhost:3030/user/login', {
+                    method: 'POST',
                     mode: 'cors'
                 }).then(resp => resp.json())
                     .then(data => console.log(data))

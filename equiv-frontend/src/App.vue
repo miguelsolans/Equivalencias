@@ -1,5 +1,10 @@
 <template>
     <v-app>
-        <router-view/>
+
+        <main>
+            <v-container fluid>
+                <router-view/>
+            </v-container>
+        </main>
     </v-app>
 </template>

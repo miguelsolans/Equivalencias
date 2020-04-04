@@ -3,6 +3,8 @@ const createError   = require('http-errors');
 // Express server
 const express       = require('express');
 const app           = express();
+// Handle CORS
+const cors          = require('cors');
 // Body Parser
 const bodyParser    = require('body-parser');
 // Cookie Parser
@@ -43,6 +45,13 @@ app.use(bodyParser.json());
 
 // Use cookies
 app.use(cookieParser());
+
+// Configure CORS
+const corsOptions = {
+    origin: process.env.FRONTEND_SERVER
+};
+app.use( cors(corsOptions) );
+
 
 // Define Routes
 const ProcessoRoutes = require('../app/routes/processo');
