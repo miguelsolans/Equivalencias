@@ -1,9 +1,13 @@
 <template>
     <v-layout column>
-        <v-flex xs6 offset-xs3>
+        <v-flex xs6>
             <div class="white elevation-2">
+                <img src="../assets/Logo.png" style="with: 100%">
+
                 <v-toolbar fat dense class="cyan">
-                    <v-toolbar-title>Register</v-toolbar-title>
+                    <v-toolbar-title>
+                        Login
+                    </v-toolbar-title>
                 </v-toolbar>
 
                 <div class="pl-4 pr-4 pt-2 pb2">
@@ -39,17 +43,28 @@
         },
         methods: {
             login: function () {
+                let credentials = {
+                    username: this.username,
+                    password: this.password
+                };
+
                 // e.preventDefault();
                 //alert("Test...");
                 fetch('http://localhost:3030/user/login', {
                     method: 'POST',
                     mode: 'cors',
-                    body: {
-                        username: this.username,
-                        password: this.password
-                    }
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(credentials)
                 }).then(resp => resp.json())
-                    .then(data => console.log(data))
+                    .then(data => {
+                        console.log(data);
+                        let d = new Date();
+                        d.setTime(d.getTime() + (24*60*60*1000));
+                        let expires = "expires=" + d.toUTCString();
+                        document.cookie = "userToken=" + data.token + ";" + expires + ";path=/";
+                    })
                     .catch(err => console.log(err));
                 // alert(this.username);
             }
