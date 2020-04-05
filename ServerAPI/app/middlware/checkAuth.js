@@ -24,9 +24,9 @@ module.exports = (req, res, next) => {
                     next();
                 }
             })
-            .catch(err => res.status(401).jsonp(err));
+            .catch(err => res.status(403).jsonp(err));
 
     } catch(err) {
-        res.jsonp( { title: "Error!", message: "Authentication failed!", error: err} );
+        res.status(403).jsonp( { title: "Error!", message: "Authentication failed!", error: err} );
     }
 };
