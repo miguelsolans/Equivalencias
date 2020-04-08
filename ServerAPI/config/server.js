@@ -27,6 +27,8 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
 const env = process.argv[2];
 if(env === 'dev')
     app.use( logger(env) );
+else if( env === 'production') 
+    console.log = function(){}
 
 // Tell node where public files are located
 app.use(express.static('./app/public'));
