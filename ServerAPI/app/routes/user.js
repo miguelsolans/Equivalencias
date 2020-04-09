@@ -3,7 +3,7 @@ const router  = express.Router();
 const bcrypt  = require('bcryptjs');
 const jwt     = require('jsonwebtoken');
 
-const checkAuth = require('../middlware/checkAuth');
+const checkAuth = require('../middleware/checkAuth');
 const Users = require('../controllers/users');
 
 
@@ -33,7 +33,7 @@ router.post('/login', (req, res, next) => {
                 bcrypt.compare(userAuth.password, user.password)
                     .then(result => {
                         if(!result) {
-                            res.jsonp( {title: "error", message: "Invalid password!"} );
+                            res.status(401).jsonp( {title: "error", message: "Invalid password!"} );
                         } else {
                             const token = jwt.sign({
                                     username: user.username
@@ -46,17 +46,18 @@ router.post('/login', (req, res, next) => {
                                 httpOnly: true
                             };
 
+    		            console.log(token);
+ 
                             res.cookie('userToken', token, cookieOptions);
-
-                            res.jsonp( {title: "Success!", message: "User logged on successfully", token: token} );
+                            res.status(201).jsonp( {title: "Success!", message: "User logged on successfully", token: token} );
                         }
 
 
                     })
-                    .catch(err => res.jsonp(err));
+                    .catch(err => res.status(401).jsonp(err));
             }
         })
-        .catch(err => res.jsonp(err));
+        .catch(err => res.status(401).jsonp(err));
 
 });
 
@@ -76,8 +77,8 @@ router.post('/register', (req, res) => {
         };
 
         Users.newUser(newUser)
-            .then(data => res.jsonp(data))
-            .catch(err => res.jsonp(err));
+            .then(data => res.status(201).jsonp(data))
+            .catch(err => res.status(400).jsonp(err));
     });
 
 });

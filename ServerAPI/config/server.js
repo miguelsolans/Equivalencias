@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
         console.log("Connection to MongoDB successfully established")
     })
     .catch(() => {
-        console.log("Couldn't connect to MongoDB");
+        throw new Error("Couldn't connect to MongoDB");
     });
 
 // Display Request Status
@@ -28,7 +28,7 @@ const env = process.argv[2];
 if(env === 'dev')
     app.use( logger(env) );
 else if( env === 'production') 
-    console.log = function(){}
+    console.log = function(){ /* Do NOTHING - prevent logs under production */ };
 
 // Tell node where public files are located
 app.use(express.static('./app/public'));

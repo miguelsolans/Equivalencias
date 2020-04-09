@@ -5,7 +5,7 @@ const Processos = require('../controllers/processos');
 
 const pdf = require('../utils/pdf');
 
-const checkAuth = require('../middlware/checkAuth');
+const checkAuth = require('../middleware/checkAuth');
 
 
 /**
@@ -43,7 +43,7 @@ router.post('/:id/generate', checkAuth, (req, res) => {
 
             let msgOutput = result ? "Successfully generated" : "Some error occurred...";
 
-            res.jsonp( {title: "Success!", message: msgOutput} );
+            res.status(201).jsonp( {title: "Success!", message: msgOutput} );
         })
         .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
 });
@@ -57,7 +57,7 @@ router.post('/', checkAuth, (req, res) => {
     info.initiatedBy = req.decodedUser.username;
 
     Processos.new(info)
-        .then(data => res.jsonp(data))
+        .then(data => res.status(201).jsonp(data))
         .catch(err => res.jsonp(err));
 
 });
@@ -90,7 +90,7 @@ router.put('/:id', checkAuth, (req, res) => {
     subject.createdBy = req.decodedUser.username;
 
     Processos.addSubjects(req.params.id, req.body)
-        .then(data => res.jsonp(data))
+        .then(data => res.status(201).jsonp(data))
         .catch(err => res.jsonp(err));
 });
 
