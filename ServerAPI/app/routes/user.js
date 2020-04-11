@@ -45,11 +45,12 @@ router.post('/login', (req, res, next) => {
                             const cookieOptions = {
                                 httpOnly: true
                             };
-
-    		            console.log(token);
- 
+                            // TODO: Pass-on user role
                             res.cookie('userToken', token, cookieOptions);
-                            res.status(201).jsonp( {title: "Success!", message: "User logged on successfully", token: token} );
+                            res.status(201).jsonp( {title: "Success!", message: "User logged on successfully", token: token, user: {
+                                username: user.username,
+                                fullName: user.fullName
+                            }});
                         }
 
 
