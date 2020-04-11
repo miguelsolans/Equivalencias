@@ -18,9 +18,9 @@ module.exports.findProcessById = (id) => {
     return Processo.findOne( {processo: id} );
 };
 
-module.exports.new = ({_id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
-
-    const newProcess = new Processo({_id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy});
+module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
+    let _id = processo;
+    const newProcess = new Processo({ _id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
 
     return newProcess.save();
 };

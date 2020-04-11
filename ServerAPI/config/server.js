@@ -50,9 +50,14 @@ app.use(cookieParser());
 
 // Configure CORS
 const corsOptions = {
-    origin: process.env.FRONTEND_SERVER
+    origin: process.env.FRONTEND_SERVER,
+    redentials: true,
 };
-app.use( cors(corsOptions) );
+
+app.use(cors({credentials: true, origin: 'http://localhost:8080'}));
+// app.use( cors(corsOptions) );
+// app.use(cors(corsOptions));
+// app.options('*', cors(corsOptions));
 
 
 // Define Routes

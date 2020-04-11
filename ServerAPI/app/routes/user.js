@@ -28,7 +28,7 @@ router.post('/login', (req, res, next) => {
         .then(user => {
 
             if(!user){
-                res.jsonp({title: "Error", message: `User ${userAuth.username} does not exists`});
+                res.status(401).jsonp({title: "Error", message: `User ${userAuth.username} does not exists`});
             } else {
                 bcrypt.compare(userAuth.password, user.password)
                     .then(result => {

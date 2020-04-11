@@ -1,79 +1,90 @@
 <template>
-    <v-layout column>
-        <v-flex xs6>
-            <div class="white elevation-2">
-                <img src="../assets/Logo.png" style="with: 100%">
+    <div>
+        <form>
+            <label for="username">Username</label>
+            <input id="username" type="text" v-model="username" required autofocus>
 
-                <v-toolbar fat dense class="cyan">
-                    <v-toolbar-title>
-                        Login
-                    </v-toolbar-title>
-                </v-toolbar>
+            <label for="password">Password</label>
+            <input id="password" type="password" v-model="password" required autofocus>
 
-                <div class="pl-4 pr-4 pt-2 pb2">
-                    <v-text-field
-                        label="Username"
-                        type="text"
-                        v-model="username"
-                        class="input-group--focussed"></v-text-field>
-
-                    <v-text-field
-                        label="Password"
-                        type="password"
-                        v-model="password"
-                        class="input-group-focussed"></v-text-field>
-
-                    <v-btn
-                        class="cyan"
-                        @click="login">Login</v-btn>
-                </div>
-                <p>Your input {{ username }}</p>
-            </div>
-        </v-flex>
-    </v-layout>
+            <button type="submit" @click="handleLogin">Login</button>
+        </form>
+    </div>
 </template>
+
 <script>
+    import axios from 'axios';
     export default {
         name: "Login",
-        data() {
+        data: () => {
             return {
                 username: '',
                 password: ''
             }
         },
         methods: {
-            login: function () {
+            handleLogin(e) {
+                e.preventDefault();
                 let credentials = {
                     username: this.username,
                     password: this.password
                 };
+                console.log(credentials);
 
-                // e.preventDefault();
-                //alert("Test...");
-                fetch('http://localhost:3030/user/login', {
+                axios({
                     method: 'POST',
-                    mode: 'cors',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(credentials)
-                }).then(resp => resp.json())
-                    .then(data => {
-                        console.log(data);
-                        let d = new Date();
-                        d.setTime(d.getTime() + (24*60*60*1000));
-                        let expires = "expires=" + d.toUTCString();
-                        document.cookie = "userToken=" + data.token + ";" + expires + ";path=/";
-                    })
-                    .catch(err => console.log(err));
-                // alert(this.username);
+                    url: 'http://localhost:3030/user/login',
+                    data: credentials
+                }).then(resp => {
+                    localStorage.setItem('userToken', resp.data.token);
+                    localStorage.setItem('user', JSON.stringify(resp.data.user));
+                    this.$router.push('/dashboard');
+
+                    this.$cookies.set('userToken', resp.data.token);
+                })
+                .catch(err => console.log(err.response));
+
+
+                // fetch('http://localhost:3030/user/login', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Accept': 'application/json, text/plain, */*',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify(credentials)
+                // }).then(resp => {
+                //     return {
+                //         status: resp.status,
+                //         body: await resp.json()
+                //     };
+                //     // alert(status);
+                //     // resp.json().then(data => ({status: resp.status, body: data}))
+                //     // if(!resp.ok) {
+                //     //     throw new Error("Authentication failed");
+                //     // }
+                //     // else {
+                //     //     return resp.json()
+                //     //         .then(data => ({status: resp.status, body: data}));
+                //     // }
+                // }).then(data => {
+                //     if(data.status === 201) {
+                //         console.log("Works :-)");
+                //         console.log(data);
+                //         localStorage.setItem('userToken', data.body.token);
+                //         localStorage.setItem('user', JSON.stringify(data.body.user));
+                //     } else {
+                //         console.log("Snap... Something happened");
+                //         console.log(data);
+                //     }
+                //
+                // }).catch(err => {
+                //     console.log(err);
+                // });
             }
         }
     }
 </script>
 
 <style scoped>
-.v-toolbar__title {
-    color: white;
-}
+
 </style>

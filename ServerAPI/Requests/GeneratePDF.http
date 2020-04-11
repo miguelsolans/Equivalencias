@@ -17,7 +17,6 @@ Content-Type: application/json
 Accept: application/json
 
 {
-	"_id": "13253",
 	"processo": "13253",
 	"idAluno": "41841",
 	"nomeAluno": "Carlos Miguel Rebelo Solans",
