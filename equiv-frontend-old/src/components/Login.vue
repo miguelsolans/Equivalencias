@@ -22,16 +22,6 @@
                 password: ''
             }
         },
-        computed: {
-            loggedIn() {
-                return this.$store.state.auth.status.loggedIn;
-            }
-        },
-        created() {
-            if(this.loggedIn) {
-                this.$router.push('/dashboard');
-            }
-        },
         methods: {
             handleLogin(e) {
                 e.preventDefault();
@@ -41,25 +31,18 @@
                 };
                 console.log(credentials);
 
-                this.$store.dispatch('auth/login', credentials)
-                    .then(() => {
-                        this.$router.push('/dashboard');
-                    }, error => {
-                        alert("ERROR during login");
-                        console.log(error);
-                    })
-                // axios({
-                //     method: 'POST',
-                //     url: 'http://localhost:3030/user/login',
-                //     data: credentials
-                // }).then(resp => {
-                //     localStorage.setItem('userToken', resp.data.token);
-                //     localStorage.setItem('user', JSON.stringify(resp.data.user));
-                //     this.$router.push('/dashboard');
-                //
-                //     this.$cookies.set('userToken', resp.data.token);
-                // })
-                // .catch(err => console.log(err.response));
+                axios({
+                    method: 'POST',
+                    url: 'http://localhost:3030/user/login',
+                    data: credentials
+                }).then(resp => {
+                    localStorage.setItem('userToken', resp.data.token);
+                    localStorage.setItem('user', JSON.stringify(resp.data.user));
+                    this.$router.push('/dashboard');
+
+                    this.$cookies.set('userToken', resp.data.token);
+                })
+                .catch(err => console.log(err.response));
 
 
                 // fetch('http://localhost:3030/user/login', {
