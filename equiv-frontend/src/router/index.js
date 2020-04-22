@@ -2,6 +2,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../components/Login';
 import ListaProcessos from '../components/ListaProcessos';
+import VueCookies from 'vue-cookies';
 
 Vue.use(VueRouter);
 
@@ -33,7 +34,7 @@ const router = new VueRouter({
  */
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
-        if(localStorage.getItem('userToken') === null || localStorage.getItem('userToken') === undefined) {
+        if(VueCookies.get('userToken') === null || localStorage.getItem('user') === undefined) {
             next('/login');
         } else {
             next();

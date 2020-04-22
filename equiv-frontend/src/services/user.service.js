@@ -5,11 +5,9 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:3030';
-
 class UserService {
     getUser(username) {
-        return axios.get(`${API_URL}/user/${username}`, {
+        return axios.get(`${process.env.API_SERVER}/user/${username}`, {
             withCredentials: true
         });
     }

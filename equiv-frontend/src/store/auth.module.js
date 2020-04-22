@@ -3,11 +3,11 @@
  */
 import AuthService from '../services/auth.service';
 
-const user = JSON.parse(localStorage.getItem('user'));
-const token = this.$cookies.get('userToken');
+const userStorage = JSON.parse(localStorage.getItem('user'));
+// const token = this.$cookies.get('userToken');
 
-const initialSate = user
-    ? { status: { loggedIn: true}, user }
+const initialSate = userStorage
+    ? { status: { loggedIn: true}, userStorage }
     : {status: { loggedIn: false}, user: null };
 
 export const auth = {
