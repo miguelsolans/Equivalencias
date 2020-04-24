@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Login from '../components/Login';
-import ListaProcessos from '../components/ListaProcessos';
+import ListaProcessos from '../components/NewProcess';
 import VueCookies from 'vue-cookies';
 
 Vue.use(VueRouter);

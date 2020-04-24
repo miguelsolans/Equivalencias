@@ -1,15 +1,47 @@
 <template>
-    <div>
-        <form>
-            <label for="username">Username</label>
-            <input id="username" type="text" v-model="username" required autofocus>
 
-            <label for="password">Password</label>
-            <input id="password" type="password" v-model="password" required autofocus>
+    <v-content>
+        <v-alert :value="showErrorAlert" dense outlined dismissible type="error" transition="slide-y-transition">
+            {{ message }}
+        </v-alert>
+        <v-container fluid full-height>
+            <v-layout align-center justify-center>
+                <v-flex xs12 sm8 md4>
+                    <v-card class="elevation-12">
+                        <v-toolbar color="primary" dark float>
+                            <v-toolbar-title>Login</v-toolbar-title>
+                            <v-spacer></v-spacer>
+                            <v-toolbar-title>Mantis</v-toolbar-title>
+                        </v-toolbar>
 
-            <button type="submit" @click="handleLogin">Login</button>
-        </form>
-    </div>
+                        <v-card-text>
+                            <v-form>
+                                <v-text-field label="Username" name="username" v-model="username" type="text"></v-text-field>
+
+                                <v-text-field label="Password" name="password" v-model="password" type="password"></v-text-field>
+                            </v-form>
+                        </v-card-text>
+
+                        <v-card-actions>
+                            <v-spacer></v-spacer>
+                            <v-btn color="primary" @click="handleLogin">Login</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-content>
+<!--    <div>-->
+<!--        <form>-->
+<!--            <label for="username">Username</label>-->
+<!--            <input id="username" type="text" v-model="username" required autofocus>-->
+
+<!--            <label for="password">Password</label>-->
+<!--            <input id="password" type="password" v-model="password" required autofocus>-->
+
+<!--            <button type="submit" @click="handleLogin">Login</button>-->
+<!--        </form>-->
+<!--    </div>-->
 </template>
 
 <script>
@@ -22,7 +54,9 @@
             return {
                 user: new User('', ''),
                 username: '',
-                password: ''
+                password: '',
+                message: '',
+                showErrorAlert: false
             }
         },
         computed: {
@@ -49,6 +83,8 @@
                         this.$router.push('/dashboard');
                     }, error => {
                         alert("ERROR during login");
+                        this.message = error;
+                        this.showErrorAlert = true;
                         console.log(error);
                     })
                 // axios({
