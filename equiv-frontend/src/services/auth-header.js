@@ -1,9 +1,11 @@
+import VueCookies from 'vue-cookies';
 export default function authHeader() {
     let user = JSON.parse(localStorage.getItem('user'));
-    let token = this.$cookies.get('userToken');
+    let token = VueCookies.get('userToken');
 
     if(token && user) {
-        return { 'x-access-token': token }
+        return { 'userToken': token }
+        // return { 'x-access-token': token }
     } else {
         return { };
     }

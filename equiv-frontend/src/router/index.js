@@ -1,7 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Login from '../components/Login';
-import ListaProcessos from '../components/NewProcess';
 import VueCookies from 'vue-cookies';
 
 Vue.use(VueRouter);
@@ -10,13 +8,13 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: Login,
+        component: () => import('../components/Login'),
 
     },
     {
         path: '/dashboard',
         name: 'ListaProcessos',
-        component: ListaProcessos,
+        component: () => import('../components/NewProcess'),
         meta: {
             requiresAuth: true
         }

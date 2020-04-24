@@ -53,11 +53,13 @@ router.post('/:id/generate', checkAuth, (req, res) => {
  */
 router.post('/', checkAuth, (req, res) => {
 
+    console.log(req.body);
+
     const newProcess = {
         processo: req.body.processo,
         idAluno: req.body.idAluno,
         nomeAluno: req.body.nomeAluno,
-        institProv: req.body.instProv,
+        instProv: req.body.instProv,
         cursoProv: req.body.cursoProv,
         initiatedBy: req.decodedUser.username
     };

@@ -15,8 +15,10 @@ export const auth = {
     state: initialSate,
     actions: {
         login({commit}, user) {
+            console.log(user.username);
             return AuthService.login(user)
                 .then(user => {
+                    console.log(user);
                     commit('loginSuccess', user);
                     return Promise.resolve(user);
                 }, error => {

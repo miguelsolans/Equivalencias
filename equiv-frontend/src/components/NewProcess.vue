@@ -1,60 +1,50 @@
 <template>
-    <form>
-        <label for="processo">Identificador do Processo</label>
-        <input id="processo" type="text" v-model="processo" required>
+    <v-form>
+        <v-text-field label="Identificador do Processo" type="text" v-model="student.processo" required></v-text-field>
 
-        <label for="idAluno">Identificador do Aluno</label>
-        <input id="idAluno" type="text" v-model="idAluno" required>
+        <v-text-field label="Identificador do Aluno" type="text" v-model="student.idAluno" required></v-text-field>
 
-        <label for="nomeAluno">Nome Completo do Aluno</label>
-        <input id="nomeAluno" type="text" v-model="nomeAluno" required>
+        <v-text-field label="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" required></v-text-field>
 
-        <label for="institProv">Instituição Proveninente</label>
-        <input id="institProv" type="text" v-model="institProv" required>
+        <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>
 
-        <label for="cursoProv">Curso Proveninente</label>
-        <input id="cursoProv" type="text" v-model="cursoProv" required>
+        <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>
 
-        <button type="submit" @click="handleSubmit">Criar</button>
-    </form>
+        <v-btn color="primary" @click="handleSubmit">Criar</v-btn>
+        <v-btn color="normal" @click="clearForm">Cancelar</v-btn>
+    </v-form>
 </template>
 
 <script>
-    import axios from 'axios';
+    // import axios from 'axios';
+    import Processo from '../models/processo';
+    import UserService from '../services/user.service';
+    // import axios from "axios";
+    // import config from "../config";
 
     export default {
         name: "ListaProcessos",
         data() {
             return {
-                processo: '',
-                idAluno: '',
-                nomeAluno: '',
-                institProv: '',
-                cursoProv: ''
+                student: new Processo('', '', '', '', '')
             }
         },
         methods: {
             handleSubmit(e) {
                 e.preventDefault();
-                const token = localStorage.getItem('userToken');
-                const student = {
-                    processo: this.processo,
-                    idAluno: this.idAluno,
-                    nomeAluno: this.nomeAluno,
-                    institProv: this.institProv,
-                    cursoProv: this.cursoProv
-                };
-                console.log(token);
-                console.log(student);
-                axios({
-                    method: 'POST',
-                    url: 'http://localhost:3030/processo',
-                    // crossdomain: true,
-                    withCredentials: true,
-                    data: student
-                })
-                .then(value => console.log(value.data))
-                .catch(err => console.log(err));
+
+                // this.student = new Processo(this.processo, this.idAluno, this.nomeAluno, this.instProv, this.cursoProv);
+
+                UserService.newProcess(this.student)
+                    .then(data => {
+                        console.log(data);
+                        this.student = new Processo();
+                    })
+                    .catch(err => console.log(err));
+            },
+
+            clearForm() {
+                this.student = new Processo();
             }
         }
     }

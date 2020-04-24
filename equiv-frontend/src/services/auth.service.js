@@ -10,6 +10,7 @@ import VueCookies from 'vue-cookies';
 export default {
 
     login: (user) => {
+        console.log("DURING LOGIN");
         return axios.post(`${config.API_SERVER}/user/login`, {
             username: user.username,
             password: user.password
@@ -17,7 +18,6 @@ export default {
             if(response.data.token) {
                 localStorage.setItem('user', JSON.stringify(response.data.user));
                 VueCookies.set('userToken', response.data.token);
-                //this.$cookies.set('userToken', response.data.token);
             }
 
             return response.data;
@@ -26,6 +26,7 @@ export default {
 
     logout: () => {
         localStorage.removeItem('user');
-        this.$cookies.removeItem('userToken');
+        VueCookies.removeItem('userToken');
+        // this.$cookies.removeItem('userToken');
     }
 }
