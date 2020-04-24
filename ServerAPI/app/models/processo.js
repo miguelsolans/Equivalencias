@@ -45,7 +45,7 @@ const equivalencias = new mongoose.Schema({
         type: String,
         required: true
     },
-    createdWhen: {
+    createdAt: {
         type: Date,
         default: Date.now(),
         required: true

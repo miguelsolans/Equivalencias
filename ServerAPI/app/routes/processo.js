@@ -52,11 +52,17 @@ router.post('/:id/generate', checkAuth, (req, res) => {
  * Create a new Student
  */
 router.post('/', checkAuth, (req, res) => {
-    const info = req.body;
 
-    info.initiatedBy = req.decodedUser.username;
+    const newProcess = {
+        processo: req.body.processo,
+        idAluno: req.body.idAluno,
+        nomeAluno: req.body.nomeAluno,
+        institProv: req.body.instProv,
+        cursoProv: req.body.cursoProv,
+        initiatedBy: req.decodedUser.username
+    };
 
-    Processos.new(info)
+    Processos.new(newProcess)
         .then(data => res.status(201).jsonp(data))
         .catch(err => res.jsonp(err));
 
