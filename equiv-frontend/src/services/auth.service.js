@@ -26,7 +26,6 @@ export default {
 
     logout: () => {
         localStorage.removeItem('user');
-        VueCookies.removeItem('userToken');
-        // this.$cookies.removeItem('userToken');
+        VueCookies.remove('userToken');
     }
 }

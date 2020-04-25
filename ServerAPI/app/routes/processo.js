@@ -20,7 +20,7 @@ router.get('/', checkAuth, (req, res) => {
             .then(data => res.jsonp(data))
             .catch(err => res.jsonp(err));
     } else {
-        Processos.list()
+        Processos.list(null, { processo: true, idAluno: true, nomeAluno: true })
             .then(data => res.jsonp(data))
             .catch(err => res.jsonp(err));
     }

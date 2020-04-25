@@ -14,7 +14,7 @@ const routes = [
     {
         path: '/dashboard',
         name: 'ListaProcessos',
-        component: () => import('../components/NewProcess'),
+        component: () => import('../views/Dashboard'),
         meta: {
             requiresAuth: true
         }

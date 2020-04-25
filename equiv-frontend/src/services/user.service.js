@@ -5,6 +5,7 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 import config from '../config';
+// import {auth} from "../store/auth.module";
 
 class UserService {
     getUser(username) {
@@ -19,6 +20,12 @@ class UserService {
         return axios.post(`${config.API_SERVER}/processo`, student, {
             headers: authHeader()
         })
+    }
+
+    listProcesses() {
+        return axios.get(`${config.API_SERVER}/processo`, {
+            headers: authHeader()
+        });
     }
 }
 

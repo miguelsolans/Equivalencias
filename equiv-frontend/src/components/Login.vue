@@ -31,17 +31,6 @@
             </v-layout>
         </v-container>
     </v-content>
-<!--    <div>-->
-<!--        <form>-->
-<!--            <label for="username">Username</label>-->
-<!--            <input id="username" type="text" v-model="username" required autofocus>-->
-
-<!--            <label for="password">Password</label>-->
-<!--            <input id="password" type="password" v-model="password" required autofocus>-->
-
-<!--            <button type="submit" @click="handleLogin">Login</button>-->
-<!--        </form>-->
-<!--    </div>-->
 </template>
 
 <script>
@@ -52,8 +41,6 @@
         data: () => {
             return {
                 user: new User('', ''),
-                // username: '',
-                // password: '',
                 message: '',
                 showErrorAlert: false
             }
