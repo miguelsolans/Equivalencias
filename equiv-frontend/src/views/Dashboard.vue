@@ -1,8 +1,17 @@
 <template>
-    <div>
-        <NewProcess/>
-        <ListProcess/>
-    </div>
+    <v-container>
+        <v-card>
+            <v-layout row>
+                <v-flex md6>
+                    <ListProcess/>
+                </v-flex>
+                <v-flex md6>
+                    <NewProcess/>
+                </v-flex>
+
+            </v-layout>
+        </v-card>
+    </v-container>
 </template>
 
 <script>

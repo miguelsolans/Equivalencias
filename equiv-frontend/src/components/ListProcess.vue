@@ -1,17 +1,22 @@
 <template>
-    <div>
-        <p>Error: {{message}}</p>
+    <v-container>
+        <h2>Lista de Processos</h2>
+        <v-container>
+            <v-layout v-for="process in processes" row :key="process.processo">
+                <v-flex md6>
+                    <p>{{process.nomeAluno}}</p>
+                    <v-img src="../assets/User.png"></v-img>
+                </v-flex>
+                <v-flex md6>
+                    <p><b>Número de Processo</b></p>
+                    <p>{{process.processo}}</p>
 
-        <ul>
-            <li v-for="process in processes" :key="process.processo">
-                <p>{{process.nomeAluno}}</p>
-                <p>Número de Processo</p>
-                <p>{{process.processo}}</p>
-                <p>Número de Aluno</p>
-                <p>{{process.idAluno}}</p>
-            </li>
-        </ul>
-    </div>
+                    <p><b>Número de Aluno</b></p>
+                    <p>{{ process.idAluno }}</p>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </v-container>
 </template>
 
 <script>
@@ -30,7 +35,6 @@
                 .catch(err => {
                     this.message = err;
                 });
-            this.processes = " Hello";
         }
     }
 </script>
