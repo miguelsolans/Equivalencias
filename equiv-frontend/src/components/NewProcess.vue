@@ -11,7 +11,8 @@
 
             <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>
 
-            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>
+            <v-select label="Instituição Proveniente" type="text" :items="universities"></v-select>
+<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>-->
 
             <v-btn color="primary" @click="handleSubmit">Criar</v-btn>
             <v-btn color="normal" @click="clearForm">Cancelar</v-btn>
@@ -31,8 +32,14 @@
         name: "ListaProcessos",
         data() {
             return {
+                universities: null,
                 student: new Processo('', '', '', '', '')
             }
+        },
+        mounted() {
+            UserService.listUniversities()
+                .then(result => console.log(result))
+                .catch(err => console.log(err));
         },
         methods: {
             handleSubmit(e) {

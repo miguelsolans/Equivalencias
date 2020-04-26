@@ -27,6 +27,12 @@ class UserService {
             headers: authHeader()
         });
     }
+
+    listUniversities() {
+        return axios.get(`${config.API_SERVER}/universidade`, {
+            headers: authHeader()
+        });
+    }
 }
 
 export default new UserService();
