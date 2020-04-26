@@ -68,7 +68,7 @@ Accept: application/json
 ###
 
 // Delete afterwards so this test can be ran again
-DELETE localhost:3030/processo/13253
+# DELETE localhost:3030/processo/13253
 
 
 ###

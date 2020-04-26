@@ -1,15 +1,17 @@
 <template>
     <div>
         <h2>Gestão do Processo</h2>
-        <Subjects/>
+        <Equivalences/>
+        <NewEquivalence/>
     </div>
 </template>
 
 <script>
-    import Subjects from '../components/Subjects';
+    import Equivalences from '../components/StudentEquivalences';
+    import NewEquivalence from '../components/NewEquivalence'
     export default {
         name: "Student",
-        components: {Subjects}
+        components: { Equivalences, NewEquivalence }
     }
 </script>
 

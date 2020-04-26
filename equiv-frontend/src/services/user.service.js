@@ -5,7 +5,6 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 import config from '../config';
-// import {auth} from "../store/auth.module";
 
 class UserService {
     getUser(username) {
@@ -30,6 +29,12 @@ class UserService {
 
     listUniversities() {
         return axios.get(`${config.API_SERVER}/universidade`, {
+            headers: authHeader()
+        });
+    }
+
+    getProcess(id) {
+        return axios.get(`${config.API_SERVER}/processo/${id}`, {
             headers: authHeader()
         });
     }

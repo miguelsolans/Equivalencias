@@ -27,9 +27,12 @@ router.get('/', checkAuth, (req, res) => {
 
 });
 
-router.get('/:id/processes', checkAuth, (req, res) => {
-    // Listar os processos de um aluno
-    let idAluno = req.params.id;
+router.get('/:id', checkAuth, (req, res) => {
+    let idProcesso = req.params.id;
+
+    Processos.findProcessById(idProcesso)
+        .then(data => res.status(200).json(data))
+        .catch(err => res.status(500).json(err));
 });
 
 router.post('/:id/generate', checkAuth, (req, res) => {
