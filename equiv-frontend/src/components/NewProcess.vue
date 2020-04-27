@@ -10,10 +10,11 @@
 
             <v-text-field label="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" required></v-text-field>
 
-            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>
+<!--            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
 
-<!--            <v-select label="Instituição Proveniente" type="text" :items="universities"></v-select>-->
-<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>-->
+            <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
+
+            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>
 
             <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
             <v-divider  class="mx-4" inset vertical></v-divider>
@@ -34,29 +35,34 @@
         name: "ListaProcessos",
         data() {
             return {
-                // universities: null,
+                universities: null,
                 student: new Processo('', '', '', '', '')
             }
         },
         mounted() {
-            // UserService.listUniversities()
-            //     .then(result => console.log(result))
-            //     .catch(err => console.log(err));
+            UserService.listUniversities()
+                .then(result => this.universities = result.data)
+                .catch(err => console.log(err));
         },
         methods: {
             handleSubmit(e) {
                 e.preventDefault();
 
-                // this.student = new Processo(this.processo, this.idAluno, this.nomeAluno, this.instProv, this.cursoProv);
-
                 UserService.newProcess(this.student)
-                    .then(data => {
-                        console.log(data);
-                        this.student = new Processo();
+                    .then(response => {
+                        console.log(response);
+
+                        if(response.data.errors) {
+                            alert("HANDLE ERROR");
+                        } else {
+                            this.student = new Processo();
+                        }
                     })
                     .catch(err => console.log(err));
             },
-
+            universityChosen() {
+                console.log(`${this.student.instProv}`);
+            },
             clearForm() {
                 this.student = new Processo();
             }
