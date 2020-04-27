@@ -14,8 +14,6 @@ class UserService {
     }
 
     newProcess(student) {
-        console.log(student.nomeAluno);
-
         return axios.post(`${config.API_SERVER}/processo`, student, {
             headers: authHeader()
         })
