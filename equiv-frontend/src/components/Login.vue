@@ -8,7 +8,7 @@
             <v-layout align-center justify-center>
                 <v-flex xs12 sm8 md4>
                     <v-card class="elevation-12">
-                        <v-toolbar color="primary" dark float>
+                        <v-toolbar color="teal" dark float>
                             <v-toolbar-title>Login</v-toolbar-title>
                             <v-spacer></v-spacer>
                             <v-toolbar-title>Mantis</v-toolbar-title>
@@ -24,7 +24,7 @@
 
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color="primary" @click="handleLogin">Login</v-btn>
+                            <v-btn color="teal" dark @click="handleLogin">Login</v-btn>
                         </v-card-actions>
                     </v-card>
                 </v-flex>

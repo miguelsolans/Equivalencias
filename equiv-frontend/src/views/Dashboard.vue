@@ -2,10 +2,11 @@
     <v-container>
         <v-card>
             <v-layout row>
-                <v-flex md6>
+                <v-flex md4>
                     <ListProcess/>
                 </v-flex>
-                <v-flex md6>
+                <v-flex md8>
+                    <v-divider vertical></v-divider>
                     <NewProcess/>
                 </v-flex>
 

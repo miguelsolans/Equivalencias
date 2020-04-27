@@ -1,7 +1,44 @@
 <template>
-    <div>
-        <button @click="handleLogout">Logout</button>
-    </div>
+    <v-toolbar
+            color="teal"
+            dark
+    >
+        <v-toolbar-title>Mantis</v-toolbar-title>
+
+        <v-divider
+                class="mx-4"
+                inset
+                vertical
+        ></v-divider>
+
+        <span class="subheading">
+            Dashboard
+        </span>
+
+        <v-spacer></v-spacer>
+
+        <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn text @click="handleLogout">
+                Logout
+            </v-btn>
+
+            <v-divider
+                    inset
+                    vertical
+            ></v-divider>
+
+            <v-btn text>
+                Settings
+            </v-btn>
+
+            <v-divider
+                    inset
+                    vertical
+            ></v-divider>
+        </v-toolbar-items>
+
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    </v-toolbar>
 </template>
 
 <script>
@@ -10,7 +47,7 @@
         methods: {
             handleLogout() {
                 this.$store.dispatch('auth/logout')
-                    .then(() => this.$router.push('/login'))
+                    .then(() => this.$router.push('/'))
                     .catch(err => console.log(err));
             }
         }

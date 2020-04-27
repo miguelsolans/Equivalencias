@@ -20,8 +20,8 @@ const routes = [
         }
     },
     {
-        path: '/student/:id',
-        name: 'student',
+        path: '/process/:id',
+        name: 'process',
         component: () => import ('../views/Student'),
         meta: {
             requiresAuth: true

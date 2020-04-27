@@ -32,14 +32,14 @@
         name: "ListaProcessos",
         data() {
             return {
-                universities: null,
+                // universities: null,
                 student: new Processo('', '', '', '', '')
             }
         },
         mounted() {
-            UserService.listUniversities()
-                .then(result => console.log(result))
-                .catch(err => console.log(err));
+            // UserService.listUniversities()
+            //     .then(result => console.log(result))
+            //     .catch(err => console.log(err));
         },
         methods: {
             handleSubmit(e) {
