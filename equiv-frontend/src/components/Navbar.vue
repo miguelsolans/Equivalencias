@@ -11,9 +11,12 @@
                 vertical
         ></v-divider>
 
-        <span class="subheading">
-            Dashboard
-        </span>
+        <v-toolbar-items>
+            <v-btn text :to="{ name: 'dashboard' }">
+                Dashboard
+            </v-btn>
+        </v-toolbar-items>
+
 
         <v-spacer></v-spacer>
 

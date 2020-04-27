@@ -1,3 +1,6 @@
+// TODO: CRIAR UMA QUERY QUE MOSTRA UC DE EQUIVALENCIAS SEMELHANTES
+
+
 const express = require('express');
 const router  = express.Router();
 

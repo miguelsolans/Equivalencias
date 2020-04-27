@@ -17,7 +17,7 @@ export default {
         }).then(response => {
             if(response.data.token) {
                 localStorage.setItem('user', JSON.stringify(response.data.user));
-                VueCookies.set('userToken', response.data.token);
+                VueCookies.set('userToken', response.data.token, "1h");
             }
 
             return response.data;
