@@ -4,7 +4,7 @@ const Users = require('../controllers/users');
 module.exports = (req, res, next) => {
 
     try {
-        const token = req.cookies.userToken;
+        const token = req.headers.usertoken || req.headers.userToken;
 
         const decodedToken = jwt.verify(token, process.env.AUTH_SECRET, { algorithm: 'RS256' });
 
@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
                         email: user.email
                     };
 
-                    console.log(`${req.decodedUser} logged on`);
+                    console.log(`${req.decodedUser.username} logged on`);
 
                     next();
                 }

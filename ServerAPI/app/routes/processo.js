@@ -20,16 +20,19 @@ router.get('/', checkAuth, (req, res) => {
             .then(data => res.jsonp(data))
             .catch(err => res.jsonp(err));
     } else {
-        Processos.list()
+        Processos.list(null, { processo: true, idAluno: true, nomeAluno: true })
             .then(data => res.jsonp(data))
             .catch(err => res.jsonp(err));
     }
 
 });
 
-router.get('/:id/processes', checkAuth, (req, res) => {
-    // Listar os processos de um aluno
-    let idAluno = req.params.id;
+router.get('/:id', checkAuth, (req, res) => {
+    let idProcesso = req.params.id;
+
+    Processos.findProcessById(idProcesso)
+        .then(data => res.status(200).json(data))
+        .catch(err => res.status(500).json(err));
 });
 
 router.post('/:id/generate', checkAuth, (req, res) => {
@@ -52,11 +55,19 @@ router.post('/:id/generate', checkAuth, (req, res) => {
  * Create a new Student
  */
 router.post('/', checkAuth, (req, res) => {
-    const info = req.body;
 
-    info.initiatedBy = req.decodedUser.username;
+    console.log(req.body);
 
-    Processos.new(info)
+    const newProcess = {
+        processo: req.body.processo,
+        idAluno: req.body.idAluno,
+        nomeAluno: req.body.nomeAluno,
+        instProv: req.body.instProv,
+        cursoProv: req.body.cursoProv,
+        initiatedBy: req.decodedUser.username
+    };
+
+    Processos.new(newProcess)
         .then(data => res.status(201).jsonp(data))
         .catch(err => res.jsonp(err));
 

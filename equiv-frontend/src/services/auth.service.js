@@ -4,18 +4,20 @@
  */
 
 import axios from 'axios';
-const API_URL = 'http://localhost:3030';
+import config from '../config';
+import VueCookies from 'vue-cookies';
 
 export default {
 
     login: (user) => {
-        return axios.post(`${API_URL}/user/login`, {
+        console.log("DURING LOGIN");
+        return axios.post(`${config.API_SERVER}/user/login`, {
             username: user.username,
             password: user.password
         }).then(response => {
             if(response.data.token) {
                 localStorage.setItem('user', JSON.stringify(response.data.user));
-                this.$cookies.set('userToken', response.data.token);
+                VueCookies.set('userToken', response.data.token);
             }
 
             return response.data;
@@ -24,6 +26,6 @@ export default {
 
     logout: () => {
         localStorage.removeItem('user');
-        this.$cookies.removeItem('userToken');
+        VueCookies.remove('userToken');
     }
 }

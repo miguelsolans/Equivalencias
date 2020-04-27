@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Use cookies
-app.use(cookieParser());
+// app.use(cookieParser());
 
 // Configure CORS
 const corsOptions = {

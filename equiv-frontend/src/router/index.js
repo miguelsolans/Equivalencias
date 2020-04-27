@@ -1,21 +1,28 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Login from '../components/Login';
-import ListaProcessos from '../components/ListaProcessos';
+import VueCookies from 'vue-cookies';
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/login',
+        path: '/',
         name: 'login',
-        component: Login,
+        component: () => import('../components/Login'),
 
     },
     {
         path: '/dashboard',
-        name: 'ListaProcessos',
-        component: ListaProcessos,
+        name: 'dashboard',
+        component: () => import('../views/Dashboard'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/process/:id',
+        name: 'process',
+        component: () => import ('../views/Student'),
         meta: {
             requiresAuth: true
         }
@@ -33,8 +40,8 @@ const router = new VueRouter({
  */
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
-        if(localStorage.getItem('userToken') === null || localStorage.getItem('userToken') === undefined) {
-            next('/login');
+        if(VueCookies.get('userToken') === null || localStorage.getItem('user') === undefined) {
+            next('/');
         } else {
             next();
         }
