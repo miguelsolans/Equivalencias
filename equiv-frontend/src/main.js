@@ -10,8 +10,8 @@ Vue.use(VueCookies);
 Vue.config.productionTip = false;
 
 new Vue({
-    router,
     vuetify,
     store,
+    router,
     render: h => h(App)
 }).$mount('#app');

@@ -10,7 +10,6 @@ import VueCookies from 'vue-cookies';
 export default {
 
     login: (user) => {
-        console.log("DURING LOGIN");
         return axios.post(`${config.API_SERVER}/user/login`, {
             username: user.username,
             password: user.password

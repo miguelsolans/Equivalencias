@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import VueCookies from 'vue-cookies';
+import Store from '@/store'
 
 Vue.use(VueRouter);
 
@@ -40,9 +41,12 @@ const router = new VueRouter({
  */
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
-        if(VueCookies.get('userToken') === null || localStorage.getItem('user') === undefined) {
+        if(VueCookies.get('userToken') === null) {
+
+            Store.dispatch('auth/logout');
+
             next('/');
-        } else {
+        }  else {
             next();
         }
     } else {
