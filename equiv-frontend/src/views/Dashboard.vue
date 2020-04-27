@@ -6,8 +6,11 @@
                     <ListProcess/>
                 </v-flex>
                 <v-flex md8>
-                    <v-divider vertical></v-divider>
-                    <NewProcess/>
+                    <v-divider inset vertical></v-divider>
+                    <v-row>
+                        <v-img class="logo-img" src="../assets/Logo.png"></v-img>
+                        <NewProcess/>
+                    </v-row>
                 </v-flex>
 
             </v-layout>
@@ -28,5 +31,7 @@
 </script>
 
 <style scoped>
-
+    .logo-img {
+        max-width: 500px;
+    }
 </style>

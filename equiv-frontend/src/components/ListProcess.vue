@@ -4,8 +4,8 @@
         <v-container>
             <v-card>
                 <v-list two-line>
-                    <template v-for="process in processes">
-                        <v-list-item :key="process.processo">
+                    <template v-for="(process, index) in processes">
+                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process.processo }}">
                             <v-list-item-avatar v-if="process.avatar">
                                 <img :src="process.avatar">
                             </v-list-item-avatar>
@@ -23,7 +23,7 @@
                                 </v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
-                        <v-divider :key="process.processo"></v-divider>
+                        <v-divider :key="index"></v-divider>
                     </template>
                 </v-list>
             </v-card>

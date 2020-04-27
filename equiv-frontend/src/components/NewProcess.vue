@@ -1,7 +1,8 @@
 <template>
     <v-container>
-        <v-img src="../assets/Logo.png"></v-img>
-        <h2>Novo Processo</h2>
+        <v-row align="center">
+            <h2 class="text-center">Novo Processo</h2>
+        </v-row>
         <v-form>
             <v-text-field label="Identificador do Processo" type="text" v-model="student.processo" required></v-text-field>
 
@@ -11,10 +12,11 @@
 
             <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>
 
-            <v-select label="Instituição Proveniente" type="text" :items="universities"></v-select>
+<!--            <v-select label="Instituição Proveniente" type="text" :items="universities"></v-select>-->
 <!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>-->
 
-            <v-btn color="primary" @click="handleSubmit">Criar</v-btn>
+            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
+            <v-divider  class="mx-4" inset vertical></v-divider>
             <v-btn color="normal" @click="clearForm">Cancelar</v-btn>
         </v-form>
     </v-container>
@@ -63,5 +65,7 @@
 </script>
 
 <style scoped>
-
+    .container {
+        max-width: 700px;
+    }
 </style>
