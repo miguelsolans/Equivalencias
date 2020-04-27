@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <p>PROCESS ID: {{ processId }}</p>
         <v-form>
             <v-text-field label="UC Realizada" v-model="equivalencia.id"></v-text-field>
 
@@ -9,17 +10,19 @@
 
             <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent"></v-text-field>
 
-            <v-btn @click="handleSubmit">Criar</v-btn>
+            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
         </v-form>
     </v-container>
 </template>
 
 <script>
-    import Equivalencia from '../models/equivalencia'
+    import Equivalencia from '../models/equivalencia';
+    import UserService from '../services/user.service';
     export default {
         name: "NewEquivalence",
         data() {
             return {
+                processId: this.$route.params.id,
                 equivalencia: new Equivalencia('','','','','','','', '')
             }
         },
@@ -27,7 +30,9 @@
             handleSubmit(e) {
                 e.preventDefault();
 
-
+                UserService.newEquivalence(this.processId, this.equivalencia)
+                    .then(result => console.log(result.data))
+                    .catch(err => console.log(err));
 
             }
         }

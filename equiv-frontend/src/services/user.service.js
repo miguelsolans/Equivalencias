@@ -38,6 +38,12 @@ class UserService {
             headers: authHeader()
         });
     }
+
+    newEquivalence(id, equivalence) {
+        return axios.put(`${config.API_SERVER}/processo/${id}`, equivalence, {
+            headers: authHeader()
+        })
+    }
 }
 
 export default new UserService();
