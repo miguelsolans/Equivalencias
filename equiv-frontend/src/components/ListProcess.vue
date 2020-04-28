@@ -71,4 +71,11 @@
     .v-image {
         max-width: 150px;
     }
+    /*
+     * I'm just trying something here, don't get rid of that yet
+     */
+    .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
+        height: 550px;
+        overflow-y: auto;
+    }
 </style>
