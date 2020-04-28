@@ -31,10 +31,6 @@ const equivalencias = new mongoose.Schema({
         type: String,
         required: [true, "Deve definir a UC que pretende dar como equivalencia"]
     },
-    anoUcEquiv: {
-        type: String,
-        required: [true, "Deve especificar o ano da UC equivalente"]
-    },
     semUcEquiv: {
         type: String,
         required: [true, "Deve especificar o semestre da UC equivalente"]
@@ -69,8 +65,7 @@ const processoSchema = new mongoose.Schema({
     },
     idAluno: {
         type: String,
-        required: [true, "Deve especificar "],
-        unique: true
+        required: [true, "Deve especificar "]
     },
     nomeAluno: {
         type: String,

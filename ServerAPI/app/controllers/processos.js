@@ -42,17 +42,18 @@ module.exports.searchByYear = (year) => {
 //     // nota: NUMBER,
 //     // ects: NUMBER,
 //     // ucRealizada: STRING
-module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada, createdBy}) => {
+module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada, createdBy}) => {
     const subject = {
         semUcEquiv: semUcEquiv,
-        anoUcEquiv: anoUcEquiv,
         ucEquiv: ucEquiv,
+        anoLetivo: anoLetivo,
         percent: percent,
         nota: nota,
         ects: ects,
         ucRealizada: ucRealizada,
         createdBy: createdBy
     };
-    // equivalencias
-    return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
+    return Processo.findOneAndUpdate({ _id: id}, { $set: { equivalencias: subject } }, { new: true, runValidators: true })
+
+    //return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
 };
