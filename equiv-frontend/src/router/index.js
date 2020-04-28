@@ -8,6 +8,10 @@ Vue.use(VueRouter);
 const routes = [
     {
         path: '/',
+        redirect: '/dashboard'
+    },
+    {
+        path: '/login',
         name: 'login',
         component: () => import('../components/Login'),
 
@@ -42,10 +46,9 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
     if(to.matched.some(record => record.meta.requiresAuth)) {
         if(VueCookies.get('userToken') === null) {
-
             Store.dispatch('auth/logout');
 
-            next('/');
+            next('/login');
         }  else {
             next();
         }
