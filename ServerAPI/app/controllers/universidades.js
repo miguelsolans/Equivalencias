@@ -11,9 +11,10 @@ module.exports.list = (query, projection) => {
     return Universidade.find(query, projection);
 };
 
-module.exports.addNew = (name) => {
+module.exports.addNew = ({codInstit, nomeInstit}) => {
     const university = new Universidade({
-        NomeInstit: name
+        codInstit: codInstit,
+        nomeInstit: nomeInstit
     });
 
     return university.save();
@@ -22,4 +23,9 @@ module.exports.addNew = (name) => {
 module.exports.getUniversityCourses = (id) => {
 
     return Universidade.findById(id, { Cursos: 1 });
+};
+
+module.exports.addCourse = (codInstit, { codCurso, nomeCurso}) => {
+
+	
 };

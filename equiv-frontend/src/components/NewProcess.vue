@@ -14,7 +14,8 @@
 
             <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
 
-            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>
+            <v-autocomplete v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="nomeCurso" :disabled="course.disable"></v-autocomplete>
+<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
 
             <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
             <v-divider  class="mx-4" inset vertical></v-divider>
@@ -35,16 +36,25 @@
         name: "ListaProcessos",
         data() {
             return {
+                course: {
+                    disable: true,
+                    courses: []
+                },
                 universities: null,
                 student: new Processo('', '', '', '', '')
             }
         },
         mounted() {
-            UserService.listUniversities()
-                .then(result => this.universities = result.data)
-                .catch(err => console.log(err));
+            this.init();
+
         },
         methods: {
+            init() {
+                UserService.listUniversities()
+                    .then(result => this.universities = result.data)
+                    .catch(err => console.log(err));
+            },
+
             handleSubmit(e) {
                 e.preventDefault();
 
@@ -56,12 +66,25 @@
                             alert("HANDLE ERROR");
                         } else {
                             this.student = new Processo();
+                            this.course.courses = null;
+                            this.course.disable = true
                         }
                     })
                     .catch(err => console.log(err));
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);
+                this.course.disable = false;
+                this.course.courses = [{
+                    nomeCurso: "Licenciatura em Engenharia de Sistemas Informáticos",
+                    codCursO: 1
+                }, {
+                    nomeCurso: "Licenciatura em Engenharia de Desenvolvimento de Jogos Digitais",
+                    codCurso: 2
+                }, {
+                    nomeCurso: "Licenciatura em Engenharia de Informática Médica",
+                    codCurso: 3
+                }];
             },
             clearForm() {
                 this.student = new Processo();

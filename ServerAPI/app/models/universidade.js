@@ -9,6 +9,7 @@ const mongoose = require('mongoose');
 const cursoSchema = new mongoose.Schema({
     codCurso: {
         type: Number,
+        unique: true,
         required: [true, "Deve especificar o código de curso segundo a atribuição da Universidade"]
     },
     nomeCurso: {
@@ -20,6 +21,7 @@ const cursoSchema = new mongoose.Schema({
 const universidadeSchema = new mongoose.Schema({
     codInstit: {
         type: Number,
+        unique: true,
         required: [true, "Deve especificar o código da Universidade estipulado pela DGES"]
     },
     nomeInstit: {

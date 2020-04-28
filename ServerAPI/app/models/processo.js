@@ -55,11 +55,13 @@ const equivalencias = new mongoose.Schema({
 const processoSchema = new mongoose.Schema({
     _id: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     processo: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     initiatedBy: {
         type: String,
@@ -67,7 +69,8 @@ const processoSchema = new mongoose.Schema({
     },
     idAluno: {
         type: String,
-        required: [true, "Deve especificar "]
+        required: [true, "Deve especificar "],
+        unique: true
     },
     nomeAluno: {
         type: String,
