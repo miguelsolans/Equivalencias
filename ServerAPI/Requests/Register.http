@@ -6,6 +6,14 @@ Content-Type: application/json
 
 ###
 
+// New User
+POST http://localhost:3030/user/register
+Content-Type: application/json
+
+{ "username": "dichico", "password": "passwordforte", "email": "dichico.dev@uminho.pt", "fullName": "Diogo Francisco Araújo Leite Costa" }
+
+###
+
 POST http://localhost:3030/user/login
 Content-Type: application/json
 

@@ -49,6 +49,8 @@
         name: "Navbar",
         methods: {
             handleLogout() {
+
+                alert("A sua sessão foi terminada.");
                 this.$store.dispatch('auth/logout')
                     .then(() => this.$router.push('/login'))
                     .catch(err => console.log(err));
