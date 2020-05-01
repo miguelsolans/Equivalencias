@@ -63,7 +63,7 @@
                     .then(() => {
                         this.$router.push('/dashboard');
                     }, error => {
-                        alert("ERROR during login");
+                        this.$swal.fire("Erro na autenticação do utilizador", "", "error");
                         this.message = error;
                         this.showErrorAlert = true;
                         console.log(error);

@@ -50,10 +50,25 @@
         methods: {
             handleLogout() {
 
-                alert("A sua sessão foi terminada.");
-                this.$store.dispatch('auth/logout')
-                    .then(() => this.$router.push('/login'))
-                    .catch(err => console.log(err));
+                this.$swal.fire({
+                    title: 'Deseja fazer logout?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#4ed68f',
+                    cancelButtonColor: '#dd6055',
+                    confirmButtonText: 'Logout'
+                }).then((result) => {
+                    if (result.value) {
+                        this.$swal.fire(
+                            'Logout efetuado com sucesso.',
+                            '',
+                            'success'
+                        );
+                        this.$store.dispatch('auth/logout')
+                            .then(() => this.$router.push('/login'))
+                            .catch(err => console.log(err));
+                    }
+                });
             }
         }
     }
