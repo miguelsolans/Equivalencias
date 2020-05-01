@@ -27,22 +27,6 @@
                     </template>
                 </v-list>
             </v-card>
-<!--            <v-layout v-for="process in processes" row :key="process.processo">-->
-<!--                <v-flex md6>-->
-<!--                    <p>{{process.nomeAluno}}</p>-->
-<!--                    <v-img src="../assets/User.png"></v-img>-->
-<!--                </v-flex>-->
-<!--                <v-flex md6>-->
-<!--                    <p><b>Número de Processo</b></p>-->
-<!--                    <router-link :to="{ name: 'process', params: { id: process.processo }}">-->
-<!--                        <p>{{process.processo}}</p>-->
-<!--                    </router-link>-->
-
-
-<!--                    <p><b>Número de Aluno</b></p>-->
-<!--                    <p>{{ process.idAluno }}</p>-->
-<!--                </v-flex>-->
-<!--            </v-layout>-->
         </v-container>
     </v-container>
 </template>
