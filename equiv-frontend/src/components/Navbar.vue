@@ -51,7 +51,7 @@
             handleLogout() {
 
                 this.$swal.fire({
-                    title: 'Deseja fazer logout?',
+                    title: 'Deseja terminar sessão?',
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#4ed68f',
@@ -60,7 +60,7 @@
                 }).then((result) => {
                     if (result.value) {
                         this.$swal.fire(
-                            'Logout efetuado com sucesso.',
+                            'Sessão terminada com sucesso.',
                             '',
                             'success'
                         );

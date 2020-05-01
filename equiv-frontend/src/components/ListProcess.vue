@@ -57,6 +57,9 @@
                 message: ''
             }
         },
+        created() {
+            this.$root.$on('newProcess', data => this.processes.push(data) );
+        },
         mounted() {
             UserService.listProcesses()
                 .then(response => this.processes = response.data)

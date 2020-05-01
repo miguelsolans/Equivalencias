@@ -65,9 +65,13 @@
                         if(response.data.errors) {
                             alert("HANDLE ERROR");
                         } else {
+                            this.$root.$emit('newProcess', this.student);
+
+                            // console.log(response.data);
                             this.student = new Processo();
                             this.course.courses = null;
-                            this.course.disable = true
+                            this.course.disable = true;
+
                         }
                     })
                     .catch(err => console.log(err));
