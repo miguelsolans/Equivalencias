@@ -142,7 +142,7 @@ router.get('/:id/file/:filename', (req, res) => {
             res.status(404).json({title: "Not Found", message: "File not found!"});
         } else {
             res.contentType("application/pdf");
-            res.send(data);
+            res.status(200).send(data);
         }
     });
 
