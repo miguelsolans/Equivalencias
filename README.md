@@ -6,7 +6,9 @@
 
 # Mantis
 
-Mantis é fruto do projeto de Laboratório de Engenharia Informática, que consiste em desenvolver uma aplicação para gerir os processos de equivalencias de alunos provenientes de outros cursos, entre a UM ou faculdades externas.
+Equivalencias é um projeto de LEI, Laboratório de Engenharia Informática, uma componente inserida no plano de estudos do curso de Mestrado em Engenharia Informática na Universidade do Minho.
+Como tal, é pretendido o desenvolvimento de uma plataforma que permite agilizar o processo de atribuição de equivalências aos alunos que pretendem ingressar no curso de um determinado departamento, designada por Mantis. 
+É um sistema composto por vários microserviços, entre servidor Frontend desenvolvido recorrendo ao VueJS com a Framework Vuetify, e um backend desenvolvido em NodeJS. A aplicação possui pressistência de dados em NoSQL, o MongoDB.
 
 ## Development Team
 
