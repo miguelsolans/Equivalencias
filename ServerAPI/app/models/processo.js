@@ -6,6 +6,22 @@
 
 const mongoose = require('mongoose');
 
+const document = new mongoose.Schema({
+    filename: {
+        type: String,
+        required: true
+    },
+    generatedBy: {
+        type: String,
+        required: true
+    },
+    generatedAt: {
+        type: Date,
+        default: Date.now()
+    }
+});
+
+
 const equivalencias = new mongoose.Schema({
     ucRealizada: {
         type: String,
@@ -49,7 +65,8 @@ const equivalencias = new mongoose.Schema({
         type: Date,
         default: Date.now(),
         required: true
-    }
+    },
+
 });
 
 const processoSchema = new mongoose.Schema({
@@ -85,7 +102,8 @@ const processoSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    equivalencias: [equivalencias]
+    equivalencias: [equivalencias],
+    documentation: [document]
 });
 
 const Processo = mongoose.model('equivalencias', processoSchema, 'equivalencias');

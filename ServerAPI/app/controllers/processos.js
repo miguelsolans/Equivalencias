@@ -56,3 +56,12 @@ module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, no
     // equivalencias
     return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
 };
+
+module.exports.addDocument = (id, { filename, requestedBy }) => {
+    const newDocument = {
+        filename: filename,
+        requestedBy: requestedBy
+    };
+    // New document
+    return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
+};
