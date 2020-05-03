@@ -10,6 +10,8 @@ Equivalencias é um projeto de LEI, Laboratório de Engenharia Informática, uma
 Como tal, é pretendido o desenvolvimento de uma plataforma que permite agilizar o processo de atribuição de equivalências aos alunos que pretendem ingressar no curso de um determinado departamento, designada por Mantis. 
 É um sistema composto por vários microserviços, entre servidor Frontend desenvolvido recorrendo ao VueJS com a Framework Vuetify, e um backend desenvolvido em NodeJS. A aplicação possui pressistência de dados em NoSQL, o MongoDB.
 
+Toda a arquitetura deste sistema encontra-se discutida na [Wiki](https://github.com/miguelsolans/equivalencias/wiki) deste mesmo repositório, que pode ser encontrada [aqui](https://github.com/miguelsolans/equivalencias/wiki), bem como instruções de utilização e rotas disponíveis no Backend.
+
 ## Development Team
 
 * [Diogo Araújo](https://github.com/dichico)
