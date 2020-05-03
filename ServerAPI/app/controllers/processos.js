@@ -78,7 +78,7 @@ module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, not
 
 };
 
-module.exports.newDocument = ({filename, generatedBy}) => {
+module.exports.newDocument = (id, {filename, generatedBy}) => {
 
     const newDocument = {
         filename: filename,
