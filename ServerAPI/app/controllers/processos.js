@@ -19,9 +19,30 @@ module.exports.findProcessById = (id) => {
 
 module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
     let _id = processo;
+
     const newProcess = new Processo({ _id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
 
     return newProcess.save();
+
+    // await new Promise(async (resolve, reject) => {
+    //
+    //     try {
+    //         let _id = processo;
+    //
+    //         const newProcess = new Processo({ _id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
+    //
+    //         const data = await newProcess.save();
+    //         console.log("INSIDE PROMISE");
+    //         console.log(data);
+    //
+    //         return resolve(data);
+    //
+    //     } catch(err) {
+    //         return reject(err);
+    //     }
+    // })
+
+    // return newProcess.save();
 };
 
 module.exports.delete = (id) => {
@@ -55,5 +76,14 @@ module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, not
     };
     return Processo.findOneAndUpdate({ _id: id}, { $set: { equivalencias: subject } }, { new: true, runValidators: true })
 
-    //return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
+};
+
+module.exports.newDocument = ({filename, generatedBy}) => {
+
+    const newDocument = {
+        filename: filename,
+        generatedBy: generatedBy
+    };
+
+    return Processo.findOneAndUpdate({ _id: id}, { $set: { documentation: newDocument } }, { new: true, runValidators: true })
 };

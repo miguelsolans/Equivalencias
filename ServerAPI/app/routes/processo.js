@@ -7,6 +7,7 @@ const router  = express.Router();
 const Processos = require('../controllers/processos');
 
 const pdf = require('../utils/pdf');
+const fs = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
 
@@ -71,7 +72,14 @@ router.post('/', checkAuth, (req, res) => {
     };
 
     Processos.new(newProcess)
-        .then(data => res.status(201).jsonp(data))
+        .then(data => {
+            // fs.mkdirSync(`app/files/${data.processo}`);
+            fs.mkdirSync(`app/files/${data.processo}`, {
+                recursive: true
+            });
+            console.log(data);
+            res.status(201).jsonp(data);
+        })
         .catch(err => res.jsonp(err));
 
 });
@@ -83,7 +91,13 @@ router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
 
     Processos.delete(req.params.id)
-        .then(data => res.jsonp(data))
+        .then(data => {
+            fs.rmdirSync(`app/files/${data.processo}`, {
+                recursive: true
+            });
+
+            res.jsonp(data);
+        })
         .catch(err => res.jsonp(err));
 
 });

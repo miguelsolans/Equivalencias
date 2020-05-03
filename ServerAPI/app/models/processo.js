@@ -6,6 +6,22 @@
 
 const mongoose = require('mongoose');
 
+const document = new mongoose.Schema({
+   filename: {
+       type: String,
+       required: true
+   },
+
+    generatedBy: {
+        type: String,
+        required: true
+    },
+
+    generatedAt: {
+        type: Date,
+        default: Date.now(),
+    }
+});
 const equivalencias = new mongoose.Schema({
     ucRealizada: {
         type: String,
@@ -79,11 +95,12 @@ const processoSchema = new mongoose.Schema({
         type: String,
         required: [true, "Deve especificar o curso do aluno"]
     },
-    data: {
+    createdAt: {
         type: Date,
         default: Date.now()
     },
-    equivalencias: [equivalencias]
+    equivalencias: [equivalencias],
+    documentation: [document]
 });
 
 const Processo = mongoose.model('equivalencias', processoSchema, 'equivalencias');
