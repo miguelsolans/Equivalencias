@@ -78,12 +78,11 @@ module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, not
 
 };
 
-module.exports.newDocument = (id, {filename, generatedBy}) => {
-
+module.exports.addDocument = (id, { filename, requestedBy }) => {
     const newDocument = {
         filename: filename,
-        generatedBy: generatedBy
+        requestedBy: requestedBy
     };
-
-    return Processo.findOneAndUpdate({ _id: id}, { $set: { documentation: newDocument } }, { new: true, runValidators: true })
+    // New document
+    return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
 };

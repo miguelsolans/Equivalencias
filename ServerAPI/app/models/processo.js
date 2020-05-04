@@ -16,12 +16,12 @@ const document = new mongoose.Schema({
         type: String,
         required: true
     },
-
     generatedAt: {
         type: Date,
         default: Date.now(),
     }
 });
+
 const equivalencias = new mongoose.Schema({
     ucRealizada: {
         type: String,
@@ -61,7 +61,8 @@ const equivalencias = new mongoose.Schema({
         type: Date,
         default: Date.now(),
         required: true
-    }
+    },
+
 });
 
 const processoSchema = new mongoose.Schema({
