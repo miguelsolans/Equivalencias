@@ -40,7 +40,11 @@ class UserService {
     newEquivalence(id, equivalence) {
         return axios.put(`${config.API_SERVER}/processo/${id}`, equivalence, {
             headers: authHeader()
-        })
+        });
+    }
+
+    getProcessFiles(id) {
+        return axios.get(`${config.API_SERVER}/processo/${id}/files`);
     }
 }
 

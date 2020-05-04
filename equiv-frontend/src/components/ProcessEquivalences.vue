@@ -11,7 +11,7 @@
 <script>
     import UserService from '../services/user.service';
     export default {
-        name: "StudentEquivalences",
+        name: "ProcessEquivalences",
         data() {
             return {
                 // Table Configuration

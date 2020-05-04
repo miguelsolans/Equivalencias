@@ -78,11 +78,45 @@ module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, not
 
 };
 
-module.exports.addDocument = (id, { filename, requestedBy }) => {
+module.exports.newDocument = (id, { filename, requestedBy }) => {
     const newDocument = {
         filename: filename,
         requestedBy: requestedBy
     };
     // New document
     return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
+};
+
+module.exports.listDocumentation = (processId) => {
+    //return Processo.findOne({ processo: processId}, { documentation: true })
+    return Processo.aggregate([
+        {
+            '$match': {
+                '_id': processId
+            }
+        }, {
+            '$project': {
+                '_id': true,
+                'documentation': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$documentation'
+            }
+        }, {
+            '$sort': {
+                'documentation.filename': -1
+            }
+        }, {
+            '$addFields': {
+                'filename': '$documentation.filename',
+                'generatedBy': '$documentation.generatedBy',
+                'generatedAt': '$documentation.generatedAt'
+            }
+        }, {
+            '$project': {
+                'documentation': false
+            }
+        }
+    ])
 };

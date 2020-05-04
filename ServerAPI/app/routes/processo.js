@@ -135,6 +135,13 @@ router.put('/:id', checkAuth, (req, res) => {
         .catch(err => res.jsonp(err));
 });
 
+router.get('/:id/files', (req, res) => {
+    Processos.listDocumentation(req.params.id)
+        .then(data => res.status(200).json(data))
+        .catch(err => res.json(err));
+});
+
+
 router.get('/:id/file/:filename', (req, res) => {
 
     fs.readFile(`./app/files/${req.params.id}/${req.params.filename}.pdf`, ( error, data ) => {
