@@ -48,6 +48,10 @@ class UserService {
             headers: authHeader()
         });
     }
+
+    getUniversityCourses(university) {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/${university}/courses`);
+    }
 }
 
 export default new UserService();

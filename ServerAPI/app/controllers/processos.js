@@ -120,3 +120,31 @@ module.exports.listDocumentation = (processId) => {
         }
     ])
 };
+
+module.exports.universityCourses = (universityName) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': universityName
+            }
+        }, {
+            '$group': {
+                '_id': '$cursoProv',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'instProv': {
+                    '$first': '$instProv'
+                },
+                'cursoProv': {
+                    '$first': '$cursoProv'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+            }
+        }
+    ])
+};
