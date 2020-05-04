@@ -8,6 +8,7 @@ import VueSweetAlert2 from 'vue-sweetalert2';
 
 Vue.use(VueCookies);
 Vue.use(VueSweetAlert2);
+Vue.use(require('vue-moment'));
 
 Vue.config.productionTip = false;
 

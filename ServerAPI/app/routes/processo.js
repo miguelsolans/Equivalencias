@@ -142,7 +142,7 @@ router.get('/:id/files', (req, res) => {
 });
 
 
-router.get('/:id/file/:filename', (req, res) => {
+router.get('/:id/file/:filename', checkAuth, (req, res) => {
 
     fs.readFile(`./app/files/${req.params.id}/${req.params.filename}.pdf`, ( error, data ) => {
         if(error) {
