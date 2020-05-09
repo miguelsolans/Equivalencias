@@ -148,3 +148,98 @@ module.exports.universityCourses = (universityName) => {
         }
     ])
 };
+
+// Queries have not been fully tested
+module.exports.courseSubjects = (university, course) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': university,
+                'cursoProv': course
+            }
+        }, {
+            '$project': {
+                'equivalencias': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$equivalencias'
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$equivalencias'
+            }
+        }, {
+            '$group': {
+                '_id': '$ucRealizada',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'ucRealizada': {
+                  '$first': '$ucRealizada'
+                },
+                'percent': {
+                    '$first': '$percent'
+                },
+                'ects': {
+                    '$first': '$ects'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+
+            }
+        }
+    ])
+};
+
+module.exports.equivalenceSubject = (university, course, subject) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': university,
+                'cursoProv': course
+            }
+        }, {
+            '$project': {
+                'equivalencias': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$equivalencias'
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$equivalencias'
+            }
+        }, {
+            '$match': {
+                'ucEquiv': subject
+            }
+        }, {
+            '$group': {
+                '_id': '$ucEquiv',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'percent': {
+                    '$first': '$percent'
+                },
+                'ects': {
+                    '$first': '$ects'
+                },
+                'ucEquiv': {
+                    '$first': '$ucEquiv'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+
+            }
+        }
+    ])
+};

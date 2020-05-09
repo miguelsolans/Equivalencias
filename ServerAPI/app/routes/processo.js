@@ -31,6 +31,9 @@ router.get('/', checkAuth, (req, res) => {
 
 });
 
+/**
+ * Get Process by Id
+ */
 router.get('/:id', checkAuth, (req, res) => {
     let idProcesso = req.params.id;
 
@@ -69,7 +72,7 @@ router.post('/:id/generate', checkAuth, (req, res) => {
 });
 
 /**
- * Create a new Student
+ * Initiate a new Process
  */
 router.post('/', checkAuth, (req, res) => {
 
@@ -98,7 +101,7 @@ router.post('/', checkAuth, (req, res) => {
 });
 
 /**
- * Delete a student given by his ID
+ * Delete process by its Id
  */
 router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
@@ -116,7 +119,7 @@ router.delete('/:id', checkAuth, (req, res) => {
 });
 
 /**
- * Add Subjects to Student
+ * Add Subjects to Process by its Id
  */
 router.put('/:id', checkAuth, (req, res) => {
     // semUcEquiv: STRING,
@@ -135,13 +138,18 @@ router.put('/:id', checkAuth, (req, res) => {
         .catch(err => res.jsonp(err));
 });
 
+/**
+ * Get Process files by its Id
+ */
 router.get('/:id/files', (req, res) => {
     Processos.listDocumentation(req.params.id)
         .then(data => res.status(200).json(data))
         .catch(err => res.json(err));
 });
 
-
+/**
+ * Download a Process Document by its Id
+ */
 router.get('/:id/file/:filename', checkAuth, (req, res) => {
 
     fs.readFile(`./app/files/${req.params.id}/${req.params.filename}.pdf`, ( error, data ) => {
@@ -152,7 +160,6 @@ router.get('/:id/file/:filename', checkAuth, (req, res) => {
             res.status(200).send(data);
         }
     });
-
 });
 
 module.exports = router;
