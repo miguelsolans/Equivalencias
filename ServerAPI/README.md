@@ -36,4 +36,18 @@ $ npm start
 $ npm test
 ```
 
+## Running with Docker
+
+You can also run the API Server as a microservice by using Docker, with very few steps
+
+1. Go to the same directory as Dockerfile and build an image
+```
+$ docker build -t mantis-backend .
+```
+2. Run the image 
+```
+$ docker run -p mantis-backend
+```
+
+This server, unlike the previous chapter, will always run on production mode.
 
