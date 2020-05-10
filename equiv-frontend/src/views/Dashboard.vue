@@ -1,6 +1,5 @@
 <template>
     <v-container>
-        <v-card>
             <v-layout row>
                 <v-flex md4>
                     <ListProcess/>
@@ -8,13 +7,13 @@
                 <v-flex md8>
                     <v-divider inset vertical></v-divider>
                     <v-row>
-                        <v-img class="logo-img" src="../assets/Logo.png"></v-img>
+                        <v-row align="center" justify="center">
+                            <v-img position="center center" class="logo-img" src="../assets/Logo.png"></v-img>
+                        </v-row>
                         <NewProcess/>
                     </v-row>
                 </v-flex>
-
             </v-layout>
-        </v-card>
     </v-container>
 </template>
 

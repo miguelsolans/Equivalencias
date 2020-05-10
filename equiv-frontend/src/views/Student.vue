@@ -1,15 +1,15 @@
 <template>
     <div>
-        <v-btn>
-            Download
-            <v-icon dark right>mdi-file-pdf</v-icon>
-        </v-btn>
         <h2>Gestão do Processo {{ id }}</h2>
         <v-tabs>
+            <v-tab>Informações</v-tab>
             <v-tab>Equivalencias</v-tab>
             <v-tab>Formulário</v-tab>
             <v-tab>Documentação</v-tab>
 
+            <v-tab-item>
+                <StudentInfo/>
+            </v-tab-item>
             <v-tab-item>
                 <Equivalences/>
             </v-tab-item>
@@ -27,6 +27,7 @@
 </template>
 
 <script>
+    import StudentInfo from '../components/StudentInfo';
     import Equivalences from '../components/ProcessEquivalences';
     import NewEquivalence from '../components/NewEquivalence';
     import ProcessFiles from '../components/ProcessFiles';
@@ -37,7 +38,7 @@
                 id: this.$route.params.id
             }
         },
-        components: { Equivalences, NewEquivalence, ProcessFiles }
+        components: { StudentInfo, Equivalences, NewEquivalence, ProcessFiles }
     }
 </script>
 

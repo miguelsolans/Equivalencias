@@ -14,8 +14,11 @@
 
             <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
 
-            <v-autocomplete v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disable"></v-autocomplete>
-<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
+            <v-autocomplete v-if="!course.enableInput && !course.doesntExist" v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disableAutocomplete"></v-autocomplete>
+            <v-text-field v-else-if="course.enableInput || course.doesntExist" label="Curso Proveniente" v-model="student.cursoProv"></v-text-field>
+            <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2" label="Curso ainda não existe"></v-checkbox>
+
+            <!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
 
             <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
             <v-divider  class="mx-4" inset vertical></v-divider>
@@ -26,18 +29,17 @@
 </template>
 
 <script>
-    // import axios from 'axios';
     import Processo from '../models/processo';
     import UserService from '../services/user.service';
-    // import axios from "axios";
-    // import config from "../config";
 
     export default {
         name: "ListaProcessos",
         data() {
             return {
                 course: {
-                    disable: true,
+                    disableAutocomplete: true,
+                    doesntExist: false,
+                    enableInput: false,
                     courses: []
                 },
                 universities: null,
@@ -75,29 +77,28 @@
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);
-                this.course.disable = false;
+                // this.course.disable = false;
 
                 UserService.getUniversityCourses(this.student.instProv)
                     .then(result => {
                         console.log(result);
                         this.course.courses = result.data;
+
+                        if(this.course.courses.length > 0) {
+                            this.course.disableAutocomplete = false;
+                        } else {
+                            console.log("No Courses... Please input a new one");
+                            this.course.disableAutocomplete = false;
+                            this.course.enableInput = true;
+                        }
                     }).catch(err => console.log(err));
 
-                // this.course.courses = [{
-                //     nomeCurso: "Licenciatura em Engenharia de Sistemas Informáticos",
-                //     codCursO: 1
-                // }, {
-                //     nomeCurso: "Licenciatura em Engenharia de Desenvolvimento de Jogos Digitais",
-                //     codCurso: 2
-                // }, {
-                //     nomeCurso: "Licenciatura em Engenharia de Informática Médica",
-                //     codCurso: 3
-                // }];
             },
             resetForm() {
                 this.student = new Processo();
                 this.course.courses = [];
-                this.course.disable = true;
+                this.course.disableAutocomplete = true;
+                this.course.enableInput = false;
             }
         }
     }
