@@ -7,6 +7,7 @@ const router  = express.Router();
 const Processos = require('../controllers/processos');
 
 const pdf = require('../utils/pdf');
+const fs = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
 
@@ -30,6 +31,9 @@ router.get('/', checkAuth, (req, res) => {
 
 });
 
+/**
+ * Get Process by Id
+ */
 router.get('/:id', checkAuth, (req, res) => {
     let idProcesso = req.params.id;
 
@@ -38,24 +42,37 @@ router.get('/:id', checkAuth, (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
+// TODO: REFACTOR THIS NASTY CODE TO ASYNC/AWAIT
 router.post('/:id/generate', checkAuth, (req, res) => {
-    let idAluno = req.params.id;
+    let idProcess = req.params.id;
 
-    Processos.findProcessById( idAluno )
-        .then(data => {
-            console.log("DATA FETCHED...Passing to utils now");
+    Processos.findProcessById( idProcess )
+        .then(process => {
+            console.log("Process Found");
+            const fileMetadata = {
+                filename: Date.now(),
+                generatedBy: req.decodedUser.fullName
+            };
+            Processos.newDocument(process.processo, fileMetadata)
+                .then(document => {
+                    console.log("DATA FETCHED...Passing to utils now");
 
-            let result = pdf.makePdf(data, req.decodedUser);
+                    console.log(document);
 
-            let msgOutput = result ? "Successfully generated" : "Some error occurred...";
+                    let result = pdf.makePdf(process, req.decodedUser, fileMetadata.filename);
+                    let msgOutput = result ? "Successfully generated" : "Some error occurred...";
 
-            res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+                    res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+
+                })
+                .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
+
         })
         .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
 });
 
 /**
- * Create a new Student
+ * Initiate a new Process
  */
 router.post('/', checkAuth, (req, res) => {
 
@@ -71,25 +88,38 @@ router.post('/', checkAuth, (req, res) => {
     };
 
     Processos.new(newProcess)
-        .then(data => res.status(201).jsonp(data))
+        .then(data => {
+            // fs.mkdirSync(`app/files/${data.processo}`);
+            fs.mkdirSync(`app/files/${data.processo}`, {
+                recursive: true
+            });
+            console.log(data);
+            res.status(201).jsonp(data);
+        })
         .catch(err => res.jsonp(err));
 
 });
 
 /**
- * Delete a student given by his ID
+ * Delete process by its Id
  */
 router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
 
     Processos.delete(req.params.id)
-        .then(data => res.jsonp(data))
+        .then(data => {
+            fs.rmdirSync(`app/files/${data.processo}`, {
+                recursive: true
+            });
+
+            res.jsonp(data);
+        })
         .catch(err => res.jsonp(err));
 
 });
 
 /**
- * Add Subjects to Student
+ * Add Subjects to Process by its Id
  */
 router.put('/:id', checkAuth, (req, res) => {
     // semUcEquiv: STRING,
@@ -108,5 +138,28 @@ router.put('/:id', checkAuth, (req, res) => {
         .catch(err => res.jsonp(err));
 });
 
+/**
+ * Get Process files by its Id
+ */
+router.get('/:id/files', (req, res) => {
+    Processos.listDocumentation(req.params.id)
+        .then(data => res.status(200).json(data))
+        .catch(err => res.json(err));
+});
+
+/**
+ * Download a Process Document by its Id
+ */
+router.get('/:id/file/:filename', checkAuth, (req, res) => {
+
+    fs.readFile(`./app/files/${req.params.id}/${req.params.filename}.pdf`, ( error, data ) => {
+        if(error) {
+            res.status(404).json({title: "Not Found", message: "File not found!"});
+        } else {
+            res.contentType("application/pdf");
+            res.status(200).send(data);
+        }
+    });
+});
 
 module.exports = router;

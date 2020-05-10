@@ -10,14 +10,16 @@
 
             <v-text-field label="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" required></v-text-field>
 
-            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>
+<!--            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
 
-<!--            <v-select label="Instituição Proveniente" type="text" :items="universities"></v-select>-->
-<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required></v-text-field>-->
+            <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
+
+            <v-autocomplete v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disable"></v-autocomplete>
+<!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
 
             <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
             <v-divider  class="mx-4" inset vertical></v-divider>
-            <v-btn color="normal" @click="clearForm">Cancelar</v-btn>
+            <v-btn color="normal" @click="resetForm">Cancelar</v-btn>
         </v-form>
     </v-container>
 
@@ -34,31 +36,68 @@
         name: "ListaProcessos",
         data() {
             return {
-                // universities: null,
+                course: {
+                    disable: true,
+                    courses: []
+                },
+                universities: null,
                 student: new Processo('', '', '', '', '')
             }
         },
         mounted() {
-            // UserService.listUniversities()
-            //     .then(result => console.log(result))
-            //     .catch(err => console.log(err));
+            this.init();
+
         },
         methods: {
-            handleSubmit(e) {
-                e.preventDefault();
-
-                // this.student = new Processo(this.processo, this.idAluno, this.nomeAluno, this.instProv, this.cursoProv);
-
-                UserService.newProcess(this.student)
-                    .then(data => {
-                        console.log(data);
-                        this.student = new Processo();
-                    })
+            init() {
+                UserService.listUniversities()
+                    .then(result => this.universities = result.data)
                     .catch(err => console.log(err));
             },
 
-            clearForm() {
+            handleSubmit(e) {
+                e.preventDefault();
+
+                UserService.newProcess(this.student)
+                    .then(response => {
+                        console.log(response);
+
+                        if(response.data.errors) {
+                            alert("HANDLE ERROR");
+                        } else {
+                            this.$root.$emit('newProcess', this.student);
+
+                            this.resetForm();
+
+                        }
+                    })
+                    .catch(err => console.log(err));
+            },
+            universityChosen() {
+                console.log(`${this.student.instProv}`);
+                this.course.disable = false;
+
+                UserService.getUniversityCourses(this.student.instProv)
+                    .then(result => {
+                        console.log(result);
+                        this.course.courses = result.data;
+                    }).catch(err => console.log(err));
+
+                // this.course.courses = [{
+                //     nomeCurso: "Licenciatura em Engenharia de Sistemas Informáticos",
+                //     codCursO: 1
+                // }, {
+                //     nomeCurso: "Licenciatura em Engenharia de Desenvolvimento de Jogos Digitais",
+                //     codCurso: 2
+                // }, {
+                //     nomeCurso: "Licenciatura em Engenharia de Informática Médica",
+                //     codCurso: 3
+                // }];
+            },
+            resetForm() {
                 this.student = new Processo();
+                this.course.courses = [];
+                this.course.disable = true;
             }
         }
     }

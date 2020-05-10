@@ -18,7 +18,7 @@
                             <v-form>
                                 <v-text-field label="Username" name="username" v-model="user.username" type="text"></v-text-field>
 
-                                <v-text-field label="Password" name="password" v-model="user.password" type="password"></v-text-field>
+                                <v-text-field label="Password" name="password" v-model="user.password" type="password" @keyup.enter="handleLogin"></v-text-field>
                             </v-form>
                         </v-card-text>
 
@@ -63,7 +63,7 @@
                     .then(() => {
                         this.$router.push('/dashboard');
                     }, error => {
-                        alert("ERROR during login");
+                        this.$swal.fire("Erro na autenticação do utilizador", "", "error");
                         this.message = error;
                         this.showErrorAlert = true;
                         console.log(error);

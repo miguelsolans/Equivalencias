@@ -49,9 +49,26 @@
         name: "Navbar",
         methods: {
             handleLogout() {
-                this.$store.dispatch('auth/logout')
-                    .then(() => this.$router.push('/'))
-                    .catch(err => console.log(err));
+
+                this.$swal.fire({
+                    title: 'Deseja terminar sessão?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#4ed68f',
+                    cancelButtonColor: '#dd6055',
+                    confirmButtonText: 'Logout'
+                }).then((result) => {
+                    if (result.value) {
+                        this.$swal.fire(
+                            'Sessão terminada com sucesso.',
+                            '',
+                            'success'
+                        );
+                        this.$store.dispatch('auth/logout')
+                            .then(() => this.$router.push('/login'))
+                            .catch(err => console.log(err));
+                    }
+                });
             }
         }
     }

@@ -7,20 +7,20 @@
 const mongoose = require('mongoose');
 
 const document = new mongoose.Schema({
-    filename: {
-        type: String,
-        required: true
-    },
+   filename: {
+       type: String,
+       required: true
+   },
+
     generatedBy: {
         type: String,
         required: true
     },
     generatedAt: {
         type: Date,
-        default: Date.now()
+        default: Date.now(),
     }
 });
-
 
 const equivalencias = new mongoose.Schema({
     ucRealizada: {
@@ -47,10 +47,6 @@ const equivalencias = new mongoose.Schema({
         type: String,
         required: [true, "Deve definir a UC que pretende dar como equivalencia"]
     },
-    anoUcEquiv: {
-        type: String,
-        required: [true, "Deve especificar o ano da UC equivalente"]
-    },
     semUcEquiv: {
         type: String,
         required: [true, "Deve especificar o semestre da UC equivalente"]
@@ -72,11 +68,13 @@ const equivalencias = new mongoose.Schema({
 const processoSchema = new mongoose.Schema({
     _id: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     processo: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     initiatedBy: {
         type: String,
@@ -98,7 +96,7 @@ const processoSchema = new mongoose.Schema({
         type: String,
         required: [true, "Deve especificar o curso do aluno"]
     },
-    data: {
+    createdAt: {
         type: Date,
         default: Date.now()
     },

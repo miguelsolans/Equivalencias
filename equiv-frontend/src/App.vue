@@ -21,6 +21,9 @@
             loggedOn() {
                 return this.$store.state.auth.status.loggedIn;
             }
+        },
+        mounted() {
+            console.log("MOUNTED " + process.env.VUE_APP_API_SERVER)
         }
     }
 </script>

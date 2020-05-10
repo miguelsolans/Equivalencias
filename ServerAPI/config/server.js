@@ -15,7 +15,7 @@ const logger        = require('morgan');
 const mongoose      = require('mongoose');
 
 mongoose.connect(process.env.MONGO_CONNECTION, {
-    useNewUrlParser: true, useUnifiedTopology: true })
+    useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true})
     .then(() => {
         console.log("Connection to MongoDB successfully established")
     })

@@ -62,10 +62,10 @@ const month = (date) => {
  * @param student information with the same field names as in Data Model
  * @returns true if created, false otherwise
  */
-module.exports.makePdf = (student, author) => {
+module.exports.makePdf = (student, author, filename) => {
     let todayDate = new Date();
 
-    let path = `app/files/${student.processo}.pdf`;
+    let path = `app/files/${student.processo}/${filename}.pdf`;
 
     const document = {
         pageSize: 'A4',

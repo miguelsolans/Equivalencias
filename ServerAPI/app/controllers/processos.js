@@ -19,9 +19,30 @@ module.exports.findProcessById = (id) => {
 
 module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
     let _id = processo;
+
     const newProcess = new Processo({ _id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
 
     return newProcess.save();
+
+    // await new Promise(async (resolve, reject) => {
+    //
+    //     try {
+    //         let _id = processo;
+    //
+    //         const newProcess = new Processo({ _id, processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
+    //
+    //         const data = await newProcess.save();
+    //         console.log("INSIDE PROMISE");
+    //         console.log(data);
+    //
+    //         return resolve(data);
+    //
+    //     } catch(err) {
+    //         return reject(err);
+    //     }
+    // })
+
+    // return newProcess.save();
 };
 
 module.exports.delete = (id) => {
@@ -42,26 +63,183 @@ module.exports.searchByYear = (year) => {
 //     // nota: NUMBER,
 //     // ects: NUMBER,
 //     // ucRealizada: STRING
-module.exports.addSubjects = (id, { semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada, createdBy}) => {
+module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada, createdBy}) => {
     const subject = {
         semUcEquiv: semUcEquiv,
-        anoUcEquiv: anoUcEquiv,
         ucEquiv: ucEquiv,
+        anoLetivo: anoLetivo,
         percent: percent,
         nota: nota,
         ects: ects,
         ucRealizada: ucRealizada,
         createdBy: createdBy
     };
-    // equivalencias
-    return Processo.findOneAndUpdate({ _id: id}, { $push: { equivalencias: subject } })
+    return Processo.findOneAndUpdate({ _id: id}, { $set: { equivalencias: subject } }, { new: true, runValidators: true })
+
 };
 
-module.exports.addDocument = (id, { filename, requestedBy }) => {
+module.exports.newDocument = (id, { filename, requestedBy }) => {
     const newDocument = {
         filename: filename,
         requestedBy: requestedBy
     };
     // New document
     return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
+};
+
+module.exports.listDocumentation = (processId) => {
+    //return Processo.findOne({ processo: processId}, { documentation: true })
+    return Processo.aggregate([
+        {
+            '$match': {
+                '_id': processId
+            }
+        }, {
+            '$project': {
+                '_id': true,
+                'documentation': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$documentation'
+            }
+        }, {
+            '$sort': {
+                'documentation.filename': -1
+            }
+        }, {
+            '$addFields': {
+                'filename': '$documentation.filename',
+                'generatedBy': '$documentation.generatedBy',
+                'generatedAt': '$documentation.generatedAt'
+            }
+        }, {
+            '$project': {
+                'documentation': false
+            }
+        }
+    ])
+};
+
+module.exports.universityCourses = (universityName) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': universityName
+            }
+        }, {
+            '$group': {
+                '_id': '$cursoProv',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'instProv': {
+                    '$first': '$instProv'
+                },
+                'cursoProv': {
+                    '$first': '$cursoProv'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+            }
+        }
+    ])
+};
+
+// Queries have not been fully tested
+module.exports.courseSubjects = (university, course) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': university,
+                'cursoProv': course
+            }
+        }, {
+            '$project': {
+                'equivalencias': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$equivalencias'
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$equivalencias'
+            }
+        }, {
+            '$group': {
+                '_id': '$ucRealizada',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'ucRealizada': {
+                  '$first': '$ucRealizada'
+                },
+                'percent': {
+                    '$first': '$percent'
+                },
+                'ects': {
+                    '$first': '$ects'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+
+            }
+        }
+    ])
+};
+
+module.exports.equivalenceSubject = (university, course, subject) => {
+    return Processo.aggregate([
+        {
+            '$match': {
+                'instProv': university,
+                'cursoProv': course
+            }
+        }, {
+            '$project': {
+                'equivalencias': true
+            }
+        }, {
+            '$unwind': {
+                'path': '$equivalencias'
+            }
+        }, {
+            '$replaceRoot': {
+                'newRoot': '$equivalencias'
+            }
+        }, {
+            '$match': {
+                'ucEquiv': subject
+            }
+        }, {
+            '$group': {
+                '_id': '$ucEquiv',
+                'uniqueCount': {
+                    '$sum': 1
+                },
+                'percent': {
+                    '$first': '$percent'
+                },
+                'ects': {
+                    '$first': '$ects'
+                },
+                'ucEquiv': {
+                    '$first': '$ucEquiv'
+                }
+            }
+        }, {
+            '$project': {
+                '_id': false,
+                'uniqueCount': false
+
+            }
+        }
+    ])
 };

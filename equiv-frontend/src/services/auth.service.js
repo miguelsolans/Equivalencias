@@ -4,13 +4,12 @@
  */
 
 import axios from 'axios';
-import config from '../config';
 import VueCookies from 'vue-cookies';
 
 export default {
 
     login: (user) => {
-        return axios.post(`${config.API_SERVER}/user/login`, {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/user/login`, {
             username: user.username,
             password: user.password
         }).then(response => {

@@ -10,10 +10,11 @@ export default class Equivalencia {
      * @param ects: NUMERO DE CRÉDITOS DA UC EQUIVALENTE REALIZADA
      * @param ucRealizada: NOME DA UC REALIZADA
      */
-    constructor(semUcEquiv, anoUcEquiv, ucEquiv, percent, nota, ects, ucRealizada) {
+    constructor(semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada) {
         this.semUcEquiv = semUcEquiv;
-        this.anoUcEquiv = anoUcEquiv;
-        this.ucRealizada = ucRealizada;
+        // this.anoUcEquiv = anoUcEquiv;
+        this.ucEquiv = ucEquiv;
+        this.anoLetivo = anoLetivo;
         this.percent = percent;
         this.nota = nota;
         this.ects = ects;

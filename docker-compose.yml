@@ -1,0 +1,41 @@
+version: "3"
+services:
+    backend:
+        container_name: mantis-backend
+        restart: always
+        environment:
+            - APP_PORT=3030
+            - APP_URL=http://localhost:3030
+            - API_URL=http://localhost:3030/api
+            - MONGO_CONNECTION=mongodb://mantis-mongo:27017/equivalencia
+            - AUTH_SECRET=anticonstitucionalissimamente
+            - AUTH_TOKEN_TIMETOLIVE=1h
+            - AUTH_TOKEN_ALGORITHM=RS256
+            - FRONTEND_SERVER=http://localhost:8080
+        build: ./ServerAPI
+        ports: 
+            - "3030:3030"
+        volumes:
+            - ./mantis/backend
+        links:
+            - mongo
+    frontend: 
+        container_name: mantis-frontend
+        environment: 
+            - VUE_APP_API_SERVER=http://127.0.0.1:3030
+        build: ./equiv-frontend
+        ports: 
+            - "8080:8080"
+        volumes: 
+            - ./mantis/frontend
+        links: 
+            - backend
+    mongo:
+        container_name: mantis-mongo
+        image: mongo
+        ports: 
+            - "27017:27017"
+        volumes:
+            - data-volume:/data-db
+volumes:
+    data-volume: 
