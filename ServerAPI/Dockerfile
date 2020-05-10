@@ -1,5 +1,5 @@
 # NodeJS Version
-FROM node:10
+FROM node:lts-alpine
 
 # App Directory
 WORKDIR /mantis/backend

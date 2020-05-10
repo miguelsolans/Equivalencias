@@ -19,6 +19,17 @@ services:
             - ./mantis/backend
         links:
             - mongo
+    frontend: 
+        container_name: mantis-frontend
+        environment: 
+            - VUE_APP_API_SERVER=http://127.0.0.1:3030
+        build: ./equiv-frontend
+        ports: 
+            - "8080:8080"
+        volumes: 
+            - ./mantis/frontend
+        links: 
+            - backend
     mongo:
         container_name: mantis-mongo
         image: mongo
