@@ -9,9 +9,10 @@
 </template>
 
 <script>
-    import UserService from '../services/user.service';
+    // import UserService from '../services/user.service';
     export default {
         name: "ProcessEquivalences",
+        props: ["equivalencias"],
         data() {
             return {
                 // Table Configuration
@@ -23,17 +24,11 @@
                 ],
                 processId: this.$route.params.id,
                 student: [],
-                equivalencias: [],
                 error: null
             }
         },
         mounted() {
-            UserService.getProcess(this.processId)
-                .then(result => {
-                    this.student = result.data;
-                    this.equivalencias = this.student.equivalencias;
-                })
-                .catch(err => this.error = err);
+
         }
     }
 </script>

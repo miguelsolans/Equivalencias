@@ -8,7 +8,7 @@
                     <h2>Lista de Processos</h2>
 
                     <template v-for="(process, index) in processes">
-                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process.processo }}">
+                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process._id }}">
                             <v-list-item-avatar v-if="process.avatar">
                                 <img :src="process.avatar">
                             </v-list-item-avatar>
@@ -46,7 +46,7 @@
             }
         },
         created() {
-            this.$root.$on('newProcess', data => this.processes.push(data) );
+            this.$on('newProcess', data => this.processes.push(data) );
         },
         mounted() {
             UserService.listProcesses()

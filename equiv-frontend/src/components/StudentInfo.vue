@@ -24,26 +24,28 @@
 </template>
 
 <script>
-    import UserService from '../services/user.service';
+    // import UserService from '../services/user.service';
 
     export default {
         name: "StudentInfo",
+        props: ["process"],
         data() {
             return {
-                process: null,
+                // process: null,
                 processId: this.$route.params.id,
                 readOnly: true
             }
         },
         mounted() {
-            UserService.getProcess(this.processId)
-                .then(response => {
-
-                    this.process = response.data;
-                }).catch(err => {
-                    // TODO: Do something with error
-                    console.log(err);
-            })
+            console.log("init data component");
+            // UserService.getProcess(this.processId)
+            //     .then(response => {
+            //
+            //         this.process = response.data;
+            //     }).catch(err => {
+            //         // TODO: Do something with error
+            //         console.log(err);
+            // })
         }
     }
 </script>
