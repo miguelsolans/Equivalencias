@@ -1,5 +1,6 @@
 <template>
     
+    <v-app>
     <v-content>
 
         <v-alert :value ="showErrorAlert" dense outlined dismissible type ="error" transition ="slide-y-transition">
@@ -13,7 +14,7 @@
                         <div id ="login">
                             
                             <div id ="description">
-                                <p> LOGIN </p>
+                                <img src="../assets/Logo.png" width=100% height=100%>
                             </div>
 
                             <div id ="form">
@@ -35,6 +36,7 @@
         </v-container>
     
     </v-content>
+    </v-app>
 
 </template>
 
