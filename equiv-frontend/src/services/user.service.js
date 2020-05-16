@@ -50,7 +50,21 @@ class UserService {
     }
 
     getUniversityCourses(university) {
-        return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/${university}/courses`);
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/?university=${university}`, {
+            headers: authHeader()
+        });
+    }
+
+    getCourseSubjects(university, course) {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/?university=${university}&course=${course}`, {
+            headers: authHeader()
+        });
+    }
+
+    getSubject(university, course, subject) {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade?university=${university}&course=${course}&subject=${subject}`, {
+            headers: authHeader()
+        });
     }
 }
 

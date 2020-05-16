@@ -67,9 +67,7 @@ const equivalencias = new mongoose.Schema({
 
 const processoSchema = new mongoose.Schema({
     _id: {
-        type: String,
-        required: true,
-        unique: true
+        type: mongoose.Schema.Types.ObjectId,
     },
     processo: {
         type: String,

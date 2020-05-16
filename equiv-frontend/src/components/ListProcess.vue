@@ -1,11 +1,14 @@
 <template>
     <v-container>
-        <h2>Lista de Processos</h2>
         <v-container>
             <v-card>
+                <v-text-field outlined clearable color="success" label="Procurar..."></v-text-field>
+<!--                <v-text-field class="mx-3" flat label="Procurar..." solo-inverted v-model="search" clearable @click:clear="clearSearch"></v-text-field>-->
                 <v-list two-line>
+                    <h2>Lista de Processos</h2>
+
                     <template v-for="(process, index) in processes">
-                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process.processo }}">
+                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process._id }}">
                             <v-list-item-avatar v-if="process.avatar">
                                 <img :src="process.avatar">
                             </v-list-item-avatar>
@@ -37,12 +40,13 @@
         name: "ListProcess",
         data() {
             return {
+                search: '',
                 processes: null,
                 message: ''
             }
         },
         created() {
-            this.$root.$on('newProcess', data => this.processes.push(data) );
+            this.$on('newProcess', data => this.processes.push(data) );
         },
         mounted() {
             UserService.listProcesses()
@@ -50,6 +54,11 @@
                 .catch(err => {
                     this.message = err;
                 });
+        },
+        methods: {
+            clearSearch () {
+                this.search="";
+            }
         }
     }
 </script>
