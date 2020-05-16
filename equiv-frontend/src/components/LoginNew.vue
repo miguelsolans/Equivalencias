@@ -15,18 +15,19 @@
                             
                             <div id ="description">
                                 <p> Login </p>
-                                <img src="../assets/images/Logo.png" width=100% height=100%>
+                                <img src="../assets/images/Logo.png" width=100% height=100% alt="Logótipo do projeto">
                             </div>
 
                             <div id ="form">
                                     
-                                    <label for ="username">Username</label>
-                                    <input type ="text" id ="username" v-model ="user.username" placeholder= "Insert Username">
+                                <label for ="username">Username</label>
+                                <input type ="text" id ="username" v-model ="user.username" placeholder= "Insert Username">
 
-                                    <label for ="password">Password</label>
-                                    <input type ="password" id ="password" v-model ="user.password" placeholder ="●●●●●●●●●●●●" @keyup.enter ="handleLogin">
+                                <label for ="password">Password</label>
+                                <input type ="password" id ="password" v-model ="user.password" placeholder ="●●●●●●●●●●●●" @keyup.enter ="handleLogin">
 
-                                    <button type ="submit" @click ="handleLogin">Log in</button>
+                                <font-awesome-icon icon="sign-in-alt" />
+                                <button type ="submit" @click ="handleLogin">Log in</button>
                                 
                             </div>
                             
@@ -131,7 +132,7 @@
     div#app div#login div#form {
     background-image: linear-gradient(to bottom,#33cc99, #238e64);
     border-radius: 5px;
-    box-shadow: 0px 0px 30px 0px #666;
+    box-shadow: 0 0 30px 0 #666;
     color: #ecf0f1;
     width: 260px;
     padding: 35px;
@@ -191,8 +192,8 @@
     div#app div#login div#form {
         background-image: linear-gradient(to bottom,#33cc99, #238e64);
         border-radius: 5px;
-        -webkit-box-shadow: 0px 0px 30px 0px #666;
-        box-shadow: 0px 0px 30px 0px #666;
+        -webkit-box-shadow: 0 0 30px 0 #666;
+        box-shadow: 0 0 30px 0 #666;
         color: #ecf0f1;
         width: 100%;
         padding: 35px;
