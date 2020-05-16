@@ -4,7 +4,7 @@
             <Navbar></Navbar>
         </div>
         <main>
-            <v-container fluid>
+            <v-container class="fill-height" fluid>
                 <router-view/>
             </v-container>
         </main>
