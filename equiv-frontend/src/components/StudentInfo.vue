@@ -2,7 +2,7 @@
     <v-container>
         <v-row>
             <v-col md2>
-                <img class="avatar" src="../assets/User.png">
+                <img class="avatar" src="../assets/images/User.png">
             </v-col>
 
             <v-col md10>

@@ -9,21 +9,22 @@
 
         <v-container class="fill-height" fluid>
             <v-row align="center" justify="center">
-                <v-col cols="12" sm="8" md="4">
+                <v-col cols="auto" sm=True md=True lg=True xl=True>
                     <div id ="app">
                         <div id ="login">
                             
                             <div id ="description">
-                                <img src="../assets/Logo.png" width=100% height=100%>
+                                <p> Login </p>
+                                <img src="../assets/images/Logo.png" width=100% height=100%>
                             </div>
 
                             <div id ="form">
                                     
                                     <label for ="username">Username</label>
-                                    <input type ="text" id ="username" v-model ="user.username">
+                                    <input type ="text" id ="username" v-model ="user.username" placeholder= "Insert Username">
 
                                     <label for ="password">Password</label>
-                                    <input type ="password" id ="password" v-model ="user.password" placeholder ="**********" @keyup.enter ="handleLogin">
+                                    <input type ="password" id ="password" v-model ="user.password" placeholder ="●●●●●●●●●●●●" @keyup.enter ="handleLogin">
 
                                     <button type ="submit" @click ="handleLogin">Log in</button>
                                 
@@ -39,8 +40,6 @@
     </v-app>
 
 </template>
-
-<script src ="https://cdn.jsdelivr.net/npm/vue"></script>
 
 <script>
 
@@ -86,14 +85,8 @@
 
 <style scoped>
 
-    @import url(https://fonts.googleapis.com/css?family =Nunito);
-    @import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
-    @import url(https://raw.githubusercontent.com/simedia-tech/vuejs-login-template/master/styles.css);
-
-
     * {
-    box-sizing: border-box;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Rubik', sans-serif;
     }
 
     html,
@@ -129,13 +122,14 @@
     }
 
     div#app div#login div#description p {
-    font-size: 0.8em;
+    font-family: 'Secular One', sans-serif;
+    font-size: 5em;
     color: #95a5a6;
     margin-top: 10px;
     }
 
     div#app div#login div#form {
-    background-color: #34495e;
+    background-image: linear-gradient(to bottom,#33cc99, #238e64);
     border-radius: 5px;
     box-shadow: 0px 0px 30px 0px #666;
     color: #ecf0f1;
@@ -195,9 +189,13 @@
     }
 
     div#app div#login div#form {
-        border-radius: unset;
-        box-shadow: unset;
+        background-image: linear-gradient(to bottom,#33cc99, #238e64);
+        border-radius: 5px;
+        -webkit-box-shadow: 0px 0px 30px 0px #666;
+        box-shadow: 0px 0px 30px 0px #666;
+        color: #ecf0f1;
         width: 100%;
+        padding: 35px;
     }
 
     div#app div#login div#form form {

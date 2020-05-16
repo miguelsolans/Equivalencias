@@ -27,3 +27,9 @@
         }
     }
 </script>
+
+<style scoped>
+
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap%27');
+
+</style>
