@@ -53,7 +53,7 @@ router.post('/:id/generate', checkAuth, (req, res) => {
                 filename: Date.now(),
                 generatedBy: req.decodedUser.fullName
             };
-            Processos.newDocument(process.processo, fileMetadata)
+            Processos.newDocument(process._id, fileMetadata)
                 .then(document => {
                     console.log("DATA FETCHED...Passing to utils now");
 
@@ -141,7 +141,7 @@ router.put('/:id', checkAuth, (req, res) => {
 /**
  * Get Process files by its Id
  */
-router.get('/:id/files', (req, res) => {
+router.get('/:id/files', checkAuth, (req, res) => {
     Processos.listDocumentation(req.params.id)
         .then(data => res.status(200).json(data))
         .catch(err => res.json(err));

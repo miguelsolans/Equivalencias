@@ -46,7 +46,8 @@
         data() {
             return {
                 id: this.$route.params.id,
-                process: null
+                process: null,
+                error: null
             }
         },
         components: { StudentInfo, Equivalences, NewEquivalence, ProcessFiles },
@@ -56,6 +57,7 @@
                     this.process = response.data;
                 }).catch(err => {
                     // TODO: Handle error in view
+                    this.error = err;
                     console.log(err);
             })
         },
