@@ -4,6 +4,7 @@
  * Author: Miguel Solans
  */
 const Processo = require('../models/processo');
+const mongoose = require('mongoose');
 
 module.exports.list = (query, projection) => {
     return Processo.find(query, projection);
@@ -71,10 +72,11 @@ module.exports.newDocument = (id, { filename, requestedBy }) => {
 
 module.exports.listDocumentation = (processId) => {
     //return Processo.findOne({ processo: processId}, { documentation: true })
+    const mongoose = require('mongoose');
     return Processo.aggregate([
         {
             '$match': {
-                '_id': processId
+                '_id': new mongoose.mongo.ObjectId(processId)
             }
         }, {
             '$project': {
@@ -177,6 +179,13 @@ module.exports.courseSubjects = (university, course) => {
     ])
 };
 
+/**
+ * Returns similar equivalences for a given university, course and subject
+ * @param university: source university
+ * @param course: source course
+ * @param subject: subject already done
+ * @returns {Aggregate}
+ */
 module.exports.equivalenceSubject = (university, course, subject) => {
     return Processo.aggregate([
         {
@@ -198,7 +207,7 @@ module.exports.equivalenceSubject = (university, course, subject) => {
             }
         }, {
             '$match': {
-                'ucEquiv': subject
+                'ucRealizada': subject
             }
         }, {
             '$group': {

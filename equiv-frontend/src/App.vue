@@ -4,7 +4,7 @@
             <Navbar></Navbar>
         </div>
         <main>
-            <v-container fluid>
+            <v-container class="fill-height" fluid>
                 <router-view/>
             </v-container>
         </main>
@@ -27,3 +27,9 @@
         }
     }
 </script>
+
+<style scoped>
+
+    @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap%27');
+
+</style>

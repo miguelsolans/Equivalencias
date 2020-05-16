@@ -13,7 +13,7 @@
                                 <img :src="process.avatar">
                             </v-list-item-avatar>
                             <v-list-item-avatar v-else-if="!process.avatar">
-                                <img src="../assets/User.png">
+                                <img src="../assets/images/User.png">
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title v-html="process.nomeAluno"></v-list-item-title>

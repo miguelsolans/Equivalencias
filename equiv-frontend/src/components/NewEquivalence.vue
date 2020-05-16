@@ -2,20 +2,20 @@
     <v-container>
         <v-form>
             <!--<v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>-->
-            <v-autocomplete v-model="equivalencia.ucRealizada" label="UC Realizada" type="text" :items="ucRealizada" item-text="ucRealizada" @change="subjectChosen"></v-autocomplete>
+            <v-autocomplete v-model="equivalencia.ucRealizada" label="UC Realizada" type="text" :items="ucOrigem" item-text="ucRealizada" @change="subjectChosen" :rules="[v => !!v || 'Especifique o nome da UC realizada']" required></v-autocomplete>
 
-            <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput"></v-text-field>
+            <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
 
-            <v-select label="Semestre da UC Completada" v-model="equivalencia.semUcEquiv" :items="['1º Semestre', '2º Semestre']"></v-select>
+            <v-select label="Semestre da UC Equivalente" v-model="equivalencia.semUcEquiv" :items="['1º Semestre', '2º Semestre']" :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" required></v-select>
 
-            <v-text-field label="Ano letivo de conclusão" v-model="equivalencia.anoLetivo"></v-text-field>
+            <v-text-field label="Ano letivo de conclusão" v-model="equivalencia.anoLetivo" :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" required></v-text-field>
 
-            <v-text-field label="Nota Obtida" v-model="equivalencia.nota"></v-text-field>
+            <v-text-field label="Nota Obtida" v-model="equivalencia.nota" :rules="gradeRules" required></v-text-field>
 
-            <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent" :disabled="disabledInput"></v-text-field>
+            <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent" :disabled="disabledInput" :rules="[v => !!v || 'Especifique a percentagem']" required></v-text-field>
 
-            <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv"></v-text-field>
-            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
+            <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" required></v-text-field>
+            <v-btn color="teal" dark @click="handleSubmit" :disabled="!valid">Criar</v-btn>
         </v-form>
     </v-container>
 </template>
@@ -32,7 +32,15 @@
                 equivalencia: new Equivalencia(),
                 ucOrigem: null,
                 ucDestino: null,
-                disabledInput: true
+                disabledInput: true,
+
+                // Form Rules
+                valid: false,
+                gradeRules: [
+                    v => !!v || "Especifique a nota atribuída a UC realizada",
+                    v => v <= 20 || "Nota não deve ser acima de 20 valores",
+                    v => v >= 0 || "Nota não deve ser abaixo de 20 valores"
+                ]
             }
         },
         mounted() {
@@ -42,6 +50,17 @@
             // Fetch University of Minho MIEI Courses
         },
         methods: {
+            subjectChosen() {
+                UserService.getSubject(this.process.instProv, this.process.cursoProv, this.equivalencia.ucRealizada)
+                    .then(response => {
+                        this.ucDestino = response.data;
+                        this.disabledInput = false;
+                        console.log(response.data);
+                    })
+                    .catch(err => console.log(err));
+            },
+
+
             handleSubmit(e) {
                 e.preventDefault();
 

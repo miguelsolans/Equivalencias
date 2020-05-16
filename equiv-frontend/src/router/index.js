@@ -13,7 +13,7 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('../components/Login'),
+        component: () => import('../components/LoginNew'),
 
     },
     {

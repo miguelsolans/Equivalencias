@@ -29,11 +29,18 @@ const equivalencias = new mongoose.Schema({
     },
     ects: {
         type: Number,
-        required: [true, "Deve especificar o numero de créditos"]
+        integer: true,
+        required: [true, "Deve especificar o numero inteiro de créditos"]
     },
     nota: {
         type: Number,
-        required: [true, "Deve definir uma nota (0 a 20) para a equivalencia do aluno"]
+        min: 0,
+        max: 20,
+        required: [true, "Deve definir uma nota (0 a 20) para a equivalencia do aluno"],
+        //validate:
+        // validators: {
+        //     message: props => `${props.value} deve especificar uma nova error...`
+        // }
     },
     anoLetivo: {
         type: String,
@@ -41,6 +48,8 @@ const equivalencias = new mongoose.Schema({
     },
     percent: {
         type: Number,
+        min: 0,
+        max: 100,
         required: true
     },
     ucEquiv: {
@@ -80,11 +89,11 @@ const processoSchema = new mongoose.Schema({
     },
     idAluno: {
         type: String,
-        required: [true, "Deve especificar "]
+        required: [true, "Deve especificar o identificador do aluno"]
     },
     nomeAluno: {
         type: String,
-        required: [true, "Deve especificar o nome do aluno!"]
+        required: [true, "Deve especificar o nome do aluno"]
     },
     instProv: {
         type: String,

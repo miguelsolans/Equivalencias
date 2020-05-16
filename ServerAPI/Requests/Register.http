@@ -10,6 +10,14 @@ Content-Type: application/json
 POST http://localhost:3030/user/register
 Content-Type: application/json
 
+{ "username": "diogoesnog", "password": "lol123", "email": "diogosilvanogueira97@gmail.com", "fullName": "Diogo Silva Nogueira" }
+
+###
+
+// New User
+POST http://localhost:3030/user/register
+Content-Type: application/json
+
 { "username": "dichico", "password": "passwordforte", "email": "dichico.dev@uminho.pt", "fullName": "Diogo Francisco Araújo Leite Costa" }
 
 ###

@@ -53,6 +53,8 @@
         mounted() {
             UserService.getProcessFiles( this.processId )
                 .then(response => {
+                    console.log("GET Files");
+                    console.log(response.data);
                     this.files = response.data
                 }).catch(err => console.log(err));
 
