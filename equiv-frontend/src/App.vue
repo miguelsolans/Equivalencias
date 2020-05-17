@@ -1,7 +1,7 @@
 <template>
     <v-app>
         <div v-if="loggedOn">
-            <Navbar></Navbar>
+            <NavbarNew></NavbarNew>
         </div>
         <main>
             <v-container class="fill-height" fluid>
@@ -12,10 +12,10 @@
 </template>
 
 <script>
-    import Navbar from './components/Navbar'
+    import NavbarNew from "./components/NavbarNew";
     export default {
         components: {
-            Navbar
+            NavbarNew
         },
         computed: {
             loggedOn() {
