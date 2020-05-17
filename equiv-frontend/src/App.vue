@@ -1,21 +1,19 @@
 <template>
     <v-app>
-        <div v-if="loggedOn">
-            <NavbarNew></NavbarNew>
-        </div>
-        <main>
-            <v-container class="fill-height" fluid>
-                <router-view/>
-            </v-container>
-        </main>
+        <v-container>
+            <div v-if="loggedOn">
+                <Navbar></Navbar>
+            </div>
+            <router-view/>
+        </v-container>
     </v-app>
 </template>
 
 <script>
-    import NavbarNew from "./components/NavbarNew";
+    import Navbar from "./components/Navbar";
     export default {
         components: {
-            NavbarNew
+            Navbar
         },
         computed: {
             loggedOn() {
