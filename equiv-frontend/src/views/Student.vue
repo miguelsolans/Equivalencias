@@ -4,13 +4,14 @@
             <h2>Gestão do Processo {{ process.processo }}</h2>
             <v-tabs>
                 <v-tab>Informações</v-tab>
-                <v-tab>Equivalencias</v-tab>
+                <v-tab>Equivalências</v-tab>
                 <v-tab>Formulário</v-tab>
                 <v-tab>Documentação</v-tab>
 
                 <v-tab-item>
                     <StudentInfo :process="process"/>
                 </v-tab-item>
+
                 <v-tab-item>
                     <Equivalences :equivalencias="process.equivalencias"/>
                 </v-tab-item>
@@ -25,9 +26,8 @@
             </v-tabs>
         </div>
         <div v-else>
-            <p>Não há dados</p>
+            <p>Não há dados para este processo de equivalência.</p>
         </div>
-
     </v-container>
 </template>
 
