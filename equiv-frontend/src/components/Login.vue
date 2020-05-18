@@ -1,48 +1,56 @@
 <template>
+    <v-container class="align-center justify-center">
+        <v-row cols="1" class="mb-5">
+            <v-col>
+                <div id ="app">
+                    <div id ="login">
 
-    <v-content>
-        <v-alert :value="showErrorAlert" dense outlined dismissible type="error" transition="slide-y-transition">
-            {{ message }}
-        </v-alert>
-        <v-container fluid full-height>
-            <v-layout align-center justify-center>
-                <v-flex xs12 sm8 md4>
-                    <v-card class="elevation-12">
-                        <v-toolbar color="teal" dark float>
-                            <v-toolbar-title>Login</v-toolbar-title>
-                            <v-spacer></v-spacer>
-                            <v-toolbar-title>Mantis</v-toolbar-title>
-                        </v-toolbar>
+                        <div id ="description" align="center">
+                            <p> Login </p>
+                            <img src="../assets/images/Logo.png" width=100% height=100% alt="Logótipo do projeto">
+                        </div>
 
-                        <v-card-text>
-                            <v-form>
-                                <v-text-field label="Username" name="username" v-model="user.username" type="text"></v-text-field>
+                        <div id ="form">
 
-                                <v-text-field label="Password" name="password" v-model="user.password" type="password" @keyup.enter="handleLogin"></v-text-field>
-                            </v-form>
-                        </v-card-text>
+                            <label for ="username">Username</label>
+                            <input type ="text" id ="username" v-model ="user.username" placeholder= "Insert Username">
 
-                        <v-card-actions>
-                            <v-spacer></v-spacer>
-                            <v-btn color="teal" dark @click="handleLogin">Login</v-btn>
-                        </v-card-actions>
-                    </v-card>
-                </v-flex>
-            </v-layout>
-        </v-container>
-    </v-content>
+                            <label for ="password">Password</label>
+                            <input type ="password" id ="password" v-model ="user.password" placeholder ="●●●●●●●●●●●●" @keyup.enter ="handleLogin">
+
+                            <font-awesome-icon icon="sign-in-alt" />
+                            <button type ="submit" @click ="handleLogin">Log in</button>
+
+                        </div>
+
+                    </div>
+                </div>
+            </v-col>
+        </v-row>
+
+        <v-row cols="1" align="center" justify="center">
+            <v-col md="7" sm="9">
+                <v-alert v-model="errorAlert" prominent align="center" dismissible elevation="12" type ="error" transition ="slide-y-reverse-transition">
+                    {{ message }}
+                </v-alert>
+            </v-col>
+        </v-row>
+    
+    </v-container>
+
 </template>
 
 <script>
+
     import User from '../models/user';
 
     export default {
         name: "Login",
-        data: () => {
+        data: ()  => {
             return {
                 user: new User('', ''),
-                message: '',
-                showErrorAlert: false
+                message: 'Os dados inseridos encontram-se incorretos.',
+                errorAlert: false
             }
         },
         computed: {
@@ -60,12 +68,10 @@
                 e.preventDefault();
 
                 this.$store.dispatch('auth/login', this.user)
-                    .then(() => {
+                    .then(()  => {
                         this.$router.push('/dashboard');
-                    }, error => {
-                        this.$swal.fire("Erro na autenticação do utilizador", "", "error");
-                        this.message = error;
-                        this.showErrorAlert = true;
+                    }, error  => {
+                        this.errorAlert  = true;
                         console.log(error);
                     })
             }
@@ -73,6 +79,127 @@
     }
 </script>
 
+
 <style scoped>
+
+    * {
+    font-family: 'Rubik', sans-serif;
+    }
+
+    html,
+    body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    }
+
+    div#app {
+    width: 100%;
+    height: 100%;
+    }
+
+    div#app div#login {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    }
+
+    div#app div#login div#description {
+    background-color: #ffffff;
+    width: 280px;
+    padding: 35px;
+    }
+
+    div#app div#login div#description h1,
+    div#app div#login div#description p {
+    margin: 0;
+    }
+
+    div#app div#login div#description p {
+    font-family: 'Secular One', sans-serif;
+    font-size: 5em;
+    color: #95a5a6;
+    margin-top: 10px;
+    }
+
+    div#app div#login div#form {
+    background-image: linear-gradient(to bottom,#33cc99, #238e64);
+    border-radius: 5px;
+    box-shadow: 0 0 30px 0 #666;
+    color: #ecf0f1;
+    width: 260px;
+    padding: 35px;
+    }
+
+    div#app div#login div#form label,
+    div#app div#login div#form input {
+    outline: none;
+    width: 100%;
+    }
+
+    div#app div#login div#form label {
+    color: #95a5a6;
+    font-size: 0.8em;
+    }
+
+    div#app div#login div#form input {
+    background-color: transparent;
+    border: none;
+    color: #ecf0f1;
+    font-size: 1em;
+    margin-bottom: 20px;
+    }
+
+    div#app div#login div#form ::placeholder {
+    color: #ecf0f1;
+    opacity: 1;
+    }
+
+    div#app div#login div#form button {
+    background-color: #ffffff;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+    }
+
+    div#app div#login div#form button:hover {
+    background-color: #eeeeee;
+    }
+
+    @media screen and (max-width: 600px) {
+    div#app div#login {
+        align-items: unset;
+        background-color: unset;
+        display: unset;
+        justify-content: unset;
+    }
+
+    div#app div#login div#description {
+        margin: 0 auto;
+        max-width: 350px;
+        width: 100%;
+    }
+
+    div#app div#login div#form {
+        background-image: linear-gradient(to bottom,#33cc99, #238e64);
+        border-radius: 5px;
+        -webkit-box-shadow: 0 0 30px 0 #666;
+        box-shadow: 0 0 30px 0 #666;
+        color: #ecf0f1;
+        width: 100%;
+        padding: 35px;
+    }
+
+    div#app div#login div#form form {
+        margin: 0 auto;
+        max-width: 280px;
+        width: 100%;
+    }
+    }
 
 </style>
