@@ -26,7 +26,18 @@
             </v-tabs>
         </div>
         <div v-else>
-            <p>Não há dados para este processo de equivalência.</p>
+
+            <v-dialog v-model="error" persistent max-width="350">
+                <v-card>
+                    <v-card-title class="headline">Processo não encontrado.</v-card-title>
+                    <v-card-text>{{textoErro}}</v-card-text>
+                    <v-card-actions>
+                        <v-spacer></v-spacer>
+                        <v-btn color="red darken-1" text @click="voltarAtras">Voltar Atrás</v-btn>
+                    </v-card-actions>
+                </v-card>
+            </v-dialog>
+
         </div>
     </v-container>
 </template>
@@ -47,7 +58,8 @@
             return {
                 id: this.$route.params.id,
                 process: null,
-                error: null
+                error: null,
+                textoErro: "Este processo não se encontra presente no servidor. Por favor tente novamente mais tarde."
             }
         },
         components: { StudentInfo, Equivalences, NewEquivalence, ProcessFiles },
@@ -56,7 +68,6 @@
                 .then(response => {
                     this.process = response.data;
                 }).catch(err => {
-                    // TODO: Handle error in view
                     this.error = err;
                     console.log(err);
             })
@@ -66,6 +77,10 @@
             newEquivalence(equivalence) {
                 console.log("/student Parent new Equivalence");
                 this.process.equivalencias.push(equivalence);
+            },
+            voltarAtras() {
+                this.$router.push('/login')
+                .catch(err => console.log(err));
             }
         }
     }
