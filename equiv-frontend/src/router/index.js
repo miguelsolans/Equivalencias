@@ -19,7 +19,7 @@ const routes = [
     {
         path: '/dashboard',
         name: 'dashboard',
-        component: () => import('../views/Dashboard'),
+        component: () => import('../views/DashboardPage'),
         meta: {
             requiresAuth: true
         }
@@ -27,7 +27,7 @@ const routes = [
     {
         path: '/process/:id',
         name: 'process',
-        component: () => import ('../views/Student'),
+        component: () => import ('../views/StudentPage'),
         meta: {
             requiresAuth: true
         }

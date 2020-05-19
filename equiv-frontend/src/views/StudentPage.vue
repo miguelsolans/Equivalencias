@@ -46,10 +46,10 @@
     // Data API Class
     import UserService from '../services/user.service';
     // Load Views
-    import StudentInfo from '../components/StudentInfo';
-    import Equivalences from '../components/ProcessEquivalences';
-    import NewEquivalence from '../components/NewEquivalence';
-    import ProcessFiles from '../components/ProcessFiles';
+    import StudentInfo from '../components/StudentPage/StudentInfo';
+    import Equivalences from '../components/StudentPage/ProcessEquivalences';
+    import NewEquivalence from '../components/StudentPage/NewEquivalence';
+    import ProcessFiles from '../components/StudentPage/ProcessFiles';
 
 
     export default {

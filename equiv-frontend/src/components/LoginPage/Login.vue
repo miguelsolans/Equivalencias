@@ -7,7 +7,7 @@
 
                         <div id ="description" align="center">
                             <p> Login </p>
-                            <img src="../assets/images/Logo.png" width=100% height=100% alt="Logótipo do projeto">
+                            <img src="../../assets/images/Logo.png" width=100% height=100% alt="Logótipo do projeto">
                         </div>
 
                         <div id ="form">
@@ -42,7 +42,7 @@
 
 <script>
 
-    import User from '../models/user';
+    import User from '../../models/user';
 
     export default {
         name: "Login",

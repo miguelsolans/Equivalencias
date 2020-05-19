@@ -13,7 +13,7 @@
                                 <img :src="process.avatar">
                             </v-list-item-avatar>
                             <v-list-item-avatar v-else-if="!process.avatar">
-                                <img src="../assets/images/User.png">
+                                <img src="../../assets/images/User.png">
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title v-html="process.nomeAluno"></v-list-item-title>
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-    import UserService from '../services/user.service'
+    import UserService from '../../services/user.service'
     export default {
         name: "ListProcess",
         data() {

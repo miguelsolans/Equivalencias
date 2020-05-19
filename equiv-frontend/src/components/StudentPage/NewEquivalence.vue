@@ -21,8 +21,8 @@
 </template>
 
 <script>
-    import Equivalencia from '../models/equivalencia';
-    import UserService from '../services/user.service';
+    import Equivalencia from '../../models/equivalencia';
+    import UserService from '../../services/user.service';
     export default {
         name: "NewEquivalence",
         props: ["process"],

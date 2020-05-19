@@ -18,8 +18,8 @@
 </template>
 
 <script>
-    import NewProcess from '../components/NewProcess';
-    import ListProcess from '../components/ListProcess';
+    import NewProcess from '../components/DashboardPage/NewProcess';
+    import ListProcess from '../components/DashboardPage/ListProcess';
     export default {
         name: "Dashboard",
         components: {

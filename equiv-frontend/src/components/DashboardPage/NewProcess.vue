@@ -29,8 +29,8 @@
 </template>
 
 <script>
-    import Processo from '../models/processo';
-    import UserService from '../services/user.service';
+    import Processo from '../../models/processo';
+    import UserService from '../../services/user.service';
 
     export default {
         name: "ListaProcessos",
