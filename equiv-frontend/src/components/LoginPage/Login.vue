@@ -6,8 +6,7 @@
                     <div id ="login">
 
                         <div id ="description" align="center">
-                            <p> Login </p>
-                            <img src="../../assets/images/Logo.png" width=100% height=100% alt="Logótipo do projeto">
+                            <img src="../../assets/images/Login.png" width=100% height=100% alt="Logótipo do projeto">
                         </div>
 
                         <div id ="form">
@@ -35,6 +34,7 @@
                                 color="teal lighten-5"
                                 placeholder="Insira a palavra-passe"
                                 @click:append="showPassword = !showPassword"
+                                @keyup.enter="handleLogin"
                                 required
                             ></v-text-field>
 
@@ -166,8 +166,7 @@
 
     div#app div#login div#description {
     background-color: #ffffff;
-    width: 280px;
-    padding: 35px;
+    width: 40%;
     }
 
     div#app div#login div#description h1,
@@ -177,13 +176,19 @@
 
     div#app div#login div#description p {
     font-family: 'Secular One', sans-serif;
-    font-size: 5em;
-    color: #95a5a6;
+    font-size: 4em;
+    color: #238e64;
+    margin-top: 10px;
+    }
+
+    div#app div#login div#description p1 {
+    font-size: 1em;
+    color: #696969;
     margin-top: 10px;
     }
 
     div#app div#login div#form {
-    background-image: linear-gradient(to bottom,#33cc99, #238e64);
+    background-image: linear-gradient(to bottom,#38c087, #177452);
     border-radius: 8px;
     box-shadow: 0 0 30px 0 #A8A8A8;
     color: white;
@@ -242,12 +247,11 @@
 
     div#app div#login div#description {
         margin: 0 auto;
-        max-width: 350px;
         width: 100%;
     }
 
     div#app div#login div#form {
-        background-image: linear-gradient(to bottom,#33cc99, #238e64);
+        background-image: linear-gradient(to bottom,#38c087, #177452);
         border-radius: 8px;
         box-shadow: 0 0 30px 0 #A8A8A8;
         color: #ecf0f1;

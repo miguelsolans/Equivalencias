@@ -28,6 +28,6 @@
 
 <style scoped>
 
-    @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap%27');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap');
 
 </style>
