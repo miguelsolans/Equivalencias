@@ -22,6 +22,13 @@
         },
         mounted() {
             console.log("MOUNTED " + process.env.VUE_APP_API_SERVER)
+        },
+        watch: {
+            $route(to) {
+                document.title = `${to.meta.title}`;
+                const link = document.querySelector("[rel='icon']")
+                link.setAttribute('href',to.meta.icon)
+            }
         }
     }
 </script>
