@@ -39,7 +39,7 @@
                             ></v-text-field>
 
                             <div class="text-center">
-                                <v-btn rounded color="teal lighten-5" @click ="handleLogin">Sign In</v-btn>
+                                <v-btn rounded color="teal lighten-5" @click ="handleLogin">Iniciar Sessão  </v-btn>
                             </div>
                         </div>
 
@@ -69,7 +69,7 @@
         data: ()  => {
             return {
                 user: new User('', ''),
-                message: 'Username e/ou Password inválidos.',
+                message: 'Username e/ou Palavra-Passe inválidos.',
                 errorAlert: false,
                 username: '',
                 showPassword: false,
@@ -166,7 +166,7 @@
 
     div#app div#login div#description {
     background-color: #ffffff;
-    width: 40%;
+    width: 35%;
     }
 
     div#app div#login div#description h1,

@@ -15,7 +15,8 @@ const routes = [
         name: 'login',
         component: () => import('../views/LoginPage'),
         meta: {
-            title: 'Login'
+            title: 'Login',
+            icon: '../views/Favicon.ico'
         }
 
     },
