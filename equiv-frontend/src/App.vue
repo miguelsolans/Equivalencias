@@ -1,11 +1,11 @@
 <template>
     <v-app>
-        <v-container>
+        <v-content>
             <div v-if="loggedOn">
                 <Navbar></Navbar>
             </div>
             <router-view/>
-        </v-container>
+        </v-content>
     </v-app>
 </template>
 
@@ -22,12 +22,19 @@
         },
         mounted() {
             console.log("MOUNTED " + process.env.VUE_APP_API_SERVER)
+        },
+        watch: {
+            $route(to) {
+                document.title = `${to.meta.title}`;
+                const link = document.querySelector("[rel='icon']")
+                link.setAttribute('href',to.meta.icon)
+            }
         }
     }
 </script>
 
 <style scoped>
 
-    @import url('https://fonts.googleapis.com/css2?family=Rubik&family=Secular+One&display=swap%27');
+    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap');
 
 </style>

@@ -13,13 +13,17 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('../components/LoginNew'),
+        component: () => import('../views/LoginPage'),
+        meta: {
+            title: 'Login',
+            icon: '../views/Favicon.ico'
+        }
 
     },
     {
         path: '/dashboard',
         name: 'dashboard',
-        component: () => import('../views/Dashboard'),
+        component: () => import('../views/DashboardPage'),
         meta: {
             requiresAuth: true
         }
@@ -27,7 +31,7 @@ const routes = [
     {
         path: '/process/:id',
         name: 'process',
-        component: () => import ('../views/Student'),
+        component: () => import ('../views/StudentPage'),
         meta: {
             requiresAuth: true
         }
