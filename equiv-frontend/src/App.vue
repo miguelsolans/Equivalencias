@@ -34,9 +34,11 @@
 </script>
 
 <style scoped>
+
     @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap");
 
     * {
         font-family: "Rubik", sans-serif;
     }
+
 </style>

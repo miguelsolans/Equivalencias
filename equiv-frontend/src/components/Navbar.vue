@@ -1,12 +1,12 @@
 <template>
     <v-container>
         <v-app-bar
-                app
-                color="#313131"
-                dark
-                dense
-                short
-                elevate-on-scroll
+            app
+            color="#313131"
+            dark
+            dense
+            short
+            elevate-on-scroll
         >
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
@@ -19,16 +19,17 @@
 
             <div class="text-center mx-1">
                 <v-btn
-                        rounded
-                        elevation="0"
-                        text color="#fff"
-                        dark
+                    href="/"
+                    rounded
+                    elevation="0"
+                    text color="#fff"
+                    dark
                 >
                     <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
+                        class="text-capitalize
+                        mx-1 
+                        d-none 
+                        d-sm-flex"
                     >
                         <strong>Página Inicial</strong>
                     </text-area>
@@ -40,17 +41,17 @@
 
             <div class="text-center mx-1">
                 <v-btn
-                        rounded
-                        elevation="0"
-                        text
-                        color="#fff"
-                        dark
+                    rounded
+                    elevation="0"
+                    text
+                    color="#fff"
+                    dark
                 >
                     <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
+                        class="text-capitalize
+                        mx-1 
+                        d-none 
+                        d-sm-flex"
                     >
                         <strong>Definições</strong>
                     </text-area>
@@ -62,16 +63,16 @@
 
             <div class="text-center mx-1" @click="logoutAlert = true">
                 <v-btn
-                        rounded
-                        elevation="0"
-                        text color="#32b37d"
-                        dark
+                    rounded
+                    elevation="0"
+                    text color="#32b37d"
+                    dark
                 >
                     <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
+                        class="text-capitalize
+                        mx-1 
+                        d-none 
+                        d-sm-flex"
                     >
                         <strong>Sair</strong>
                     </text-area>
@@ -120,23 +121,26 @@
 
 <style scoped>
 
+    /* CSS a ser aplicado a toda a Navbar */
     * {
         font-size: 13px;
     }
 
+    /* Mudar o tamanho dos ícones */
     .v-btn > .v-btn__content .v-icon {
         font-size: 20px;
     }
 
+    /* Efeito hover do Logo aplicado */
     .imgLogo {
-        width: 100%;
-        -webkit-filter: drop-shadow(1px 1px 1px #222);
-        filter: drop-shadow(1px 1px 1px #222);
+    width: 100%;
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
     }
 
     .imgLogo:hover {
-        -webkit-filter: drop-shadow(0px 1px 3px #187754);
-        filter: drop-shadow(0px 1px 3px #187754);
+    -webkit-filter: drop-shadow(0px 1px 3px #187754);
+    filter: drop-shadow(0px 1px 3px #187754);
     }
 
 </style>

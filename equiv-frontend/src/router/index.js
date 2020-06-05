@@ -15,8 +15,7 @@ const routes = [
         name: 'login',
         component: () => import('../views/LoginPage'),
         meta: {
-            title: 'Login',
-            icon: '../views/Favicon.ico'
+            title: 'Login'
         }
 
     },
@@ -25,13 +24,14 @@ const routes = [
         name: 'dashboard',
         component: () => import('../views/DashboardPage'),
         meta: {
-            requiresAuth: true
+            requiresAuth: true,
+            title: 'Mantis'
         }
     },
     {
         path: '/process/:id',
         name: 'process',
-        component: () => import ('../views/StudentPage'),
+        component: () => import('../views/StudentPage'),
         meta: {
             requiresAuth: true
         }
@@ -48,12 +48,12 @@ const router = new VueRouter({
  * Navigation Guards
  */
 router.beforeEach((to, from, next) => {
-    if(to.matched.some(record => record.meta.requiresAuth)) {
-        if(VueCookies.get('userToken') === null) {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        if (VueCookies.get('userToken') === null) {
             Store.dispatch('auth/logout');
 
             next('/login');
-        }  else {
+        } else {
             next();
         }
     } else {

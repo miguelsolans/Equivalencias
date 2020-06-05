@@ -13,7 +13,9 @@
 </script>
 
 <style scoped>
+
     * {
         font-family: "Rubik", sans-serif;
     }
+    
 </style>
