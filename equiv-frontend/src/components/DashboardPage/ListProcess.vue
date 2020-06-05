@@ -1,22 +1,27 @@
 <template>
-    <v-container>
+    <v-container fill-height fluid>
         <v-text-field
             outlined
             rounded
             dense
             clearable
-            color="success"
-            placeholder="Procurar Processo Equivalência"
+            color="#32b37d"
+            append-icon="mdi-magnify"
+            placeholder="Procurar Processo Equivalência..."
+            @click:clear="clearSearch"
         ></v-text-field>
-        <v-card>
-            <!--                <v-text-field class="mx-3" flat label="Procurar..." solo-inverted v-model="search" clearable @click:clear="clearSearch"></v-text-field>-->
+        <v-card rounded>
+            <text-area
+                class="font-weight-bold
+                px-5"
+            >
+                Lista de Processos
+            </text-area>
             <v-list two-line>
-                <h2>Lista de Processos</h2>
-
                 <template v-for="(process, index) in processes">
                     <v-list-item
-                            :key="process.processo"
-                            :to="{ name: 'process', params: { id: process._id } }"
+                        :key="process.processo"
+                        :to="{ name: 'process', params: { id: process._id } }"
                     >
                         <v-list-item-avatar v-if="process.avatar">
                             <img :src="process.avatar" />
@@ -26,7 +31,8 @@
                         </v-list-item-avatar>
                         <v-list-item-content>
                             <v-list-item-title
-                                    v-html="process.nomeAluno"
+                                class="font-weight-bold" 
+                                v-html="process.nomeAluno"
                             ></v-list-item-title>
                             <v-list-item-subtitle>
                                 <span>Número de Processo: </span> {{ process.processo }}
@@ -74,14 +80,21 @@
 </script>
 
 <style scoped>
+
+    /* Mudar o tamanho do Avatar de cada processo */
     .v-image {
         max-width: 150px;
     }
-    /*
-         * I'm just trying something here, don't get rid of that yet
-         */
+
+    /* Alterar o border-radius do card da Lista de Processos */
+    .v-card:not(.v-sheet--tile):not(.v-card--shaped) {
+        border-radius: 10px;
+    }
+
+    /* Alterar altura do card da Lista de Processos */
+    /* Feito para caber apenas 4 processos visíveis */
     .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
-        height: 550px;
+        height: 330px;
         overflow-y: auto;
     }
 </style>

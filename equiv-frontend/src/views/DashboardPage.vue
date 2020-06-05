@@ -5,7 +5,6 @@
                     <ListProcess/>
                 </v-flex>
                 <v-flex md8>
-                    <v-divider inset vertical></v-divider>
                     <NewProcess/>
                 </v-flex>
             </v-layout>
@@ -26,10 +25,7 @@
 
 <style scoped>
 
-    .logo-img {
-        max-width: 500px;
-    }
-        
+    /* CSS a ser aplicado a toda a Dashboard */
     * {
     font-family: 'Rubik', sans-serif;
     }

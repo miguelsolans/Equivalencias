@@ -84,7 +84,7 @@
 
         <v-dialog v-model="logoutAlert" persistent max-width="350">
             <v-card>
-                <v-card-title class="headline">Deseja terminar sessão?</v-card-title>
+                <v-card-title class="headline">Terminar Sessão?</v-card-title>
                 <v-card-text>Todos as suas alterações não guardadas serão perdidas.</v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="green darken-1" text @click="logoutAlert = false">Voltar Atrás</v-btn>
