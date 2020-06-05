@@ -65,7 +65,8 @@
                 <v-btn
                     rounded
                     elevation="0"
-                    text color="#32b37d"
+                    text 
+                    color="#32b37d"
                     dark
                 >
                     <text-area

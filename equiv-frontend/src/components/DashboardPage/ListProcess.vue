@@ -1,5 +1,5 @@
 <template>
-    <v-container fill-height fluid>
+    <v-container>
         <v-text-field
             outlined
             rounded

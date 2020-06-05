@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <h3>Criar Processo</h3>
+        <h3>Registar Novo Processo</h3>
         <v-form>
             <v-text-field 
                 placeholder="Identificador do Processo" 
@@ -50,19 +50,48 @@
                 v-model="student.cursoProv"
                 class="mx-2"
             ></v-text-field>
-            <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2" label ="Curso ainda não existe"></v-checkbox>
-
-            <!--            <v-text-field placeholder="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
-
-             <!-- <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
-            <v-divider  class="mx-4" inset vertical></v-divider>
-            <v-btn color="normal" @click="resetForm">Cancelar</v-btn> -->
+            
+            <v-row class="text-right">
+                <v-col>
+                    <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2 my-2" label ="Curso Inexistente"/>
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="mx-2" 
+                        color="#197855"
+                        dark
+                        @click="handleSubmit"
+                    >
+                        <text-area
+                            class="text-capitalize
+                            mx-1 
+                            d-none 
+                            d-sm-flex"
+                        >
+                            <strong>Criar Processo</strong>
+                        </text-area>
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                    <v-btn
+                        rounded
+                        class="mx-2" 
+                        color="#39c087"
+                        dark
+                        fab
+                        small
+                        @click="resetForm"
+                    >
+                        <v-icon>mdi-cached</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
         </v-form>
     </v-container>
-
 </template>
 
 <script>
+
     import Processo from '../../models/processo';
     import UserService from '../../services/user.service';
 
@@ -136,10 +165,13 @@
             }
         }
     }
+
 </script>
 
 <style scoped>
+
     .container {
         max-width: 700px;
     }
+
 </style>
