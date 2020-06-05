@@ -16,6 +16,6 @@ COPY . .
 EXPOSE 3030
 
 # Run App
-CMD [ "npm", "test" ]
+CMD [ "npm", "start" ]
 
 
