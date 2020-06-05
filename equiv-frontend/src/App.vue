@@ -4,7 +4,7 @@
             <div v-if="loggedOn">
                 <Navbar></Navbar>
             </div>
-            <router-view/>
+            <router-view />
         </v-content>
     </v-app>
 </template>
@@ -21,20 +21,22 @@
             }
         },
         mounted() {
-            console.log("MOUNTED " + process.env.VUE_APP_API_SERVER)
+            console.log("MOUNTED " + process.env.VUE_APP_API_SERVER);
         },
         watch: {
             $route(to) {
                 document.title = `${to.meta.title}`;
-                const link = document.querySelector("[rel='icon']")
-                link.setAttribute('href',to.meta.icon)
+                const link = document.querySelector("[rel='icon']");
+                link.setAttribute("href", to.meta.icon);
             }
         }
-    }
+    };
 </script>
 
 <style scoped>
+    @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap");
 
-    @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap');
-
+    * {
+        font-family: "Rubik", sans-serif;
+    }
 </style>

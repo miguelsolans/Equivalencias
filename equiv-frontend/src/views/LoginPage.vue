@@ -1,6 +1,6 @@
 <template>
     <v-container class="fill-height" fluid>
-            <Login></Login>
+        <Login></Login>
     </v-container>
 </template>
 
@@ -8,10 +8,12 @@
     import Login from "../components/LoginPage/Login";
     export default {
         name: "LoginPage",
-        components: {Login}
-    }
+        components: { Login }
+    };
 </script>
 
 <style scoped>
-
+    * {
+        font-family: "Rubik", sans-serif;
+    }
 </style>

@@ -1,54 +1,85 @@
 <template>
-    <v-container class="mb-7">
+    <v-container>
         <v-app-bar
                 app
-                color="teal"
+                color="#313131"
                 dark
+                dense
+                short
+                elevate-on-scroll
         >
-            <v-btn icon large :to="{ name: 'dashboard' }">
-                <v-icon>mdi-home</v-icon>
-            </v-btn>
-            <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
-                <span>MANTIS</span>
-            </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon large @click.stop="drawer = !drawer">
-                <v-avatar size="32px" icon>
-                    <v-icon>mdi-account-cog</v-icon>
-                </v-avatar>
-            </v-btn>
+            <v-toolbar-title style="width: 160px">
+                <a href="/">
+                    <img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/>
+                </a>
+            </v-toolbar-title>
+
+            <v-spacer></v-spacer>
+
+            <div class="text-center mx-1">
+                <v-btn
+                        rounded
+                        elevation="0"
+                        text color="#fff"
+                        dark
+                >
+                    <text-area
+                            class="text-capitalize
+            mx-1 
+            d-none 
+            d-sm-flex"
+                    >
+                        <strong>Página Inicial</strong>
+                    </text-area>
+                    <v-icon>mdi-home-variant</v-icon>
+                </v-btn>
+            </div>
+
+            <v-divider inset vertical></v-divider>
+
+            <div class="text-center mx-1">
+                <v-btn
+                        rounded
+                        elevation="0"
+                        text
+                        color="#fff"
+                        dark
+                >
+                    <text-area
+                            class="text-capitalize
+            mx-1 
+            d-none 
+            d-sm-flex"
+                    >
+                        <strong>Definições</strong>
+                    </text-area>
+                    <v-icon>mdi-cog</v-icon>
+                </v-btn>
+            </div>
+
+            <v-divider inset vertical></v-divider>
+
+            <div class="text-center mx-1" @click="logoutAlert = true">
+                <v-btn
+                        rounded
+                        elevation="0"
+                        text color="#32b37d"
+                        dark
+                >
+                    <text-area
+                            class="text-capitalize
+            mx-1 
+            d-none 
+            d-sm-flex"
+                    >
+                        <strong>Sair</strong>
+                    </text-area>
+                    <v-icon>mdi-logout-variant</v-icon>
+                </v-btn>
+            </div>
+            <v-spacer></v-spacer>
         </v-app-bar>
-
-        <v-navigation-drawer
-                v-model="drawer"
-                right
-                app
-                false
-        >
-            <v-list-item-group>
-
-                <v-list-item>
-                    <v-list-item-icon>
-                        <v-icon>mdi-account-cog</v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title>Definições</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
-                <v-list-item @click="logoutAlert = true">
-                    <v-list-item-icon>
-                        <v-icon>mdi-logout</v-icon>
-                    </v-list-item-icon>
-
-                    <v-list-item-content>
-                        <v-list-item-title>Terminar Sessão</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-
-            </v-list-item-group>
-        </v-navigation-drawer>
 
         <v-dialog v-model="logoutAlert" persistent max-width="350">
             <v-card>
@@ -61,24 +92,51 @@
             </v-card>
         </v-dialog>
     </v-container>
-
 </template>
 
 <script>
+
     export default {
+
         props: {
-            source: String,
+            source: String
         },
+
         data: () => ({
-            drawer: false,
             logoutAlert: false
         }),
+
         methods: {
             handleLogout() {
-                this.$store.dispatch('auth/logout')
-                    .then(() => this.$router.push('/login'))
+                this.$store
+                    .dispatch("auth/logout")
+                    .then(() => this.$router.push("/login"))
                     .catch(err => console.log(err));
             }
         }
-    }
+    };
+
 </script>
+
+<style scoped>
+
+    * {
+        font-size: 13px;
+    }
+
+    .v-btn > .v-btn__content .v-icon {
+        font-size: 20px;
+    }
+
+    .imgLogo {
+        width: 100%;
+        -webkit-filter: drop-shadow(1px 1px 1px #222);
+        filter: drop-shadow(1px 1px 1px #222);
+    }
+
+    .imgLogo:hover {
+        -webkit-filter: drop-shadow(0px 1px 3px #187754);
+        filter: drop-shadow(0px 1px 3px #187754);
+    }
+
+</style>

@@ -138,10 +138,6 @@
     .form-input >>> .v-icon {
         color: white;
     }
-    
-    * {
-    font-family: 'Rubik', sans-serif;
-    }
 
     html,
     body {

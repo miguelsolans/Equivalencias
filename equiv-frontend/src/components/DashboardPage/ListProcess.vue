@@ -2,27 +2,37 @@
     <v-container>
         <v-container>
             <v-card>
-                <v-text-field outlined clearable color="success" label="Procurar..."></v-text-field>
-<!--                <v-text-field class="mx-3" flat label="Procurar..." solo-inverted v-model="search" clearable @click:clear="clearSearch"></v-text-field>-->
+                <v-text-field
+                        outlined
+                        clearable
+                        color="success"
+                        label="Procurar..."
+                ></v-text-field>
+                <!--                <v-text-field class="mx-3" flat label="Procurar..." solo-inverted v-model="search" clearable @click:clear="clearSearch"></v-text-field>-->
                 <v-list two-line>
                     <h2>Lista de Processos</h2>
 
                     <template v-for="(process, index) in processes">
-                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process._id }}">
+                        <v-list-item
+                                :key="process.processo"
+                                :to="{ name: 'process', params: { id: process._id } }"
+                        >
                             <v-list-item-avatar v-if="process.avatar">
-                                <img :src="process.avatar">
+                                <img :src="process.avatar" />
                             </v-list-item-avatar>
                             <v-list-item-avatar v-else-if="!process.avatar">
-                                <img src="../../assets/images/User.png">
+                                <img src="../../assets/images/User.png" />
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title v-html="process.nomeAluno"></v-list-item-title>
+                                <v-list-item-title
+                                        v-html="process.nomeAluno"
+                                ></v-list-item-title>
                                 <v-list-item-subtitle>
-                                    <span>Número de Processo: </span> {{process.processo}}
+                                    <span>Número de Processo: </span> {{ process.processo }}
                                 </v-list-item-subtitle>
 
                                 <v-list-item-subtitle>
-                                    <span>Número de Aluno: </span> {{process.idAluno}}
+                                    <span>Número de Aluno: </span> {{ process.idAluno }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
@@ -35,32 +45,32 @@
 </template>
 
 <script>
-    import UserService from '../../services/user.service'
+    import UserService from "../../services/user.service";
     export default {
         name: "ListProcess",
         data() {
             return {
-                search: '',
+                search: "",
                 processes: null,
-                message: ''
-            }
+                message: "",
+            };
         },
         created() {
-            this.$on('newProcess', data => this.processes.push(data) );
+            this.$on("newProcess", (data) => this.processes.push(data));
         },
         mounted() {
             UserService.listProcesses()
-                .then(response => this.processes = response.data)
-                .catch(err => {
+                .then((response) => (this.processes = response.data))
+                .catch((err) => {
                     this.message = err;
                 });
         },
         methods: {
-            clearSearch () {
-                this.search="";
-            }
-        }
-    }
+            clearSearch() {
+                this.search = "";
+            },
+        },
+    };
 </script>
 
 <style scoped>
@@ -68,8 +78,8 @@
         max-width: 150px;
     }
     /*
-     * I'm just trying something here, don't get rid of that yet
-     */
+         * I'm just trying something here, don't get rid of that yet
+         */
     .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
         height: 550px;
         overflow-y: auto;

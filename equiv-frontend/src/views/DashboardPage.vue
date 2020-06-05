@@ -33,4 +33,8 @@
     .logo-img {
         max-width: 500px;
     }
+        
+    * {
+    font-family: 'Rubik', sans-serif;
+    }
 </style>
