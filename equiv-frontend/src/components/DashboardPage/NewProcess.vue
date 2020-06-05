@@ -1,28 +1,62 @@
 <template>
     <v-container>
-        <v-row align="center">
-            <h2 class="text-center">Novo Processo</h2>
-        </v-row>
+        <h3>Criar Processo</h3>
         <v-form>
-            <v-text-field label="Identificador do Processo" type="text" v-model="student.processo" required></v-text-field>
+            <v-text-field 
+                placeholder="Identificador do Processo" 
+                type="text" 
+                v-model="student.processo" 
+                class="mx-2"
+                required
+            ></v-text-field>
+            <v-text-field 
+                placeholder="Identificador do Aluno" 
+                type="text" v-model="student.idAluno" 
+                class="mx-2"
+                required
+            ></v-text-field>
+            <v-text-field 
+                placeholder="Nome Completo do Aluno" 
+                type="text" 
+                v-model="student.nomeAluno" 
+                class="mx-2"
+                required
+            ></v-text-field>
 
-            <v-text-field label="Identificador do Aluno" type="text" v-model="student.idAluno" required></v-text-field>
+<!--            <v-text-field placeholder="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
 
-            <v-text-field label="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" required></v-text-field>
+            <v-autocomplete 
+                v-model="student.instProv" 
+                placeholder="Instituição Proveniente" 
+                type="text" 
+                :items="universities" 
+                item-text="nomeInstit" 
+                @change="universityChosen"
+                class="mx-2"
+            ></v-autocomplete>
 
-<!--            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
+            <v-autocomplete 
+                v-if="!course.enableInput && !course.doesntExist" 
+                v-model="student.cursoProv" 
+                placeholder="Curso Proveniente" 
+                :items="course.courses" 
+                item-text="cursoProv" 
+                :disabled="course.disableAutocomplete"
+                class="mx-2"
+            ></v-autocomplete>
+            <v-text-field 
+                v-else-if="course.enableInput || course.doesntExist" 
+                placeholder="Curso Proveniente" 
+                v-model="student.cursoProv"
+                class="mx-2"
+            ></v-text-field>
+            <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2" label ="Curso ainda não existe"></v-checkbox>
 
-            <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
+            <!--            <v-text-field placeholder="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
 
-            <v-autocomplete v-if="!course.enableInput && !course.doesntExist" v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disableAutocomplete"></v-autocomplete>
-            <v-text-field v-else-if="course.enableInput || course.doesntExist" label="Curso Proveniente" v-model="student.cursoProv"></v-text-field>
-            <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2" label="Curso ainda não existe"></v-checkbox>
-
-            <!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
-
-            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
+             <!-- <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
             <v-divider  class="mx-4" inset vertical></v-divider>
-            <v-btn color="normal" @click="resetForm">Cancelar</v-btn>
+            <v-btn color="normal" @click="resetForm">Cancelar</v-btn> -->
         </v-form>
     </v-container>
 

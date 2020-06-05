@@ -11,13 +11,7 @@
             @click:clear="clearSearch"
         ></v-text-field>
         <v-card rounded>
-            <text-area
-                class="font-weight-bold
-                px-5"
-            >
-                Lista de Processos
-            </text-area>
-            <v-list two-line>
+            <v-list rounded two-line>
                 <template v-for="(process, index) in processes">
                     <v-list-item
                         :key="process.processo"
@@ -94,7 +88,7 @@
     /* Alterar altura do card da Lista de Processos */
     /* Feito para caber apenas 4 processos visíveis */
     .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
-        height: 330px;
+        height: 350px;
         overflow-y: auto;
     }
 </style>
