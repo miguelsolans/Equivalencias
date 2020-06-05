@@ -1,33 +1,81 @@
 <template>
-  <v-container class="mb-7">
-    <v-app-bar app color="#313131" dark dense short elevate-on-scroll>
+  <v-container>
+    <v-app-bar 
+      app 
+      color="#313131" 
+      dark 
+      dense 
+      short 
+      elevate-on-scroll
+    >
       <v-spacer></v-spacer>
       <v-toolbar-title style="width: 160px">
-        <img class="imgLogo pt-1" src="../assets/images/Logo Branco.png" />
+        <a href="/">
+          <img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/>
+        </a>
       </v-toolbar-title>
+
       <v-spacer></v-spacer>
-      <div class="text-center mx-2">
-        <v-btn rounded color="primary" dark>
-          <text-area class="text-capitalize mx-1 .d-sm-none .d-md-flex">
+
+      <div class="text-center mx-1">
+        <v-btn 
+          rounded 
+          elevation="0" 
+          text color="#fff" 
+          dark
+        >
+          <text-area 
+            class="text-capitalize 
+            mx-1 
+            d-none 
+            d-sm-flex"
+          >
             <strong>Página Inicial</strong>
           </text-area>
-          <v-icon>mdi-home</v-icon>
+          <v-icon>mdi-home-variant</v-icon>
         </v-btn>
       </div>
-      <div class="text-center mx-2">
-        <v-btn rounded color="primary" dark>
-          <text-area class="text-capitalize mx-1 .d-sm-none .d-md-flex">
+
+      <v-divider inset vertical></v-divider>
+
+      <div class="text-center mx-1">
+        <v-btn 
+          rounded 
+          elevation="0" 
+          text 
+          color="#fff" 
+          dark
+        >
+          <text-area 
+            class="text-capitalize 
+            mx-1 
+            d-none 
+            d-sm-flex"
+          >
             <strong>Definições</strong>
           </text-area>
-          <v-icon>mdi-account-cog</v-icon>
+          <v-icon>mdi-cog</v-icon>
         </v-btn>
       </div>
-      <div class="text-center mx-2">
-        <v-btn rounded color="primary" dark>
-          <text-area class="text-capitalize mx-1 .d-sm-none .d-md-flex">
+
+      <v-divider inset vertical></v-divider>
+
+      <div class="text-center mx-1" @click="logoutAlert = true">
+        <v-btn 
+          rounded 
+          elevation="0" 
+          text color="#32b37d" 
+          dark
+        >
+          <text-area 
+            class="text-capitalize 
+            mx-1 
+            d-none 
+            d-sm-flex"
+          >
             <strong>Sair</strong>
           </text-area>
-          <v-icon>mdi-logout</v-icon>
+          <v-icon>mdi-logout-variant</v-icon>
         </v-btn>
       </div>
       <v-spacer></v-spacer>
@@ -47,26 +95,48 @@
 </template>
 
 <script>
-export default {
-  props: {
-    source: String
-  },
-  data: () => ({
-    logoutAlert: false
-  }),
-  methods: {
-    handleLogout() {
-      this.$store
-        .dispatch("auth/logout")
-        .then(() => this.$router.push("/login"))
-        .catch(err => console.log(err));
+
+  export default {
+
+    props: {
+      source: String
+    },
+
+    data: () => ({
+      logoutAlert: false
+    }),
+
+    methods: {
+      handleLogout() {
+        this.$store
+          .dispatch("auth/logout")
+          .then(() => this.$router.push("/login"))
+          .catch(err => console.log(err));
+      }
     }
-  }
-};
+  };
+
 </script>
 
 <style scoped>
-.imgLogo {
-  width: 100%;
-}
+
+  * {
+    font-size: 13px;
+  }
+  
+  .v-btn > .v-btn__content .v-icon {
+    font-size: 20px;
+  }
+
+  .imgLogo {
+    width: 100%;
+    -webkit-filter: drop-shadow(1px 1px 1px #222);
+    filter: drop-shadow(1px 1px 1px #222);
+  }
+
+  .imgLogo:hover {
+    -webkit-filter: drop-shadow(0px 1px 3px #187754);
+    filter: drop-shadow(0px 1px 3px #187754);
+  }
+
 </style>
