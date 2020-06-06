@@ -2,9 +2,11 @@
     <v-container>
             <v-layout row>
                 <v-flex md4>
+                    <v-divider inset vertical></v-divider>
                     <ListProcess/>
                 </v-flex>
                 <v-flex md8>
+                    <v-divider inset vertical></v-divider>
                     <NewProcess/>
                 </v-flex>
             </v-layout>
@@ -12,8 +14,10 @@
 </template>
 
 <script>
+
     import NewProcess from '../components/DashboardPage/NewProcess';
     import ListProcess from '../components/DashboardPage/ListProcess';
+
     export default {
         name: "Dashboard",
         components: {
@@ -21,6 +25,7 @@
             ListProcess
         }
     }
+
 </script>
 
 <style scoped>

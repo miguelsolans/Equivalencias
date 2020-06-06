@@ -5,15 +5,20 @@
                 <Navbar></Navbar>
             </div>
             <router-view />
+            <Footer/>
         </v-content>
     </v-app>
 </template>
 
 <script>
+
     import Navbar from "./components/Navbar";
+    import Footer from "./components/Footer";
+
     export default {
         components: {
-            Navbar
+            Navbar,
+            Footer
         },
         computed: {
             loggedOn() {
@@ -31,6 +36,7 @@
             }
         }
     };
+
 </script>
 
 <style scoped>

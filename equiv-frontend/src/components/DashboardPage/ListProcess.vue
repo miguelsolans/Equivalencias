@@ -1,11 +1,11 @@
 <template>
     <v-container>
         <v-text-field
-            outlined
             rounded
             dense
+            filled
             clearable
-            color="#32b37d"
+            color="#197855"
             append-icon="mdi-magnify"
             placeholder="Procurar Processo Equivalência..."
             @click:clear="clearSearch"
@@ -17,10 +17,7 @@
                         :key="process.processo"
                         :to="{ name: 'process', params: { id: process._id } }"
                     >
-                        <v-list-item-avatar v-if="process.avatar">
-                            <img :src="process.avatar" />
-                        </v-list-item-avatar>
-                        <v-list-item-avatar v-else-if="!process.avatar">
+                        <v-list-item-avatar>
                             <img src="../../assets/images/User.png" />
                         </v-list-item-avatar>
                         <v-list-item-content>
