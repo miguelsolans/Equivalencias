@@ -4,7 +4,6 @@ import router from './router';
 import store from './store';
 import vuetify from './plugins/vuetify';
 import VueCookies from 'vue-cookies';
-import VueSweetAlert2 from 'vue-sweetalert2';
 
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
