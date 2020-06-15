@@ -1,13 +1,11 @@
 <template>
     <v-container>
         <v-app-bar
-            v-if="dashboardPage"
             app
             color="#313131"
             dark
             dense
             short
-            hide-on-scroll
         >
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
@@ -31,8 +29,8 @@
                         d-sm-flex"
                     >
                         <strong>Página Inicial</strong>
-                    </span>
                         <v-icon>mdi-home-variant</v-icon>
+                    </text-area>
                 </v-btn>
             </div>
 
@@ -54,8 +52,8 @@
                         d-sm-flex"
                     >
                         <strong>Definições</strong>
-                    </span>
                     <v-icon>mdi-cog</v-icon>
+                    </text-area>
                 </v-btn>
             </div>
 
@@ -76,8 +74,8 @@
                         d-sm-flex"
                     >
                         <strong>Sair</strong>
-                    </span>
                     <v-icon>mdi-logout-variant</v-icon>
+                    </text-area>
                 </v-btn>
             </div>
             <v-spacer></v-spacer>
