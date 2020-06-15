@@ -1,6 +1,7 @@
 <template>
     <v-container>
-        <div>Settings</div>
+        <h2>Definições</h2>
+
     </v-container>
 </template>
 

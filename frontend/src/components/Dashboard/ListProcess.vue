@@ -2,21 +2,13 @@
     <v-container>
         <v-container>
             <v-card>
-                <v-text-field
-                        outlined
-                        clearable
-                        color="success"
-                        label="Procurar..."
-                ></v-text-field>
+                <v-text-field outlined clearable color="success" label="Procurar..." v-model="search"></v-text-field>
                 <!--                <v-text-field class="mx-3" flat label="Procurar..." solo-inverted v-model="search" clearable @click:clear="clearSearch"></v-text-field>-->
                 <v-list two-line>
                     <h2>Lista de Processos</h2>
 
-                    <template v-for="(process, index) in processes">
-                        <v-list-item
-                                :key="process.processo"
-                                :to="{ name: 'process', params: { id: process._id } }"
-                        >
+                    <template v-for="(process, index) in filterStudents">
+                        <v-list-item :key="process.processo" :to="{ name: 'process', params: { id: process._id } }">
                             <v-list-item-avatar v-if="process.avatar">
                                 <img :src="process.avatar" />
                             </v-list-item-avatar>
@@ -24,9 +16,7 @@
                                 <img src="../../assets/images/User.png" />
                             </v-list-item-avatar>
                             <v-list-item-content>
-                                <v-list-item-title
-                                        v-html="process.nomeAluno"
-                                ></v-list-item-title>
+                                <v-list-item-title>{{ process.nomeAluno }}</v-list-item-title>
                                 <v-list-item-subtitle>
                                     <span>Número de Processo: </span> {{ process.processo }}
                                 </v-list-item-subtitle>
@@ -51,7 +41,7 @@
         data() {
             return {
                 search: "",
-                processes: null,
+                processes: [],
                 message: "",
             };
         },
@@ -64,6 +54,12 @@
                 .catch((err) => {
                     this.message = err;
                 });
+        },
+        computed: {
+            filterStudents: function() {
+                let self = this;
+                return this.processes.filter(el => el.nomeAluno.toLowerCase().includes(self.search.toLowerCase()) || el.idAluno.toLowerCase().includes(self.search.toLowerCase()) || el.processo.toLowerCase().includes(self.search.toLowerCase()))
+            }
         },
         methods: {
             clearSearch() {
