@@ -9,6 +9,7 @@
             color="#197855"
             prepend-inner-icon="mdi-magnify"
             placeholder="Procurar Processo Equivalência"
+            v-model="search"
             @click:clear="clearSearch"
         ></v-text-field>
         <v-card rounded>
