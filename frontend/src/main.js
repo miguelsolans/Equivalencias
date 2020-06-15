@@ -10,7 +10,6 @@ import {faSignInAlt} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
 
 Vue.use(VueCookies);
-Vue.use(VueSweetAlert2);
 Vue.use(require('vue-moment'));
 
 library.add(faSignInAlt);
