@@ -13,7 +13,7 @@ const routes = [
     {
         path: '/login',
         name: 'login',
-        component: () => import('../views/LoginPage'),
+        component: () => import('../views/Login'),
         meta: {
             title: 'Login'
         }
@@ -22,7 +22,7 @@ const routes = [
     {
         path: '/dashboard',
         name: 'dashboard',
-        component: () => import('../views/DashboardPage'),
+        component: () => import('../views/Dashboard'),
         meta: {
             requiresAuth: true,
             title: 'Mantis'
@@ -31,7 +31,15 @@ const routes = [
     {
         path: '/process/:id',
         name: 'process',
-        component: () => import('../views/StudentPage'),
+        component: () => import('../views/Student'),
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        path: '/settings',
+        name: 'settings',
+        component: () => import('../views/Settings'),
         meta: {
             requiresAuth: true
         }

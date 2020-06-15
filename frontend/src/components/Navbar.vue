@@ -11,9 +11,7 @@
         >
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
-                <a href="/">
-                    <img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/>
-                </a>
+                <a href="/"><img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/></a>
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
@@ -33,8 +31,8 @@
                         d-sm-flex"
                     >
                         <strong>Página Inicial</strong>
-                    </text-area>
-                    <v-icon>mdi-home-variant</v-icon>
+                    </span>
+                        <v-icon>mdi-home-variant</v-icon>
                 </v-btn>
             </div>
 
@@ -47,6 +45,7 @@
                     text
                     color="#fff"
                     dark
+                    href="/settings"
                 >
                     <text-area
                         class="text-capitalize
@@ -55,7 +54,7 @@
                         d-sm-flex"
                     >
                         <strong>Definições</strong>
-                    </text-area>
+                    </span>
                     <v-icon>mdi-cog</v-icon>
                 </v-btn>
             </div>
@@ -77,7 +76,7 @@
                         d-sm-flex"
                     >
                         <strong>Sair</strong>
-                    </text-area>
+                    </span>
                     <v-icon>mdi-logout-variant</v-icon>
                 </v-btn>
             </div>

@@ -13,7 +13,7 @@
         ></v-text-field>
         <v-card rounded>
             <v-list rounded two-line>
-                <template v-for="(process, index) in processes">
+                <template v-for="(process, index) in filterStudents">
                     <v-list-item
                         :key="process.processo"
                         :to="{ name: 'process', params: { id: process._id } }"
@@ -54,7 +54,7 @@
         data() {
             return {
                 search: "",
-                processes: null,
+                processes: [],
                 message: "",
             };
         },
@@ -67,6 +67,12 @@
                 .catch((err) => {
                     this.message = err;
                 });
+        },
+        computed: {
+            filterStudents: function() {
+                let self = this;
+                return this.processes.filter(el => el.nomeAluno.toLowerCase().includes(self.search.toLowerCase()) || el.idAluno.toLowerCase().includes(self.search.toLowerCase()) || el.processo.toLowerCase().includes(self.search.toLowerCase()))
+            }
         },
         methods: {
             clearSearch() {

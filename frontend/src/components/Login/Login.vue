@@ -109,157 +109,155 @@
 <style scoped>
 
     .form-input >>> .v-input__slot::after {
-    border-color: rgba(255, 255, 255, 0.7) !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
     }
 
     .form-input >>> .v-input__slot::before {
-    border-color: rgba(255, 255, 255, 0.7) !important;
+        border-color: rgba(255, 255, 255, 0.7) !important;
     }
     
     .form-input >>> .error--text {
-    color: rgba(255, 255, 255, 0.7) !important;
+        color: rgba(255, 255, 255, 0.7) !important;
     }
 
     .form-input >>> .theme--light.v-messages {
-    color: rgba(255, 255, 255, 0.7) !important;
+        color: rgba(255, 255, 255, 0.7) !important;
     }
 
     .form-input >>> .theme--light.v-messages {
-    color: rgba(255, 255, 255, 0.7) !important;
+        color: rgba(255, 255, 255, 0.7) !important;
     }
 
     .form-input >>> input {
-    caret-color: white !important;
-    color: white;
-    font-size: 0.9em;
-    width: 150px;
+        caret-color: white !important;
+        color: white;
+        font-size: 0.9em;
+        width: 150px;
     }
 
     .form-input >>> .v-icon {
         color: white;
     }
 
-    html,
-    body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        width: 100%;
     }
 
     div#app {
-    width: 100%;
-    height: 100%;
+        width: 100%;
+        height: 100%;
     }
 
     div#app div#login {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
     }
 
     div#app div#login div#description {
-    background-color: #ffffff;
-    width: 35%;
+        background-color: #ffffff;
+        width: 35%;
     }
 
     div#app div#login div#description h1,
     div#app div#login div#description p {
-    margin: 0;
+        margin: 0;
     }
 
     div#app div#login div#description p {
-    font-family: 'Secular One', sans-serif;
-    font-size: 4em;
-    color: #238e64;
-    margin-top: 10px;
+        font-family: 'Secular One', sans-serif;
+        font-size: 4em;
+        color: #238e64;
+        margin-top: 10px;
     }
 
     div#app div#login div#description p1 {
-    font-size: 1em;
-    color: #696969;
-    margin-top: 10px;
-    }
-
-    div#app div#login div#form {
-    background-image: linear-gradient(to bottom,#38c087, #177452);
-    border-radius: 8px;
-    box-shadow: 0 0 30px 0 #A8A8A8;
-    color: white;
-    padding: 35px;
-    }
-
-    div#app div#login div#form label,
-    div#app div#login div#form input {
-    outline: none;
-    width: 100%;
-    }
-
-    div#app div#login div#form label {
-    color: #95a5a6;
-    font-size: 0.8em;
-    }
-
-    div#app div#login div#form input {
-    background-color: transparent;
-    border: none;
-    color: #ecf0f1;
-    font-size: 1em;
-    margin-bottom: 20px;
-    }
-
-    div#app div#login div#form ::placeholder {
-    color: white;
-    opacity: 1;
-    }
-
-    div#app div#login div#form  ::label {
-    color: white;
-    }
-
-    div#app div#login div#form button {
-    background-color: #ffffff;
-    cursor: pointer;
-    border: none;
-    padding: 10px;
-    transition: background-color 0.2s ease-in-out;
-    width: 100%;
-    margin-top: 20px;
-    }
-
-    div#app div#login div#form button:hover {
-    background-color: #eeeeee;
-    }
-
-    @media screen and (max-width: 600px) {
-    div#app div#login {
-        align-items: unset;
-        background-color: unset;
-        display: unset;
-        justify-content: unset;
-    }
-
-    div#app div#login div#description {
-        margin: 0 auto;
-        width: 100%;
+        font-size: 1em;
+        color: #696969;
+        margin-top: 10px;
     }
 
     div#app div#login div#form {
         background-image: linear-gradient(to bottom,#38c087, #177452);
         border-radius: 8px;
         box-shadow: 0 0 30px 0 #A8A8A8;
-        color: #ecf0f1;
-        width: 100%;
+        color: white;
         padding: 35px;
     }
 
-    div#app div#login div#form form {
-        margin: 0 auto;
-        max-width: 280px;
+    div#app div#login div#form label,
+    div#app div#login div#form input {
+        outline: none;
         width: 100%;
     }
+
+    div#app div#login div#form label {
+        color: #95a5a6;
+        font-size: 0.8em;
+    }
+
+    div#app div#login div#form input {
+        background-color: transparent;
+        border: none;
+        color: #ecf0f1;
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    div#app div#login div#form ::placeholder {
+        color: white;
+        opacity: 1;
+    }
+
+    div#app div#login div#form  ::label {
+        color: white;
+    }
+
+    div#app div#login div#form button {
+        background-color: #ffffff;
+        cursor: pointer;
+        border: none;
+        padding: 10px;
+        transition: background-color 0.2s ease-in-out;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    div#app div#login div#form button:hover {
+        background-color: #eeeeee;
+    }
+
+    @media screen and (max-width: 600px) {
+        div#app div#login {
+            align-items: unset;
+            background-color: unset;
+            display: unset;
+            justify-content: unset;
+        }
+
+        div#app div#login div#description {
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        div#app div#login div#form {
+            background-image: linear-gradient(to bottom,#38c087, #177452);
+            border-radius: 8px;
+            box-shadow: 0 0 30px 0 #A8A8A8;
+            color: #ecf0f1;
+            width: 100%;
+            padding: 35px;
+        }
+        div#app div#login div#form form {
+            margin: 0 auto;
+            max-width: 280px;
+            width: 100%;
+        }
     
     }
 
