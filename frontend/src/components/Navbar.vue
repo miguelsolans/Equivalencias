@@ -29,8 +29,8 @@
                         d-sm-flex"
                     >
                         <strong>Página Inicial</strong>
-                        <v-icon>mdi-home-variant</v-icon>
                     </text-area>
+                    <v-icon>mdi-home-variant</v-icon>
                 </v-btn>
             </div>
 
@@ -52,8 +52,8 @@
                         d-sm-flex"
                     >
                         <strong>Definições</strong>
-                    <v-icon>mdi-cog</v-icon>
                     </text-area>
+                    <v-icon>mdi-cog</v-icon>
                 </v-btn>
             </div>
 
@@ -74,8 +74,8 @@
                         d-sm-flex"
                     >
                         <strong>Sair</strong>
-                    <v-icon>mdi-logout-variant</v-icon>
                     </text-area>
+                    <v-icon>mdi-logout-variant</v-icon>
                 </v-btn>
             </div>
             <v-spacer></v-spacer>
