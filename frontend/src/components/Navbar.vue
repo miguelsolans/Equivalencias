@@ -1,59 +1,29 @@
 <template>
     <v-container>
-        <v-app-bar
-                app
-                color="#313131"
-                dark
-                dense
-                short
-                elevate-on-scroll
-        >
+        <v-app-bar app color="#313131" dark dense short elevate-on-scroll>
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
-                <a href="/">
-                    <img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/>
-                </a>
+                <a href="/"><img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/></a>
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
 
             <div class="text-center mx-1">
-                <v-btn
-                        rounded
-                        elevation="0"
-                        text color="#fff"
-                        dark
-                >
-                    <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
-                    >
+                <v-btn rounded elevation="0" text color="#fff" dark href="/dashboard">
+                    <span class="text-capitalize mx-1 d-none d-sm-flex">
                         <strong>Página Inicial</strong>
-                    </text-area>
-                    <v-icon>mdi-home-variant</v-icon>
+                    </span>
+                        <v-icon>mdi-home-variant</v-icon>
                 </v-btn>
             </div>
 
             <v-divider inset vertical></v-divider>
 
             <div class="text-center mx-1">
-                <v-btn
-                        rounded
-                        elevation="0"
-                        text
-                        color="#fff"
-                        dark
-                >
-                    <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
-                    >
+                <v-btn rounded elevation="0" text color="#fff" dark href="/settings">
+                    <span class="text-capitalize mx-1 d-none d-sm-flex">
                         <strong>Definições</strong>
-                    </text-area>
+                    </span>
                     <v-icon>mdi-cog</v-icon>
                 </v-btn>
             </div>
@@ -61,20 +31,10 @@
             <v-divider inset vertical></v-divider>
 
             <div class="text-center mx-1" @click="logoutAlert = true">
-                <v-btn
-                        rounded
-                        elevation="0"
-                        text color="#32b37d"
-                        dark
-                >
-                    <text-area
-                            class="text-capitalize
-            mx-1 
-            d-none 
-            d-sm-flex"
-                    >
+                <v-btn rounded elevation="0" text color="#32b37d" dark>
+                    <span class="text-capitalize mx-1 d-none d-sm-flex">
                         <strong>Sair</strong>
-                    </text-area>
+                    </span>
                     <v-icon>mdi-logout-variant</v-icon>
                 </v-btn>
             </div>

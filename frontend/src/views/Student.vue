@@ -33,7 +33,7 @@
                     <v-card-text>{{textoErro}}</v-card-text>
                     <v-card-actions>
                         <v-spacer></v-spacer>
-                        <v-btn color="red darken-1" text @click="voltarAtras">Voltar Atrás</v-btn>
+                        <v-btn color="red darken-1" text @click="rollback">Voltar Atrás</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-dialog>
@@ -46,10 +46,10 @@
     // Data API Class
     import UserService from '../services/user.service';
     // Load Views
-    import StudentInfo from '../components/StudentPage/StudentInfo';
-    import Equivalences from '../components/StudentPage/ProcessEquivalences';
-    import NewEquivalence from '../components/StudentPage/NewEquivalence';
-    import ProcessFiles from '../components/StudentPage/ProcessFiles';
+    import StudentInfo from '../components/Student/StudentInfo';
+    import Equivalences from '../components/Student/ProcessEquivalences';
+    import NewEquivalence from '../components/Student/NewEquivalence';
+    import ProcessFiles from '../components/Student/ProcessFiles';
 
 
     export default {
@@ -78,7 +78,7 @@
                 console.log("/student Parent new Equivalence");
                 this.process.equivalencias.push(equivalence);
             },
-            voltarAtras() {
+            rollback() {
                 this.$router.push('/login')
                 .catch(err => console.log(err));
             }

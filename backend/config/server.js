@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_CONNECTION, {
         console.log("Connection to MongoDB successfully established")
     })
     .catch(() => {
-        throw new Error("Couldn't connect to MongoDB");
+        throw new Error("Could not establish connection to MongoDB");
     });
 
 // Display Request Status
@@ -46,7 +46,7 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 // Use cookies
-// app.use(cookieParser());
+app.use(cookieParser());
 
 // Configure CORS
 const corsOptions = {
@@ -55,10 +55,6 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// app.use( cors(corsOptions) );
-// app.use(cors(corsOptions));
-// app.options('*', cors(corsOptions));
-
 
 // Define Routes
 const ProcessoRoutes = require('../app/routes/processo');
@@ -73,6 +69,7 @@ app.use('/user', UserRoutes);
 app.use((req, res, next) => {
     next(createError(404));
 });
+
 // error handler
 app.use((err, req, res, next) => {
     // set locals, only providing error in development

@@ -4,7 +4,7 @@
             <div v-if="loggedOn">
                 <Navbar></Navbar>
             </div>
-            <router-view />
+            <router-view/>
         </v-content>
     </v-app>
 </template>
