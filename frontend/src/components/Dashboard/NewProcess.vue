@@ -2,7 +2,7 @@
     <v-container>
         <v-row no-gutters class="ml-md-5">
             <v-col cols="1">                
-                <v-avatar size="50px"><img src="../../assets/images/New Process1.png" /></v-avatar>
+                <v-avatar size="50px"><img src="../../assets/images/New Process1.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
             <v-col class="ml-4">
                 <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
@@ -80,27 +80,18 @@
                     />
                 </v-col>
                 <v-col class="my-2">
-                    <v-tooltip left>
-                        <template v-slot:activator="{ on }">
-                            <v-btn
-                                rounded
-                                class="ml-5" 
-                                color="#197855"
-                                dark
-                                v-on="on"
-                                @click="handleSubmit"
-                            >
-                                <text-area
-                                    class="text-capitalize
-                                    mx-1"
-                                >
-                                    <strong>Criar Processo</strong>
-                                </text-area>
-                                <v-icon>mdi-plus</v-icon>
-                            </v-btn>
-                        </template>
-                        <span>Criar Processo</span>
-                    </v-tooltip>
+                        <v-btn
+                            rounded
+                            class="ml-5"
+                            color="#197855"
+                            dark
+                            @click="handleSubmit"
+                        >
+                            <div class="text-capitalize mx-1">
+                                <strong>Criar Processo</strong>
+                            </div>
+                            <v-icon>mdi-plus</v-icon>
+                        </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <v-btn
@@ -155,6 +146,16 @@
                 </v-col>
             </v-row>
         </v-form>
+
+        <v-dialog v-model="noProcessAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Este processo não existe</v-card-title>
+                <v-card-text>Por favor preencha os campos pedidos antes de tentar submeter o processo.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 
 </template>
@@ -165,9 +166,10 @@
     import UserService from '../../services/user.service';
 
     export default {
-        name: "ListaProcessos",
+        name: "NewProcess",
         data() {
             return {
+                noProcessAlert: false,
                 course: {
                     disableAutocomplete: true,
                     doesntExist: false,
@@ -197,7 +199,7 @@
                         console.log(response);
 
                         if(response.data.errors) {
-                            alert("HANDLE ERROR");
+                            this.noProcessAlert = true;
                         } else {
                             this.$root.$emit('newProcess', this.student);
 
@@ -238,10 +240,5 @@
 </script>
 
 <style scoped>
-
-    .imgTitle {
-        -webkit-box-shadow:0 1px 3px #959595; 
-        box-shadow:0 1px 3px #959595;
-    }
 
 </style>
