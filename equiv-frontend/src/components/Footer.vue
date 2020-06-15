@@ -1,35 +1,59 @@
-
 <template>
-  <v-footer
-    dark
-    padless
-  >
-    <v-card
-      flat
-      tile
-      color="#197855"
-      class="white--text text-center"
-    >
-      <v-card-text>
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-4 white--text"
-          icon
+    <v-footer
+        padless
+      >
+        <v-row
+          justify="center"
+          no-gutters
         >
-          <v-icon size="24px">mdi-github</v-icon>
-        </v-btn>
-      </v-card-text>
+          <v-col
+            style="background: #197855"
+            class="py-4 justify-center text-center white--text"
+            cols="12"
+          >
+            <img style="width: 100px" class="imgLogo" src="../assets/images/Logo Branco.png"/>
+            <v-divider inset vertical></v-divider>
+            {{ new Date().getFullYear() }} — Made with <strong>Vuetify</strong>
+          </v-col>
 
-      <v-card-text class="white--text pt-0">
-        Phasellus feugiat arcu sapien, et iaculis ipsum elementum sit amet. Mauris cursus commodo interdum. Praesent ut risus eget metus luctus accumsan id ultrices nunc. Sed at orci sed massa consectetur dignissim a sit amet dui. Duis commodo vitae velit et faucibus. Morbi vehicula lacinia malesuada. Nulla placerat augue vel ipsum ultrices, cursus iaculis dui sollicitudin. Vestibulum eu ipsum vel diam elementum tempor vel ut orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-      </v-card-text>
+        </v-row>
 
-      <v-divider></v-divider>
-
-      <v-card-text class="white--text">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-      </v-card-text>
-    </v-card>
-  </v-footer>
+        <v-dialog v-model="logoutAlert" persistent max-width="350">
+          <v-card>
+              <v-card-title class="headline">Terminar Sessão?</v-card-title>
+              <v-card-text>Todos as suas alterações não guardadas serão perdidas.</v-card-text>
+              <v-card-actions class="justify-center">
+                  <v-btn color="green darken-1" text @click="logoutAlert = false">Voltar Atrás</v-btn>
+                  <v-btn color="red darken-1" text @click="handleLogout">Terminar Sessão</v-btn>
+              </v-card-actions>
+          </v-card>
+      </v-dialog>
+    </v-footer>
 </template>
+
+<script>
+
+    export default {
+
+        data: () => ({
+            logoutAlert: false
+        }),
+        methods: {
+            handleLogout() {
+                this.$store
+                    .dispatch("auth/logout")
+                    .then(() => this.$router.push("/login"))
+                    .catch(err => console.log(err));
+            }
+        }
+    };
+
+</script>
+
+<style scoped>
+
+    .imgLogo {
+        width: 100%;
+    }
+
+</style>

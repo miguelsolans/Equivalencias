@@ -2,10 +2,12 @@
     <v-app>
         <v-content>
             <div v-if="loggedOn">
-                <Navbar></Navbar>
+                <Navbar/>
             </div>
             <router-view />
-            <Footer/>
+            <div v-if="dashboardPage">
+                <Footer/>
+            </div>
         </v-content>
     </v-app>
 </template>
@@ -23,6 +25,9 @@
         computed: {
             loggedOn() {
                 return this.$store.state.auth.status.loggedIn;
+            },
+            dashboardPage() {
+                return this.$route.name == "dashboard";
             }
         },
         mounted() {

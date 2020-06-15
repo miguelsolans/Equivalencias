@@ -1,12 +1,13 @@
 <template>
     <v-container>
         <v-app-bar
+            v-if="dashboardPage"
             app
             color="#313131"
             dark
             dense
             short
-            elevate-on-scroll
+            hide-on-scroll
         >
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
@@ -103,11 +104,14 @@
         props: {
             source: String
         },
-
+        computed: {
+            dashboardPage() {
+                return this.$route.name == "dashboard";
+            }
+        },
         data: () => ({
             logoutAlert: false
         }),
-
         methods: {
             handleLogout() {
                 this.$store
@@ -134,14 +138,14 @@
 
     /* Efeito hover do Logo aplicado */
     .imgLogo {
-    width: 100%;
-    -webkit-filter: drop-shadow(1px 1px 1px #222);
-    filter: drop-shadow(1px 1px 1px #222);
+        width: 100%;
+        -webkit-filter: drop-shadow(1px 1px 1px #222);
+        filter: drop-shadow(1px 1px 1px #222);
     }
 
     .imgLogo:hover {
-    -webkit-filter: drop-shadow(0px 1px 3px #187754);
-    filter: drop-shadow(0px 1px 3px #187754);
+        -webkit-filter: drop-shadow(0px 2px 3px #187754);
+        filter: drop-shadow(0px 2px 3px #187754);
     }
 
 </style>

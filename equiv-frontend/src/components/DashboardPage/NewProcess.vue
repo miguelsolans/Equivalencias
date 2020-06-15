@@ -1,7 +1,14 @@
 <template>
     <v-container>
-        <h3 class="ml-md-5">Registar Novo Processo Equivalência</h3>
-        <p class="ml-md-5">Complete os dados para criar um novo Processo</p>
+        <v-row no-gutters class="ml-md-5">
+            <v-col cols="1">                
+                <v-avatar size="50px"><img src="../../assets/images/New Process1.png" /></v-avatar>
+            </v-col>
+            <v-col class="ml-4">
+                <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
+                <p>Complete os dados para criar um novo Processo</p>
+            </v-col>
+        </v-row>
 
         <v-form class="my-10">
             <v-text-field 
@@ -118,7 +125,7 @@
                     <v-checkbox 
                         color="#197855"
                         v-model="course.doesntExist" 
-                        class="ml-5 my-2" 
+                        class="my-2" 
                         label ="Curso Inexistente"
                     />
                 </v-col>
@@ -232,8 +239,9 @@
 
 <style scoped>
 
-    .container {
-        max-width: autocomplete;
+    .imgTitle {
+        -webkit-box-shadow:0 1px 3px #959595; 
+        box-shadow:0 1px 3px #959595;
     }
 
 </style>
