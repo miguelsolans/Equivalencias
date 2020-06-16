@@ -21,6 +21,17 @@ export default class Equivalencia {
         this.ucRealizada = ucRealizada;
     }
 
+    schoolYearValidation() {
+        let regEx = /^\d{4}\/\d{4}$/;
+
+        if(this.anoLetivo.match(regEx) !== null) {
+            let years = this.anoLetivo.split('/');
+
+            return (parseInt(years[0]) + 1 === parseInt(years[1]));
+        }
+
+        return false;
+    }
     /**
      * Override Object Properties
      * @returns {string}

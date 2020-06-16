@@ -22,7 +22,7 @@
                     text color="#fff"
                     dark
                 >
-                    <text-area
+                    <div
                         class="text-capitalize
                         mx-1 
                         d-none 
@@ -30,7 +30,7 @@
                     >
                         <strong>Página Inicial</strong>
                         <v-icon>mdi-home-variant</v-icon>
-                    </text-area>
+                    </div>
                 </v-btn>
             </div>
 
@@ -45,7 +45,7 @@
                     dark
                     href="/settings"
                 >
-                    <text-area
+                    <div
                         class="text-capitalize
                         mx-1 
                         d-none 
@@ -53,7 +53,7 @@
                     >
                         <strong>Definições</strong>
                     <v-icon>mdi-cog</v-icon>
-                    </text-area>
+                    </div>
                 </v-btn>
             </div>
 
@@ -67,7 +67,7 @@
                     color="#32b37d"
                     dark
                 >
-                    <text-area
+                    <div
                         class="text-capitalize
                         mx-1 
                         d-none 
@@ -75,7 +75,7 @@
                     >
                         <strong>Sair</strong>
                     <v-icon>mdi-logout-variant</v-icon>
-                    </text-area>
+                    </div>
                 </v-btn>
             </div>
             <v-spacer></v-spacer>
