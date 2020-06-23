@@ -12,7 +12,7 @@ module.exports.newUser = ({username, password, email, fullName}) => {
 };
 
 module.exports.searchUser = (username) => {
-    return User.findOne({ username: username });
+    return User.findOne({ username: username }, {password: 0});
 };
 
 module.exports.changePassword = (username, newPassword) => {

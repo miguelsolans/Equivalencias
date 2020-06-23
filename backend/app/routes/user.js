@@ -2,10 +2,11 @@ const express = require('express');
 const router  = express.Router();
 const bcrypt  = require('bcryptjs');
 const jwt     = require('jsonwebtoken');
+const Users = require('../controllers/users');
+const Hash = require('../utils/hasing');
 
 const checkAuth = require('../middleware/checkAuth');
-const Users = require('../controllers/users');
-
+const userAdmin = require('../middleware/userAdmin');
 
 router.get('/:username', checkAuth, (req, res) => {
     console.log(`GET / ${req.params.username}`);
@@ -45,11 +46,11 @@ router.post('/login', (req, res, next) => {
                             const cookieOptions = {
                                 httpOnly: true
                             };
-                            // TODO: Pass-on user role
                             res.cookie('userToken', token, cookieOptions);
                             res.status(201).jsonp( {title: "Success!", message: "User logged on successfully", token: token, user: {
                                 username: user.username,
-                                fullName: user.fullName
+                                fullName: user.fullName,
+                                admin: user.admin
                             }});
                         }
 
@@ -62,12 +63,10 @@ router.post('/login', (req, res, next) => {
 
 });
 
-
-router.post('/register', (req, res) => {
+router.post('/register', checkAuth, userAdmin, (req, res) => {
     console.log("USER POST /");
 
     bcrypt.hash(req.body.password, 10, (err, hash) => {
-        // TODO: Remove throw after tests
         if(err) console.log(err);
 
         const newUser = {
@@ -85,11 +84,30 @@ router.post('/register', (req, res) => {
 });
 
 
-router.delete('/', checkAuth, (req, res) => {
+// TOOD: middleware to check user
+router.put('/password', checkAuth, (req, res) => {
+    let info = {
+        username: req.decodedUser.username,
+        ...req.body
+    };
+
+    Users.searchUser(info.username)
+        .then(user => {
+
+            // TODO: Verify if passwords match
+
+            // TODO: If so, change to new Password
+        }).catch();
+    console.log(info);
+});
+
+
+router.delete('/', checkAuth, userAdmin, (req, res) => {
 
     Users.destroyUser(req.body.username)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));
 });
+
 
 module.exports = router;

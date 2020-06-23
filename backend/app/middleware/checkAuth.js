@@ -16,7 +16,8 @@ module.exports = (req, res, next) => {
                     req.decodedUser = {
                         username: user.username,
                         fullName: user.fullName,
-                        email: user.email
+                        email: user.email,
+                        admin: user.admin
                     };
 
                     console.log(`${req.decodedUser.username} logged on`);
