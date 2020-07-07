@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
         const token = req.headers.usertoken || req.headers.userToken;
 	
         const decodedToken = jwt.verify(token, process.env.AUTH_SECRET, { algorithm: 'RS256' });
-	
+
         Users.searchUser(decodedToken.username)
             .then(user => {
                 if(!user){
