@@ -4,10 +4,14 @@ const checkAuth     = require('../middleware/checkAuth');
 const Universidades = require('../controllers/universidades');
 const Processos     = require('../controllers/processos');
 
+/**
+ * Get University and respective Courses
+ * query {university}: University name,
+ * query {course}: Course name, returns available subjects
+ * query {subject}: Subject name, returns similar processes for smart fields
+ */
 router.get('/',  checkAuth, (req, res) => {
-    // query -> university
-    // query -> course
-    // query -> subject
+
     const query = req.query;
     console.log("UNIVERSIDADES GET / ");
 
