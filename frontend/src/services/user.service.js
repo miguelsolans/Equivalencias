@@ -6,8 +6,8 @@ import axios from 'axios';
 import authHeader from './auth-header';
 
 class UserService {
-    getLoggedUser() {
-        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/logged`, {
+    getUser(username) {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/${username}`, {
             headers: authHeader()
         });
     }
@@ -66,8 +66,6 @@ class UserService {
             headers: authHeader()
         });
     }
-
-
 }
 
 export default new UserService();

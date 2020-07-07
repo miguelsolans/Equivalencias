@@ -2,32 +2,22 @@
     <v-app>
         <v-content>
             <div v-if="loggedOn">
-                <Navbar/>
+                <Navbar></Navbar>
             </div>
-            <router-view />
-            <div v-if="dashboardPage">
-                <Footer/>
-            </div>
+            <router-view/>
         </v-content>
     </v-app>
 </template>
 
 <script>
-
     import Navbar from "./components/Navbar";
-    import Footer from "./components/Footer";
-
     export default {
         components: {
-            Navbar,
-            Footer
+            Navbar
         },
         computed: {
             loggedOn() {
                 return this.$store.state.auth.status.loggedIn;
-            },
-            dashboardPage() {
-                return this.$route.name == "dashboard";
             }
         },
         mounted() {
@@ -41,15 +31,12 @@
             }
         }
     };
-
 </script>
 
 <style scoped>
-
     @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Secular+One&display=swap");
 
     * {
         font-family: "Rubik", sans-serif;
     }
-
 </style>

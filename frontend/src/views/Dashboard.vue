@@ -2,12 +2,16 @@
     <v-container>
             <v-layout row>
                 <v-flex md4>
-                    <v-divider inset vertical></v-divider>
                     <ListProcess/>
                 </v-flex>
                 <v-flex md8>
                     <v-divider inset vertical></v-divider>
-                    <NewProcess/>
+                    <v-row>
+                        <v-row align="center" justify="center">
+                            <v-img position="center center" class="logo-img" src="../assets/images/Logo.png"></v-img>
+                        </v-row>
+                        <NewProcess/>
+                    </v-row>
                 </v-flex>
             </v-layout>
     </v-container>
@@ -23,14 +27,14 @@
             ListProcess
         }
     }
-
 </script>
 
 <style scoped>
-
-    /* CSS a ser aplicado a toda a Dashboard */
+    .logo-img {
+        max-width: 500px;
+    }
+        
     * {
     font-family: 'Rubik', sans-serif;
     }
-    
 </style>
