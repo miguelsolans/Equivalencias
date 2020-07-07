@@ -1,41 +1,175 @@
 <template>
     <v-container>
-        <v-row align="center">
-            <h2 class="text-center">Novo Processo</h2>
+        <v-row no-gutters class="ml-md-5">
+            <v-col cols="1">                
+                <v-avatar size="50px"><img src="../../assets/images/New Process1.png" alt="Avatar para o processo"/></v-avatar>
+            </v-col>
+            <v-col class="ml-4">
+                <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
+                <p>Complete os dados para criar um novo Processo</p>
+            </v-col>
         </v-row>
-        <v-form>
-            <v-text-field label="Identificador do Processo" type="text" v-model="student.processo" required></v-text-field>
 
-            <v-text-field label="Identificador do Aluno" type="text" v-model="student.idAluno" required></v-text-field>
+        <v-form class="my-10">
+            <v-text-field 
+                color="#197855"
+                placeholder="Identificador do Processo" 
+                type="text" 
+                v-model="student.processo" 
+                class="ml-md-5"
+                required
+                hide-details
+            ></v-text-field>
+            <v-text-field 
+                color="#197855"
+                placeholder="Identificador do Aluno" 
+                type="text" v-model="student.idAluno" 
+                class="ml-md-5"
+                required
+                hide-details
+            ></v-text-field>
+            <v-text-field 
+                color="#197855"                
+                placeholder="Nome Completo do Aluno" 
+                type="text" 
+                v-model="student.nomeAluno" 
+                class="ml-md-5"
+                required
+                hide-details
+            ></v-text-field>
 
-            <v-text-field label="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" required></v-text-field>
+<!--            <v-text-field placeholder="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
 
-<!--            <v-text-field label="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
+            <v-autocomplete 
+                color="#197855"
+                v-model="student.instProv" 
+                placeholder="Instituição Proveniente" 
+                type="text" 
+                :items="universities" 
+                item-text="nomeInstit" 
+                @change="universityChosen"
+                class="ml-md-5"
+                hide-details
+            ></v-autocomplete>
 
-            <v-autocomplete v-model="student.instProv" label="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen"></v-autocomplete>
-
-            <v-autocomplete v-if="!course.enableInput && !course.doesntExist" v-model="student.cursoProv" label="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disableAutocomplete"></v-autocomplete>
-            <v-text-field v-else-if="course.enableInput || course.doesntExist" label="Curso Proveniente" v-model="student.cursoProv"></v-text-field>
-            <v-checkbox color="warning" v-model="course.doesntExist" class="mx-2" label="Curso ainda não existe"></v-checkbox>
-
-            <!--            <v-text-field label="Curso Proveninente" type="text" v-model="student.cursoProv" required :disabled="true"></v-text-field>-->
-
-            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
-            <v-divider  class="mx-4" inset vertical></v-divider>
-            <v-btn color="normal" @click="resetForm">Cancelar</v-btn>
+            <v-autocomplete 
+                color="#197855"
+                v-if="!course.enableInput && !course.doesntExist" 
+                v-model="student.cursoProv" 
+                placeholder="Curso Proveniente" 
+                :items="course.courses" 
+                item-text="cursoProv" 
+                :disabled="course.disableAutocomplete"
+                class="ml-md-5"
+            ></v-autocomplete>
+            <v-text-field
+                color="#197855"
+                v-else-if="course.enableInput || course.doesntExist" 
+                placeholder="Curso Proveniente" 
+                v-model="student.cursoProv"
+                class="ml-md-5"
+            ></v-text-field>
+            
+            <v-row class="text-right d-none d-sm-flex">
+                <v-col>
+                    <v-checkbox 
+                        color="#197855" 
+                        v-model="course.doesntExist" 
+                        class="ml-md-5 my-2" 
+                        label ="Curso Inexistente"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                        <v-btn
+                            rounded
+                            class="ml-5"
+                            color="#197855"
+                            dark
+                            @click="handleSubmit"
+                        >
+                            <div class="text-capitalize mx-1">
+                                <strong>Criar Processo</strong>
+                            </div>
+                            <v-icon>mdi-plus</v-icon>
+                        </v-btn>
+                    <v-tooltip top>
+                        <template v-slot:activator="{ on }">
+                            <v-btn
+                                rounded
+                                class="ml-5" 
+                                color="#39c087"
+                                dark
+                                fab
+                                small
+                                v-on="on"
+                                @click="resetForm"
+                            >
+                                <v-icon>mdi-delete-empty</v-icon>
+                            </v-btn>
+                        </template>
+                        <span>Limpar Dados</span>
+                    </v-tooltip>
+                </v-col>
+            </v-row>
+            <v-row class="text-right d-flex d-sm-none">
+                <v-col>
+                    <v-checkbox 
+                        color="#197855"
+                        v-model="course.doesntExist" 
+                        class="my-2" 
+                        label ="Curso Inexistente"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="ml-5" 
+                        color="#197855"
+                        dark
+                        fab
+                        small
+                        @click="resetForm"
+                    >
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                    <v-btn
+                        rounded
+                        class="ml-5" 
+                        color="#39c087"
+                        dark
+                        fab
+                        small
+                        @click="resetForm"
+                    >
+                        <v-icon>mdi-delete-empty</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
         </v-form>
+
+        <v-dialog v-model="noProcessAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Este processo não existe</v-card-title>
+                <v-card-text>Por favor preencha os campos pedidos antes de tentar submeter o processo.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 
 </template>
 
 <script>
+
     import Processo from '../../models/processo';
     import UserService from '../../services/user.service';
 
     export default {
-        name: "ListaProcessos",
+        name: "NewProcess",
         data() {
             return {
+                noProcessAlert: false,
                 course: {
                     disableAutocomplete: true,
                     doesntExist: false,
@@ -65,7 +199,7 @@
                         console.log(response);
 
                         if(response.data.errors) {
-                            alert("HANDLE ERROR");
+                            this.noProcessAlert = true;
                         } else {
                             this.$root.$emit('newProcess', this.student);
 
@@ -102,10 +236,9 @@
             }
         }
     }
+
 </script>
 
 <style scoped>
-    .container {
-        max-width: 700px;
-    }
+
 </style>

@@ -1,21 +1,41 @@
 <template>
     <v-container>
         <v-form>
-            <!--<v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>-->
-            <v-autocomplete v-model="equivalencia.ucRealizada" label="UC Realizada" type="text" :items="ucOrigem" item-text="ucRealizada" @change="subjectChosen" :rules="[v => !!v || 'Especifique o nome da UC realizada']" required></v-autocomplete>
+            <!-- With Autocomplete -->
+            <v-container v-if="!manualInput">
+                <!-- UC Realizada -->
+                <v-autocomplete v-model="equivalencia.ucRealizada" label="UC Realizada" type="text" :items="ucOrigem" item-text="ucRealizada" @change="subjectChosen" :rules="[v => !!v || 'Especifique o nome da UC realizada']" required></v-autocomplete>
 
-            <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
+                <!-- Ano Letivo de Conclusão -->
+                <v-text-field label="Ano letivo de conclusão" v-model="equivalencia.anoLetivo" :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" required></v-text-field>
 
-            <v-select label="Semestre da UC Equivalente" v-model="equivalencia.semUcEquiv" :items="['1º Semestre', '2º Semestre']" :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" required></v-select>
+                <!-- UC Equivalente -->
+                <v-autocomplete :disabled="disabledInput" label="UC Equivalente" v-model="equivalencia.ucEquiv" type="text" :items="ucDestino" item-text="ucEquiv" required></v-autocomplete>
 
-            <v-text-field label="Ano letivo de conclusão" v-model="equivalencia.anoLetivo" :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" required></v-text-field>
+                <!-- Nota Obtida -->
+                <v-text-field label="Nota Obtida" v-model="equivalencia.nota" :rules="gradeRules" required></v-text-field>
 
-            <v-text-field label="Nota Obtida" v-model="equivalencia.nota" :rules="gradeRules" required></v-text-field>
+                <!-- ECTS -->
+                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
 
-            <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent" :disabled="disabledInput" :rules="[v => !!v || 'Especifique a percentagem']" required></v-text-field>
+                <!-- Semestre Equivalente -->
+                <v-select label="Semestre da UC Equivalente" v-model="equivalencia.semUcEquiv" :items="['1º Semestre', '2º Semestre']" :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" required></v-select>
 
-            <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" required></v-text-field>
-            <v-btn color="teal" dark @click="handleSubmit" :disabled="!valid">Criar</v-btn>
+                <!-- Percentagem de Equivalencia -->
+                <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent" :disabled="disabledInput" :rules="[v => !!v || 'Especifique a percentagem']" required></v-text-field>
+
+
+            </v-container>
+            <!-- Without Autocomplete -->
+            <v-container v-else>
+                <v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>
+                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" required></v-text-field>
+                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
+            </v-container>
+
+            <v-switch v-model="manualInput" class="mx-2" label="Inserção Manual"></v-switch>
+
+            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
         </v-form>
     </v-container>
 </template>
@@ -31,8 +51,9 @@
                 processId: this.$route.params.id,
                 equivalencia: new Equivalencia(),
                 ucOrigem: null,
-                ucDestino: null,
+                ucDestino: [],
                 disabledInput: true,
+                manualInput: false,
 
                 // Form Rules
                 valid: false,
@@ -51,19 +72,42 @@
         },
         methods: {
             subjectChosen() {
+                console.group("Subject Chosen");
+
+                console.log(`Subject Chosen ${this.equivalencia.ucRealizada}`);
+                let params = {
+                    instProv: this.process.instProv,
+                    cursoProv: this.process.cursoProv,
+                    ucRealizada: this.equivalencia.ucRealizada
+                };
+
+                console.log(params);
                 UserService.getSubject(this.process.instProv, this.process.cursoProv, this.equivalencia.ucRealizada)
                     .then(response => {
-                        this.ucDestino = response.data;
-                        this.disabledInput = false;
-                        console.log(response.data);
+                        let data = response.data;
+                        if(data.length > 0) {
+                            console.log("Updating...");
+                            console.log(data);
+                            this.ucDestino.push(... data);
+                            this.equivalencia.ects = data.ects;
+                            this.disabledInput = false;
+                        } else {
+                            this.manualInput = true;
+                        }
+
                     })
                     .catch(err => console.log(err));
+
+                console.groupEnd();
             },
 
 
             handleSubmit(e) {
                 e.preventDefault();
+                // TODO: Perform validation?
+                this.equivalencia.schoolYearValidation();
 
+                //
                 UserService.newEquivalence(this.processId, this.equivalencia)
                     .then(response => {
 

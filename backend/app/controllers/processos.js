@@ -20,7 +20,7 @@ module.exports.findProcessById = (id) => {
 
 module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {
 
-    const newProcess = new Processo({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
+    const newProcess = new Processo({ processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy });
 
     return newProcess.save();
 
