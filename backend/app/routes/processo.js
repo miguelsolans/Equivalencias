@@ -120,16 +120,15 @@ router.delete('/:id', checkAuth, (req, res) => {
 
 /**
  * Add Subjects to Process by its Id
- * param {id}: Process ID
- * body {semUcEquiv}: "1º Semestre" or "2º Semestre"
- * body {anoUcEquiv}: STRING
- * body {UcEquiv}: STRING
- * body {percent}: number
- * body {nota}: number between 0 and 20
- * body {ects}: number of ECTS
- * body {ucRealizada}: STRING
  */
 router.put('/:id', checkAuth, (req, res) => {
+    // semUcEquiv: STRING,
+    // anoUcEquiv: STRING,
+    // ucEquiv: STRING,
+    // percent: NUMBER,
+    // nota: NUMBER,
+    // ects: NUMBER,
+    // ucRealizada: STRING
     const subject = req.body;
 
     subject.createdBy = req.decodedUser.username;
@@ -150,9 +149,6 @@ router.get('/:id/files', checkAuth, (req, res) => {
 
 /**
  * Download a Process Document by its Id
- * param {id}: process ID
- * param {filename}: filename
- * returns multimedia content
  */
 router.get('/:id/file/:filename', checkAuth, (req, res) => {
 

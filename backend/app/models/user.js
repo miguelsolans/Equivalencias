@@ -15,10 +15,10 @@ const userScheme = new mongoose.Schema({
         required: true,
         unique: true
     },
-    admin: {
+    deletable: {
         type: Boolean,
         required: true,
-        default: false
+        default: true
     },
     fullName: {
         type: String,
