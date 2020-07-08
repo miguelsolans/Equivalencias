@@ -92,10 +92,10 @@
             
             <v-row class="text-right d-none d-sm-flex">
                 <v-col>
-                    <v-checkbox 
+                    <v-switch
                         color="#197855" 
-                        v-model="course.doesntExist" 
-                        class="ml-md-5 my-2" 
+                        v-model="course.doesntExist"
+                        class="ml-md-5 my-2"
                         label ="Curso Inexistente"
                     />
                 </v-col>
@@ -110,7 +110,7 @@
                             <div class="text-capitalize mx-1">
                                 <strong>Criar Processo</strong>
                             </div>
-                            <v-icon>mdi-plus</v-icon>
+                            <v-icon>mdi-account-plus</v-icon>
                         </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
@@ -133,10 +133,10 @@
             </v-row>
             <v-row class="text-right d-flex d-sm-none">
                 <v-col>
-                    <v-checkbox 
-                        color="#197855"
-                        v-model="course.doesntExist" 
-                        class="my-2" 
+                    <v-switch
+                        color="#197855" 
+                        v-model="course.doesntExist"
+                        class="ml-md-5 my-2"
                         label ="Curso Inexistente"
                     />
                 </v-col>
@@ -170,7 +170,7 @@
         <v-dialog v-model="noProcessAlert" persistent max-width="350">
             <v-card>
                 <v-card-title class="headline">Este processo não existe</v-card-title>
-                <v-card-text>Por favor preencha os campos pedidos antes de tentar submeter o processo.</v-card-text>
+                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter o processo.</v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
                 </v-card-actions>

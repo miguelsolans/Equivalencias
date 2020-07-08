@@ -5,6 +5,9 @@
                 <Navbar/>
             </div>
             <router-view />
+            <div v-if="dashboardPage">
+                <Footer/>
+            </div>
         </v-content>
     </v-app>
 </template>
@@ -12,10 +15,12 @@
 <script>
 
     import Navbar from "./components/Navbar";
+    import Footer from "./components/Footer";
 
     export default {
         components: {
-            Navbar
+            Navbar,
+            Footer
         },
         computed: {
             loggedOn() {

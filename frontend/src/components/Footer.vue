@@ -1,7 +1,7 @@
 <template>
     <v-footer
         padless
-        fixed
+        dense
       >
         <v-row
           justify="center"

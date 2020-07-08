@@ -13,7 +13,10 @@
             @click:clear="clearSearch"
         ></v-text-field>
         <v-card rounded>
-            <v-list rounded two-line>
+            <v-list 
+                two-line
+                rounded 
+            >
                 <template v-for="(process, index) in filterStudents">
                     <v-list-item
                         :key="process.processo"
