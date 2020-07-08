@@ -4,42 +4,54 @@
             <v-col cols="1">                
                 <v-avatar size="55px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
-            <v-col class="ml-4">
+            <v-col class="ml-8">
                 <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
                 <p>Complete os dados para criar um novo Processo</p>
             </v-col>
         </v-row>
 
-        <v-form class="my-10">
-            <v-text-field 
-                color="#197855"
-                placeholder="Identificador do Processo" 
-                type="text" 
-                v-model="student.processo" 
-                class="ml-md-5"
-                required
-                hide-details
-            ></v-text-field>
-            <v-text-field 
-                color="#197855"
-                placeholder="Identificador do Aluno" 
-                type="text" v-model="student.idAluno" 
-                class="ml-md-5"
-                required
-                hide-details
-            ></v-text-field>
+        <v-form class="my-9">
+            <v-row>
+                <v-col cols="6" sm="6">
+                    <v-text-field 
+                        color="#197855"
+                        placeholder="Identificador do Processo" 
+                        type="text" 
+                        v-model="student.processo"
+                        class="ml-md-5"
+                        dense
+                        filled
+                        rounded
+                        hide-details
+                        required
+                    ></v-text-field>
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-text-field 
+                        color="#197855"
+                        placeholder="Identificador do Aluno" 
+                        type="text" v-model="student.idAluno" 
+                        class="ml-md-5"
+                        dense
+                        filled
+                        rounded
+                        hide-details
+                        required
+                    ></v-text-field>
+                </v-col>
+            </v-row>
             <v-text-field 
                 color="#197855"                
                 placeholder="Nome Completo do Aluno" 
                 type="text" 
                 v-model="student.nomeAluno" 
                 class="ml-md-5"
-                required
+                dense
+                filled
+                rounded
                 hide-details
+                required
             ></v-text-field>
-
-<!--            <v-text-field placeholder="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
-
             <v-autocomplete 
                 color="#197855"
                 v-model="student.instProv" 
@@ -48,10 +60,12 @@
                 :items="universities" 
                 item-text="nomeInstit" 
                 @change="universityChosen"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
                 hide-details
             ></v-autocomplete>
-
             <v-autocomplete 
                 color="#197855"
                 v-if="!course.enableInput && !course.doesntExist" 
@@ -60,14 +74,20 @@
                 :items="course.courses" 
                 item-text="cursoProv" 
                 :disabled="course.disableAutocomplete"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
             ></v-autocomplete>
             <v-text-field
                 color="#197855"
                 v-else-if="course.enableInput || course.doesntExist" 
                 placeholder="Curso Proveniente" 
                 v-model="student.cursoProv"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
             ></v-text-field>
             
             <v-row class="text-right d-none d-sm-flex">
