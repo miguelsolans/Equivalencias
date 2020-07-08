@@ -1,24 +1,29 @@
 <template>
     <v-container>
-        <v-text-field
-            class="textSearch"
-            rounded
-            dense
-            filled
-            clearable
-            color="#197855"
-            prepend-inner-icon="mdi-magnify"
-            placeholder="Procurar Processo Equivalência"
-            v-model="search"
-            @click:clear="clearSearch"
-        ></v-text-field>
+
         <v-card rounded>
+            <v-list rounded dense>
+                <v-scaper></v-scaper>
+                <v-text-field
+                    class="textSearch"
+                    rounded
+                    dense
+                    filled
+                    clearable
+                    color="#197855"
+                    prepend-inner-icon="mdi-magnify"
+                    placeholder="Procurar Processo de Equivalência"
+                    v-model="search"
+                    @click:clear="clearSearch"
+                ></v-text-field>
+            </v-list>
             <v-list rounded two-line>
                 <template v-for="(process, index) in filterStudents">
                     <v-list-item
                         :key="process.processo"
                         :to="{ name: 'process', params: { id: process._id } }"
                     >
+                    
                         <v-list-item-avatar v-if="process.avatar">
                             <img :src="process.avatar"/>
                         </v-list-item-avatar>
@@ -33,7 +38,6 @@
                             <v-list-item-subtitle>
                                 <span>Processo </span> {{ process.processo }}
                             </v-list-item-subtitle>
-
                             <v-list-item-subtitle>
                                 <span>Aluno Número </span> {{ process.idAluno }}
                             </v-list-item-subtitle>
@@ -115,7 +119,7 @@
 
     /* Alterar o border-radius do card da Lista de Processos */
     .v-card:not(.v-sheet--tile):not(.v-card--shaped) {
-        border-radius: 10px;
+        border-radius: 15px;
     }
 
     /* Alterar altura do card da Lista de Processos */
@@ -123,6 +127,7 @@
     .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
         height: 355px;
         overflow-y: auto;
+        margin-top: -20px;
     }
 
     /* Alterar a cor do ícone e do texto da Caixa de Pesquisa */
