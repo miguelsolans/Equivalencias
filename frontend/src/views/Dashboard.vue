@@ -16,6 +16,7 @@
 <script>
     import NewProcess from '../components/Dashboard/NewProcess';
     import ListProcess from '../components/Dashboard/ListProcess';
+    
     export default {
         name: "Dashboard",
         components: {

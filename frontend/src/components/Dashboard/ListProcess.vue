@@ -2,9 +2,9 @@
     <v-container>
         <v-text-field
             class="textSearch"
+            filled
             rounded
             dense
-            filled
             clearable
             color="#197855"
             prepend-inner-icon="mdi-magnify"
@@ -13,7 +13,10 @@
             @click:clear="clearSearch"
         ></v-text-field>
         <v-card rounded>
-            <v-list rounded two-line>
+            <v-list 
+                two-line
+                rounded 
+            >
                 <template v-for="(process, index) in filterStudents">
                     <v-list-item
                         :key="process.processo"
@@ -33,7 +36,6 @@
                             <v-list-item-subtitle>
                                 <span>Processo </span> {{ process.processo }}
                             </v-list-item-subtitle>
-
                             <v-list-item-subtitle>
                                 <span>Aluno Número </span> {{ process.idAluno }}
                             </v-list-item-subtitle>
@@ -47,9 +49,7 @@
 </template>
 
 <script>
-
     import UserService from "../../services/user.service";
-
     export default {
         name: "ListProcess",
         data() {
@@ -83,14 +83,12 @@
             firstUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
-
                 return regex.exec(stringSplit[0])[0];
             },
             // Função que obtém a última letra maiúscula do nome do Aluno
             lastUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
-
                 return regex.exec(stringSplit[stringSplit.length-1])[0];
             },
             // Função que atribui 4 valores diferentes para as cores dos Avatars
@@ -107,31 +105,26 @@
 </script>
 
 <style scoped>
-
     /* Mudar o tamanho do Avatar de cada processo */
     .v-image {
         max-width: 150px;
     }
-
     /* Alterar o border-radius do card da Lista de Processos */
     .v-card:not(.v-sheet--tile):not(.v-card--shaped) {
-        border-radius: 10px;
+        border-radius: 20px;
     }
-
     /* Alterar altura do card da Lista de Processos */
     /* Feito para caber apenas 4 processos visíveis */
     .v-list.v-sheet.v-sheet--tile.theme--light.v-list--two-line {
         height: 355px;
         overflow-y: auto;
     }
-
     /* Alterar a cor do ícone e do texto da Caixa de Pesquisa */
     .textSearch >>> input {
         caret-color: #197855 !important;
         color: #197855;
         font-size: 0.9em;
     }
-
     .textSearch >>> .v-icon {
         color: #197855;
     }
@@ -140,5 +133,4 @@
         -webkit-box-shadow:0 1px 4px #959595; 
         box-shadow:0 1px 4px #959595;
     }
-
 </style>

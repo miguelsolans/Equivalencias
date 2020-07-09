@@ -2,44 +2,56 @@
     <v-container>
         <v-row no-gutters class="ml-md-5">
             <v-col cols="1">                
-                <v-avatar size="50px"><img src="../../assets/images/New Process1.png" alt="Avatar para o processo"/></v-avatar>
+                <v-avatar size="55px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
-            <v-col class="ml-4">
+            <v-col class="ml-8">
                 <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
                 <p>Complete os dados para criar um novo Processo</p>
             </v-col>
         </v-row>
 
-        <v-form class="my-10">
-            <v-text-field 
-                color="#197855"
-                placeholder="Identificador do Processo" 
-                type="text" 
-                v-model="student.processo" 
-                class="ml-md-5"
-                required
-                hide-details
-            ></v-text-field>
-            <v-text-field 
-                color="#197855"
-                placeholder="Identificador do Aluno" 
-                type="text" v-model="student.idAluno" 
-                class="ml-md-5"
-                required
-                hide-details
-            ></v-text-field>
+        <v-form class="my-9">
+            <v-row>
+                <v-col cols="6" sm="6">
+                    <v-text-field 
+                        color="#197855"
+                        placeholder="Identificador do Processo" 
+                        type="text" 
+                        v-model="student.processo"
+                        class="ml-md-5"
+                        dense
+                        filled
+                        rounded
+                        hide-details
+                        required
+                    ></v-text-field>
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-text-field 
+                        color="#197855"
+                        placeholder="Identificador do Aluno" 
+                        type="text" v-model="student.idAluno" 
+                        class="ml-md-5"
+                        dense
+                        filled
+                        rounded
+                        hide-details
+                        required
+                    ></v-text-field>
+                </v-col>
+            </v-row>
             <v-text-field 
                 color="#197855"                
                 placeholder="Nome Completo do Aluno" 
                 type="text" 
                 v-model="student.nomeAluno" 
                 class="ml-md-5"
-                required
+                dense
+                filled
+                rounded
                 hide-details
+                required
             ></v-text-field>
-
-<!--            <v-text-field placeholder="Instituição Proveninente" type="text" v-model="student.instProv" required></v-text-field>-->
-
             <v-autocomplete 
                 color="#197855"
                 v-model="student.instProv" 
@@ -48,10 +60,12 @@
                 :items="universities" 
                 item-text="nomeInstit" 
                 @change="universityChosen"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
                 hide-details
             ></v-autocomplete>
-
             <v-autocomplete 
                 color="#197855"
                 v-if="!course.enableInput && !course.doesntExist" 
@@ -60,22 +74,28 @@
                 :items="course.courses" 
                 item-text="cursoProv" 
                 :disabled="course.disableAutocomplete"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
             ></v-autocomplete>
             <v-text-field
                 color="#197855"
                 v-else-if="course.enableInput || course.doesntExist" 
                 placeholder="Curso Proveniente" 
                 v-model="student.cursoProv"
-                class="ml-md-5"
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
             ></v-text-field>
             
             <v-row class="text-right d-none d-sm-flex">
                 <v-col>
-                    <v-checkbox 
+                    <v-switch
                         color="#197855" 
-                        v-model="course.doesntExist" 
-                        class="ml-md-5 my-2" 
+                        v-model="course.doesntExist"
+                        class="ml-md-5 my-2"
                         label ="Curso Inexistente"
                     />
                 </v-col>
@@ -90,7 +110,7 @@
                             <div class="text-capitalize mx-1">
                                 <strong>Criar Processo</strong>
                             </div>
-                            <v-icon>mdi-plus</v-icon>
+                            <v-icon>mdi-account-plus</v-icon>
                         </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
@@ -113,10 +133,10 @@
             </v-row>
             <v-row class="text-right d-flex d-sm-none">
                 <v-col>
-                    <v-checkbox 
-                        color="#197855"
-                        v-model="course.doesntExist" 
-                        class="my-2" 
+                    <v-switch
+                        color="#197855" 
+                        v-model="course.doesntExist"
+                        class="ml-md-5 my-2"
                         label ="Curso Inexistente"
                     />
                 </v-col>
@@ -150,7 +170,7 @@
         <v-dialog v-model="noProcessAlert" persistent max-width="350">
             <v-card>
                 <v-card-title class="headline">Este processo não existe</v-card-title>
-                <v-card-text>Por favor preencha os campos pedidos antes de tentar submeter o processo.</v-card-text>
+                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter o processo.</v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
                 </v-card-actions>
