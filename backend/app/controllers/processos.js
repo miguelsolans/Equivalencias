@@ -4,7 +4,6 @@
  * Author: Miguel Solans
  */
 const Processo = require('../models/processo');
-const mongoose = require('mongoose');
 
 module.exports.list = (query, projection) => {
     return Processo.find(query, projection);
@@ -37,13 +36,6 @@ module.exports.searchByYear = (year) => {
     return Processo.find({ data: { $gte: start, $lt: end} });
 };
 
-// // semUcEquiv: STRING,
-//     // anoUcEquiv: STRING,
-//     // ucEquiv: STRING,
-//     // percent: NUMBER,
-//     // nota: NUMBER,
-//     // ects: NUMBER,
-//     // ucRealizada: STRING
 module.exports.addSubjects = (id, { semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada, createdBy}) => {
     const subject = {
         semUcEquiv: semUcEquiv,
@@ -76,11 +68,13 @@ module.exports.listDocumentation = (processId) => {
     return Processo.aggregate([
         {
             '$match': {
-                '_id': new mongoose.mongo.ObjectId(processId)
+                //'processo': new mongoose.mongo.ObjectId(processId)
+                'processo': processId
             }
         }, {
             '$project': {
                 '_id': true,
+                'processo': true,
                 'documentation': true
             }
         }, {

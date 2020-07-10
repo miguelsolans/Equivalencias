@@ -53,22 +53,4 @@ router.post('/', checkAuth, (req, res) => {
         .catch(err => res.status(401).jsonp(err));
 });
 
-// router.get('/:university', (req, res) => {
-//
-//     const query = req.query;
-//
-//
-//     Processos.universityCourses(req.params.name)
-//         .then(data => res.status(200).json(data))
-//         .catch(err => res.json(err));
-// });
-
-// router.get('/:university/course/:course',)
-
-// router.post('/:id', checkAuth, (req, res) => {
-
-
-// });
-
-
 module.exports = router;
