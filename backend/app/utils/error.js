@@ -1,4 +1,4 @@
-class Error {
+module.exports = class Error {
     constructor(code, title, message) {
         this.code = code;
         this.title = title;
@@ -7,6 +7,26 @@ class Error {
     }
 
     setErrorStack(error) {
-        this.error = error
+        this.error = error;
+    }
+
+    getHttpCode() {
+        return this.code;
+    }
+
+    getBody() {
+        let body = {
+            title: this.title,
+            message: this.message,
+            error: this.error
+        };
+
+        if(this.error == null) {
+            console.log("Removing Body");
+            delete body["error"];
+        }
+
+        return body;
     }
 }
+

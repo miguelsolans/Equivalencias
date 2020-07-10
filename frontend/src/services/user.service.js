@@ -68,6 +68,23 @@ class UserService {
     }
 
 
+    updatePassword(oldPassword, newPassword) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/user/password`, {
+            oldPassword: oldPassword,
+            newPassword: newPassword
+        }, {
+            headers: authHeader()
+        });
+    }
+
+    updateAccount(user) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
+            fullName: user.fullName,
+            email: user.email
+        }, {
+            headers: authHeader()
+        });
+    }
 }
 
 export default new UserService();

@@ -4,9 +4,12 @@
 const express = require('express');
 const router  = express.Router();
 
+const isAdmin = require('../middleware/userAdmin');
+
 const Processos = require('../controllers/processos');
 
-const pdf = require('../utils/pdf');
+//const pdf = require('../utils/pdfOld');
+const Pdf = require('../utils/pdf');
 const fs = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
@@ -45,7 +48,7 @@ router.get('/:id', checkAuth, (req, res) => {
 // TODO: REFACTOR THIS NASTY CODE TO ASYNC/AWAIT
 router.post('/:id/generate', checkAuth, (req, res) => {
     let idProcess = req.params.id;
-
+    // TODO: Refactor. Create PDF first. If Database fails, delete created PDF.
     Processos.findProcessById( idProcess )
         .then(process => {
             console.log("Process Found");
@@ -54,15 +57,19 @@ router.post('/:id/generate', checkAuth, (req, res) => {
                 generatedBy: req.decodedUser.fullName
             };
             Processos.newDocument(process._id, fileMetadata)
-                .then(document => {
-                    console.log("DATA FETCHED...Passing to utils now");
+                .then(() => {
+                    try {
+                        let studentPdf = new Pdf(process, req.decodedUser, fileMetadata.filename);
+                        //let result = pdf.makePdf(process, req.decodedUser, fileMetadata.filename);
+                        let result = studentPdf.makePdf();
+                        let msgOutput = result ? "Successfully generated" : "Some error occurred...";
 
-                    console.log(document);
+                        res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+                    } catch(err) {
+                        console.log(err);
+                        res.jsonp(err);
+                    }
 
-                    let result = pdf.makePdf(process, req.decodedUser, fileMetadata.filename);
-                    let msgOutput = result ? "Successfully generated" : "Some error occurred...";
-
-                    res.status(201).jsonp( {title: "Success!", message: msgOutput} );
 
                 })
                 .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
@@ -166,4 +173,31 @@ router.get('/:id/file/:filename', checkAuth, (req, res) => {
     });
 });
 
+
+router.get('/export', checkAuth, isAdmin, (req, res) => {
+
+    let { year, sort, limit, type} = req.params;
+
+    if(!type) {
+        res.jsonp({title: "Type Not Specified", message: "Specify a data type (JSON or XML)"});
+    } else {
+        if(type.toLowerCase() === "xml") {
+            // TODO: Export with XML
+        }
+        else if(type.toLowerCase() === "json") {
+
+        }
+        else {
+            res.jsonp({title: "Unsupported type", message: `${type} is not a supported export data type`});
+        }
+
+    }
+    // Work with params
+    // year=
+    // sort=[year, asc, desc],
+    // limit=[number of max data]
+    // type=JSON/XML
+
+
+});
 module.exports = router;

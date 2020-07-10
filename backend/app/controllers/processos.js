@@ -15,7 +15,7 @@ module.exports.findOneStudent = (id) => {
 };
 
 module.exports.findProcessById = (id) => {
-    return Processo.findById( id );
+    return Processo.findOne( {processo: id} );
 };
 
 module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initiatedBy}) => {

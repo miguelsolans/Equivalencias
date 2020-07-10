@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "Platform"
+        name: "ManageFaculty"
     }
 </script>
 

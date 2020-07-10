@@ -6,7 +6,7 @@ const Users = require('../controllers/users');
 const Hash = require('../utils/hasing');
 
 const checkAuth = require('../middleware/checkAuth');
-const userAdmin = require('../middleware/userAdmin');
+const isAdmin = require('../middleware/userAdmin');
 
 /**
  * Get a Certain user by its ID
@@ -46,7 +46,8 @@ router.post('/login', (req, res, next) => {
                             res.status(401).jsonp( {title: "error", message: "Invalid password!"} );
                         } else {
                             const token = jwt.sign({
-                                    username: user.username
+                                    // username: user.username
+                                    user: user._id
                                 },
                                 process.env.AUTH_SECRET, { expiresIn: process.env.AUTH_TOKEN_TIMETOLIVE },
                                 { algorithm: process.env.AUTH_TOKEN_ALGORITHM }
@@ -71,6 +72,43 @@ router.post('/login', (req, res, next) => {
         .catch(err => res.status(401).jsonp(err));
 
 });
+
+/**
+ * Update Account Information endpoint
+ * body {fullName}: User fullName
+ * body {email}: Account e-mail address
+ */
+router.put('/update', checkAuth, async (req, res) => {
+    console.log("POST / Update Account");
+
+    try {
+        let data;
+        if(req.decodedUser.admin) {
+            data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, req.body.admin);
+        } else {
+            data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, false);
+        }
+
+        res.status(201).jsonp(data);
+    } catch(err) {
+        res.status(501).jsonp({title: "Error!", message: "Some error occurred while updating account information", error: err});
+    }
+
+});
+
+/**
+ * Update Account username for a certain user
+ * params {username}: Username to update
+ * body {username}: New username to update to
+ */
+router.patch('/username/:username', checkAuth, isAdmin, (req, res) => {
+
+    Users.updateUsername(req.params.username, req.body.username)
+        .then(data => res.status(201).jsonp({title: "Updated", message: `${req.params.username} username has been updated to ${req.body.username}`, data: data}))
+        .catch(err => res.status(500).jsonp(err));
+
+});
+
 
 /**
  * Register a new username
@@ -140,12 +178,19 @@ router.put('/password', checkAuth, async (req, res) => {
  * Delete an account. Will not work if the current account is set to admin
  * body {username}: account username
  */
-router.delete('/', checkAuth, userAdmin, (req, res) => {
+router.delete('/', checkAuth, isAdmin, (req, res) => {
 
     Users.destroyUser(req.body.username)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));
 });
+
+router.get('/', checkAuth, isAdmin, (req, res) => {
+
+    Users.getUsers()
+        .then(data => res.status(200).jsonp(data))
+        .catch(err => res.status(500).jsonp(err));
+})
 
 
 module.exports = router;
