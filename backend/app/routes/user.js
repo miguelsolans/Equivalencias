@@ -3,7 +3,6 @@ const router  = express.Router();
 const bcrypt  = require('bcryptjs');
 const jwt     = require('jsonwebtoken');
 const Users = require('../controllers/users');
-const Hash = require('../utils/hasing');
 
 const checkAuth = require('../middleware/checkAuth');
 const isAdmin = require('../middleware/userAdmin');
