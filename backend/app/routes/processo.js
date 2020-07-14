@@ -1,16 +1,43 @@
-// TODO: CRIAR UMA QUERY QUE MOSTRA UC DE EQUIVALENCIAS SEMELHANTES
-
-
 const express = require('express');
 const router  = express.Router();
-
+const isAdmin = require('../middleware/userAdmin');
+const xmlParser = require('js2xmlparser');
 const Processos = require('../controllers/processos');
-
-const pdf = require('../utils/pdf');
+const Pdf = require('../utils/pdf');
 const fs = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
 
+router.get('/export', checkAuth, isAdmin, async (req, res) => {
+
+    let { year, sort, limit, type} = req.query;
+    console.log(req.query);
+    if(!type) {
+        res.jsonp({title: "Type Not Specified", message: "Specify a data type (JSON or XML)"});
+    } else {
+        if(type.toLowerCase() === "xml") {
+            // TODO: Export with XML
+            let data = await Processos.list();
+
+            console.log(data);
+
+            res.status(200).xml(xmlParser.parse("data", data));
+
+        }
+        else if(type.toLowerCase() === "json") {
+
+        }
+        else {
+            res.jsonp({title: "Unsupported type", message: `${type} is not a supported export data type`});
+        }
+
+    }
+    // Work with params
+    // year=
+    // sort=[year, asc, desc],
+    // limit=[number of max data]
+    // type=JSON/XML
+});
 
 /**
  * Get Students Enrolled
@@ -42,33 +69,30 @@ router.get('/:id', checkAuth, (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
-// TODO: REFACTOR THIS NASTY CODE TO ASYNC/AWAIT
-router.post('/:id/generate', checkAuth, (req, res) => {
+router.post('/:id/generate', checkAuth, async (req, res) => {
     let idProcess = req.params.id;
 
-    Processos.findProcessById( idProcess )
-        .then(process => {
-            console.log("Process Found");
-            const fileMetadata = {
-                filename: Date.now(),
-                generatedBy: req.decodedUser.fullName
-            };
-            Processos.newDocument(process._id, fileMetadata)
-                .then(document => {
-                    console.log("DATA FETCHED...Passing to utils now");
+    try {
+        let process = await Processos.findProcessById( idProcess );
 
-                    console.log(document);
+        const fileMetadata = {
+            filename: Date.now(),
+            generatedBy: req.decodedUser.fullName
+        }
 
-                    let result = pdf.makePdf(process, req.decodedUser, fileMetadata.filename);
-                    let msgOutput = result ? "Successfully generated" : "Some error occurred...";
+        await Processos.newDocument(process._id, fileMetadata);
 
-                    res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+        let studentPdf = new Pdf(process, req.decodedUser, fileMetadata.filename);
 
-                })
-                .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
+        let result = studentPdf.makePdf();
 
-        })
-        .catch(err => res.jsonp( {title: "Error!", message: "Some error occurred while generating a PDF output", error: err} ));
+        let msgOutput = result ? "Successfully generated" : "Some error occurred...";
+        res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+
+    } catch(err) {
+        res.status(500).jsonp( {title: "Error!", message: "Some error occurred while generating the PDF", error: err} )
+    }
+
 });
 
 /**

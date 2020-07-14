@@ -33,7 +33,8 @@ const routes = [
         name: 'process',
         component: () => import('../views/Student'),
         meta: {
-            requiresAuth: true
+            requiresAuth: true,
+            title: 'Gestão Processo'
         }
     },
     {
@@ -41,7 +42,8 @@ const routes = [
         name: 'settings',
         component: () => import('../views/Settings'),
         meta: {
-            requiresAuth: true
+            requiresAuth: true,
+            title: 'Definições'
         }
     }
 ];
