@@ -1,8 +1,35 @@
 <template>
     <v-container>
         <div v-if="process !== null">
-            <h2>Gestão do Processo {{ process.processo }}</h2>
-            <v-tabs>
+            <v-row no-gutters>
+                <v-col
+                    cols="12"
+                    sm="6"
+                    md="8"
+                >                    
+                    <h1 style="font-weight: bold">Gestão do Processo</h1>
+                    <h2 style="color: #187653">{{ process.processo }}</h2>
+                </v-col>
+                <v-col
+                    cols="6"
+                    md="4"
+                >                    
+                    <v-row no-gutters class="ml-md-5">
+                        <v-col cols="1">                
+                            <v-avatar size="55px"><img src="../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
+                        </v-col>
+                        <v-col class="ml-8">
+                            <h3 style="color: #187653">{{ process.nomeAluno }}</h3>
+                            <h3>{{ process.idAluno }}</h3>
+                        </v-col>
+                    </v-row>
+                </v-col>
+            </v-row>
+     
+            <v-tabs 
+                class="my-10" 
+                color="#187653"
+            >
                 <v-tab>Informações</v-tab>
                 <v-tab>Equivalências</v-tab>
                 <v-tab>Formulário</v-tab>

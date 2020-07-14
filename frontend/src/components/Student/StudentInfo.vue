@@ -1,25 +1,17 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col md2>
-                <img class="avatar" src="../../assets/images/User.png">
-            </v-col>
+        <h2>Perfil do Aluno</h2>
+        <v-form>
+            <v-text-field v-model="process.processo" label="Identificador do Processo" :disabled="readOnly"></v-text-field>
+            <v-text-field v-model="process.idAluno" label="Identificador do Aluno" :disabled="readOnly"></v-text-field>
+            <v-text-field v-model="process.nomeAluno" label="Nome do Aluno" :disabled="readOnly"></v-text-field>
+            <v-text-field v-model="process.instProv" label="Instituição Proveniente" :disabled="readOnly"></v-text-field>
+            <v-text-field v-model="process.cursoProv" label="Curso Proveniente" :disabled="readOnly"></v-text-field>
+            <v-switch v-model="readOnly" class="mx-2" label="Modo de Leitura"></v-switch>
 
-            <v-col md10>
-                <h2>Perfil do Aluno</h2>
-                <v-form>
-                    <v-text-field v-model="process.processo" label="Identificador do Processo" :disabled="readOnly"></v-text-field>
-                    <v-text-field v-model="process.idAluno" label="Identificador do Aluno" :disabled="readOnly"></v-text-field>
-                    <v-text-field v-model="process.nomeAluno" label="Nome do Aluno" :disabled="readOnly"></v-text-field>
-                    <v-text-field v-model="process.instProv" label="Instituição Proveniente" :disabled="readOnly"></v-text-field>
-                    <v-text-field v-model="process.cursoProv" label="Curso Proveniente" :disabled="readOnly"></v-text-field>
-                    <v-switch v-model="readOnly" class="mx-2" label="Modo de Leitura"></v-switch>
+            <!-- constructor(processo, idAluno, nomeAluno, instProv, cursoProv) -->
 
-                    <!-- constructor(processo, idAluno, nomeAluno, instProv, cursoProv) -->
-
-                </v-form>
-            </v-col>
-        </v-row>
+        </v-form>
     </v-container>
 </template>
 
