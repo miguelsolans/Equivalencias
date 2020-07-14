@@ -2,7 +2,7 @@
     <v-container>
         <v-row no-gutters class="ml-md-5">
             <v-col cols="1">                
-                <v-avatar size="55px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
+                <v-avatar size="55px"><img src="../../assets/images/NewProcess.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
             <v-col class="ml-8">
                 <h3 style="color: #187653">Registar Novo Processo Equivalência</h3>
@@ -116,7 +116,7 @@
                             <v-btn
                                 rounded
                                 class="ml-5" 
-                                color="#33aa7d"
+                                color="#39c087"
                                 dark
                                 fab
                                 small
@@ -154,7 +154,7 @@
                     <v-btn
                         rounded
                         class="ml-5" 
-                        color="#33aa7d"
+                        color="#39c087"
                         dark
                         fab
                         small

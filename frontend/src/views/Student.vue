@@ -13,15 +13,17 @@
                 <v-col
                     cols="6"
                     md="4"
-                    class="text-align: right"
+                    align="right"
                 >                    
-                    <v-row no-gutters class="ml-md-5">
-                        <v-col cols="1">                
-                            <v-avatar size="55px"><img src="../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
-                        </v-col>
-                        <v-col class="ml-8">
+                    <v-row align="center" no-gutters class="ml-md-5">
+                        <v-col>                
                             <h3 style="color: #187653">{{ process.nomeAluno }}</h3>
                             <h3>{{ process.idAluno }}</h3>
+                        </v-col>
+                        <v-col>
+                            <v-avatar size="65px">
+                                <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
+                            </v-avatar>
                         </v-col>
                     </v-row>
                 </v-col>
@@ -33,7 +35,7 @@
                 class="my-10" 
                 color="#187653"
             >
-                <v-tab>Informações Proceso</v-tab>
+                <v-tab>Informações Processo</v-tab>
                 <v-tab>Equivalências</v-tab>
                 <v-tab>Formulário Equivalência</v-tab>
                 <v-tab>Documentos</v-tab>
