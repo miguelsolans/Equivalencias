@@ -67,6 +67,7 @@
             UserService.getProcess(this.id)
                 .then(response => {
                     this.process = response.data;
+                    console.log(this.process);
                 }).catch(err => {
                     this.error = err;
                     console.log(err);
