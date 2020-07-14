@@ -13,6 +13,7 @@
                 <v-col
                     cols="6"
                     md="4"
+                    class="text-align: right"
                 >                    
                     <v-row no-gutters class="ml-md-5">
                         <v-col cols="1">                
@@ -26,14 +27,16 @@
                 </v-col>
             </v-row>
      
-            <v-tabs 
+            <v-tabs
+                centered
+                show-arrows
                 class="my-10" 
                 color="#187653"
             >
-                <v-tab>Informações</v-tab>
+                <v-tab>Informações Proceso</v-tab>
                 <v-tab>Equivalências</v-tab>
-                <v-tab>Formulário</v-tab>
-                <v-tab>Documentação</v-tab>
+                <v-tab>Formulário Equivalência</v-tab>
+                <v-tab>Documentos</v-tab>
 
                 <v-tab-item>
                     <StudentInfo :process="process"/>
