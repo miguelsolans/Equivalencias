@@ -5,7 +5,7 @@
                 <v-avatar size="55px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
             <v-col class="ml-8">
-                <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
+                <h3 style="color: #187653">Registar Novo Processo Equivalência</h3>
                 <p>Complete os dados para criar um novo Processo</p>
             </v-col>
         </v-row>
@@ -14,7 +14,7 @@
             <v-row>
                 <v-col cols="6" sm="6">
                     <v-text-field 
-                        color="#197855"
+                        color="#187653"
                         placeholder="Identificador do Processo" 
                         type="text" 
                         v-model="student.processo"
@@ -28,7 +28,7 @@
                 </v-col>
                 <v-col cols="6" sm="6">
                     <v-text-field 
-                        color="#197855"
+                        color="#187653"
                         placeholder="Identificador do Aluno" 
                         type="text" v-model="student.idAluno" 
                         class="ml-md-5"
@@ -41,7 +41,7 @@
                 </v-col>
             </v-row>
             <v-text-field 
-                color="#197855"                
+                color="#187653"                
                 placeholder="Nome Completo do Aluno" 
                 type="text" 
                 v-model="student.nomeAluno" 
@@ -53,7 +53,7 @@
                 required
             ></v-text-field>
             <v-autocomplete 
-                color="#197855"
+                color="#187653"
                 v-model="student.instProv" 
                 placeholder="Instituição Proveniente" 
                 type="text" 
@@ -67,7 +67,7 @@
                 hide-details
             ></v-autocomplete>
             <v-autocomplete 
-                color="#197855"
+                color="#187653"
                 v-if="!course.enableInput && !course.doesntExist" 
                 v-model="student.cursoProv" 
                 placeholder="Curso Proveniente" 
@@ -80,7 +80,7 @@
                 rounded
             ></v-autocomplete>
             <v-text-field
-                color="#197855"
+                color="#187653"
                 v-else-if="course.enableInput || course.doesntExist" 
                 placeholder="Curso Proveniente" 
                 v-model="student.cursoProv"
@@ -93,7 +93,7 @@
             <v-row class="text-right d-none d-sm-flex">
                 <v-col>
                     <v-switch
-                        color="#197855" 
+                        color="#187653" 
                         v-model="course.doesntExist"
                         class="ml-md-5 my-2"
                         label ="Curso Inexistente"
@@ -103,7 +103,7 @@
                         <v-btn
                             rounded
                             class="ml-5"
-                            color="#197855"
+                            color="#187653"
                             dark
                             @click="handleSubmit"
                         >
@@ -116,7 +116,7 @@
                             <v-btn
                                 rounded
                                 class="ml-5" 
-                                color="#39c087"
+                                color="#33aa7d"
                                 dark
                                 fab
                                 small
@@ -133,7 +133,7 @@
             <v-row class="text-right d-flex d-sm-none">
                 <v-col>
                     <v-switch
-                        color="#197855" 
+                        color="#187653" 
                         v-model="course.doesntExist"
                         class="ml-md-5 my-2"
                         label ="Curso Inexistente"
@@ -143,7 +143,7 @@
                     <v-btn
                         rounded
                         class="ml-5" 
-                        color="#197855"
+                        color="#187653"
                         dark
                         fab
                         small
@@ -154,7 +154,7 @@
                     <v-btn
                         rounded
                         class="ml-5" 
-                        color="#39c087"
+                        color="#33aa7d"
                         dark
                         fab
                         small

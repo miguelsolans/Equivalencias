@@ -246,7 +246,7 @@
         }
 
         div#app div#login div#form {
-            background-image: linear-gradient(to bottom,#38c087, #177452);
+            background-image: linear-gradient(to bottom,#3bb98a, #187653);
             border-radius: 15px;
             box-shadow: 0 0 30px 0 #A8A8A8;
             color: #ecf0f1;

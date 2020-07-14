@@ -6,7 +6,7 @@
             rounded
             dense
             clearable
-            color="#197855"
+            color="#187653"
             prepend-inner-icon="mdi-magnify"
             placeholder="Procurar Processo Equivalência"
             v-model="search"
@@ -96,9 +96,9 @@
             // Dessa forma, recorre-se ao resto da divisão por 4
             randomColor: function(index) {
                 if(index%4 == 1) return "linear-gradient(#3bb98a, #187653)";
-                if(index%4 == 2) return "linear-gradient(#22ba7e, #2a956a)";
-                if(index%4 == 3) return "linear-gradient(#38d694, #2ca773)";
-                if(index%4 == 0) return "linear-gradient(#60ebaf, #39c086)";
+                if(index%4 == 2) return "linear-gradient(#3bb98a, #187653)";
+                if(index%4 == 3) return "linear-gradient(#3bb98a, #187653)";
+                if(index%4 == 0) return "linear-gradient(#3bb98a, #187653)";
             }        
         },
     };
@@ -121,12 +121,12 @@
     }
     /* Alterar a cor do ícone e do texto da Caixa de Pesquisa */
     .textSearch >>> input {
-        caret-color: #197855 !important;
-        color: #197855;
+        caret-color: #187653 !important;
+        color: #187653;
         font-size: 0.9em;
     }
     .textSearch >>> .v-icon {
-        color: #197855;
+        color: #187653;
     }
     
     .imgAvatar {
