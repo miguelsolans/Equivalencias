@@ -2,7 +2,7 @@
     <v-container>
         <v-row no-gutters class="ml-md-5">
             <v-col cols="1">                
-                <v-avatar size="55px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
+                <v-avatar size="50px"><img src="../../assets/images/Process.png" alt="Avatar para o processo"/></v-avatar>
             </v-col>
             <v-col class="ml-8">
                 <h3 style="color: #197855">Registar Novo Processo Equivalência</h3>
@@ -110,7 +110,6 @@
                             <div class="text-capitalize mx-1">
                                 <strong>Criar Processo</strong>
                             </div>
-                            <v-icon>mdi-account-plus</v-icon>
                         </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
