@@ -15,7 +15,7 @@
                             filled 
                             rounded 
                             :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
-                            required
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
@@ -30,7 +30,7 @@
                             dense 
                             filled 
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -45,7 +45,7 @@
                             dense
                             filled
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
@@ -58,7 +58,7 @@
                             dense
                             filled
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -72,7 +72,7 @@
                             dense
                             filled
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -85,11 +85,12 @@
                             dense
                             filled
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
-                        <v-text-field 
+                        <v-text-field
+                            color="#187653"
                             label="Percentagem da Equivalência" 
                             v-model="equivalencia.percent" 
                             :disabled="disabledInput" 
@@ -97,7 +98,7 @@
                             dense
                             filled
                             rounded
-                            required
+                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -105,13 +106,55 @@
             <!-- Without Autocomplete -->
             <v-container v-else>
                 <v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>
-                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" required></v-text-field>
-                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
+                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" hide-details></v-text-field>
+                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" hide-details></v-text-field>
             </v-container>
-
-            <v-switch v-model="manualInput" class="mx-2" label="Inserção Manual"></v-switch>
-
-            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
+            <v-row class="text-right d-none d-sm-flex">
+                <v-col>
+                    <v-switch
+                        color="#187653" 
+                        v-model="manualInput"
+                        class="ml-md-5 my-5"
+                        label="Inserção Manual"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        @click="handleSubmit"
+                    >
+                        <div class="text-capitalize mx-1">
+                            <strong>Criar Equivalência</strong>
+                        </div>
+                    </v-btn>
+                </v-col>
+            </v-row>
+            <v-row class="text-right d-flex d-sm-none">
+                <v-col>
+                    <v-switch
+                        color="#187653" 
+                        v-model="manualInput"
+                        class="ml-md-5 my-5"
+                        label="Inserção Manual"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        fab
+                        small
+                        @click="handleSubmit"
+                    >
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>   
         </v-form>
     </v-container>
 </template>
