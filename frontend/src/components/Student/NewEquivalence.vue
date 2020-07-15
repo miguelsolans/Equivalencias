@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-form class="my-5">
+        <v-form class="my-5 mr-1">
             <v-container v-if="!manualInput">
                 <v-row>
                     <v-col cols="6" sm="6">
@@ -109,19 +109,19 @@
                 <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" hide-details></v-text-field>
                 <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" hide-details></v-text-field>
             </v-container>
-            <v-row class="text-right d-none d-sm-flex">
+            <v-row class="text-right d-none d-sm-flex mr-1">
                 <v-col>
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-md-5 my-5"
+                        class="ml-md-5 my-2"
                         label="Inserção Manual"
                     />
                 </v-col>
-                <v-col class="my-2">
+                <v-col>
                     <v-btn
+                        class="my-2"
                         rounded
-                        class="ml-5"
                         color="#187653"
                         dark
                         @click="handleSubmit"

@@ -2,7 +2,7 @@
     <v-container>
         <div v-if="process !== null">
             <v-row
-                class="d-none d-sm-flex"
+                class="d-none d-sm-flex mr-7 ml-7"
                 no-gutters
             >
                 <v-col

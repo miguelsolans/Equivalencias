@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-form class="my-5">
+        <v-form class="my-5 mr-6">
             <v-row>
                 <v-col cols="6" sm="6">
                     <v-text-field 
