@@ -1,41 +1,160 @@
 <template>
     <v-container>
-        <v-form>
-            <!-- With Autocomplete -->
+        <v-form class="my-5 mr-1">
             <v-container v-if="!manualInput">
-                <!-- UC Realizada -->
-                <v-autocomplete v-model="equivalencia.ucRealizada" label="UC Realizada" type="text" :items="ucOrigem" item-text="ucRealizada" @change="subjectChosen" :rules="[v => !!v || 'Especifique o nome da UC realizada']" required></v-autocomplete>
-
-                <!-- Ano Letivo de Conclusão -->
-                <v-text-field label="Ano letivo de conclusão" v-model="equivalencia.anoLetivo" :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" required></v-text-field>
-
-                <!-- UC Equivalente -->
-                <v-autocomplete :disabled="disabledInput" label="UC Equivalente" v-model="equivalencia.ucEquiv" type="text" :items="ucDestino" item-text="ucEquiv" required></v-autocomplete>
-
-                <!-- Nota Obtida -->
-                <v-text-field label="Nota Obtida" v-model="equivalencia.nota" :rules="gradeRules" required></v-text-field>
-
-                <!-- ECTS -->
-                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
-
-                <!-- Semestre Equivalente -->
-                <v-select label="Semestre da UC Equivalente" v-model="equivalencia.semUcEquiv" :items="['1º Semestre', '2º Semestre']" :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" required></v-select>
-
-                <!-- Percentagem de Equivalencia -->
-                <v-text-field label="Percentagem da Equivalência" v-model="equivalencia.percent" :disabled="disabledInput" :rules="[v => !!v || 'Especifique a percentagem']" required></v-text-field>
-
-
+                <v-row>
+                    <v-col cols="6" sm="6">
+                        <v-autocomplete
+                            color="#187653"
+                            v-model="equivalencia.ucRealizada" 
+                            label="UC Realizada" 
+                            type="text" 
+                            :items="ucOrigem" 
+                            item-text="ucRealizada"
+                            @change="subjectChosen"
+                            filled 
+                            rounded 
+                            :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
+                            hide-details
+                        />
+                    </v-col>
+                    <v-col cols="6" sm="6">
+                        <v-autocomplete
+                            color="#187653"
+                            :disabled="disabledInput"
+                            label="UC Equivalente"
+                            v-model="equivalencia.ucEquiv"
+                            type="text"
+                            :items="ucDestino"
+                            item-text="ucEquiv"
+                            dense 
+                            filled 
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="6" sm="6">
+                        <v-text-field
+                            class="mb-2"
+                            color="#187653"
+                            label="Ano Letivo de Conclusão" 
+                            v-model="equivalencia.anoLetivo" 
+                            :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                    <v-col cols="6" sm="6">
+                        <v-select
+                            color="#187653"
+                            label="Semestre da UC Equivalente" 
+                            v-model="equivalencia.semUcEquiv" 
+                            :items="['1º Semestre', '2º Semestre']" 
+                            :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                </v-row>
+                <v-row>
+                    <v-col cols="4" sm="4">
+                        <v-text-field
+                            color="#187653" 
+                            label="Nota Obtida" 
+                            v-model="equivalencia.nota" 
+                            rules="gradeRules" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                    <v-col cols="4" sm="4">
+                        <v-text-field
+                            color="#187653"
+                            label="ECTS" 
+                            v-model="equivalencia.ects" 
+                            :disabled="disabledInput" 
+                            :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                    <v-col cols="4" sm="4">
+                        <v-text-field
+                            color="#187653"
+                            label="Percentagem da Equivalência" 
+                            v-model="equivalencia.percent" 
+                            :disabled="disabledInput" 
+                            :rules="[v => !!v || 'Especifique a percentagem']" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                        />
+                    </v-col>
+                </v-row>
             </v-container>
             <!-- Without Autocomplete -->
             <v-container v-else>
                 <v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>
-                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" required></v-text-field>
-                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" required></v-text-field>
+                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" hide-details></v-text-field>
+                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" hide-details></v-text-field>
             </v-container>
-
-            <v-switch v-model="manualInput" class="mx-2" label="Inserção Manual"></v-switch>
-
-            <v-btn color="teal" dark @click="handleSubmit">Criar</v-btn>
+            <v-row class="text-right d-none d-sm-flex mr-1">
+                <v-col>
+                    <v-switch
+                        color="#187653" 
+                        v-model="manualInput"
+                        class="ml-md-5 my-2"
+                        label="Inserção Manual"
+                    />
+                </v-col>
+                <v-col>
+                    <v-btn
+                        class="my-2"
+                        rounded
+                        color="#187653"
+                        dark
+                        @click="handleSubmit"
+                    >
+                        <div class="text-capitalize mx-1">
+                            <strong>Criar Equivalência</strong>
+                        </div>
+                    </v-btn>
+                </v-col>
+            </v-row>
+            <v-row class="text-right d-flex d-sm-none">
+                <v-col>
+                    <v-switch
+                        color="#187653" 
+                        v-model="manualInput"
+                        class="ml-md-5 my-5"
+                        label="Inserção Manual"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        fab
+                        small
+                        @click="handleSubmit"
+                    >
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>   
         </v-form>
     </v-container>
 </template>

@@ -1,12 +1,32 @@
 <template>
     <v-container>
-        <v-form class="my-5">
+        <v-form class="my-5 mr-6">
             <v-row>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" label="Identificador do Processo" v-model="process.processo" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
+                    <v-text-field 
+                        color="#187653" 
+                        label="Identificador do Processo" 
+                        v-model="process.processo" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details 
+                        :disabled="readOnly"
+                    />
                 </v-col>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" label="Identificador do Aluno" v-model="process.idAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
+                    <v-text-field 
+                        color="#187653" 
+                        label="Identificador do Aluno" 
+                        v-model="process.idAluno" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details 
+                        :disabled="readOnly"
+                    />
                 </v-col>
             </v-row>
             <v-text-field color="#187653" label="Nome do Aluno" v-model="process.nomeAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
@@ -25,9 +45,7 @@
                 </v-col>
                 <v-col class="my-2">
                     <v-btn rounded class="ml-5" color="#187653" dark @click="updateProcess">
-                        <div class="text-capitalize mx-1">
-                            <strong>Salvar Alterações</strong>
-                        </div>
+                        <v-icon>mdi-content-save</v-icon>
                     </v-btn>
                 </v-col>
             </v-row>
