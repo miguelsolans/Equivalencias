@@ -1,69 +1,19 @@
 <template>
     <v-container>
-        <v-form
-            class="my-5"
-        >
+        <v-form class="my-5">
             <v-row>
                 <v-col cols="6" sm="6">
-                    <v-text-field 
-                        color="#187653"
-                        label="Identificador do Processo"
-                        v-model="process.processo"
-                        class="ml-md-5"
-                        dense
-                        filled
-                        rounded
-                        hide-details
-                        :disabled="readOnly"
-                    ></v-text-field>
+                    <v-text-field color="#187653" label="Identificador do Processo" v-model="process.processo" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
                 </v-col>
                 <v-col cols="6" sm="6">
-                    <v-text-field 
-                        color="#187653"
-                        label="Identificador do Aluno"
-                        v-model="process.idAluno"
-                        class="ml-md-5"
-                        dense
-                        filled
-                        rounded
-                        hide-details
-                        :disabled="readOnly"
-                    ></v-text-field>
+                    <v-text-field color="#187653" label="Identificador do Aluno" v-model="process.idAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
                 </v-col>
             </v-row>
-            <v-text-field 
-                color="#187653"
-                label="Nome do Aluno"
-                v-model="process.nomeAluno"
-                class="ml-md-5"
-                dense
-                filled
-                rounded
-                hide-details
-                :disabled="readOnly"
-            ></v-text-field>
-            <v-text-field 
-                color="#187653"
-                label="Instituição Proveniente"
-                v-model="process.instProv"
-                class="ml-md-5 mt-3"
-                dense
-                filled
-                rounded
-                hide-details
-                :disabled="readOnly"
-            ></v-text-field>
-            <v-text-field 
-                color="#187653"
-                label="Curso Proveniente"
-                v-model="process.cursoProv"
-                class="ml-md-5 mt-3"
-                dense
-                filled
-                rounded
-                hide-details
-                :disabled="readOnly"
-            ></v-text-field>
+            <v-text-field color="#187653" label="Nome do Aluno" v-model="process.nomeAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
+<!--            <v-text-field color="#187653" label="Instituição Proveniente" v-model="process.instProv" class="ml-md-5 mt-3" dense filled rounded hide-details :disabled="readOnly"/>-->
+            <v-autocomplete color="#187653" v-model="process.instProv" placeholder="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen" class="ml-md-5 mt-3" dense filled rounded hide-details/>
+
+            <v-text-field color="#187653" label="Curso Proveniente" v-model="process.cursoProv" class="ml-md-5 mt-3" dense filled rounded hide-details :disabled="readOnly"/>
             <v-row class="text-right">
                 <v-col>
                     <v-switch
@@ -93,8 +43,7 @@
 </template>
 
 <script>
-    // import UserService from '../services/user.service';
-
+    import UserService from '../../services/user.service';
     export default {
         name: "StudentInfo",
         props: ["process"],
@@ -102,19 +51,21 @@
             return {
                 // process: null,
                 processId: this.$route.params.id,
-                readOnly: true
+                readOnly: true,
+                universities: []
             }
         },
         mounted() {
             console.log("init data component");
-            // UserService.getProcess(this.processId)
-            //     .then(response => {
-            //
-            //         this.process = response.data;
-            //     }).catch(err => {
-            //         // TODO: Do something with error
-            //         console.log(err);
-            // })
+            this.fetchUniversities();
+        },
+        methods: {
+            fetchUniversities() {
+                UserService.listUniversities()
+                    .then(response => {
+                        this.universities.push(...response.data);
+                    }).catch(err => console.log(err));
+            }
         }
     }
 </script>
