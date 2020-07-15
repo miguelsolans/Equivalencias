@@ -13,59 +13,14 @@
         <v-form class="my-9">
             <v-row>
                 <v-col cols="6" sm="6">
-                    <v-text-field 
-                        color="#187653"
-                        placeholder="Identificador do Processo" 
-                        type="text" 
-                        v-model="student.processo"
-                        class="ml-md-5"
-                        dense
-                        filled
-                        rounded
-                        hide-details
-                        required
-                    ></v-text-field>
+                    <v-text-field color="#187653" placeholder="Identificador do Processo" type="text" v-model="student.processo" class="ml-md-5" dense filled rounded hide-details required/>
                 </v-col>
                 <v-col cols="6" sm="6">
-                    <v-text-field 
-                        color="#187653"
-                        placeholder="Identificador do Aluno" 
-                        type="text" v-model="student.idAluno" 
-                        class="ml-md-5"
-                        dense
-                        filled
-                        rounded
-                        hide-details
-                        required
-                    ></v-text-field>
+                    <v-text-field color="#187653" placeholder="Identificador do Aluno" type="text" v-model="student.idAluno" class="ml-md-5" dense filled rounded hide-details required/>
                 </v-col>
             </v-row>
-            <v-text-field 
-                color="#187653"                
-                placeholder="Nome Completo do Aluno" 
-                type="text" 
-                v-model="student.nomeAluno" 
-                class="ml-md-5"
-                dense
-                filled
-                rounded
-                hide-details
-                required
-            ></v-text-field>
-            <v-autocomplete 
-                color="#187653"
-                v-model="student.instProv" 
-                placeholder="Instituição Proveniente" 
-                type="text" 
-                :items="universities" 
-                item-text="nomeInstit" 
-                @change="universityChosen"
-                class="ml-md-5 mt-3"
-                dense
-                filled
-                rounded
-                hide-details
-            ></v-autocomplete>
+            <v-text-field color="#187653" placeholder="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" class="ml-md-5" dense filled rounded hide-details required/>
+            <v-autocomplete color="#187653" v-model="student.instProv" placeholder="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen" class="ml-md-5 mt-3" dense filled rounded hide-details/>
             <v-autocomplete 
                 color="#187653"
                 v-if="!course.enableInput && !course.doesntExist" 
@@ -100,17 +55,17 @@
                     />
                 </v-col>
                 <v-col class="my-2">
-                        <v-btn
-                            rounded
-                            class="ml-5"
-                            color="#187653"
-                            dark
-                            @click="handleSubmit"
-                        >
-                            <div class="text-capitalize mx-1">
-                                <strong>Criar Processo</strong>
-                            </div>
-                        </v-btn>
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        @click="handleSubmit"
+                    >
+                        <div class="text-capitalize mx-1">
+                            <strong>Criar Processo</strong>
+                        </div>
+                    </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <v-btn
@@ -147,7 +102,7 @@
                         dark
                         fab
                         small
-                        @click="resetForm"
+                        @click="handleSubmit"
                     >
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>

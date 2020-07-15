@@ -1,26 +1,38 @@
 <template>
     <v-container>
         <div v-if="process !== null">
-            <v-row no-gutters>
+            <v-row
+                class="d-none d-sm-flex mr-7 ml-7"
+                no-gutters
+            >
                 <v-col
                     cols="12"
                     sm="6"
                     md="8"
                 >                    
-                    <h1 style="font-weight: bold">Gestão do Processo</h1>
-                    <h2 style="color: #187653">{{ process.processo }}</h2>
+                    <h1>Processo Equivalência</h1>
+                    <p style="color: #187653">Número {{ process.processo }}</p>
                 </v-col>
                 <v-col
                     cols="6"
+                    sm="6"
                     md="4"
                     align="right"
                 >                    
-                    <v-row align="center" no-gutters class="ml-md-5">
-                        <v-col>                
-                            <h3 style="color: #187653">{{ process.nomeAluno }}</h3>
-                            <h3>{{ process.idAluno }}</h3>
+                    <v-row 
+                        align="center" 
+                        no-gutters
+                    >
+                        <v-col
+                            class="mx-5"
+                        >                
+                            <h4 style="color: #187653">Aluno(a) {{ process.nomeAluno }}</h4>
+                            <p>Número {{ process.idAluno }}</p>
                         </v-col>
-                        <v-col>
+                        <v-col                            
+                            class="mb-5"
+                            cols="2"
+                        >
                             <v-avatar size="65px">
                                 <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
                             </v-avatar>
@@ -28,16 +40,51 @@
                     </v-row>
                 </v-col>
             </v-row>
-     
+            <v-row
+                class="text-right d-flex d-sm-none"
+                no-gutters
+            >
+                <v-col
+                    cols="6"
+                    align="left"
+                >                    
+                    <h1>Processo Equivalência</h1>
+                    <p style="color: #187653">Número {{ process.processo }}</p>
+                </v-col>
+                <v-col
+                    cols="6"
+                    align="right"
+                >                    
+                    <v-row 
+                        align="center" 
+                        no-gutters
+                    >
+                        <v-col
+                            class="mx-5"
+                        >                
+                            <h4 style="color: #187653">{{ process.nomeAluno }}</h4>
+                            <p>Número {{ process.idAluno }}</p>
+                        </v-col>
+                        <v-col                            
+                            class="mb-5"
+                            cols="2"
+                        >
+                            <v-avatar size="65px">
+                                <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
+                            </v-avatar>
+                        </v-col>
+                    </v-row>
+                </v-col>
+            </v-row>
             <v-tabs
                 centered
                 show-arrows
                 class="my-10" 
                 color="#187653"
             >
-                <v-tab>Informações Processo</v-tab>
-                <v-tab>Equivalências</v-tab>
-                <v-tab>Formulário Equivalência</v-tab>
+                <v-tab>Informações Gerais</v-tab>
+                <v-tab>Lista Equivalências</v-tab>
+                <v-tab>Formulário Nova Equivalência</v-tab>
                 <v-tab>Documentos</v-tab>
 
                 <v-tab-item>
@@ -120,5 +167,6 @@
 </script>
 
 <style scoped>
+
 
 </style>
