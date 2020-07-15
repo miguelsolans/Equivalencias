@@ -100,17 +100,17 @@
                     />
                 </v-col>
                 <v-col class="my-2">
-                        <v-btn
-                            rounded
-                            class="ml-5"
-                            color="#187653"
-                            dark
-                            @click="handleSubmit"
-                        >
-                            <div class="text-capitalize mx-1">
-                                <strong>Criar Processo</strong>
-                            </div>
-                        </v-btn>
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        @click="handleSubmit"
+                    >
+                        <div class="text-capitalize mx-1">
+                            <strong>Criar Processo</strong>
+                        </div>
+                    </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
                             <v-btn

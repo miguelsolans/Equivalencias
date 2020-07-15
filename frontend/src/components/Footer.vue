@@ -8,11 +8,12 @@
           no-gutters
         >
           <v-col
+            align="center"
             style="background: #187653"
             class="py-4 justify-center text-center white--text"
             cols="12"
           >
-            <img style="width: 100px" class="imgLogo" src="../assets/images/Logo Branco.png"/>
+            <img style="width: 100px" class="imgLogo mb-2" align="center" src="../assets/images/Logo Branco.png"/>
             <v-divider inset vertical></v-divider>
             {{ new Date().getFullYear() }} — Made with <strong>Vuetify</strong>
           </v-col>
