@@ -65,7 +65,7 @@ class UserService {
      * @returns {Promise<AxiosResponse<any>>}
      */
     newEquivalence(id, equivalence) {
-        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, equivalence, {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/processo/${id}/subject`, equivalence, {
             headers: authHeader()
         });
     }
@@ -117,6 +117,12 @@ class UserService {
         }, {
             headers: authHeader()
         });
+    }
+
+    updateProcess(id, processo) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+            headers: authHeader()
+        })
     }
 }
 

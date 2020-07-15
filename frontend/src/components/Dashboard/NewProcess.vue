@@ -21,63 +21,22 @@
             </v-row>
             <v-text-field color="#187653" placeholder="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" class="ml-md-5" dense filled rounded hide-details required/>
             <v-autocomplete color="#187653" v-model="student.instProv" placeholder="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen" class="ml-md-5 mt-3" dense filled rounded hide-details/>
-            <v-autocomplete 
-                color="#187653"
-                v-if="!course.enableInput && !course.doesntExist" 
-                v-model="student.cursoProv" 
-                placeholder="Curso Proveniente" 
-                :items="course.courses" 
-                item-text="cursoProv" 
-                :disabled="course.disableAutocomplete"
-                class="ml-md-5 mt-3"
-                dense
-                filled
-                rounded
-            ></v-autocomplete>
-            <v-text-field
-                color="#187653"
-                v-else-if="course.enableInput || course.doesntExist" 
-                placeholder="Curso Proveniente" 
-                v-model="student.cursoProv"
-                class="ml-md-5 mt-3"
-                dense
-                filled
-                rounded
-            ></v-text-field>
-            
+            <v-autocomplete color="#187653" v-if="!course.enableInput && !course.doesntExist" v-model="student.cursoProv" placeholder="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disableAutocomplete" class="ml-md-5 mt-3" dense filled rounded/>
+            <v-text-field color="#187653" v-else-if="course.enableInput || course.doesntExist" placeholder="Curso Proveniente" v-model="student.cursoProv" class="ml-md-5 mt-3" dense filled rounded/>
+
             <v-row class="text-right d-none d-sm-flex">
                 <v-col>
-                    <v-switch
-                        color="#187653" 
-                        v-model="course.doesntExist"
-                        class="ml-md-5 my-2"
-                        label ="Curso Inexistente"
-                    />
+                    <v-switch color="#187653" v-model="course.doesntExist" class="ml-md-5 my-2" label="Curso Inexistente"/>
                 </v-col>
                 <v-col class="my-2">
-                    <v-btn
-                        rounded
-                        class="ml-5"
-                        color="#187653"
-                        dark
-                        @click="handleSubmit"
-                    >
+                    <v-btn rounded class="ml-5" color="#187653" dark @click="handleSubmit">
                         <div class="text-capitalize mx-1">
                             <strong>Criar Processo</strong>
                         </div>
                     </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
-                            <v-btn
-                                rounded
-                                class="ml-5" 
-                                color="#39c087"
-                                dark
-                                fab
-                                small
-                                v-on="on"
-                                @click="resetForm"
-                            >
+                            <v-btn rounded class="ml-5" color="#39c087" dark fab small v-on="on" @click="resetForm">
                                 <v-icon>mdi-delete-empty</v-icon>
                             </v-btn>
                         </template>
@@ -87,34 +46,13 @@
             </v-row>
             <v-row class="text-right d-flex d-sm-none">
                 <v-col>
-                    <v-switch
-                        color="#187653" 
-                        v-model="course.doesntExist"
-                        class="ml-md-5 my-2"
-                        label ="Curso Inexistente"
-                    />
+                    <v-switch color="#187653" v-model="course.doesntExist" class="ml-md-5 my-2" label ="Curso Inexistente"/>
                 </v-col>
                 <v-col class="my-2">
-                    <v-btn
-                        rounded
-                        class="ml-5" 
-                        color="#187653"
-                        dark
-                        fab
-                        small
-                        @click="resetForm"
-                    >
+                    <v-btn rounded class="ml-5" color="#187653" dark fab small @click="resetForm">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
-                    <v-btn
-                        rounded
-                        class="ml-5" 
-                        color="#39c087"
-                        dark
-                        fab
-                        small
-                        @click="resetForm"
-                    >
+                    <v-btn rounded class="ml-5" color="#39c087" dark fab small @click="resetForm">
                         <v-icon>mdi-delete-empty</v-icon>
                     </v-btn>
                 </v-col>
@@ -185,7 +123,6 @@
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);
-                // this.course.disable = false;
 
                 UserService.getUniversityCourses(this.student.instProv)
                     .then(result => {
