@@ -3,10 +3,30 @@
         <v-form class="my-5">
             <v-row>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" label="Identificador do Processo" v-model="process.processo" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
+                    <v-text-field 
+                        color="#187653" 
+                        label="Identificador do Processo" 
+                        v-model="process.processo" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details 
+                        :disabled="readOnly"
+                    />
                 </v-col>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" label="Identificador do Aluno" v-model="process.idAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
+                    <v-text-field 
+                        color="#187653" 
+                        label="Identificador do Aluno" 
+                        v-model="process.idAluno" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details 
+                        :disabled="readOnly"
+                    />
                 </v-col>
             </v-row>
             <v-text-field 
