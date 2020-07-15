@@ -33,6 +33,7 @@
                 filled 
                 rounded 
                 hide-details
+                :disabled="readOnly"
             />
             <v-text-field 
                 color="#187653"
