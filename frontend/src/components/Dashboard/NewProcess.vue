@@ -147,7 +147,7 @@
                         dark
                         fab
                         small
-                        @click="resetForm"
+                        @click="handleSubmit"
                     >
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>

@@ -64,7 +64,7 @@
                 hide-details
                 :disabled="readOnly"
             ></v-text-field>
-            <v-row class="text-right">
+            <v-row class="text-right d-none d-sm-flex">
                 <v-col>
                     <v-switch
                         color="#187653" 
@@ -86,7 +86,28 @@
                     </v-btn>
                 </v-col>
             </v-row>
-                    
+            <v-row class="text-right d-flex d-sm-none">
+                <v-col>
+                    <v-switch
+                        color="#187653" 
+                        v-model="readOnly"
+                        class="ml-md-5 my-5"
+                        label="Modo de Leitura"
+                    />
+                </v-col>
+                <v-col class="my-2">
+                    <v-btn
+                        rounded
+                        class="ml-5"
+                        color="#187653"
+                        dark
+                        fab
+                        small
+                    >
+                        <v-icon>mdi-content-save</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>                    
             <!-- constructor(processo, idAluno, nomeAluno, instProv, cursoProv) -->
         </v-form>
     </v-container>
