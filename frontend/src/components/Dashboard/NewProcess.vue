@@ -128,7 +128,7 @@
                             this.newProcessAlert = true;
                         }
                     })
-                    .catch(err => console.log(err));
+                    .catch(err => console.log(err.response));
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);

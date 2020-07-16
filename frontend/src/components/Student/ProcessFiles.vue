@@ -1,5 +1,6 @@
 <template>
     <v-container>
+        <v-btn @click="generatePdf"></v-btn>
         <div v-if="files.length > 0">
             <v-card>
                 <v-list two-line>
@@ -51,16 +52,20 @@
             }
         },
         mounted() {
-            UserService.getProcessFiles( this.processId )
-                .then(response => {
-                    console.log("GET Files");
-                    console.log(response.data);
-                    this.files = response.data
-                }).catch(err => console.log(err));
-
+            this.getFiles();
         },
         methods: {
+            generatePdf() {
+                UserService.generatePdf( this.processId )
+                    .then(response => console.log(response))
+                    .catch(err => console.log(err.response));
+            },
 
+            getFiles() {
+                UserService.getProcessFiles( this.processId )
+                    .then(response => this.files.push(...response.data))
+                    .catch(err => console.log(err));
+            }
         }
     }
 </script>

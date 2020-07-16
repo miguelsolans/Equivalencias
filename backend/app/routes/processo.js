@@ -87,7 +87,7 @@ router.post('/:id/generate', checkAuth, async (req, res) => {
         let result = studentPdf.makePdf();
 
         let msgOutput = result ? "Successfully generated" : "Some error occurred...";
-        res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+        res.status(201).jsonp( {title: "Success!", message: msgOutput, filename: studentPdf.getFilename()} );
 
     } catch(err) {
         res.status(500).jsonp( {title: "Error!", message: "Some error occurred while generating the PDF", error: err} )
@@ -113,8 +113,7 @@ router.post('/', checkAuth, (req, res) => {
 
     Processos.new(newProcess)
         .then(data => {
-            // fs.mkdirSync(`app/files/${data.processo}`);
-            fs.mkdirSync(`app/files/${data.processo}`, {
+            fs.mkdirSync(`app/files/${data._id}`, {
                 recursive: true
             });
             console.log(data);

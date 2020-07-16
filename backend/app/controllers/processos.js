@@ -72,14 +72,14 @@ module.exports.newDocument = (id, { filename, requestedBy }) => {
     return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
 };
 
-module.exports.listDocumentation = (processId) => {
+module.exports.listDocumentation = (id) => {
     //return Processo.findOne({ processo: processId}, { documentation: true })
     const mongoose = require('mongoose');
     return Processo.aggregate([
         {
             '$match': {
                 //'processo': new mongoose.mongo.ObjectId(processId)
-                'processo': processId
+                '_id': new mongoose.mongo.ObjectId(id)
             }
         }, {
             '$project': {

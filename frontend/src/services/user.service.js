@@ -6,15 +6,7 @@ import axios from 'axios';
 import authHeader from './auth-header';
 
 class UserService {
-    /**
-     * Get Account Information
-     * @returns {Promise<AxiosResponse<any>>}
-     */
-    getLoggedUser() {
-        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/logged`, {
-            headers: authHeader()
-        });
-    }
+
 
     /**
      * Create a new Process
@@ -76,12 +68,26 @@ class UserService {
      * @returns {Promise<AxiosResponse<any>>}
      */
     getProcessFiles(id) {
-        console.log("USER SERVICE: " + process.env.VUE_APP_API_SERVER);
         return axios.get(`${process.env.VUE_APP_API_SERVER}/processo/${id}/files`, {
             headers: authHeader()
         });
     }
 
+    generatePdf(id) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/processo/${id}/generate`, {
+            headers: authHeader()
+        });
+    }
+
+    updateProcess(id, processo) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+            headers: authHeader()
+        })
+    }
+
+    //
+    // University Endpoint
+    //
     getUniversityCourses(university) {
         return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/?university=${university}`, {
             headers: authHeader()
@@ -101,16 +107,19 @@ class UserService {
     }
 
 
-    updateProcess(id, processo) {
-        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+    //
+    // User Endpoint
+    //
+
+    /**
+     * Get Account Information
+     * @returns {Promise<AxiosResponse<any>>}
+     */
+    getLoggedUser() {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/logged`, {
             headers: authHeader()
-        })
+        });
     }
-
-
-    //
-    // Settings
-    //
 
     /**
      * Change user password

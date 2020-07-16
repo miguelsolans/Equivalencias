@@ -93,6 +93,10 @@ module.exports = class Pdf {
         }
     }
 
+    getFilename() {
+        return this.filename;
+    }
+
     getDocument() {
         let todayDate = new Date();
 
