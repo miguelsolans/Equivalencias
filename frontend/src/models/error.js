@@ -1,12 +1,16 @@
 export default class Error {
-    constructor(title, message, error)  {
+    constructor(code, title, message, error)  {
+        this.code = code;
         this.title = title;
         this.message = message;
         this.error = error;
     }
 
+    setErrorStack(error) {
+        this.error = error;
+    }
 
-    isAdmin() {
-        return this.admin;
+    setHttpCode(code) {
+        this.code = code;
     }
 }
