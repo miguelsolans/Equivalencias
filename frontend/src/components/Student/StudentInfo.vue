@@ -29,10 +29,60 @@
                     />
                 </v-col>
             </v-row>
-            <v-text-field color="#187653" label="Nome do Aluno" v-model="process.nomeAluno" class="ml-md-5" dense filled rounded hide-details :disabled="readOnly"/>
-            <v-autocomplete color="#187653" v-model="process.instProv" placeholder="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen" class="ml-md-5 mt-3" dense filled rounded hide-details :disabled="readOnly"/>
-            <v-autocomplete color="#187653" v-if="!temp && !course.doesntExist" v-model="process.cursoProv" placeholder="Curso Proveniente" :items="course.courses" item-text="cursoProv" class="ml-md-5 mt-3" dense filled rounded :disabled="readOnly"/>
-            <v-text-field color="#187653" v-else-if="temp || course.doesntExist" placeholder="Curso Proveniente" v-model="process.cursoProv" class="ml-md-5 mt-3" dense filled rounded :disabled="readOnly"/>
+            <v-text-field 
+                color="#187653" 
+                label="Nome do Aluno" 
+                v-model="process.nomeAluno" 
+                class="ml-md-5" 
+                dense
+                filled
+                rounded
+                hide-details
+                :disabled="readOnly"
+            />
+            <v-autocomplete
+                color="#187653"
+                v-model="process.instProv"
+                label="Instituição Proveniente" 
+                type="text"
+                :items="universities"
+                item-text="nomeInstit"
+                @change="universityChosen"
+                class="ml-md-5
+                mt-3"
+                dense
+                filled
+                rounded
+                hide-details
+                :disabled="readOnly"
+            />
+            <v-autocomplete
+                color="#187653"
+                label="Curso Proveniente" 
+                v-if="!temp
+                &&
+                !course.doesntExist"
+                v-model="process.cursoProv"
+                :items="course.courses"
+                item-text="cursoProv"
+                class="ml-md-5
+                mt-3"
+                dense
+                filled
+                rounded
+                :disabled="readOnly"
+            />
+            <v-text-field 
+                color="#187653"
+                label="Curso Proveniente" 
+                v-else-if="temp || course.doesntExist" 
+                v-model="process.cursoProv" 
+                class="ml-md-5 mt-3"
+                dense
+                filled
+                rounded
+                :disabled="readOnly"
+            />
             <v-row class="text-right d-none d-sm-flex">
                 <v-col cols="3">
                     <v-switch 

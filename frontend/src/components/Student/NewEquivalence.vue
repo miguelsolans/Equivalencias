@@ -142,7 +142,7 @@
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-md-5 my-2"
+                        class="ml-3 my-2"
                         label="Inserção Manual"
                     />
                 </v-col>
@@ -165,14 +165,14 @@
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-md-5 my-5"
+                        class="ml-3 my-2"
                         label="Inserção Manual"
                     />
                 </v-col>
                 <v-col cols="6">
                     <v-btn
                         rounded
-                        class="ml-5"
+                        class="mr-3"
                         color="#187653"
                         dark
                         fab
