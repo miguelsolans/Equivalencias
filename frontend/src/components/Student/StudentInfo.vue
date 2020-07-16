@@ -92,6 +92,15 @@
                 </v-col>
             </v-row>
         </v-form>
+        <v-dialog v-model="updatedInfoProcess" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Processo Atualizado</v-card-title>
+                <v-card-text>As novas informações para o Processo em causa foram submetidas com sucesso.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="updatedInfoProcess = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 
@@ -102,6 +111,7 @@
         props: ["process"],
         data() {
             return {
+                updatedInfoProcess: false,
                 processId: this.$route.params.id,
                 readOnly: true,
                 temp: true,
@@ -150,6 +160,8 @@
                 UserService.updateProcess(this.processId, this.process)
                     .then(response => console.log(response.data))
                     .catch(err => console.log(err));
+                
+                this.updatedInfoProcess = true;
             }
         }
     }

@@ -61,10 +61,19 @@
 
         <v-dialog v-model="noProcessAlert" persistent max-width="350">
             <v-card>
-                <v-card-title class="headline">Este processo não existe</v-card-title>
-                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter o processo.</v-card-text>
+                <v-card-title class="headline">Processo Inexistente</v-card-title>
+                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter o Processo.</v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+        <v-dialog v-model="newProcessAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Novo Processo Criado</v-card-title>
+                <v-card-text>O Processo solicitado foi submetido com sucesso.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="newProcessAlert = false">Voltar ao    Início</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -82,6 +91,7 @@
         data() {
             return {
                 noProcessAlert: false,
+                newProcessAlert: false,
                 course: {
                     disableAutocomplete: true,
                     doesntExist: false,
@@ -114,9 +124,8 @@
                             this.noProcessAlert = true;
                         } else {
                             this.$root.$emit('newProcess', this.student);
-
                             this.resetForm();
-
+                            this.newProcessAlert = true;
                         }
                     })
                     .catch(err => console.log(err));
