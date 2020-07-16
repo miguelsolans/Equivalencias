@@ -124,6 +124,23 @@ router.post('/', checkAuth, (req, res) => {
 
 });
 
+
+router.put('/:id', checkAuth, (req, res) => {
+    let id = req.params.id;
+    const fields = {
+        processo: req.body.processo,
+        idAluno: req.body.idAluno,
+        nomeAluno: req.body.nomeAluno,
+        instProv: req.body.instProv,
+        cursoProv: req.body.cursoProv
+    }
+
+    Processos.updateProcess(id, fields)
+        .then(data => res.status(201).jsonp(data))
+        .catch(err => res.status(400).jsonp(err))
+
+});
+
 /**
  * Delete process by its Id
  */
@@ -153,7 +170,7 @@ router.delete('/:id', checkAuth, (req, res) => {
  * body {ects}: number of ECTS
  * body {ucRealizada}: STRING
  */
-router.put('/:id', checkAuth, (req, res) => {
+router.post('/:id/subject', checkAuth, (req, res) => {
     const subject = req.body;
 
     subject.createdBy = req.decodedUser.username;

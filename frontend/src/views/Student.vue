@@ -41,7 +41,7 @@
                 </v-col>
             </v-row>
             <v-row
-                class="text-right d-flex d-sm-none"
+                class="text-right d-flex d-sm-none ml-5"
                 no-gutters
             >
                 <v-col
@@ -49,7 +49,7 @@
                     align="left"
                 >                    
                     <h1>Processo Equivalência</h1>
-                    <p style="color: #187653">Número {{ process.processo }}</p>
+                    <p style="color: #187653">{{ process.processo }}</p>
                 </v-col>
                 <v-col
                     cols="6"
@@ -59,17 +59,11 @@
                         align="center" 
                         no-gutters
                     >
-                        <v-col
-                            class="mx-5"
-                        >                
-                            <h4 style="color: #187653">{{ process.nomeAluno }}</h4>
-                            <p>Número {{ process.idAluno }}</p>
-                        </v-col>
                         <v-col                            
-                            class="mb-5"
-                            cols="2"
+                            class="mt-5"
+                            cols="12"
                         >
-                            <v-avatar size="65px">
+                            <v-avatar size="75px">
                                 <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
                             </v-avatar>
                         </v-col>

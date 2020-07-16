@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-form class="my-5 mr-1">
+        <v-form>
             <v-container v-if="!manualInput">
                 <v-row>
                     <v-col cols="6" sm="6">
@@ -12,6 +12,7 @@
                             :items="ucOrigem" 
                             item-text="ucRealizada"
                             @change="subjectChosen"
+                            dense
                             filled 
                             rounded 
                             :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
@@ -103,24 +104,51 @@
                     </v-col>
                 </v-row>
             </v-container>
+
             <!-- Without Autocomplete -->
             <v-container v-else>
-                <v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>
-                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" hide-details></v-text-field>
-                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" hide-details></v-text-field>
+                <v-text-field
+                    color="#187653"
+                    label="UC Realizada" 
+                    v-model="equivalencia.ucRealizada"
+                    :rules="[v => !!v || 'Especifique a UC realizada']" 
+                    dense
+                    filled
+                    rounded
+                />
+                <v-text-field 
+                    color="#187653"
+                    label="UC Equivalente" 
+                    v-model="equivalencia.ucEquiv" 
+                    :rules="[v => !!v || 'Especifique a que UC que será equivalente']" 
+                    dense
+                    filled
+                    rounded
+                />
+                <v-text-field 
+                    color="#187653"
+                    label="ECTS" 
+                    v-model="equivalencia.ects" 
+                    :disabled="disabledInput" 
+                    :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" 
+                    dense
+                    filled
+                    rounded
+                />
             </v-container>
-            <v-row class="text-right d-none d-sm-flex mr-1">
-                <v-col>
+
+            <v-row class="text-right d-none d-sm-flex">
+                <v-col cols="6">
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-md-5 my-2"
+                        class="ml-3 my-2"
                         label="Inserção Manual"
                     />
                 </v-col>
-                <v-col>
+                <v-col cols="6">
                     <v-btn
-                        class="my-2"
+                        class="mr-3"
                         rounded
                         color="#187653"
                         dark
@@ -133,18 +161,18 @@
                 </v-col>
             </v-row>
             <v-row class="text-right d-flex d-sm-none">
-                <v-col>
+                <v-col cols="6">
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-md-5 my-5"
+                        class="ml-3 my-2"
                         label="Inserção Manual"
                     />
                 </v-col>
-                <v-col class="my-2">
+                <v-col cols="6">
                     <v-btn
                         rounded
-                        class="ml-5"
+                        class="mr-3"
                         color="#187653"
                         dark
                         fab
@@ -156,6 +184,24 @@
                 </v-col>
             </v-row>   
         </v-form>
+        <v-dialog v-model="noEquivalenceAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Equivalência Inexistente</v-card-title>
+                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter a Equivalência.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="noEquivalenceAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+        <v-dialog v-model="newEquivalenceAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Nova Equivalência Criada</v-card-title>
+                <v-card-text>A Equivalência solicitada foi submetida com sucesso.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="newEquivalenceAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 
@@ -167,6 +213,8 @@
         props: ["process"],
         data() {
             return {
+                noEquivalenceAlert: false,
+                newEquivalenceAlert: false,
                 processId: this.$route.params.id,
                 equivalencia: new Equivalencia(),
                 ucOrigem: null,
@@ -237,12 +285,14 @@
                             this.$emit("newEquivalence", this.equivalencia);
 
                             this.equivalencia = new Equivalencia();
+                            this.newEquivalenceAlert = true;
                         } else {
-                            console.log(data.errors)
+                            this.noEquivalenceAlert = true;
                         }
                     }).catch(err => {
                         console.log(err);
                 })
+                this.createNewEquivalence = true;
             },
 
             fetchSubjects(university, course) {

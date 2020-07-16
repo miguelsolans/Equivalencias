@@ -7,7 +7,6 @@
             <v-text-field :disabled="readOnly || !account.admin" v-model="user.username" label="Username do Utilizador" type="text"></v-text-field>
             <v-text-field v-model="user.email" label="E-mail do Utilizador" type="text" :disabled="readOnly"></v-text-field>
             <v-checkbox v-model="user.admin" label="Administrador da Plataforma" :disabled="readOnly || !account.admin"></v-checkbox>
-            <v-btn color="red" dark>Alterar Password</v-btn>
             <v-btn color="teal" dark @click="handleSubmit" :disabled="readOnly">Guardar Alterações</v-btn>
         </v-form>
         <v-switch v-model="readOnly" class="mx-2" label="Modo de Leitura"></v-switch>

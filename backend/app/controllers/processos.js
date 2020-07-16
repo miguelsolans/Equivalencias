@@ -25,6 +25,16 @@ module.exports.new = ({processo, idAluno, nomeAluno, instProv, cursoProv, initia
 
 };
 
+module.exports.updateProcess = (id, {processo, idAluno, nomeAluno, instProv, cursoProv}) => {
+    return Processo.findOneAndUpdate( {_id: id}, {
+        processo: processo,
+        idAluno: idAluno,
+        nomeAluno: nomeAluno,
+        instProv: instProv,
+        cursoProv: cursoProv
+    });
+};
+
 module.exports.delete = (id) => {
     return Processo.findByIdAndDelete(id);
 };
