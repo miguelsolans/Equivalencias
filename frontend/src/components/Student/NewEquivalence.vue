@@ -104,14 +104,41 @@
                     </v-col>
                 </v-row>
             </v-container>
+
             <!-- Without Autocomplete -->
             <v-container v-else>
-                <v-text-field label="UC Realizada" v-model="equivalencia.ucRealizada"></v-text-field>
-                <v-text-field label="UC Equivalente" v-model="equivalencia.ucEquiv" :rules="[v => !!v || 'Especifique a que UC que será equivalente']" hide-details></v-text-field>
-                <v-text-field label="ECTS" v-model="equivalencia.ects" :disabled="disabledInput" :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" hide-details></v-text-field>
+                <v-text-field
+                    color="#187653"
+                    label="UC Realizada" 
+                    v-model="equivalencia.ucRealizada"
+                    :rules="[v => !!v || 'Especifique a UC realizada']" 
+                    dense
+                    filled
+                    rounded
+                />
+                <v-text-field 
+                    color="#187653"
+                    label="UC Equivalente" 
+                    v-model="equivalencia.ucEquiv" 
+                    :rules="[v => !!v || 'Especifique a que UC que será equivalente']" 
+                    dense
+                    filled
+                    rounded
+                />
+                <v-text-field 
+                    color="#187653"
+                    label="ECTS" 
+                    v-model="equivalencia.ects" 
+                    :disabled="disabledInput" 
+                    :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" 
+                    dense
+                    filled
+                    rounded
+                />
             </v-container>
-            <v-row class="text-right d-none d-sm-flex mr-1">
-                <v-col>
+
+            <v-row class="text-right d-none d-sm-flex">
+                <v-col cols="6">
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
@@ -119,9 +146,9 @@
                         label="Inserção Manual"
                     />
                 </v-col>
-                <v-col>
+                <v-col cols="6">
                     <v-btn
-                        class="my-2"
+                        class="mr-3"
                         rounded
                         color="#187653"
                         dark
@@ -134,7 +161,7 @@
                 </v-col>
             </v-row>
             <v-row class="text-right d-flex d-sm-none">
-                <v-col>
+                <v-col cols="6">
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
@@ -142,7 +169,7 @@
                         label="Inserção Manual"
                     />
                 </v-col>
-                <v-col class="my-2">
+                <v-col cols="6">
                     <v-btn
                         rounded
                         class="ml-5"

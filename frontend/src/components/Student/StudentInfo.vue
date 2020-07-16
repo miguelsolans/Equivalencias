@@ -51,7 +51,7 @@
                         :disabled="readOnly"
                     />
                 </v-col>
-                <v-col cols="6" class="my-2">
+                <v-col cols="6">
                     <v-btn rounded class="ml-5" color="#187653" dark @click="updateProcess">
                         <div class="text-capitalize mx-1">
                             <strong>Salvar Alterações</strong>
