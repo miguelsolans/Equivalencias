@@ -4,7 +4,7 @@
 
         <v-tabs>
             <v-tab>Conta</v-tab>
-            <v-tab>Plataforma</v-tab>
+            <v-tab :disabled="!user.admin">Plataforma</v-tab>
 
             <v-tab-item>
                 <v-expansion-panels focusable>
@@ -25,7 +25,7 @@
                 </v-expansion-panels>
             </v-tab-item>
 
-            <v-tab-item>
+            <v-tab-item v-if="user.admin">
                 <v-expansion-panels focusable>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+    // TODO: Use props instead of fetching for data in components
     import Account from '../components/Settings/Acount';
     import Password from '../components/Settings/Password';
 
@@ -70,21 +71,44 @@
         name: "Settings",
         data() {
             return {
-                user: {}
+                user: {},
+                universities: [],
+                users: []
             }
         },
         components: { Account, ManageUsers, Password, NewUser, ManageUniversities },
         mounted() {
-            UserService.getLoggedUser()
-                .then(response => {
-                    let data = response.data;
+           this.getLoggedUser();
 
-                    this.user = { ...data }
-                    console.table(data);
-                }).catch(err => console.log(err));
+           if(this.user.admin) {
+               this.getUniversities();
+               this.getUsers();
+           }
         },
         methods: {
+            getLoggedUser() {
+                UserService.getLoggedUser()
+                    .then(response => {
+                        let data = response.data;
 
+                        this.user = { ...data }
+                        console.table(data);
+                    }).catch(err => console.log(err));
+            },
+
+            getUniversities() {
+                UserService.listUniversities()
+                    .then(response => {
+                        this.universities.push(...response.data)
+                    }).catch(err => console.log(err));
+            },
+
+            getUsers() {
+                UserService.getSystemUsers()
+                    .then(response => {
+                        this.users.push(...response.data);
+                    }).catch(err => console.log(err));
+            }
         }
     }
 </script>
