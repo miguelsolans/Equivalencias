@@ -36,23 +36,12 @@
             UserService.getLoggedUser()
                 .then(response => {
                     let data = response.data;
-                    //     constructor(username, fullName, admin, email, password)  {
-
                     this.user = new User(data.username, data.fullName, data.admin, data.email);
                     Object.assign(this.oldUser, this.user);
                     console.table(this.user);
                 }).catch(err => console.log(err));
         },
         methods: {
-
-            changePassword() {
-                console.log("Changing User Password...");
-                UserService.updatePassword(this.updatePassword.oldPassword, this.updatePassword.newPassword)
-                    .then(response => {
-
-                        console.log(response);
-                    }).catch(err => console.log(err));
-            },
 
             rollback() {
                 Object.assign(this.user, this.oldUser);
