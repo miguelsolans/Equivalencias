@@ -49,7 +49,7 @@
                     <v-switch color="#187653" v-model="course.doesntExist" class="ml-md-5 my-2" label ="Curso Inexistente"/>
                 </v-col>
                 <v-col class="my-2">
-                    <v-btn rounded class="ml-5" color="#187653" dark fab small @click="resetForm">
+                    <v-btn rounded class="ml-5" color="#187653" dark fab small @click="handleSubmit">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
                     <v-btn rounded class="ml-5" color="#39c087" dark fab small @click="resetForm">

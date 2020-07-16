@@ -184,6 +184,24 @@
                 </v-col>
             </v-row>   
         </v-form>
+        <v-dialog v-model="noEquivalenceAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Equivalência Inexistente</v-card-title>
+                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter a Equivalência.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="noEquivalenceAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+        <v-dialog v-model="newEquivalenceAlert" persistent max-width="350">
+            <v-card>
+                <v-card-title class="headline">Nova Equivalência Criada</v-card-title>
+                <v-card-text>A Equivalência solicitada foi submetida com sucesso.</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="newEquivalenceAlert = false">Voltar Atrás</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 
@@ -195,6 +213,8 @@
         props: ["process"],
         data() {
             return {
+                noEquivalenceAlert: false,
+                newEquivalenceAlert: false,
                 processId: this.$route.params.id,
                 equivalencia: new Equivalencia(),
                 ucOrigem: null,
@@ -265,12 +285,14 @@
                             this.$emit("newEquivalence", this.equivalencia);
 
                             this.equivalencia = new Equivalencia();
+                            this.newEquivalenceAlert = true;
                         } else {
-                            console.log(data.errors)
+                            this.noEquivalenceAlert = true;
                         }
                     }).catch(err => {
                         console.log(err);
                 })
+                this.createNewEquivalence = true;
             },
 
             fetchSubjects(university, course) {
