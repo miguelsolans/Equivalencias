@@ -12,6 +12,7 @@
                             :items="ucOrigem" 
                             item-text="ucRealizada"
                             @change="subjectChosen"
+                            dense
                             filled 
                             rounded 
                             :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
