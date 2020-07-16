@@ -5,9 +5,6 @@
                 <Navbar/>
             </div>
             <router-view />
-            <div v-if="dashboardPage">
-                <Footer/>
-            </div>
         </v-content>
     </v-app>
 </template>
