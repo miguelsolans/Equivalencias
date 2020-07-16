@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-form class="my-5 mr-1">
+        <v-form>
             <v-container v-if="!manualInput">
                 <v-row>
                     <v-col cols="6" sm="6">
