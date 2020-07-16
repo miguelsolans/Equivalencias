@@ -101,6 +101,23 @@ class UserService {
     }
 
 
+    updateProcess(id, processo) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+            headers: authHeader()
+        })
+    }
+
+
+    //
+    // Settings
+    //
+
+    /**
+     * Change user password
+     * @param oldPassword
+     * @param newPassword
+     * @returns {Promise<AxiosResponse<any>>}
+     */
     updatePassword(oldPassword, newPassword) {
         return axios.put(`${process.env.VUE_APP_API_SERVER}/user/password`, {
             oldPassword: oldPassword,
@@ -110,6 +127,11 @@ class UserService {
         });
     }
 
+    /**
+     * Update User details
+     * @param user
+     * @returns {Promise<AxiosResponse<any>>}
+     */
     updateAccount(user) {
         return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
             fullName: user.fullName,
@@ -119,10 +141,10 @@ class UserService {
         });
     }
 
-    updateProcess(id, processo) {
-        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+    getSystemUsers() {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/user`, {
             headers: authHeader()
-        })
+        });
     }
 }
 
