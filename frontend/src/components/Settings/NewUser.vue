@@ -1,11 +1,11 @@
 <template>
     <v-container>
         <v-form>
-            <v-text-field v-model="user.username" label="Nome do Utilizador" type="text"/>
-            <v-text-field v-model="user.username" label="Username" type="text"/>
-            <v-text-field v-model="user.email" label="E-mail" type="email"/>
-            <v-text-field v-model="user.password" label="E-mail" type="password"/>
-            <v-checkbox v-model="user.admin" label="Conta de Administração"/>
+            <v-text-field v-model="user.fullName" label="Nome Completo" type="text" required/>
+            <v-text-field v-model="user.username" label="Username" type="text" required/>
+            <v-text-field v-model="user.email" label="E-mail" type="email" :rules="emailRules"/>
+            <v-text-field v-model="user.password" label="Password" type="password" required/>
+            <v-checkbox v-model="user.admin" label="Conta de Administração" required/>
 
             <v-btn color="error" @click="handleSubmit">Criar Utilizador</v-btn>
         </v-form>
@@ -13,17 +13,32 @@
 </template>
 
 <script>
-    import User from '../../models/user'
+    import User from '../../models/user';
+    import UserService from '../../services/user.service';
     export default {
         name: "NewUser",
         data() {
             return {
                 user: new User(),
+
+                emailRules: [
+                    v => !!v || 'Introduza o E-mail da Conta',
+                    v => /.+@.+\..+/.test(v) || 'Deve introduzir um E-mail válido',
+                ],
             }
+        },
+        mounted() {
         },
         methods: {
             handleSubmit(e) {
                 e.preventDefault();
+
+                console.group("Creating User");
+
+                UserService.newUser(this.user)
+                    .then(response => console.log(response.data))
+                    .catch(err => console.log(err))
+                console.groupEnd();
             }
         }
     }

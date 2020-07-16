@@ -146,6 +146,16 @@ class UserService {
             headers: authHeader()
         });
     }
+
+    newUser(user) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/user/register`, {
+            fullName: user.fullName,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            admin: user.admin
+        });
+    }
 }
 
 export default new UserService();

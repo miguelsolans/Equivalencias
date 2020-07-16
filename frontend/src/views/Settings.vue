@@ -36,13 +36,13 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Registar Novo Utilizador</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUsers/>
+                            <NewUser/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Faculdades Registadas</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <Password/>
+                            <ManageUniversities/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -59,9 +59,13 @@
 
 <script>
     import Account from '../components/Settings/Acount';
-    import ManageUsers from '../components/Settings/ManageUsers';
-    import UserService from '../services/user.service';
     import Password from '../components/Settings/Password';
+
+    import ManageUsers from '../components/Settings/ManageUsers';
+    import NewUser from '../components/Settings/NewUser';
+    import ManageUniversities from '../components/Settings/ManageFaculty'
+
+    import UserService from '../services/user.service';
     export default {
         name: "Settings",
         data() {
@@ -69,7 +73,7 @@
                 user: {}
             }
         },
-        components: { Account, ManageUsers, Password },
+        components: { Account, ManageUsers, Password, NewUser, ManageUniversities },
         mounted() {
             UserService.getLoggedUser()
                 .then(response => {
