@@ -86,8 +86,13 @@ router.post('/:id/generate', checkAuth, async (req, res) => {
 
         let result = studentPdf.makePdf();
 
-        let msgOutput = result ? "Successfully generated" : "Some error occurred...";
-        res.status(201).jsonp( {title: "Success!", message: msgOutput, filename: studentPdf.getFilename()} );
+
+        if(!result) {
+            res.status(500).jsonp({title: "Error!", message: "Some error occurred..."});
+        } else {
+            res.status(201).jsonp( {title: "Success!", message: "Successfully generated", file: {filename: fileMetadata.filename, generatedAt: new Date(fileMetadata.filename), generatedBy: fileMetadata.generatedBy }});
+
+        }
 
     } catch(err) {
         res.status(500).jsonp( {title: "Error!", message: "Some error occurred while generating the PDF", error: err} )

@@ -60,8 +60,7 @@
             generatePdf() {
                 UserService.generatePdf( this.processId )
                     .then(response => {
-                        console.log("Generating...");
-                        console.log(response.data);
+                        this.files.push(response.data.file);
                     })
                     .catch(err => console.log(err.response));
             },

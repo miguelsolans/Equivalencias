@@ -14,6 +14,7 @@ module.exports = class Pdf {
         this.student = student;
         this.filename = filename;
         this.printer = new pdfMake(this.getFonts());
+        this.studentPath = this.getStudentPath();
     }
 
     /**
@@ -21,12 +22,13 @@ module.exports = class Pdf {
      * @returns {*|number}
      */
     makePdf() {
-        let path = `app/files/${this.student._id}/${this.filename}.pdf`;
+
+        // let path = `app/files/${this.student._id}/${this.filename}.pdf`;
+        let path = `${this.studentPath}/${this.filename}.pdf`;
 
         console.log("Building...");
-        let document = this.getDocument();
 
-        console.log(document);
+        let document = this.getDocument();
 
         const pdfDoc = this.printer.createPdfKitDocument(document, { /* ... */ });
 
@@ -97,6 +99,19 @@ module.exports = class Pdf {
         return this.filename;
     }
 
+    getStudentPath() {
+        let studentPath = `app/files/${this.student._id}`;
+        console.log("Student Path Health")
+        if(!fs.existsSync(studentPath)) {
+            console.log("Student Path Doesn't Exist....creating!");
+            fs.mkdirSync(studentPath, {
+                recursive: true
+            });
+        }
+
+        return studentPath;
+
+    }
     getDocument() {
         let todayDate = new Date();
 
@@ -158,7 +173,7 @@ module.exports = class Pdf {
                 {
                     style: 'body',
                     text: `Universidade do Minho, ${todayDate.getDate()} de ${this.getMonth(todayDate)} de ${todayDate.getFullYear()}
-                \nA(O) Diretor(a) de Curso da(o) Licenciatura/Mestrado/Doutoramento em XXX`
+                \nA(O) Diretor(a) de Curso da(o) ${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`
                 },
                 {
                     style: 'signature',

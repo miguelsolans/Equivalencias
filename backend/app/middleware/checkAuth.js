@@ -7,7 +7,6 @@ module.exports = async (req, res, next) => {
     try {
         const token = req.headers.usertoken || req.headers.userToken;
 
-        console.log(token);
         const decodedToken = jwt.verify(token, process.env.AUTH_SECRET, { algorithm: 'RS256' });
 
         let user = await Users.findById(decodedToken.user);
