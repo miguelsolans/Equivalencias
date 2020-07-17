@@ -53,7 +53,7 @@ module.exports = class Pdf {
             text: e.nota,
             alignment: 'center'
         }, {
-            text: e.semUcEquiv,
+            text: e.ucEquiv,
         }, {
             text: e.ects,
             alignment: 'center'
@@ -110,7 +110,8 @@ module.exports = class Pdf {
                     columns: [
                         { width: 100, image: 'app/public/images/EEUMLOGO.png', alignment: 'center' },
                         { width: 30, text: "" },
-                        { width: '*', text: "Proposta de Creditação de Formação\n \nLicenciatura/Mestrado/Doutoramento em XXX", style: 'header' }
+                        //{ width: '*', text: "Proposta de Creditação de Formação\n \nLicenciatura/Mestrado/Doutoramento em XXX", style: 'header' }
+                        { width: '*', text:`Proposta de Creditação de Formação\n \n${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'header'}
                     ],
                     style: 'header'
                 },
@@ -119,7 +120,7 @@ module.exports = class Pdf {
                     table: {
                         widths: [120, '*'],
                         body: [
-                            [{text: "Ano Letivo", bold: true}, {text: "student.anoUcEquiv", bold: false}],
+                            // [{text: "Ano Letivo", bold: true}, {text: this.student.anoUcEquiv, bold: false}],
                             [{text: "Processo", bold: true}, {text: this.student.processo, bold: false}],
                             [{text: "Estudante", bold: true}, {text: this.student.nomeAluno, bold: false}],
                             [{text: "Instituição (Origem)", bold: true}, {text: this.student.instProv, bold: false}],

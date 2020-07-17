@@ -5,8 +5,10 @@
             <v-card>
                 <v-list two-line>
                     <template v-for="(file, index) in files">
-                        <v-list-item :key="file.filename" :href="`http://${url}/processo/${file._id}/file/${file.filename}`" target="_blank">
-                            <v-list-item-avatar>
+<!--                        <v-list-item :key="file.filename" :href="`http://${url}/processo/${file._id}/file/${file.filename}`" >-->
+                        <v-list-item :key="file.filename" @click="downloadFile(file)">
+
+                        <v-list-item-avatar>
                                 <v-icon>mdi-file-pdf</v-icon>
                             </v-list-item-avatar>
 
@@ -57,13 +59,29 @@
         methods: {
             generatePdf() {
                 UserService.generatePdf( this.processId )
-                    .then(response => console.log(response))
+                    .then(response => {
+                        console.log("Generating...");
+                        console.log(response.data);
+                    })
                     .catch(err => console.log(err.response));
             },
 
             getFiles() {
                 UserService.getProcessFiles( this.processId )
                     .then(response => this.files.push(...response.data))
+                    .catch(err => console.log(err));
+            },
+
+            downloadFile(file) {
+                console.log("downloadFile");
+                UserService.downloadFile(this.processId, file.filename)
+                    .then(response => {
+                        let blob = new Blob([response.data], { type:   'application/pdf' } );
+                        let link = document.createElement('a');
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = `${file.filename}.pdf`;
+                        link.click();
+                    })
                     .catch(err => console.log(err));
             }
         }

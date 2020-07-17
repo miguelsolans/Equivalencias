@@ -74,7 +74,7 @@ class UserService {
     }
 
     generatePdf(id) {
-        return axios.post(`${process.env.VUE_APP_API_SERVER}/processo/${id}/generate`, {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/processo/${id}/generate`, null, {
             headers: authHeader()
         });
     }
@@ -83,6 +83,25 @@ class UserService {
         return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
             headers: authHeader()
         })
+    }
+
+    downloadFile(id, filename) {
+        let headerAuthType = authHeader();
+        //headerAuthType["Accept"] = "application/pdf";
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`, {
+            responseType:'arraybuffer',
+            headers: headerAuthType,
+        });
+        // return fetch(`${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`, {
+        //     method: "GET",
+        //     headers: authHeader()
+        // })
+        //     .then(response => response.blob());
+        /*return axios({
+            url: `${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`,
+            method: "GET",
+            headers: authHeader(),
+        })*/
     }
 
     //
