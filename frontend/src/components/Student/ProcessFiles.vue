@@ -1,21 +1,24 @@
 <template>
     <v-container>
+        <v-btn @click="generatePdf"></v-btn>
         <div v-if="files.length > 0">
             <v-card>
                 <v-list two-line>
                     <template v-for="(file, index) in files">
-                        <v-list-item :key="file.filename" :href="`http://${url}/processo/${file._id}/file/${file.filename}`" target="_blank">
-                            <v-list-item-avatar>
+<!--                        <v-list-item :key="file.filename" :href="`http://${url}/processo/${file._id}/file/${file.filename}`" >-->
+                        <v-list-item :key="file.filename" @click="downloadFile(file)">
+
+                        <v-list-item-avatar>
                                 <v-icon>mdi-file-pdf</v-icon>
                             </v-list-item-avatar>
 
                             <v-list-item-content>
                                 <v-list-item-subtitle>
-                                    <span>Data: </span>
-                                    {{ file.generatedAt | moment('DD/MM/YYYY, HH:MM')}}
+                                    <span>Data e Hora de Criação: </span>
+                                    {{ file.generatedAt | moment('DD/MM/YYYY, HH:mm')}}
                                 </v-list-item-subtitle>
                                 <v-list-item-subtitle>
-                                    <span>Gerado Por: </span>
+                                    <span>Utilizador Responsável: </span>
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
@@ -33,7 +36,7 @@
 <!--            </ul>-->
         </div>
         <div v-else>
-            Não existem documentos
+            Não existem Documentos
         </div>
 
     </v-container>
@@ -51,16 +54,35 @@
             }
         },
         mounted() {
-            UserService.getProcessFiles( this.processId )
-                .then(response => {
-                    console.log("GET Files");
-                    console.log(response.data);
-                    this.files = response.data
-                }).catch(err => console.log(err));
-
+            this.getFiles();
         },
         methods: {
+            generatePdf() {
+                UserService.generatePdf( this.processId )
+                    .then(response => {
+                        this.files.push(response.data.file);
+                    })
+                    .catch(err => console.log(err.response));
+            },
 
+            getFiles() {
+                UserService.getProcessFiles( this.processId )
+                    .then(response => this.files.push(...response.data))
+                    .catch(err => console.log(err));
+            },
+
+            downloadFile(file) {
+                console.log("downloadFile");
+                UserService.downloadFile(this.processId, file.filename)
+                    .then(response => {
+                        let blob = new Blob([response.data], { type:   'application/pdf' } );
+                        let link = document.createElement('a');
+                        link.href = window.URL.createObjectURL(blob);
+                        link.download = `${file.filename}.pdf`;
+                        link.click();
+                    })
+                    .catch(err => console.log(err));
+            }
         }
     }
 </script>

@@ -16,7 +16,6 @@
                     { text: "Username", value: "username"},
                     { text: "E-mail", value: "email"},
                     { text: "Tipo de Utilizador", value: "admin"}
-                    //"Nome", "Username", "E-mail", "Tipo de Utilizador"
                 ],
                 users: []
             }

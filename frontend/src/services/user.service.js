@@ -6,15 +6,7 @@ import axios from 'axios';
 import authHeader from './auth-header';
 
 class UserService {
-    /**
-     * Get Account Information
-     * @returns {Promise<AxiosResponse<any>>}
-     */
-    getLoggedUser() {
-        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/logged`, {
-            headers: authHeader()
-        });
-    }
+
 
     /**
      * Create a new Process
@@ -37,12 +29,26 @@ class UserService {
         });
     }
 
+    //
+    // Universities Endpoint
+    //
     /**
      * List registered universities
      * @returns {Promise<AxiosResponse<any>>}
      */
     listUniversities() {
         return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade`, {
+            headers: authHeader()
+        });
+    }
+
+    /**
+     * Register a new University
+     * @param university
+     * @returns {Promise<AxiosResponse<any>>}
+     */
+    registerUniversity(university) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/universidade`, university, {
             headers: authHeader()
         });
     }
@@ -76,12 +82,35 @@ class UserService {
      * @returns {Promise<AxiosResponse<any>>}
      */
     getProcessFiles(id) {
-        console.log("USER SERVICE: " + process.env.VUE_APP_API_SERVER);
         return axios.get(`${process.env.VUE_APP_API_SERVER}/processo/${id}/files`, {
             headers: authHeader()
         });
     }
 
+    generatePdf(id) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/processo/${id}/generate`, null, {
+            headers: authHeader()
+        });
+    }
+
+    updateProcess(id, processo) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+            headers: authHeader()
+        })
+    }
+
+    downloadFile(id, filename) {
+        let headerAuthType = authHeader();
+        //headerAuthType["Accept"] = "application/pdf";
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`, {
+            responseType:'arraybuffer',
+            headers: headerAuthType,
+        });
+    }
+
+    //
+    // University Endpoint
+    //
     getUniversityCourses(university) {
         return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade/?university=${university}`, {
             headers: authHeader()
@@ -101,16 +130,19 @@ class UserService {
     }
 
 
-    updateProcess(id, processo) {
-        return axios.put(`${process.env.VUE_APP_API_SERVER}/processo/${id}`, processo, {
+    //
+    // User Endpoint
+    //
+
+    /**
+     * Get Account Information
+     * @returns {Promise<AxiosResponse<any>>}
+     */
+    getLoggedUser() {
+        return axios.get(`${process.env.VUE_APP_API_SERVER}/user/logged`, {
             headers: authHeader()
-        })
+        });
     }
-
-
-    //
-    // Settings
-    //
 
     /**
      * Change user password

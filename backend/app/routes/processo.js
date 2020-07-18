@@ -28,7 +28,7 @@ router.get('/export', checkAuth, isAdmin, async (req, res) => {
 
         }
         else {
-            res.jsonp({title: "Unsupported type", message: `${type} is not a supported export data type`});
+            res.status(400).jsonp({title: "Unsupported type", message: `${type} is not a supported export data type`});
         }
 
     }
@@ -49,11 +49,11 @@ router.get('/', checkAuth, (req, res) => {
         console.log(`GET / ?year=${query.year}`);
         Processos.searchByYear(query.year)
             .then(data => res.jsonp(data))
-            .catch(err => res.jsonp(err));
+            .catch(err => res.status(400).jsonp(err));
     } else {
         Processos.list(null, { processo: true, idAluno: true, nomeAluno: true })
             .then(data => res.jsonp(data))
-            .catch(err => res.jsonp(err));
+            .catch(err => res.status(400).jsonp(err));
     }
 
 });
@@ -86,8 +86,13 @@ router.post('/:id/generate', checkAuth, async (req, res) => {
 
         let result = studentPdf.makePdf();
 
-        let msgOutput = result ? "Successfully generated" : "Some error occurred...";
-        res.status(201).jsonp( {title: "Success!", message: msgOutput} );
+
+        if(!result) {
+            res.status(500).jsonp({title: "Error!", message: "Some error occurred..."});
+        } else {
+            res.status(201).jsonp( {title: "Success!", message: "Successfully generated", file: {filename: fileMetadata.filename, generatedAt: new Date(fileMetadata.filename), generatedBy: fileMetadata.generatedBy }});
+
+        }
 
     } catch(err) {
         res.status(500).jsonp( {title: "Error!", message: "Some error occurred while generating the PDF", error: err} )
@@ -113,14 +118,13 @@ router.post('/', checkAuth, (req, res) => {
 
     Processos.new(newProcess)
         .then(data => {
-            // fs.mkdirSync(`app/files/${data.processo}`);
-            fs.mkdirSync(`app/files/${data.processo}`, {
+            fs.mkdirSync(`app/files/${data._id}`, {
                 recursive: true
             });
             console.log(data);
             res.status(201).jsonp(data);
         })
-        .catch(err => res.jsonp(err));
+        .catch(err => res.status(400).jsonp(err));
 
 });
 
@@ -155,7 +159,7 @@ router.delete('/:id', checkAuth, (req, res) => {
 
             res.jsonp(data);
         })
-        .catch(err => res.jsonp(err));
+        .catch(err => res.status(400).jsonp(err));
 
 });
 
@@ -171,13 +175,23 @@ router.delete('/:id', checkAuth, (req, res) => {
  * body {ucRealizada}: STRING
  */
 router.post('/:id/subject', checkAuth, (req, res) => {
-    const subject = req.body;
+    // { semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada, createdBy}
+    const subject = {
 
-    subject.createdBy = req.decodedUser.username;
+        semUcEquiv: req.body.semUcEquiv,
+        ucEquiv: req.body.ucEquiv,
+        anoLetivo: req.body.anoLetivo,
+        percent: req.body.percent,
+        nota: req.body.nota,
+        ects: req.body.ects,
+        ucRealizada: req.body.ucRealizada,
+        createdBy: req.decodedUser.username
 
-    Processos.addSubjects(req.params.id, req.body)
+    };
+
+    Processos.addSubjects(req.params.id, subject)
         .then(data => res.status(201).jsonp(data))
-        .catch(err => res.jsonp(err));
+        .catch(err => res.status(400).jsonp(err));
 });
 
 /**
@@ -186,7 +200,7 @@ router.post('/:id/subject', checkAuth, (req, res) => {
 router.get('/:id/files', checkAuth, (req, res) => {
     Processos.listDocumentation(req.params.id)
         .then(data => res.status(200).json(data))
-        .catch(err => res.json(err));
+        .catch(err => res.status(400).json(err));
 });
 
 /**
