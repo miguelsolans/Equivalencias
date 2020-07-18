@@ -40,7 +40,7 @@ router.get('/',  checkAuth, (req, res) => {
 
 });
 
-router.post('/', checkAuth, (req, res) => {
+router.post('/', checkAuth, isAdmin, (req, res) => {
     console.log("UNIVERSIDADES POST / ");
 
     const university = {
