@@ -4,14 +4,11 @@
         <div v-if="files.length > 0">
             <v-card>
                 <v-list two-line>
-                    <template v-for="(file, index) in files">
-<!--                        <v-list-item :key="file.filename" :href="`http://${url}/processo/${file._id}/file/${file.filename}`" >-->
+                    <template v-for="(file, index) in visiblePages">
                         <v-list-item :key="file.filename" @click="downloadFile(file)">
-
-                        <v-list-item-avatar>
+                            <v-list-item-avatar>
                                 <v-icon>mdi-file-pdf</v-icon>
                             </v-list-item-avatar>
-
                             <v-list-item-content>
                                 <v-list-item-subtitle>
                                     <span>Data e Hora de Criação: </span>
@@ -23,17 +20,18 @@
                                 </v-list-item-subtitle>
                             </v-list-item-content>
                         </v-list-item>
-
                         <v-divider :key="index"></v-divider>
                     </template>
                 </v-list>
             </v-card>
-
-<!--            <ul v-if="files.length > 0">-->
-<!--                <li v-for="file in files" :key="file.filename">-->
-<!--                    <a :href="`http://localhost:3030/processo/${file._id}/file/${file.filename}`" target="_blank">{{ file.generatedAt }}</a>-->
-<!--                </li>-->
-<!--            </ul>-->
+            <div class="my-5 text-center pt-2">
+                <v-pagination
+                    color="#187653" 
+                    v-model="page"
+                    :length="Math.ceil(files.length/perPage)"
+                    circle
+                ></v-pagination>
+            </div>
         </div>
         <div v-else>
             Não existem Documentos
@@ -48,6 +46,8 @@
         name: "ProcessFiles",
         data() {
             return {
+                page: 1,
+                perPage: 5,
                 files: [],
                 url: process.env.VUE_APP_API_SERVER,
                 processId: this.$route.params.id
@@ -55,6 +55,11 @@
         },
         mounted() {
             this.getFiles();
+        },
+        computed: {
+            visiblePages () {
+                return this.files.slice((this.page - 1)* this.perPage, this.page* this.perPage)
+            }
         },
         methods: {
             generatePdf() {
