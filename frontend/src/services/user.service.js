@@ -42,8 +42,13 @@ class UserService {
         });
     }
 
-    registerUniversity(codInstit, nomeInstit) {
-        return axios.post(`${process.env.VUE_APP_API_SERVER}/universidade`, {
+    /**
+     * Register a new University
+     * @param university
+     * @returns {Promise<AxiosResponse<any>>}
+     */
+    registerUniversity(university) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/universidade`, university, {
             headers: authHeader()
         });
     }
