@@ -3,22 +3,72 @@
         <v-btn @click="generatePdf"></v-btn>
         <div v-if="files.length > 0">
             <v-card>
-                <v-list two-line>
+                <v-list two-line >
                     <template v-for="(file, index) in visiblePages">
-                        <v-list-item :key="file.filename" @click="downloadFile(file)">
+                        <v-list-item
+                            class="d-none d-sm-flex"
+                            :key="file.filename" 
+                            @click="downloadFile(file)"
+                        >
                             <v-list-item-avatar>
                                 <v-icon>mdi-file-pdf</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-subtitle>
-                                    <span>Data e Hora de Criação: </span>
+                                    <span style="font-weight: bold">Data e Hora de Criação: </span>
                                     {{ file.generatedAt | moment('DD/MM/YYYY, HH:mm')}}
                                 </v-list-item-subtitle>
                                 <v-list-item-subtitle>
-                                    <span>Utilizador Responsável: </span>
+                                    <span 
+                                        style="font-weight: bold"
+                                    >
+                                        Utilizador Responsável:
+                                    </span>
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
+                            <v-list-title 
+                                class="text-right align-self-center"
+                            >
+                                <span
+                                    style="color:#187653; font-weight: bold"
+                                >
+                                    Download
+                                </span>
+                                <v-list-item-avatar>
+                                    <v-icon color="#187653">mdi-download</v-icon>
+                                </v-list-item-avatar>
+                            </v-list-title>
+                        </v-list-item>
+                        <v-list-item
+                            class="d-flex d-sm-none"
+                            :key="file.filename" 
+                            @click="downloadFile(file)"
+                        >
+                            <v-list-item-avatar>
+                                <v-icon>mdi-file-pdf</v-icon>
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-subtitle>
+                                    <span style="font-weight: bold">Data e Hora: </span>
+                                    {{ file.generatedAt | moment('DD/MM/YYYY, HH:mm')}}
+                                </v-list-item-subtitle>
+                                <v-list-item-subtitle>
+                                    <span 
+                                        style="font-weight: bold"
+                                    >
+                                        Utilizador:
+                                    </span>
+                                    {{ file.generatedBy }}
+                                </v-list-item-subtitle>
+                            </v-list-item-content>
+                            <v-list-title 
+                                class="text-right align-self-center"
+                            >
+                                <v-list-item-avatar>
+                                    <v-icon color="#187653">mdi-download</v-icon>
+                                </v-list-item-avatar>
+                            </v-list-title>
                         </v-list-item>
                         <v-divider :key="index"></v-divider>
                     </template>
@@ -28,7 +78,7 @@
                 <v-pagination
                     color="#187653" 
                     v-model="page"
-                    :length="Math.ceil(files.length/perPage)"
+                    :length="Math.ceil(files.length/itemsPerPage)"
                     circle
                 ></v-pagination>
             </div>
@@ -49,7 +99,7 @@
         data() {
             return {
                 page: 1,
-                perPage: 5,
+                itemsPerPage: 5,
                 files: [],
                 alert: new Alert(),
                 url: process.env.VUE_APP_API_SERVER,
@@ -61,7 +111,7 @@
         },
         computed: {
             visiblePages () {
-                return this.files.slice((this.page - 1)* this.perPage, this.page* this.perPage)
+                return this.files.slice((this.page - 1)* this.itemsPerPage, this.page* this.itemsPerPage)
             }
         },
         methods: {
