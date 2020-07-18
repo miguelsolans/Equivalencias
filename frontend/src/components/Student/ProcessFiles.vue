@@ -14,11 +14,11 @@
 
                             <v-list-item-content>
                                 <v-list-item-subtitle>
-                                    <span>Data: </span>
-                                    {{ file.generatedAt | moment('DD/MM/YYYY, HH:MM')}}
+                                    <span>Data e Hora de Criação: </span>
+                                    {{ file.generatedAt | moment('DD/MM/YYYY, HH:mm')}}
                                 </v-list-item-subtitle>
                                 <v-list-item-subtitle>
-                                    <span>Gerado Por: </span>
+                                    <span>Utilizador Responsável: </span>
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
@@ -36,7 +36,7 @@
 <!--            </ul>-->
         </div>
         <div v-else>
-            Não existem documentos
+            Não existem Documentos
         </div>
 
     </v-container>

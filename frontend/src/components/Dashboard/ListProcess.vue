@@ -83,12 +83,15 @@
             firstUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
+                if(stringSplit[0][0] == stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
                 return regex.exec(stringSplit[0])[0];
             },
             // Função que obtém a última letra maiúscula do nome do Aluno
             lastUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
+                if(stringSplit[0][0] == stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
+                if(stringSplit.length == 1) return null;
                 return regex.exec(stringSplit[stringSplit.length-1])[0];
             }      
         },
