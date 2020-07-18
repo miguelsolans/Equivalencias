@@ -29,12 +29,21 @@ class UserService {
         });
     }
 
+    //
+    // Universities Endpoint
+    //
     /**
      * List registered universities
      * @returns {Promise<AxiosResponse<any>>}
      */
     listUniversities() {
         return axios.get(`${process.env.VUE_APP_API_SERVER}/universidade`, {
+            headers: authHeader()
+        });
+    }
+
+    registerUniversity(codInstit, nomeInstit) {
+        return axios.post(`${process.env.VUE_APP_API_SERVER}/universidade`, {
             headers: authHeader()
         });
     }
@@ -92,16 +101,6 @@ class UserService {
             responseType:'arraybuffer',
             headers: headerAuthType,
         });
-        // return fetch(`${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`, {
-        //     method: "GET",
-        //     headers: authHeader()
-        // })
-        //     .then(response => response.blob());
-        /*return axios({
-            url: `${process.env.VUE_APP_API_SERVER}/processo/${id}/file/${filename}`,
-            method: "GET",
-            headers: authHeader(),
-        })*/
     }
 
     //
