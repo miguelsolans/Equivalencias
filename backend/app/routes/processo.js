@@ -8,6 +8,13 @@ const fs = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
 
+/**
+ * Export Data, admin protected
+ * query {year}: registered data within given year
+ * query {sort}: asc for ascending, desc for descending
+ * query {limit}: maximum number of data
+ * query {type}: JSON or XML output
+ */
 router.get('/export', checkAuth, isAdmin, async (req, res) => {
 
     let { year, sort, limit, type} = req.query;
@@ -32,15 +39,11 @@ router.get('/export', checkAuth, isAdmin, async (req, res) => {
         }
 
     }
-    // Work with params
-    // year=
-    // sort=[year, asc, desc],
-    // limit=[number of max data]
-    // type=JSON/XML
 });
 
 /**
  * Get Students Enrolled
+ * query {year}: get enrolled students on a given year (optional)
  */
 router.get('/', checkAuth, (req, res) => {
     let query = req.query;
@@ -60,6 +63,7 @@ router.get('/', checkAuth, (req, res) => {
 
 /**
  * Get Process by Id
+ * param {id}: process ID (Mongo ObjectID)
  */
 router.get('/:id', checkAuth, (req, res) => {
     let idProcesso = req.params.id;
@@ -69,6 +73,10 @@ router.get('/:id', checkAuth, (req, res) => {
         .catch(err => res.status(500).json(err));
 });
 
+/**
+ * Generate PDF output
+ * param {id}: process ID (Mongo ObjectID)
+ */
 router.post('/:id/generate', checkAuth, async (req, res) => {
     let idProcess = req.params.id;
 
@@ -102,6 +110,11 @@ router.post('/:id/generate', checkAuth, async (req, res) => {
 
 /**
  * Initiate a new Process
+ * body {processo}: process number
+ * body {idAluno}: student id
+ * body {nomeAluno}: student full name
+ * body {instProv}: university name
+ * body {cursoProv}: course
  */
 router.post('/', checkAuth, (req, res) => {
 
@@ -128,7 +141,15 @@ router.post('/', checkAuth, (req, res) => {
 
 });
 
-
+/**
+ * Update information
+ * param {id}: process ID (Mongo ObjectID)
+ * body {processo}: process id
+ * body {idAluno}: student id
+ * body {nomeAluno}: student fullname
+ * body {instProv}: university name
+ * body {cursoProv}: course
+ */
 router.put('/:id', checkAuth, (req, res) => {
     let id = req.params.id;
     const fields = {
@@ -147,6 +168,7 @@ router.put('/:id', checkAuth, (req, res) => {
 
 /**
  * Delete process by its Id
+ * param {id}: process ID (Mongo ObjectID)
  */
 router.delete('/:id', checkAuth, (req, res) => {
     console.log(req.params.id);
@@ -175,9 +197,7 @@ router.delete('/:id', checkAuth, (req, res) => {
  * body {ucRealizada}: STRING
  */
 router.post('/:id/subject', checkAuth, (req, res) => {
-    // { semUcEquiv, ucEquiv, anoLetivo, percent, nota, ects, ucRealizada, createdBy}
     const subject = {
-
         semUcEquiv: req.body.semUcEquiv,
         ucEquiv: req.body.ucEquiv,
         anoLetivo: req.body.anoLetivo,
@@ -186,7 +206,6 @@ router.post('/:id/subject', checkAuth, (req, res) => {
         ects: req.body.ects,
         ucRealizada: req.body.ucRealizada,
         createdBy: req.decodedUser.username
-
     };
 
     Processos.addSubjects(req.params.id, subject)
@@ -196,6 +215,7 @@ router.post('/:id/subject', checkAuth, (req, res) => {
 
 /**
  * Get Process files by its Id
+ * param {id}: process ID (Mongo ObjectID)
  */
 router.get('/:id/files', checkAuth, (req, res) => {
     Processos.listDocumentation(req.params.id)
