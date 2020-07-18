@@ -1,10 +1,10 @@
-const express = require('express');
-const router  = express.Router();
-const isAdmin = require('../middleware/userAdmin');
+const express   = require('express');
+const router    = express.Router();
+const isAdmin   = require('../middleware/userAdmin');
 const xmlParser = require('js2xmlparser');
 const Processos = require('../controllers/processos');
-const Pdf = require('../utils/pdf');
-const fs = require('fs');
+const Pdf       = require('../utils/pdf');
+const fs        = require('fs');
 
 const checkAuth = require('../middleware/checkAuth');
 

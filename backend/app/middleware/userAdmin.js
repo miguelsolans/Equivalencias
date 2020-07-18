@@ -1,3 +1,8 @@
+/* Middlware for user authentication and route protection
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
 
 module.exports = (req, res, next) => {
     console.log("Checking Role");

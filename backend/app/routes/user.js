@@ -1,11 +1,10 @@
-const express = require('express');
-const router  = express.Router();
-const bcrypt  = require('bcryptjs');
-const jwt     = require('jsonwebtoken');
-const Users = require('../controllers/users');
-
+const express   = require('express');
+const router    = express.Router();
+const bcrypt    = require('bcryptjs');
+const jwt       = require('jsonwebtoken');
+const Users     = require('../controllers/users');
 const checkAuth = require('../middleware/checkAuth');
-const isAdmin = require('../middleware/userAdmin');
+const isAdmin   = require('../middleware/userAdmin');
 
 /**
  * Get a Certain user by its ID

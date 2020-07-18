@@ -1,4 +1,9 @@
-const jwt = require('jsonwebtoken');
+/* Middlware for user authentication and route protection
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
+const jwt   = require('jsonwebtoken');
 const Users = require('../controllers/users');
 const Error = require('../utils/error');
 

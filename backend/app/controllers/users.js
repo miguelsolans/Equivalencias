@@ -1,3 +1,9 @@
+/*
+ * Controller of Universidades collection
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
 const User = require('../models/user');
 
 module.exports.findById = (id) => {
