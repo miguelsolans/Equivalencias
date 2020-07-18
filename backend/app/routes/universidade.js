@@ -1,6 +1,7 @@
 const express       = require('express');
 const router        = express.Router();
 const checkAuth     = require('../middleware/checkAuth');
+const isAdmin       = require('../middleware/userAdmin');
 const Universidades = require('../controllers/universidades');
 const Processos     = require('../controllers/processos');
 
@@ -10,7 +11,7 @@ const Processos     = require('../controllers/processos');
  * query {course}: Course name, returns available subjects
  * query {subject}: Subject name, returns similar processes for smart fields
  */
-router.get('/',  checkAuth, (req, res) => {
+router.get('/', checkAuth, (req, res) => {
 
     const query = req.query;
     console.log("UNIVERSIDADES GET / ");
@@ -40,6 +41,11 @@ router.get('/',  checkAuth, (req, res) => {
 
 });
 
+/**
+ * Create a new University
+ * body {codInstit} unique University identifier
+ * body {nomeInstit} University name
+ */
 router.post('/', checkAuth, isAdmin, (req, res) => {
     console.log("UNIVERSIDADES POST / ");
 
