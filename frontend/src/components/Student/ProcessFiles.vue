@@ -3,7 +3,7 @@
         <div v-if="files.length > 0">
             <div class="text-center align-self-center my-5">
                 <span style="color:#187653; font-weight: bold">
-                    Criar Novo Documento do Processo
+                    Gerar Novo Documento do Processo
                 </span>
                 <v-btn
                     class="mx-2"
@@ -105,7 +105,7 @@
                 </span>
                 <p/>
                 <p style="color:#187653; font-weight: bold">
-                    Criar Novo Documento do Processo
+                    Gerar Novo Documento do Processo
                 </p>
                 <v-btn
                     class="mx-2"
