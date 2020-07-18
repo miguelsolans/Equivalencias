@@ -5,8 +5,8 @@
 
 "use strict";
 
-const fs          = require('fs');
-const pdfMake     = require('pdfmake');
+const fs = require('fs');
+const pdfMake = require('pdfmake');
 
 module.exports = class Pdf {
     constructor(student, author, filename) {
@@ -46,7 +46,7 @@ module.exports = class Pdf {
     getTable(data, columns) {
         let body = columns;
 
-        data.forEach( e => body.push([{
+        data.forEach(e => body.push([{
             text: e.ucRealizada,
         }, {
             text: e.ects,
@@ -77,7 +77,7 @@ module.exports = class Pdf {
         const monthNames = ["janeiro", "fevereiro", "março", "abril", "maio", "junho",
             "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 
-        return monthNames[ date.getMonth() ];
+        return monthNames[date.getMonth()];
     }
 
     /**
@@ -102,7 +102,7 @@ module.exports = class Pdf {
     getStudentPath() {
         let studentPath = `app/files/${this.student._id}`;
         console.log("Student Path Health")
-        if(!fs.existsSync(studentPath)) {
+        if (!fs.existsSync(studentPath)) {
             console.log("Student Path Doesn't Exist....creating!");
             fs.mkdirSync(studentPath, {
                 recursive: true
@@ -119,14 +119,14 @@ module.exports = class Pdf {
             pageSize: 'A4',
             pageOrientation: 'portrait',
             // Left, Top, Right, Bottom
-            pageMargins: [ 70, 50, 70, 40 ],
+            pageMargins: [70, 50, 70, 40],
             content: [
                 {
                     columns: [
                         { width: 100, image: 'app/public/images/EEUMLOGO.png', alignment: 'center' },
                         { width: 30, text: "" },
                         //{ width: '*', text: "Proposta de Creditação de Formação\n \nLicenciatura/Mestrado/Doutoramento em XXX", style: 'header' }
-                        { width: '*', text:`Proposta de Creditação de Formação\n \n${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'header'}
+                        { width: '*', text: `Proposta de Creditação de Formação\n \n${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'header' }
                     ],
                     style: 'header'
                 },
@@ -136,10 +136,10 @@ module.exports = class Pdf {
                         widths: [120, '*'],
                         body: [
                             // [{text: "Ano Letivo", bold: true}, {text: this.student.anoUcEquiv, bold: false}],
-                            [{text: "Processo", bold: true}, {text: this.student.processo, bold: false}],
-                            [{text: "Estudante", bold: true}, {text: this.student.nomeAluno, bold: false}],
-                            [{text: "Instituição (Origem)", bold: true}, {text: this.student.instProv, bold: false}],
-                            [{text: "Curso (Origem", bold: true}, {text: this.student.cursoProv, bold: false}]
+                            [{ text: "Processo", bold: true }, { text: this.student.processo, bold: false }],
+                            [{ text: "Estudante", bold: true }, { text: this.student.nomeAluno, bold: false }],
+                            [{ text: "Instituição (Origem)", bold: true }, { text: this.student.instProv, bold: false }],
+                            [{ text: "Curso (Origem)", bold: true }, { text: this.student.cursoProv, bold: false }]
                         ],
                     },
                     layout: {
@@ -157,15 +157,15 @@ module.exports = class Pdf {
                         headerRows: 2,
                         widths: ['*', 25, 25, '*', 25, 25],
                         body: this.getTable(this.student.equivalencias, [
-                            [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: `UC de ${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
+                            [{ text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center' }, {}, {}, { text: `UC de ${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'tableHeader', colSpan: 3, alignment: 'center' }, {}, {}],
                             [
-                                {text: 'Designação', style: 'tableHeader', alignment: 'center'},
-                                {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
-                                {text: 'Nota', style: 'tableHeader', alignment: 'center'},
+                                { text: 'Designação', style: 'tableHeader', alignment: 'center' },
+                                { text: 'ECTs', style: 'tableHeader', alignment: 'center' },
+                                { text: 'Nota', style: 'tableHeader', alignment: 'center' },
 
-                                {text: 'Designação', style: 'tableHeader', alignment: 'center'},
-                                {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
-                                {text: 'Nota', style: 'tableHeader', alignment: 'center'}
+                                { text: 'Designação', style: 'tableHeader', alignment: 'center' },
+                                { text: 'ECTs', style: 'tableHeader', alignment: 'center' },
+                                { text: 'Nota', style: 'tableHeader', alignment: 'center' }
                             ]]
                         ),
                     },
@@ -205,7 +205,7 @@ module.exports = class Pdf {
                     margin: 30
                 },
                 subjects: {
-                    margin: [ 5, 20, 10, 20 ]
+                    margin: [5, 20, 10, 20]
                 },
                 headerTable: {
                     fillColor: "#f2f2f2",
