@@ -5,7 +5,8 @@ export default class Alert {
         this.message = message;
         this.stack = stack;
         this.display = false;
-        this.isError = false;
+        this.isError = isError;
+        this.type = "";
     }
 
     setStack(stack) {
@@ -22,5 +23,9 @@ export default class Alert {
 
     hideAlert() {
         this.display = false;
+    }
+
+    getType() {
+        return this.isError ? 'error' : 'info';
     }
 }

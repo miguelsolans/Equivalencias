@@ -44,11 +44,14 @@
 
 <script>
     import UserService from '../../services/user.service';
+    import Alert from '../../models/alert';
+
     export default {
         name: "ProcessFiles",
         data() {
             return {
                 files: [],
+                alert: new Alert(),
                 url: process.env.VUE_APP_API_SERVER,
                 processId: this.$route.params.id
             }
@@ -68,7 +71,11 @@
             getFiles() {
                 UserService.getProcessFiles( this.processId )
                     .then(response => this.files.push(...response.data))
-                    .catch(err => console.log(err));
+                    .catch(err => {
+                        // let { title, message } = err.data;
+                        this.alert = new Alert();
+                        console.log(err.response)
+                    });
             },
 
             downloadFile(file) {
@@ -81,7 +88,15 @@
                         link.download = `${file.filename}.pdf`;
                         link.click();
                     })
-                    .catch(err => console.log(err));
+                    .catch(err => {
+                        let status = err.response.status
+                        // let { title, message } = err.data;
+                        //     constructor(code, title, message, stack, isError)  {
+
+                        this.alert = new Alert(status, "Erro de Download", "O ficheiro requisitado não foi encontrado", err.response, true);
+
+                        this.$emit("displayAlert", this.alert);
+                    });
             }
         }
     }
