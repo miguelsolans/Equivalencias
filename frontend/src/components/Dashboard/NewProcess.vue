@@ -13,7 +13,7 @@
         <v-form class="my-9">
             <v-row>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" placeholder="Identificador do Processo" type="text" v-model="student.processo" class="ml-md-5" dense filled rounded hide-details required/>
+                    <v-text-field color="#187653" placeholder="Identificador do Processo" type="text" v-model="student.processo" class="ml-md-5" dense filled rounded hide-details/>
                 </v-col>
                 <v-col cols="6" sm="6">
                     <v-text-field color="#187653" placeholder="Identificador do Aluno" type="text" v-model="student.idAluno" class="ml-md-5" dense filled rounded hide-details required/>
