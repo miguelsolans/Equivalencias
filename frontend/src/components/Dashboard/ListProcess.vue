@@ -89,6 +89,7 @@
             lastUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
+                if(stringSplit.length == 1) return null;
                 return regex.exec(stringSplit[stringSplit.length-1])[0];
             }      
         },
