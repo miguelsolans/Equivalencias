@@ -157,7 +157,7 @@ module.exports = class Pdf {
                         headerRows: 2,
                         widths: ['*', 25, 25, '*', 25, 25],
                         body: this.getTable(this.student.equivalencias, [
-                            [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: 'UC da(o) Licenciatura/Mestrado/Doutoramento em XX', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
+                            [{text: 'UC do Curso de Origem', style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}, {text: `UC de ${process.env.COURSE_DEGREE} em ${process.env.COURSE_NAME}`, style: 'tableHeader', colSpan: 3, alignment: 'center'}, {}, {}],
                             [
                                 {text: 'Designação', style: 'tableHeader', alignment: 'center'},
                                 {text: 'ECTs', style: 'tableHeader', alignment: 'center'},
