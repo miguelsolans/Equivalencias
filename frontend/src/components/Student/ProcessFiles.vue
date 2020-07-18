@@ -1,10 +1,25 @@
 <template>
     <v-container>
-        <v-btn @click="generatePdf"></v-btn>
         <div v-if="files.length > 0">
-            <v-card>
+            <div class="text-center align-self-center my-5">
+                <span style="color:#187653; font-weight: bold">
+                    Criar Novo Documento do Processo
+                </span>
+                <v-btn
+                    class="mx-2"
+                    fab
+                    small
+                    rounded
+                    color="#187653"
+                    dark
+                    @click="generatePdf"
+                >
+                    <v-icon>mdi-plus</v-icon>
+                </v-btn>
+            </div>
+            <v-card class="my-5">
                 <v-list two-line >
-                    <template v-for="(file, index) in visiblePages">
+                    <template v-for="(file, index) in visibleFiles">
                         <v-list-item
                             class="d-none d-sm-flex"
                             :key="file.filename" 
@@ -84,7 +99,26 @@
             </div>
         </div>
         <div v-else>
-            Não existem Documentos
+            <div class="text-center align-self-center my-5">
+                <span>
+                    Não existem Documentos para o Processo
+                </span>
+                <p/>
+                <p style="color:#187653; font-weight: bold">
+                    Criar Novo Documento do Processo
+                </p>
+                <v-btn
+                    class="mx-2"
+                    fab
+                    small
+                    rounded
+                    color="#187653"
+                    dark
+                    @click="generatePdf"
+                >
+                    <v-icon>mdi-plus</v-icon>
+                </v-btn>
+            </div>
         </div>
 
     </v-container>
@@ -110,7 +144,7 @@
             this.getFiles();
         },
         computed: {
-            visiblePages () {
+            visibleFiles () {
                 return this.files.slice((this.page - 1)* this.itemsPerPage, this.page* this.itemsPerPage)
             }
         },
