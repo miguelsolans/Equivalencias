@@ -73,7 +73,7 @@
                 <v-card-title class="headline">Novo Processo Criado</v-card-title>
                 <v-card-text>O Processo solicitado foi submetido com sucesso.</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="green darken-1" text @click="newProcessAlert = false">Voltar ao    Início</v-btn>
+                    <v-btn color="green darken-1" text @click="newProcessAlert = false">Voltar ao Início</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -125,10 +125,14 @@
                         } else {
                             this.$root.$emit('newProcess', response.data);
                             this.resetForm();
-                            this.newProcessAlert = true;
+                            
                         }
+                        this.newProcessAlert = true;
                     })
-                    .catch(err => console.log(err.response));
+                    .catch(err => {
+                        console.log(err.response)
+                        this.noProcessAlert = true;
+                    });
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);
