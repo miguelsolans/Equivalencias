@@ -82,8 +82,6 @@
         name: "NewProcess",
         data() {
             return {
-                noProcessAlert: false,
-                newProcessAlert: false,
                 alert: new Alert(0, "", "", {}, false),
                 course: {
                     disableAutocomplete: true,
@@ -116,7 +114,6 @@
 
                         this.$root.$emit('newProcess', response.data);
                         this.resetForm();
-                        this.newProcessAlert = true;
 
 
 
