@@ -61,8 +61,8 @@
 
         <v-dialog v-model="alert.display" persistent max-width="350">
             <v-card>
-                <v-card-title>{{alert.title}}</v-card-title>
-                <v-card-text>{{alert.message}}</v-card-text>
+                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
+                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
                 <v-card-actions class="justify-center">
                     <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
                 </v-card-actions>
@@ -117,7 +117,7 @@
                     })
                     .catch(err => {
                         console.log(err.response);
-                        this.createAlert("Erro!","Houve um erro ao criar o processo. Tente novamente mais tarde ou verifique se o processo já existe");
+                        this.createAlert("Erro ao Criar Processo","Tente novamente mais tarde, verifique se o Processo já existe ou se todo os dados pedidos estão preenchidos.");
                     });
             },
             universityChosen() {
