@@ -60,7 +60,14 @@
             };
         },
         created() {
-            this.$on("newProcess", (data) => this.processes.push(data));
+            this.$root.$on("newProcess", (data) => {
+                console.group("ListProcess");
+                console.log("Received new Data");
+                console.log(data);
+                console.log("Updating...");
+                this.processes.push(data)
+                console.groupEnd();
+            });
         },
         mounted() {
             UserService.listProcesses()

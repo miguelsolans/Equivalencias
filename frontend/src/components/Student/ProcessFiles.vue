@@ -135,7 +135,7 @@
                 page: 1,
                 itemsPerPage: 5,
                 files: [],
-                alert: new Alert(),
+                alert: new Alert("", "", "", "", false),
                 url: process.env.VUE_APP_API_SERVER,
                 processId: this.$route.params.id
             }

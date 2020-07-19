@@ -123,7 +123,7 @@
                         if(response.data.errors) {
                             this.noProcessAlert = true;
                         } else {
-                            this.$root.$emit('newProcess', this.student);
+                            this.$root.$emit('newProcess', response.data);
                             this.resetForm();
                             this.newProcessAlert = true;
                         }
