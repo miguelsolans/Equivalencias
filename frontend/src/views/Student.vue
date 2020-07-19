@@ -1,16 +1,5 @@
 <template>
     <v-container>
-        <v-alert v-if="alert.display" prominent dense type="info">
-            <v-row align="center">
-                <v-col class="grow">{{ alert.message }}</v-col>
-                <v-col class="shrink" @click="dismissAlert">
-                    <v-icon left>mdi-close</v-icon>
-                </v-col>
-            </v-row>
-        </v-alert>
-
-
-
         <div v-if="process !== null">
             <v-row class="d-none d-sm-flex mr-7 ml-7" no-gutters>
                 <v-col cols="12" sm="6" md="8">
@@ -89,7 +78,6 @@
 <script>
     // Data API Class
     import UserService from '../services/user.service';
-    import Alert from '../models/alert';
 
     // Load Views
     import StudentInfo from '../components/Student/StudentInfo';
@@ -107,8 +95,7 @@
                 error: null,
                 //     constructor(code, title, message, stack, isError)  {
 
-                alert: new Alert("", "", "", "", false),
-                textoErro: "Este processo não se encontra presente no servidor. Por favor tente novamente mais tarde."
+                textoErro: "Não foram encontrados registos deste processo. Por favor tente novamente mais tarde."
             }
         },
         components: { StudentInfo, Equivalences, NewEquivalence, ProcessFiles },
@@ -133,16 +120,6 @@
                 .catch(err => console.log(err));
             },
 
-            displayAlert() {
-                console.log("Displaying Alert");
-                this.alert = new Alert(alert);
-                this.alert.displayAlert();
-            },
-
-            dismissAlert() {
-                console.log("dismissed event");
-                this.alert = new Alert("", "", "", "", false);
-            }
         }
     }
 </script>

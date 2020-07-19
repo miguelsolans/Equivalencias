@@ -126,7 +126,6 @@
 
 <script>
     import UserService from '../../services/user.service';
-    import Alert from '../../models/alert';
 
     export default {
         name: "ProcessFiles",
@@ -135,7 +134,6 @@
                 page: 1,
                 itemsPerPage: 5,
                 files: [],
-                alert: new Alert("", "", "", "", false),
                 url: process.env.VUE_APP_API_SERVER,
                 processId: this.$route.params.id
             }
@@ -162,7 +160,6 @@
                     .then(response => this.files.push(...response.data))
                     .catch(err => {
                         // let { title, message } = err.data;
-                        this.alert = new Alert();
                         console.log(err.response)
                     });
             },
@@ -178,13 +175,11 @@
                         link.click();
                     })
                     .catch(err => {
-                        let status = err.response.status
+                        let status = err.response.status;
+                        console.log(status);
                         // let { title, message } = err.data;
                         //     constructor(code, title, message, stack, isError)  {
 
-                        this.alert = new Alert(status, "Erro de Download", "O ficheiro requisitado não foi encontrado", err.response, true);
-
-                        this.$emit("displayAlert", this.alert);
                     });
             }
         }

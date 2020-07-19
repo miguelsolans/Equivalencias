@@ -111,8 +111,7 @@
         }),
         methods: {
             handleLogout() {
-                this.$store
-                    .dispatch("auth/logout")
+                this.$store.dispatch("auth/logout")
                     .then(() => this.$router.push("/login"))
                     .catch(err => console.log(err));
             }
