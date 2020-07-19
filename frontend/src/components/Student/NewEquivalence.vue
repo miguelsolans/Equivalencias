@@ -69,7 +69,7 @@
                             color="#187653" 
                             label="Nota Obtida" 
                             v-model="equivalencia.nota" 
-                            rules="gradeRules" 
+                            :rules="gradeRules"
                             dense
                             filled
                             rounded
@@ -155,15 +155,14 @@
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
-                        <v-text-field
-                            color="#187653"
-                            label="Semestre da UC Equivalente" 
-                            v-model="equivalencia.semUcEquiv" 
-                            :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" 
-                            dense
-                            filled
-                            rounded
-                            hide-details
+                        <v-select color="#187653" label="Semestre da UC Equivalente"
+                                v-model="equivalencia.semUcEquiv"
+                                :items="['1º Semestre', '2º Semestre']"
+                                :rules="[v => !!v || 'Escolha o semestre da UC equivalente']"
+                                dense
+                                filled
+                                rounded
+                                hide-details
                         />
                     </v-col>
                 </v-row>
