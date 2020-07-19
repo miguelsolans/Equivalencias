@@ -114,15 +114,10 @@
 
                         this.$root.$emit('newProcess', response.data);
                         this.resetForm();
-
-
-
                     })
                     .catch(err => {
                         console.log(err.response);
-
                         this.createAlert("Erro!","Houve um erro ao criar o processo. Tente novamente mais tarde ou verifique se o processo já existe");
-
                     });
             },
             universityChosen() {
