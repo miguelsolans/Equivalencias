@@ -13,6 +13,14 @@ export default class Alert {
         this.stack = stack;
     }
 
+    setTitle(title) {
+        this.title = title;
+    }
+
+    setMessage(message) {
+        this.message = message;
+    }
+
     setHttpCode(code) {
         this.code = code;
     }

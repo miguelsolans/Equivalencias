@@ -59,21 +59,12 @@
             </v-row>
         </v-form>
 
-        <v-dialog v-model="noProcessAlert" persistent max-width="350">
+        <v-dialog v-model="alert.display" persistent max-width="350">
             <v-card>
-                <v-card-title class="headline">Processo Inexistente</v-card-title>
-                <v-card-text>Por favor preencha todos os campos pedidos antes de tentar submeter o Processo.</v-card-text>
+                <v-card-title>{{alert.title}}</v-card-title>
+                <v-card-text>{{alert.message}}</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="green darken-1" text @click="noProcessAlert = false">Voltar Atrás</v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
-        <v-dialog v-model="newProcessAlert" persistent max-width="350">
-            <v-card>
-                <v-card-title class="headline">Novo Processo Criado</v-card-title>
-                <v-card-text>O Processo solicitado foi submetido com sucesso.</v-card-text>
-                <v-card-actions class="justify-center">
-                    <v-btn color="green darken-1" text @click="newProcessAlert = false">Voltar ao    Início</v-btn>
+                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -85,6 +76,7 @@
 
     import Processo from '../../models/processo';
     import UserService from '../../services/user.service';
+    import Alert from "../../models/alert";
 
     export default {
         name: "NewProcess",
@@ -92,6 +84,7 @@
             return {
                 noProcessAlert: false,
                 newProcessAlert: false,
+                alert: new Alert(0, "", "", {}, false),
                 course: {
                     disableAutocomplete: true,
                     doesntExist: false,
@@ -119,16 +112,21 @@
                 UserService.newProcess(this.student)
                     .then(response => {
                         console.log(response);
+                        this.createAlert("Novo Processo Criado",`O Processo ${this.student.processo} foi submetido com sucesso.`);
 
-                        if(response.data.errors) {
-                            this.noProcessAlert = true;
-                        } else {
-                            this.$root.$emit('newProcess', response.data);
-                            this.resetForm();
-                            this.newProcessAlert = true;
-                        }
+                        this.$root.$emit('newProcess', response.data);
+                        this.resetForm();
+                        this.newProcessAlert = true;
+
+
+
                     })
-                    .catch(err => console.log(err.response));
+                    .catch(err => {
+                        console.log(err.response);
+
+                        this.createAlert("Erro!","Houve um erro ao criar o processo. Tente novamente mais tarde ou verifique se o processo já existe");
+
+                    });
             },
             universityChosen() {
                 console.log(`${this.student.instProv}`);
@@ -153,6 +151,13 @@
                 this.course.courses = [];
                 this.course.disableAutocomplete = true;
                 this.course.enableInput = false;
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
