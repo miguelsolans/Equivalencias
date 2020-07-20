@@ -142,12 +142,13 @@
                 </v-col>
             </v-row>
         </v-form>
-        <v-dialog v-model="updatedInfoProcess" persistent max-width="350">
+
+        <v-dialog v-model="alert.display" persistent max-width="350">
             <v-card>
-                <v-card-title class="headline">Processo Atualizado</v-card-title>
-                <v-card-text>As novas informações para o Processo em causa foram submetidas com sucesso.</v-card-text>
+                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
+                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="green darken-1" text @click="updatedInfoProcess = false">Voltar Atrás</v-btn>
+                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -156,11 +157,15 @@
 
 <script>
     import UserService from '../../services/user.service';
+    import Alert from "../../models/alert";
+
     export default {
         name: "StudentInfo",
         props: ["process"],
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
+
                 updatedInfoProcess: false,
                 processId: this.$route.params.id,
                 readOnly: true,
@@ -208,10 +213,24 @@
                 e.preventDefault();
 
                 UserService.updateProcess(this.processId, this.process)
-                    .then(response => console.log(response.data))
-                    .catch(err => console.log(err));
+                    .then(response => {
+                        this.createAlert("Processo Atualizado", `O processo ${this.process.processo} foi atualizado com sucesso!`);
+                        console.log(response.data)
+                    })
+                    .catch(err => {
+                        this.createAlert("Erro ao Atualizar Informação", `Não foi possível atualizar o processo ${this.process.processo} foi atualizado com sucesso!`);
+
+                        console.log(err)
+                    });
                 
                 this.updatedInfoProcess = true;
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
