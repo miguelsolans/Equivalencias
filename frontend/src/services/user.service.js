@@ -208,6 +208,8 @@ class UserService {
             email: user.email,
             password: user.password,
             admin: user.admin
+        }, {
+            headers: authHeader()
         });
     }
 }

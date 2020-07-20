@@ -71,7 +71,6 @@ router.post('/login', async (req, res, next) => {
  * body {email}: Account e-mail address
  */
 router.put('/update', checkAuth, async (req, res) => {
-    console.log("POST / Update Account");
 
     try {
         let data;

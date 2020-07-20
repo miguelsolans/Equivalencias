@@ -23,11 +23,15 @@
                             <v-text-field v-model="userEdit.username" label="Username" type="text"/>
                             <v-text-field v-model="userEdit.email" label="E-mail" type="email"/>
                             <v-checkbox v-model="userEdit.admin" label="Administrador da Plataforma"></v-checkbox>
-
-                            <v-btn primary @click="handleSubmit">Guardar Alterações</v-btn>
                         </v-form>
                     </v-container>
                 </v-card-text>
+
+                <v-card-actions>
+                    <v-spacer/>
+                    <v-btn color="blue darken-1" text @click="editModal = false">Fechar</v-btn>
+                    <v-btn color="blue darken-1" text @click="handleSubmit">Atualizar</v-btn>
+                </v-card-actions>
             </v-card>
         </v-dialog>
 
