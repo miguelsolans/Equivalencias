@@ -15,7 +15,6 @@
                             dense
                             filled 
                             rounded 
-                            :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
                             hide-details
                         />
                     </v-col>
@@ -42,7 +41,6 @@
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
                             v-model="equivalencia.anoLetivo" 
-                            :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" 
                             dense
                             filled
                             rounded
@@ -55,7 +53,6 @@
                             label="Semestre da UC Equivalente" 
                             v-model="equivalencia.semUcEquiv" 
                             :items="['1º Semestre', '2º Semestre']" 
-                            :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" 
                             dense
                             filled
                             rounded
@@ -73,7 +70,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -86,7 +82,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -99,7 +94,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -120,7 +114,6 @@
                             dense
                             filled 
                             rounded 
-                            :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
                             hide-details
                         />
                     </v-col>
@@ -146,7 +139,6 @@
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
                             v-model="equivalencia.anoLetivo" 
-                            :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" 
                             dense
                             filled
                             rounded
@@ -155,13 +147,12 @@
                     </v-col>
                     <v-col cols="6" sm="6">
                         <v-select color="#187653" label="Semestre da UC Equivalente"
-                                v-model="equivalencia.semUcEquiv"
-                                :items="['1º Semestre', '2º Semestre']"
-                                :rules="[v => !!v || 'Escolha o semestre da UC equivalente']"
-                                dense
-                                filled
-                                rounded
-                                hide-details
+                            v-model="equivalencia.semUcEquiv"
+                            :items="['1º Semestre', '2º Semestre']"
+                            dense
+                            filled
+                            rounded
+                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -175,7 +166,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -188,7 +178,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -201,7 +190,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -289,8 +277,8 @@
                 valid: false,
                 gradeRules: [
                     v => !!v || "Especifique a nota atribuída a UC realizada",
-                    v => v <= 20 || "Nota não deve ser acima de 20 valores",
-                    v => v >= 0 || "Nota não deve ser abaixo de 20 valores"
+                    v => v >= 10 || "Nota não deve ser abaixo de 10 valores",
+                    v => v <= 20 || "Nota não deve ser acima de 20 valores"
                 ]
             }
         },
