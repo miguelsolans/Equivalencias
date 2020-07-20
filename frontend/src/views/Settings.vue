@@ -58,13 +58,13 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Faculdades Registadas</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUniversities/>
+                            <ManageUniversities :universities="universities"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Registar Faculdade</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUsers/>
+                            <NewFaculty/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-expansion-panels>
@@ -82,6 +82,7 @@
     import ManageUniversities from '../components/Settings/ManageFaculty'
 
     import UserService from '../services/user.service';
+    import NewFaculty from "../components/Settings/NewFaculty";
     export default {
         name: "Settings",
         data() {
@@ -91,7 +92,7 @@
                 users: []
             }
         },
-        components: { Account, ManageUsers, Password, NewUser, ManageUniversities },
+        components: {NewFaculty, Account, ManageUsers, Password, NewUser, ManageUniversities },
         mounted() {
             this.getLoggedUser();
 
