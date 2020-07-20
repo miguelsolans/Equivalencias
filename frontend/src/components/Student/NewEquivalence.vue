@@ -79,7 +79,7 @@
                             label="ECTS" 
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput" 
-                            :rules="[v => /[0-9]/.test(v) || 'Deve especificar os créditos da UC realizada']"
+                            :rules="[v => /[0-9]+/.test(v) || 'Deve especificar os créditos da UC realizada']"
                             dense
                             filled
                             rounded
@@ -178,7 +178,7 @@
                             label="ECTS" 
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput"
-                            :rules="[v => /[0-9]/.test(v) || 'Deve especificar os créditos da UC realizada']"
+                            :rules="[v => /[0-9]+/.test(v) || 'Deve especificar os créditos da UC realizada']"
                             dense
                             filled
                             rounded
