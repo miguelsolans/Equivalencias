@@ -64,7 +64,7 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Registar Faculdade</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <NewFaculty/>
+                            <NewFaculty :universities="universities"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-expansion-panels>

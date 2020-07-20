@@ -8,13 +8,13 @@
     import UserService from '../../services/user.service';
     export default {
         name: "ManageFaculty",
+        props: ['universities'],
         data() {
             return {
                 headers: [
                     { text: "Código", value: "codInstit" },
                     { text: "Nome", value: "nomeInstit" }
                 ],
-                universities: []
             }
         },
         mounted() {
