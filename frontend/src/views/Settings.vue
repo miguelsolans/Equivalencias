@@ -64,7 +64,7 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Registar Faculdade</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <NewFaculty :universities="universities"/>
+                            <NewFaculty :universities="universities" @newUniversity="newUniversity"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                 </v-expansion-panels>
@@ -134,6 +134,10 @@
             newUser(user) {
                 console.log("Updating Users...");
                 this.users.push(user);
+            },
+            newUniversity(university) {
+                console.log("Updating universities...");
+                this.universities.push(university);
             }
         }
     }

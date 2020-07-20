@@ -29,8 +29,11 @@
 
                 UserService.registerUniversity(this.university)
                     .then(response => {
-
                         console.log(response.data);
+
+                        this.$emit('newUniversity', response.data);
+
+                        this.createAlert("Faculdade Adicionada", `A Faculdade ${this.university.nomeInstit} foi adicionada com sucesso`);
                     })
                     .catch(err => console.log(err));
             },
