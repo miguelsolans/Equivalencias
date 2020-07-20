@@ -62,4 +62,15 @@ router.post('/', checkAuth, isAdmin, (req, res) => {
         });
 });
 
+
+router.delete('/:id', checkAuth, isAdmin, (req, res) => {
+    console.log("UNIVERSIDADES DELETE / ");
+
+    let id = req.params.id;
+
+    Universidades.deleteUniversity(id)
+        .then(data => res.status(200).jsonp(data))
+        .catch(err => res.status(400).jsonp(err));
+});
+
 module.exports = router;

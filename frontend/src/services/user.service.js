@@ -129,6 +129,12 @@ class UserService {
         });
     }
 
+    deleteUniversity(id) {
+        return axios.delete(`${process.env.VUE_APP_API_SERVER}/universidade/${id}`, {
+            headers: authHeader()
+        });
+    }
+
 
     //
     // User Endpoint
