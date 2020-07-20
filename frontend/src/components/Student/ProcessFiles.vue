@@ -121,16 +121,29 @@
             </div>
         </div>
 
+        <v-dialog v-model="alert.display" persistent max-width="350">
+            <v-card>
+                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
+                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </v-container>
 </template>
 
 <script>
     import UserService from '../../services/user.service';
+    import Alert from "../../models/alert";
 
     export default {
         name: "ProcessFiles",
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
+
                 page: 1,
                 itemsPerPage: 5,
                 files: [],
@@ -152,7 +165,10 @@
                     .then(response => {
                         this.files.push(response.data.file);
                     })
-                    .catch(err => console.log(err.response));
+                    .catch(err => {
+                        this.createAlert("Erro!", "Não foi possível gerar a documentação para o processo.");
+                        console.log(err.response)
+                    });
             },
 
             getFiles() {
@@ -177,10 +193,17 @@
                     .catch(err => {
                         let status = err.response.status;
                         console.log(status);
-                        // let { title, message } = err.data;
-                        //     constructor(code, title, message, stack, isError)  {
+
+                        this.createAlert("Erro!", "Houve um problema ao descarregar o ficheiro. Por favor, tente novamente mais tarde.");
 
                     });
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
