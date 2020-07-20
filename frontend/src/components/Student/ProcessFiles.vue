@@ -166,7 +166,7 @@
                         this.files.push(response.data.file);
                     })
                     .catch(err => {
-                        this.createAlert("Erro!", "Não foi possível gerar a documentação para o processo.");
+                        this.createAlert("Oops!...", "Não foi possível gerar a documentação para o processo.");
                         console.log(err.response)
                     });
             },
@@ -194,7 +194,7 @@
                         let status = err.response.status;
                         console.log(status);
 
-                        this.createAlert("Erro!", "Houve um problema ao descarregar o ficheiro. Por favor, tente novamente mais tarde.");
+                        this.createAlert("Oops!...", "Houve um problema ao descarregar o ficheiro e/ou o ficheiro não existe. Por favor, tente novamente mais tarde.");
 
                     });
             },

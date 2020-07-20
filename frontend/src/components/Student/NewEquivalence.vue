@@ -343,13 +343,13 @@
                         const data = response.data;
                         console.log(data);
                         this.$emit("newEquivalence", this.equivalencia);
-                        this.createAlert("Equivalencia Atribuída",'A equivalencia foi atribuída ao aluno com sucesso');
+                        this.createAlert("Equivalência Atribuída",'A equivalência foi atribuída ao aluno com sucesso');
 
                         this.equivalencia = new Equivalencia();
 
                     }).catch(err => {
                         console.log(err);
-                        this.createAlert("Erro!", "Houve um erro a atribuir a equivalencia ao aluno. Tente novamente mais tarde ou verifique se os campos estão preenchidos correctamente");
+                        this.createAlert("Oops!...", "Houve um erro a atribuir a equivalência ao aluno. Tente novamente mais tarde ou verifique se todo os dados estão preenchidos.");
                 })
             },
 
