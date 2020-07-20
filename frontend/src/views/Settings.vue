@@ -1,5 +1,24 @@
 <template>
     <v-container>
+        <v-row>
+            <v-col cols="12" sm="6" md="8">
+                <h1>Definições</h1>
+                <p style="color: #187653"> {{ user.username }}</p>
+            </v-col>
+            <v-col cols="6" sm="6" md="4" align="right">
+                <v-row align="center" no-gutters>
+                    <v-col class="mx-5">
+                        <h4 style="color: #187653">Utilizador(a) {{ user.fullName }} </h4>
+                        <p> </p>
+                    </v-col>
+                    <v-col class="mb-5" cols="2">
+                        <v-avatar size="65px">
+                            <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
+                        </v-avatar>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
         <h2>Definições</h2>
 
         <v-tabs>
@@ -78,12 +97,12 @@
         },
         components: { Account, ManageUsers, Password, NewUser, ManageUniversities },
         mounted() {
-           this.getLoggedUser();
+            this.getLoggedUser();
 
-           if(this.user.admin) {
-               this.getUniversities();
-               this.getUsers();
-           }
+            if(this.user.admin) {
+                this.getUniversities();
+                this.getUsers();
+            }
         },
         methods: {
             getLoggedUser() {
