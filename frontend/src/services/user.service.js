@@ -194,6 +194,22 @@ class UserService {
             admin: user.admin
         });
     }
+
+    deleteUser(username) {
+        return axios.delete(`${process.env.VUE_APP_API_SERVER}/user/${username}`, {
+            headers: authHeader()
+        });
+    }
+
+    editUser(user) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
+            fullName: user.fullName,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            admin: user.admin
+        });
+    }
 }
 
 export default new UserService();
