@@ -101,10 +101,10 @@
                 UserService.deleteUser(item.username)
                     .then(response => {
                         console.log(response);
-                        // TODO: Emit change to parent
+
+                        this.$emit("removeUser", response.data);
                     }).catch(err => {
                         console.log(err);
-                        // TODO: Add error alert
                 });
             },
 

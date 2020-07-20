@@ -170,9 +170,9 @@ router.put('/password', checkAuth, async (req, res) => {
  * Delete an account. Will not work if the current account is set to admin
  * body {username}: account username
  */
-router.delete('/', checkAuth, isAdmin, (req, res) => {
+router.delete('/:username', checkAuth, isAdmin, (req, res) => {
 
-    Users.destroyUser(req.body.username)
+    Users.destroyUser(req.params.username)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));
 });

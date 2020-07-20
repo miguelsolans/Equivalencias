@@ -46,7 +46,7 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUsers :users="users"/>
+                            <ManageUsers :users="users" @removeUser="removeUser"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -138,6 +138,11 @@
             newUniversity(university) {
                 console.log("Updating universities...");
                 this.universities.push(university);
+            },
+            removeUser(user) {
+                this.users = this.users.filter( u => {
+                    return u.username !== user.username
+                });
             }
         }
     }
