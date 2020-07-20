@@ -45,7 +45,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
@@ -143,11 +142,10 @@
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
                             v-model="equivalencia.anoLetivo"
-                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente']"
+                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente (XXXX/XXXX)']"
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
