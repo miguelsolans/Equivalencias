@@ -214,11 +214,11 @@
 
                 UserService.updateProcess(this.processId, this.process)
                     .then(response => {
-                        this.createAlert("Processo Atualizado", `O processo ${this.process.processo} foi atualizado com sucesso!`);
+                        this.createAlert("Processo Atualizado", `O processo número ${this.process.processo} foi atualizado com sucesso.`);
                         console.log(response.data)
                     })
                     .catch(err => {
-                        this.createAlert("Erro ao Atualizar Informação", `Não foi possível atualizar o processo ${this.process.processo} foi atualizado com sucesso!`);
+                        this.createAlert("Oops!...", `Não foi possível atualizar o processo número ${this.process.processo}.`);
 
                         console.log(err)
                     });
