@@ -42,7 +42,7 @@
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
                             v-model="equivalencia.anoLetivo" 
-                            :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" 
+                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente']"
                             dense
                             filled
                             rounded
@@ -82,7 +82,7 @@
                             label="ECTS" 
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput" 
-                            :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" 
+                            :rules="[v => /[0-9]/.test(v) || 'Deve especificar os créditos da UC realizada']"
                             dense
                             filled
                             rounded
@@ -95,7 +95,8 @@
                             label="Percentagem da Equivalência" 
                             v-model="equivalencia.percent" 
                             :disabled="disabledInput" 
-                            :rules="[v => !!v || 'Especifique a percentagem']" 
+                            :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
+                            append-icon="%"
                             dense
                             filled
                             rounded
@@ -145,8 +146,8 @@
                             class="mb-2"
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
-                            v-model="equivalencia.anoLetivo" 
-                            :rules="[v => !!v || 'Especifique o ano de conclusão da UC realizada']" 
+                            v-model="equivalencia.anoLetivo"
+                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente']"
                             dense
                             filled
                             rounded
@@ -171,7 +172,7 @@
                             color="#187653" 
                             label="Nota Obtida" 
                             v-model="equivalencia.nota" 
-                            rules="gradeRules" 
+                            :rules="gradeRules"
                             dense
                             filled
                             rounded
@@ -183,8 +184,8 @@
                             color="#187653"
                             label="ECTS" 
                             v-model="equivalencia.ects" 
-                            :disabled="disabledInput" 
-                            :rules="[v => !!v || 'Deve especificar os créditos da UC realizada']" 
+                            :disabled="disabledInput"
+                            :rules="[v => /[0-9]/.test(v) || 'Deve especificar os créditos da UC realizada']"
                             dense
                             filled
                             rounded
@@ -196,8 +197,8 @@
                             color="#187653"
                             label="Percentagem da Equivalência" 
                             v-model="equivalencia.percent" 
-                            :disabled="disabledInput" 
-                            :rules="[v => !!v || 'Especifique a percentagem']" 
+                            :disabled="disabledInput"
+                            :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
                             dense
                             filled
                             rounded
@@ -290,7 +291,7 @@
                 gradeRules: [
                     v => !!v || "Especifique a nota atribuída a UC realizada",
                     v => v <= 20 || "Nota não deve ser acima de 20 valores",
-                    v => v >= 0 || "Nota não deve ser abaixo de 20 valores"
+                    v => v >= 0 || "Nota não deve ser abaixo de 0 valores"
                 ]
             }
         },
