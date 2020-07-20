@@ -7,7 +7,6 @@
                         color="#187653" 
                         label="Identificador do Processo" 
                         v-model="process.processo" 
-                        class="ml-md-5" 
                         dense 
                         filled 
                         rounded 
@@ -20,7 +19,6 @@
                         color="#187653" 
                         label="Identificador do Aluno" 
                         v-model="process.idAluno" 
-                        class="ml-md-5" 
                         dense 
                         filled 
                         rounded 
@@ -33,7 +31,6 @@
                 color="#187653" 
                 label="Nome do Aluno" 
                 v-model="process.nomeAluno" 
-                class="ml-md-5" 
                 dense
                 filled
                 rounded
@@ -48,8 +45,7 @@
                 :items="universities"
                 item-text="nomeInstit"
                 @change="universityChosen"
-                class="ml-md-5
-                mt-3"
+                class="mt-3"
                 dense
                 filled
                 rounded
@@ -65,8 +61,7 @@
                 v-model="process.cursoProv"
                 :items="course.courses"
                 item-text="cursoProv"
-                class="ml-md-5
-                mt-3"
+                class="mt-3"
                 dense
                 filled
                 rounded
@@ -77,7 +72,7 @@
                 label="Curso Proveniente" 
                 v-else-if="temp || course.doesntExist" 
                 v-model="process.cursoProv" 
-                class="ml-md-5 mt-3"
+                class="mt-3"
                 dense
                 filled
                 rounded
@@ -88,7 +83,7 @@
                     <v-switch 
                         color="#187653" 
                         v-model="readOnly" 
-                        class="ml-md-5 my-2" 
+                        class="my-2" 
                         label="Modo de Leitura"
                     />
                 </v-col>
@@ -96,7 +91,7 @@
                     <v-switch 
                         color="#187653"
                         v-model="course.doesntExist" 
-                        class="ml-md-5 my-2" 
+                        class="my-2" 
                         label="Curso Inexistente" 
                         :disabled="readOnly"
                     />
@@ -114,7 +109,7 @@
                     <v-switch 
                         color="#187653" 
                         v-model="readOnly" 
-                        class="ml-md-5 my-2" 
+                        class="my-2" 
                         label="Modo de Leitura"
                     />
                 </v-col>
@@ -122,7 +117,7 @@
                     <v-switch 
                         color="#187653"
                         v-model="course.doesntExist" 
-                        class="ml-md-5 my-2" 
+                        class="my-2" 
                         label="Curso Inexistente" 
                         :disabled="readOnly"
                     />
