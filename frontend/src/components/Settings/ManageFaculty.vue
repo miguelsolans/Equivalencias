@@ -5,7 +5,6 @@
 </template>
 
 <script>
-    import UserService from '../../services/user.service';
     export default {
         name: "ManageFaculty",
         props: ['universities'],
@@ -18,21 +17,9 @@
             }
         },
         mounted() {
-            this.fetchUniversities()
         },
         methods: {
-            fetchUniversities() {
-                console.group("Fetching Universities");
-                UserService.listUniversities()
-                    .then(response => {
 
-                        this.universities.push(...response.data);
-                        console.table(response);
-                    })
-                    .catch(err => console.log(err));
-
-                console.groupEnd();
-            }
         }
     }
 </script>
