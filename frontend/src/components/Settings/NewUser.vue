@@ -15,10 +15,14 @@
 <script>
     import User from '../../models/user';
     import UserService from '../../services/user.service';
+    import Alert from '../../models/alert';
+
     export default {
         name: "NewUser",
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
+
                 user: new User(),
 
                 emailRules: [
@@ -36,9 +40,21 @@
                 console.group("Creating User");
 
                 UserService.newUser(this.user)
-                    .then(response => console.log(response.data))
-                    .catch(err => console.log(err))
+                    .then(response => {
+
+                        console.log(response.data)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
                 console.groupEnd();
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }

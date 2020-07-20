@@ -10,10 +10,14 @@
 
 <script>
     import UserService from '../../services/user.service.js';
+    import Alert from '../../models/alert';
+
     export default {
         name: "Password",
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
+
                 oldPassword: '',
                 newPassword: '',
 
@@ -31,10 +35,15 @@
                 e.preventDefault();
 
                 UserService.updatePassword(this.oldPassword, this.newPassword)
-                    .then(response => {
-                        console.log(response.data);
-                        // TODO: DO SOMETHING
-                    }).catch(err => console.log(err));
+                    .then(() => this.createAlert("Password Alterada", "A Password foi alterada com sucesso."))
+                    .catch(() => this.createAlert("Password não foi Atualizada", "Não foi possível atualizar a Password. Tente novamente mais tarde."));
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }

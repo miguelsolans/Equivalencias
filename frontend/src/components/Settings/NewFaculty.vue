@@ -12,11 +12,14 @@
 <script>
     import UserService from '../../services/user.service';
     import University from '../../models/university';
+    import Alert from '../../models/alert';
     export default {
         name: "NewFaculty",
         props: ["universities"],
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
+
                 university: new University()
             }
         },
@@ -30,6 +33,13 @@
                         console.log(response.data);
                     })
                     .catch(err => console.log(err));
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
