@@ -349,7 +349,7 @@
 
                     }).catch(err => {
                         console.log(err);
-                        this.createAlert("Erro!", "Houve um erro a atribuir a equivalencia ao aluno. Tente novamente mais tarde ou verifique se os campos estão preenchidos correctamente");
+                        this.createAlert("Oops!...", "Houve um erro a atribuir a equivalencia ao aluno. Tente novamente mais tarde ou verifique se todo os dados estão preenchidos.");
                 })
             },
 
