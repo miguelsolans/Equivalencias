@@ -30,18 +30,31 @@
                 </v-card-text>
             </v-card>
         </v-dialog>
+
+
+        <v-dialog v-model="alert.display" persistent max-width="350">
+            <v-card>
+                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
+                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 
 <script>
     import UserService from '../../services/user.service';
     import User from '../../models/user';
+    import Alert from '../../models/alert';
     export default {
         name: "ManageUsers",
         props: ["users"],
         data() {
             return {
                 userEdit: new User("", "", false, "", ""),
+                alert: new Alert(0, "", "", {}, false),
                 editModal: false,
                 headers: [
                     { text: "Nome", value: "fullName"},
@@ -62,7 +75,14 @@
                     .then(response => {
                         console.log(response.data);
 
-                    }).catch(err => console.log(err));
+                        this.createAlert("Conta Atualizada", `A conta de ${this.userEdit.fullName} foi atualizada com sucesso!`);
+
+                        this.editModal = false;
+                    }).catch(err => {
+                        this.editModal = false;
+                        this.createAlert("Oops...!", `Não foi possível atualizar a conta de ${this.userEdit.fullName}. Tente novamente mais tarde.`);
+                        console.log(err)
+                });
             },
             editUser(item) {
                 console.log("Editing User");
