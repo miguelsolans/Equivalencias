@@ -15,7 +15,6 @@
                             dense
                             filled 
                             rounded 
-                            :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
                             hide-details
                         />
                     </v-col>
@@ -42,7 +41,7 @@
                             color="#187653"
                             label="Ano Letivo de Conclusão" 
                             v-model="equivalencia.anoLetivo" 
-                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente']"
+                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v)]"
                             dense
                             filled
                             rounded
@@ -94,7 +93,7 @@
                             v-model="equivalencia.percent" 
                             :disabled="disabledInput" 
                             :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
-                            append-icon="%"
+                            append-icon="mdi-percent-outline"
                             dense
                             filled
                             rounded
@@ -194,6 +193,7 @@
                             v-model="equivalencia.percent" 
                             :disabled="disabledInput"
                             :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
+                            append-icon="mdi-percent-outline"
                             dense
                             filled
                             rounded
