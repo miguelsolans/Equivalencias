@@ -19,6 +19,7 @@
 
     export default {
         name: "NewUser",
+        props: ["users"],
         data() {
             return {
                 alert: new Alert(0, "", "", {}, false),
@@ -41,8 +42,10 @@
 
                 UserService.newUser(this.user)
                     .then(response => {
-
+                        console.group("New User Successfully");
+                        this.$emit("newUser", response.data);
                         console.log(response.data)
+                        console.groupEnd();
                     })
                     .catch(err => {
                         console.log(err)

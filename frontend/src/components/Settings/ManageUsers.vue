@@ -6,9 +6,10 @@
 </template>
 
 <script>
-    import UserService from '../../services/user.service';
+    // import UserService from '../../services/user.service';
     export default {
         name: "ManageUsers",
+        props: ["users"],
         data() {
             return {
                 headers: [
@@ -17,20 +18,14 @@
                     { text: "E-mail", value: "email"},
                     { text: "Tipo de Utilizador", value: "admin"}
                 ],
-                users: []
+                // users: []
             }
         },
         mounted() {
-            this.fetchUsers();
+            //this.fetchUsers();
         },
         methods: {
-            fetchUsers() {
-                UserService.getSystemUsers()
-                    .then(response => {
-                        this.users.push(...response.data);
-                        console.log(this.users);
-                    }).catch(err => console.log(err));
-            }
+
         }
     }
 </script>

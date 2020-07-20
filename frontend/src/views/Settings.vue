@@ -46,13 +46,13 @@
                     <v-expansion-panel>
                         <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUsers/>
+                            <ManageUsers :users="users"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Registar Novo Utilizador</v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <NewUser/>
+                            <NewUser :users="users" @newUser="newUser"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -74,7 +74,6 @@
 </template>
 
 <script>
-    // TODO: Use props instead of fetching for data in components
     import Account from '../components/Settings/Acount';
     import Password from '../components/Settings/Password';
 
@@ -96,9 +95,15 @@
         mounted() {
             this.getLoggedUser();
 
-            if(this.user.admin) {
+            if(this.isAdmin) {
+                console.log("Admin Logged on");
                 this.getUniversities();
                 this.getUsers();
+            }
+        },
+        computed: {
+            isAdmin() {
+                return this.$store.state.auth.user.admin;
             }
         },
         methods: {
@@ -106,9 +111,8 @@
                 UserService.getLoggedUser()
                     .then(response => {
                         let data = response.data;
-
                         this.user = { ...data }
-                        console.table(data);
+
                     }).catch(err => console.log(err));
             },
 
@@ -122,8 +126,13 @@
             getUsers() {
                 UserService.getSystemUsers()
                     .then(response => {
+                        console.log(response.data);
                         this.users.push(...response.data);
                     }).catch(err => console.log(err));
+            },
+            newUser(user) {
+                console.log("Updating Users...");
+                this.users.push(user);
             }
         }
     }
