@@ -3,13 +3,12 @@
         <v-row>
             <v-col cols="12" sm="6" md="8">
                 <h1>Definições</h1>
-                <p style="color: #187653"> {{ user.username }}</p>
             </v-col>
             <v-col cols="6" sm="6" md="4" align="right">
                 <v-row align="center" no-gutters>
                     <v-col class="mx-5">
                         <h4 style="color: #187653">Utilizador(a) {{ user.fullName }} </h4>
-                        <p> </p>
+                        <p> {{ user.username }} </p>
                     </v-col>
                     <v-col class="mb-5" cols="2">
                         <v-avatar size="65px">
@@ -19,8 +18,6 @@
                 </v-row>
             </v-col>
         </v-row>
-        <h2>Definições</h2>
-
         <v-tabs>
             <v-tab>Conta</v-tab>
             <v-tab :disabled="!user.admin">Plataforma</v-tab>
