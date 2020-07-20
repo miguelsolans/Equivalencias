@@ -5,6 +5,15 @@
             <v-text-field v-model="newPassword" label="Nova Password" hint="Pelo menos 8 caracteres" :rules="passwordRules"></v-text-field>
             <v-btn color="error" @click="handleSubmit">Alterar Password</v-btn>
         </v-form>
+        <v-dialog v-model="alert.display" persistent max-width="350">
+            <v-card>
+                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
+                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
     </v-container>
 </template>
 
