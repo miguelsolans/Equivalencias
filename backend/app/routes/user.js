@@ -76,7 +76,8 @@ router.put('/update', checkAuth, async (req, res) => {
     try {
         let data;
         if(req.decodedUser.admin) {
-            data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, req.body.admin);
+            let user = req.body.username || req.decodedUser.username;
+            data = await Users.updateInformation(user, req.body.fullName, req.body.email, req.body.admin);
         } else {
             data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, false);
         }
