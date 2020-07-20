@@ -82,6 +82,13 @@
                         console.log(err);
                         // TODO: Add error alert
                 });
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
