@@ -34,8 +34,13 @@
                         this.$emit('newUniversity', response.data);
 
                         this.createAlert("Faculdade Adicionada", `A Faculdade ${this.university.nomeInstit} foi adicionada com sucesso`);
+
+                        this.resetForm();
                     })
-                    .catch(err => console.log(err));
+                    .catch(err => {
+                        this.createAlert("Erro!", "Não foi possível registar a faculdade. Verifique se o código da faculdade é único.")
+                        console.log(err.response.data)
+                    });
             },
 
             createAlert(title, message) {
@@ -43,6 +48,10 @@
                 this.alert.setMessage(message);
 
                 this.alert.displayAlert();
+            },
+
+            resetForm() {
+                this.university = new University();
             }
         }
     }

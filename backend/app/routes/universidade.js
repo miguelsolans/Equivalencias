@@ -56,7 +56,10 @@ router.post('/', checkAuth, isAdmin, (req, res) => {
 
     Universidades.addNew(university)
         .then(data => res.status(201).jsonp(data))
-        .catch(err => res.status(401).jsonp(err));
+        .catch(err => {
+            console.log(err);
+            res.status(400).jsonp(err)
+        });
 });
 
 module.exports = router;
