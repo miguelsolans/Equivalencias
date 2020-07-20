@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <div v-if="process !== null">
-            <v-row class="d-none d-sm-flex mr-7 ml-7" no-gutters>
+            <v-row class="d-none d-sm-flex">
                 <v-col cols="12" sm="6" md="8">
                     <h1>Processo Equivalência</h1>
                     <p style="color: #187653">Número {{ process.processo }}</p>
@@ -20,7 +20,7 @@
                     </v-row>
                 </v-col>
             </v-row>
-            <v-row class="text-right d-flex d-sm-none ml-5" no-gutters>
+            <v-row class="d-flex d-sm-none">
                 <v-col cols="6" align="left">
                     <h1>Processo Equivalência</h1>
                     <p style="color: #187653">{{ process.processo }}</p>
@@ -54,7 +54,7 @@
                 </v-tab-item>
 
                 <v-tab-item>
-                    <ProcessFiles @toggle="displayAlert"/>
+                    <ProcessFiles/>
                 </v-tab-item>
             </v-tabs>
         </div>

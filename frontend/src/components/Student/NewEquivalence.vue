@@ -73,7 +73,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -86,7 +85,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -100,7 +98,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -176,7 +173,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -189,7 +185,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
@@ -202,7 +197,6 @@
                             dense
                             filled
                             rounded
-                            hide-details
                         />
                     </v-col>
                 </v-row>
@@ -290,8 +284,8 @@
                 valid: false,
                 gradeRules: [
                     v => !!v || "Especifique a nota atribuída a UC realizada",
-                    v => v <= 20 || "Nota não deve ser acima de 20 valores",
-                    v => v >= 0 || "Nota não deve ser abaixo de 0 valores"
+                    v => v >= 10 || "Nota não deve ser abaixo de 10 valores",
+                    v => v <= 20 || "Nota não deve ser acima de 20 valores"
                 ]
             }
         },
