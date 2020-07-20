@@ -54,7 +54,7 @@
                 </v-tab-item>
 
                 <v-tab-item>
-                    <ProcessFiles @toggle="displayAlert"/>
+                    <ProcessFiles/>
                 </v-tab-item>
             </v-tabs>
         </div>
