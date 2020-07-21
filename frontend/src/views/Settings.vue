@@ -13,27 +13,28 @@
                     </v-col>
                     <v-col class="mb-5" cols="2">
                         <v-avatar size="65px">
-                            <img src="../assets/images/EditProcess.png" alt="Avatar para o processo"/>
+                            <img src="../assets/images/Settings.png" alt="Avatar para o processo"/>
                         </v-avatar>
                     </v-col>
                 </v-row>
             </v-col>
         </v-row>
-        <v-tabs>
-            <v-tab>Conta</v-tab>
-            <v-tab :disabled="!user.admin">Plataforma</v-tab>
+        <v-tabs centered show-arrows class="my-5" color="#187653">
+            <v-tab>Gestão Conta e Segurança</v-tab>
+            <v-tab :disabled="!user.admin">Gestão Utilizadores</v-tab>
+            <v-tab :disabled="!user.admin">Gestão Faculdades</v-tab>
 
-            <v-tab-item>
-                <v-expansion-panels focusable>
+            <v-tab-item class="my-10">
+                <v-expansion-panels>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Informações</v-expansion-panel-header>
+                        <v-expansion-panel-header>Informações Gerais</v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <Account/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
 
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Segurança</v-expansion-panel-header>
+                        <v-expansion-panel-header>Segurança e Login</v-expansion-panel-header>
 
                         <v-expansion-panel-content>
                             <Password/>
@@ -41,9 +42,8 @@
                     </v-expansion-panel>
                 </v-expansion-panels>
             </v-tab-item>
-
             <v-tab-item v-if="user.admin">
-                <v-expansion-panels focusable>
+                <v-expansion-panels>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
                         <v-expansion-panel-content>
@@ -56,6 +56,10 @@
                             <NewUser :users="users" @newUser="newUser"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
+                </v-expansion-panels>
+            </v-tab-item>
+            <v-tab-item v-if="user.admin">
+                <v-expansion-panels>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Faculdades Registadas</v-expansion-panel-header>
                         <v-expansion-panel-content>

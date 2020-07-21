@@ -35,7 +35,7 @@
                     </v-row>
                 </v-col>
             </v-row>
-            <v-tabs centered show-arrows class="my-10" color="#187653">
+            <v-tabs centered show-arrows class="my-5" color="#187653">
                 <v-tab>Informações Gerais</v-tab>
                 <v-tab>Lista Equivalências</v-tab>
                 <v-tab>Formulário Nova Equivalência</v-tab>
