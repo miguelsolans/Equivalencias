@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-row>
+        <v-row class="d-none d-sm-flex">
             <v-col cols="12" sm="6" md="8">
                 <h1>Definições</h1>
             </v-col>
@@ -19,7 +19,20 @@
                 </v-row>
             </v-col>
         </v-row>
-
+        <v-row class="d-flex d-sm-none">
+            <v-col cols="6" class="my-5">
+                <h1>Definições</h1>
+            </v-col>
+            <v-col cols="6" align="right">
+                <v-row align="center" no-gutters>
+                    <v-col cols="12">
+                        <v-avatar size="75px">
+                            <img src="../assets/images/Settings.png" alt="Avatar para o processo"/>
+                        </v-avatar>
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
         <v-tabs centered show-arrows class="my-5" color="#187653">
             <v-tab>Gestão Conta e Segurança</v-tab>
             <v-tab :disabled="!user.admin">Gestão Utilizadores</v-tab>
@@ -137,7 +150,8 @@
                                 <v-icon color="#187653">mdi-home-plus</v-icon> 
                                 Registar Faculdade
                             </b>
-                        </v-expansion-panel-header>                        <v-expansion-panel-content>
+                        </v-expansion-panel-header>                        
+                        <v-expansion-panel-content>
                             <NewFaculty :universities="universities" @newUniversity="newUniversity"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
