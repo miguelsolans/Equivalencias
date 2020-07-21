@@ -6,24 +6,114 @@
             </v-col>
             <v-col class="ml-8">
                 <h3 style="color: #187653">Registar Novo Processo Equivalência</h3>
-                <p>Complete os dados para criar um novo Processo</p>
+                <p>* Campos de preenchimento obrigatório</p>
             </v-col>
         </v-row>
-
         <v-form class="my-9">
-            <v-row>
+            <v-row class="d-none d-sm-flex">
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" placeholder="Identificador do Processo" type="text" v-model="student.processo" class="ml-md-5" dense filled rounded hide-details/>
+                    <v-text-field 
+                        color="#187653" 
+                        placeholder="Identificador do Processo *" 
+                        type="text" v-model="student.processo" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details
+                        clearable
+                    />
                 </v-col>
                 <v-col cols="6" sm="6">
-                    <v-text-field color="#187653" placeholder="Identificador do Aluno" type="text" v-model="student.idAluno" class="ml-md-5" dense filled rounded hide-details required/>
+                    <v-text-field 
+                        color="#187653" 
+                        placeholder="Identificador do Aluno *" 
+                        type="text" 
+                        v-model="student.idAluno" 
+                        class="ml-md-5" 
+                        dense 
+                        filled 
+                        rounded 
+                        hide-details 
+                        clearable
+                    />
                 </v-col>
             </v-row>
-            <v-text-field color="#187653" placeholder="Nome Completo do Aluno" type="text" v-model="student.nomeAluno" class="ml-md-5" dense filled rounded hide-details required/>
-            <v-autocomplete color="#187653" v-model="student.instProv" placeholder="Instituição Proveniente" type="text" :items="universities" item-text="nomeInstit" @change="universityChosen" class="ml-md-5 mt-3" dense filled rounded hide-details/>
-            <v-autocomplete color="#187653" v-if="!course.enableInput && !course.doesntExist" v-model="student.cursoProv" placeholder="Curso Proveniente" :items="course.courses" item-text="cursoProv" :disabled="course.disableAutocomplete" class="ml-md-5 mt-3" dense filled rounded/>
+            <v-text-field 
+                color="#187653" 
+                placeholder="Identificador do Processo *" 
+                type="text" v-model="student.processo" 
+                class="ml-md-5 d-flex d-sm-none" 
+                dense 
+                filled 
+                rounded 
+                hide-details
+                clearable
+            />
+            <v-text-field 
+                color="#187653" 
+                placeholder="Identificador do Aluno *" 
+                type="text" 
+                v-model="student.idAluno" 
+                class="ml-md-5 mt-3 d-flex d-sm-none" 
+                dense 
+                filled 
+                rounded 
+                hide-details 
+                clearable
+            />
+            <v-text-field
+                color="#187653"
+                placeholder="Nome Completo do Aluno *" 
+                type="text" v-model="student.nomeAluno" 
+                class="ml-md-5 mt-3 d-flex d-sm-none" 
+                dense 
+                filled 
+                rounded 
+                hide-details
+                clearable 
+            />
+            <v-text-field
+                color="#187653"
+                placeholder="Nome Completo do Aluno *" 
+                type="text" v-model="student.nomeAluno" 
+                class="ml-md-5 d-none d-sm-flex" 
+                dense 
+                filled 
+                rounded 
+                hide-details
+                clearable 
+            />
+            <v-autocomplete 
+                color="#187653" 
+                v-model="student.instProv" 
+                placeholder="Instituição Proveniente *" 
+                type="text" 
+                :items="universities" 
+                item-text="nomeInstit" 
+                @change="universityChosen" 
+                class="ml-md-5 mt-3" 
+                dense 
+                filled 
+                rounded 
+                hide-details
+                clearable
+            />
+            <v-autocomplete 
+                color="#187653" 
+                v-if="!course.enableInput && !course.doesntExist" 
+                v-model="student.cursoProv" 
+                placeholder="Curso Proveniente *" 
+                :items="course.courses" 
+                item-text="cursoProv" 
+                :disabled="course.disableAutocomplete" 
+                class="ml-md-5 mt-3" 
+                dense 
+                filled 
+                rounded
+                clearable
+            />
             <v-text-field color="#187653" v-else-if="course.enableInput || course.doesntExist" placeholder="Curso Proveniente" v-model="student.cursoProv" class="ml-md-5 mt-3" dense filled rounded/>
-
             <v-row class="text-right d-none d-sm-flex">
                 <v-col>
                     <v-switch color="#187653" v-model="course.doesntExist" class="ml-md-5 my-2" label="Curso Inexistente"/>
@@ -36,7 +126,7 @@
                     </v-btn>
                     <v-tooltip top>
                         <template v-slot:activator="{ on }">
-                            <v-btn rounded class="ml-5" color="#39c087" dark fab small v-on="on" @click="resetForm">
+                            <v-btn rounded class="ml-5" color="#34ac80" dark fab small v-on="on" @click="resetForm">
                                 <v-icon>mdi-delete-empty</v-icon>
                             </v-btn>
                         </template>
@@ -52,7 +142,7 @@
                     <v-btn rounded class="ml-5" color="#187653" dark fab small @click="handleSubmit">
                         <v-icon>mdi-plus</v-icon>
                     </v-btn>
-                    <v-btn rounded class="ml-5" color="#39c087" dark fab small @click="resetForm">
+                    <v-btn rounded class="ml-5" color="#34ac80" dark fab small @click="resetForm">
                         <v-icon>mdi-delete-empty</v-icon>
                     </v-btn>
                 </v-col>
@@ -69,7 +159,6 @@
             </v-card>
         </v-dialog>
     </v-container>
-
 </template>
 
 <script>
