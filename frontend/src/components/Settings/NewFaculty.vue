@@ -1,29 +1,32 @@
 <template>
     <v-container>
-        <v-form>
+        <h5 class="ml-2 mt-5">* Campos de preenchimento obrigatório</h5>
+        <v-form class="mt-5">
             <v-row class="d-none d-sm-flex">
                 <v-col cols="md">
                     <v-text-field
                         color="#187653"
                         v-model="university.codInstit" 
-                        label="Código da Instituição" 
-                        type="number"
+                        label="Código da Instituição *" 
+                        type="text"
                         dense
                         filled
                         rounded
                         required
+                        clearable
                     />
                 </v-col>
                 <v-col cols="md">
                     <v-text-field
                         color="#187653"
                         v-model="university.nomeInstit" 
-                        label="Nome da Instituição" 
+                        label="Nome da Instituição *" 
                         type="text"
                         dense
                         filled
                         rounded
                         required
+                        clearable
                     />
                 </v-col>
                 <div>
@@ -40,22 +43,24 @@
                 <v-text-field
                     color="#187653"
                     v-model="university.codInstit" 
-                    label="Código da Instituição" 
-                    type="number"
-                    dense
-                    filled
-                    rounded
-                    required
-                />
-                <v-text-field
-                    color="#187653"
-                    v-model="university.nomeInstit" 
-                    label="Nome da Instituição" 
+                    label="Código da Instituição *" 
                     type="text"
                     dense
                     filled
                     rounded
                     required
+                    clearable
+                />
+                <v-text-field
+                    color="#187653"
+                    v-model="university.nomeInstit" 
+                    label="Nome da Instituição *" 
+                    type="text"
+                    dense
+                    filled
+                    rounded
+                    required
+                    clearable
                 />
             </v-row>
             <div class="d-flex d-sm-none">
