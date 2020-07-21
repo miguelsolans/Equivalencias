@@ -1,46 +1,87 @@
 <template>
     <v-container>
+        <h5 class="text-left my-3 mx-3">* Campos de preenchimento obrigatório</h5>
         <v-form>
-            <v-row>
+            <v-row class="d-none d-sm-flex">
                 <v-col cols="6" sm="6">
                     <v-text-field 
                         color="#187653" 
-                        label="Identificador do Processo" 
+                        label="Identificador do Processo *" 
                         v-model="process.processo" 
                         dense 
                         filled 
                         rounded 
                         hide-details 
                         :disabled="readOnly"
+                        clearable
                     />
                 </v-col>
                 <v-col cols="6" sm="6">
                     <v-text-field 
                         color="#187653" 
-                        label="Identificador do Aluno" 
+                        label="Identificador do Aluno *" 
                         v-model="process.idAluno" 
                         dense 
                         filled 
                         rounded 
                         hide-details 
                         :disabled="readOnly"
+                        clearable
                     />
                 </v-col>
             </v-row>
-            <v-text-field 
+            <v-text-field
+                class="d-flex d-sm-none my-5"
                 color="#187653" 
-                label="Nome do Aluno" 
+                label="Identificador do Processo *" 
+                v-model="process.processo" 
+                dense 
+                filled 
+                rounded 
+                hide-details 
+                :disabled="readOnly"
+                clearable
+            />
+            <v-text-field
+                class="d-flex d-sm-none mt-3"
+                color="#187653" 
+                label="Identificador do Aluno *" 
+                v-model="process.idAluno" 
+                dense 
+                filled 
+                rounded 
+                hide-details 
+                :disabled="readOnly"
+                clearable
+            />
+            <v-text-field
+                class="d-flex d-sm-none mt-3"
+                color="#187653" 
+                label="Nome do Aluno *" 
                 v-model="process.nomeAluno" 
                 dense
                 filled
                 rounded
                 hide-details
                 :disabled="readOnly"
+                clearable
+            />
+            <v-text-field
+                class="d-none d-sm-flex"
+                color="#187653" 
+                label="Nome do Aluno *" 
+                v-model="process.nomeAluno" 
+                dense
+                filled
+                rounded
+                hide-details
+                :disabled="readOnly"
+                clearable
             />
             <v-autocomplete
                 color="#187653"
                 v-model="process.instProv"
-                label="Instituição Proveniente" 
+                label="Instituição Proveniente *" 
                 type="text"
                 :items="universities"
                 item-text="nomeInstit"
@@ -51,10 +92,11 @@
                 rounded
                 hide-details
                 :disabled="readOnly"
+                clearable
             />
             <v-autocomplete
                 color="#187653"
-                label="Curso Proveniente" 
+                label="Curso Proveniente *" 
                 v-if="!temp
                 &&
                 !course.doesntExist"
@@ -66,10 +108,11 @@
                 filled
                 rounded
                 :disabled="readOnly"
+                clearable
             />
             <v-text-field 
                 color="#187653"
-                label="Curso Proveniente" 
+                label="Curso Proveniente *" 
                 v-else-if="temp || course.doesntExist" 
                 v-model="process.cursoProv" 
                 class="mt-3"
@@ -77,6 +120,7 @@
                 filled
                 rounded
                 :disabled="readOnly"
+                clearable
             />
             <v-row class="text-right d-none d-sm-flex">
                 <v-col cols="3">
@@ -209,11 +253,11 @@
 
                 UserService.updateProcess(this.processId, this.process)
                     .then(response => {
-                        this.createAlert("Processo Atualizado", `O processo número ${this.process.processo} foi atualizado com sucesso.`);
+                        this.createAlert("Processo Atualizado", `O Processo ${this.process.processo} foi atualizado com sucesso.`);
                         console.log(response.data)
                     })
                     .catch(err => {
-                        this.createAlert("Oops!...", `Não foi possível atualizar o processo número ${this.process.processo}.`);
+                        this.createAlert("Oops!...", `Não foi possível atualizar o Processo ${this.process.processo}.`);
 
                         console.log(err)
                     });

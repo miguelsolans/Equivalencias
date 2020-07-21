@@ -6,10 +6,10 @@
             </v-col>
             <v-col class="ml-8">
                 <h3 style="color: #187653">Registar Novo Processo Equivalência</h3>
-                <p>* Campos de preenchimento obrigatório</p>
+                <h5>* Campos de preenchimento obrigatório</h5>
             </v-col>
         </v-row>
-        <v-form class="my-9">
+        <v-form class="my-12">
             <v-row class="d-none d-sm-flex">
                 <v-col cols="6" sm="6">
                     <v-text-field 
@@ -206,7 +206,7 @@
                     })
                     .catch(err => {
                         console.log(err.response);
-                        this.createAlert("Oops!...","Houve um erro ao criar o novo processo. Tente novamente mais tarde, verifique se o processo já existe ou se todos os campos estão preenchidos.");
+                        this.createAlert("Oops!...","Houve um erro ao criar o Novo Processo. Tente novamente mais tarde, verifique se o Processo já existe ou se todos os campos estão preenchidos.");
                     });
             },
             universityChosen() {
