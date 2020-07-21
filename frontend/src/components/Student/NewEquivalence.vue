@@ -174,7 +174,7 @@
                     <v-col cols="6" sm="6">
                         <v-text-field
                             color="#187653"
-                            class="d-flex d-sm-none mt-5"
+                            class="d-flex d-sm-none mt-2"
                             label="Nota Obtida *" 
                             v-model="equivalencia.nota" 
                             :rules="gradeRules"
@@ -189,7 +189,7 @@
                         <v-text-field
                             color="#187653"
                             label="ECTS *"
-                            class="d-flex d-sm-none mt-5"
+                            class="d-flex d-sm-none mt-2"
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput" 
                             dense
@@ -202,7 +202,7 @@
                 </v-row>
                 <v-text-field
                     color="#187653"
-                    class="d-flex d-sm-none mt-5"
+                    class="d-flex d-sm-none mt-2"
                     label="Percentagem da Equivalência *" 
                     v-model="equivalencia.percent" 
                     :disabled="disabledInput" 
@@ -319,30 +319,25 @@
                         />
                     </v-col>
                 </v-row>
-                <v-autocomplete
+                <v-text-field
                     class="d-flex d-sm-none"
                     color="#187653"
                     v-model="equivalencia.ucRealizada" 
                     label="UC Realizada *" 
                     type="text" 
-                    :items="ucOrigem" 
-                    item-text="ucRealizada"
-                    @change="subjectChosen"
                     dense
                     filled 
                     rounded 
                     hide-details
                     clearable
                 />
-                <v-autocomplete
+                <v-text-field
                     color="#187653"
                     class="d-flex d-sm-none mt-5"
                     :disabled="disabledInput"
                     label="UC Equivalente *"
                     v-model="equivalencia.ucEquiv"
                     type="text"
-                    :items="ucDestino"
-                    item-text="ucEquiv"
                     dense 
                     filled 
                     rounded
@@ -377,7 +372,7 @@
                     <v-col cols="6" sm="6">
                         <v-text-field
                             color="#187653"
-                            class="d-flex d-sm-none mt-5"
+                            class="d-flex d-sm-none mt-2"
                             label="Nota Obtida *" 
                             v-model="equivalencia.nota" 
                             :rules="gradeRules"
@@ -392,7 +387,7 @@
                         <v-text-field
                             color="#187653"
                             label="ECTS *"
-                            class="d-flex d-sm-none mt-5"
+                            class="d-flex d-sm-none mt-2"
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput" 
                             dense
@@ -405,7 +400,7 @@
                 </v-row>
                 <v-text-field
                     color="#187653"
-                    class="d-flex d-sm-none mt-5"
+                    class="d-flex d-sm-none mt-2"
                     label="Percentagem da Equivalência *" 
                     v-model="equivalencia.percent" 
                     :disabled="disabledInput" 
