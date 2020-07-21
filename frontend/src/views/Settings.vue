@@ -27,14 +27,37 @@
             <v-tab-item class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Informações Gerais</v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account</v-icon> 
+                                Informações Gerais
+                            </b>
+                            Gestão do Nome, Username, Email e Tipo de Utilizador
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account</v-icon> 
+                                Informações Gerais
+                            </b>
+                        </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <Account/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Segurança e Login</v-expansion-panel-header>
-
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-lock-question</v-icon> 
+                                Segurança
+                            </b>
+                            Alteração da Password
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-lock-question</v-icon> 
+                                Segurança
+                            </b>
+                        </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <Password/>
                         </v-expansion-panel-content>
