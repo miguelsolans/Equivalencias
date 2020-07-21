@@ -1,13 +1,44 @@
 <template>
     <v-container>
         <v-form>
-            <v-text-field v-model="user.fullName" label="Nome Completo" type="text" required/>
-            <v-text-field v-model="user.username" label="Username" type="text" required/>
-            <v-text-field v-model="user.email" label="E-mail" type="email" :rules="emailRules"/>
-            <v-text-field v-model="user.password" label="Password" type="password" required/>
-            <v-checkbox v-model="user.admin" label="Conta de Administração" required/>
-
-            <v-btn color="error" @click="handleSubmit">Criar Utilizador</v-btn>
+            <v-row>
+                <v-col cols="6" sm="6">
+                    <v-text-field color="#187653" v-model="user.fullName" label="Nome Completo" type="text" dense filled rounded hide-details/>
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-text-field color="#187653" v-model="user.email" label="E-mail" type="email" :rules="emailRules" dense filled rounded hide-details/>
+                </v-col>
+            </v-row>
+            <v-row>
+                <v-col cols="6" sm="6">
+                    <v-text-field color="#187653" v-model="user.username" label="Username" type="text" dense filled rounded hide-details/>
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-text-field color="#187653" v-model="user.password" label="Password" type="password" dense filled rounded hide-details/>
+                </v-col>
+            </v-row>
+            <v-row class="text-right d-none d-sm-flex">
+                <v-col cols="6" sm="6">
+                    <v-checkbox color="#187653" v-model="user.admin" label="Conta Administrador" required/>
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-btn rounded class="ml-5" color="#187653" dark @click="handleSubmit">
+                        <div class="text-capitalize mx-1">
+                            <strong>Criar Utilizador</strong>
+                        </div>
+                    </v-btn>
+                </v-col>
+            </v-row>
+            <v-row class="text-right d-flex d-sm-none">
+                <v-col>
+                    <v-checkbox color="#187653" v-model="user.admin" label="Conta Administrador" required/>
+                </v-col>
+                <v-col>
+                    <v-btn fab small rounded class="ml-5" color="#187653" dark @click="handleSubmit">
+                        <v-icon>mdi-plus</v-icon>
+                    </v-btn>
+                </v-col>
+            </v-row>
         </v-form>
 
         <v-dialog v-model="alert.display" persistent max-width="350">
@@ -54,10 +85,12 @@
                     .then(response => {
                         console.group("New User Successfully");
                         this.$emit("newUser", response.data);
-                        console.log(response.data)
+                        console.log(response.data);
+                        this.createAlert("Utilizador Criado", "O Novo Utilizador foi criado com sucesso.")
                         console.groupEnd();
                     })
                     .catch(err => {
+                        this.createAlert("Oops!...", "Houve um erro ao criar o Novo Utilizador. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos.")
                         console.log(err)
                     })
                 console.groupEnd();
