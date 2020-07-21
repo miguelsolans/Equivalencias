@@ -14,10 +14,10 @@
             @page-count="pageCount = $event"
         >
             <template v-slot:item.actions="{ item }">
-                <v-icon small class="mr-2" @click="editUser(item)">
+                <v-icon color="#187653" small class="mr-2" @click="editUser(item)">
                     mdi-pencil
                 </v-icon>
-                <v-icon small @click="deleteUser(item)">
+                <v-icon color="#187653" small @click="deleteUser(item)">
                     mdi-delete
                 </v-icon>
             </template>
@@ -85,10 +85,10 @@
                 editModal: false,
                 headers: [
                     { text: "Nome", value: "fullName"},
-                    { text: "Username", value: "username"},
-                    { text: "E-mail", value: "email"},
-                    { text: "Tipo de Utilizador", value: "typeUser"},
-                    { text: "Operações", value: "actions", sortable: false}
+                    { text: "Username", align: "center", value: "username"},
+                    { text: "E-mail", align: "center",  value: "email"},
+                    { text: "Tipo de Utilizador", align: "center", value: "typeUser"},
+                    { text: "Operações", value: "actions", align: "center", sortable: false}
                 ],
             }
         },
