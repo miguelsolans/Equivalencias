@@ -100,10 +100,9 @@
             deleteUser(item) {
                 UserService.deleteUser(item.username)
                     .then(response => {
-                        console.log(response);
-
                         this.$emit("removeUser", response.data);
                     }).catch(err => {
+                        this.createAlert("Oops!...", `Não foi possível eliminar o utilizador ${item.username}`);
                         console.log(err);
                 });
             },
