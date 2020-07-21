@@ -1,6 +1,18 @@
 <template>
     <v-container>
-        <v-data-table class="table-striped" color="#187653" fixed-header :headers="headers" :items="users">
+        <v-data-table 
+            class="table-striped" 
+            color="#187653" 
+            fixed-header 
+            :headers="headers" 
+            :items="users"
+            :page.sync="page"
+            :pagination.sync="pagination"
+            :items-per-page="itemsPerPage"
+            :search="search"
+            hide-default-footer
+            @page-count="pageCount = $event"
+        >
             <template v-slot:item.actions="{ item }">
                 <v-icon small class="mr-2" @click="editUser(item)">
                     mdi-pencil
@@ -9,13 +21,23 @@
                     mdi-delete
                 </v-icon>
             </template>
+            <template v-slot:item.typeUser="{ item }">
+                <span v-if="item.admin">Administrador</span>
+                <span v-else>Standard</span>
+            </template>
         </v-data-table>
-
+        <div class="my-5 text-center pt-2">
+            <v-pagination
+                color="#187653" 
+                v-model="page" 
+                :length="pageCount"
+                circle
+            ></v-pagination>
+        </div>
 
         <v-dialog v-model="editModal">
             <v-card>
                 <v-card-title>Editar Utilizador: {{this.userEdit.username}}</v-card-title>
-
                 <v-card-text>
                     <v-container>
                         <v-form>
@@ -26,7 +48,6 @@
                         </v-form>
                     </v-container>
                 </v-card-text>
-
                 <v-card-actions>
                     <v-spacer/>
                     <v-btn color="blue darken-1" text @click="editModal = false">Fechar</v-btn>
@@ -34,7 +55,6 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
-
 
         <v-dialog v-model="alert.display" persistent max-width="350">
             <v-card>
@@ -57,6 +77,9 @@
         props: ["users"],
         data() {
             return {
+                page: 1,
+                pageCount: 0,
+                itemsPerPage: 5,
                 userEdit: new User("", "", false, "", ""),
                 alert: new Alert(0, "", "", {}, false),
                 editModal: false,
@@ -64,7 +87,7 @@
                     { text: "Nome", value: "fullName"},
                     { text: "Username", value: "username"},
                     { text: "E-mail", value: "email"},
-                    { text: "Tipo de Utilizador", value: "admin"},
+                    { text: "Tipo de Utilizador", value: "typeUser"},
                     { text: "Operações", value: "actions", sortable: false}
                 ],
             }

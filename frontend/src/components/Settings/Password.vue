@@ -87,7 +87,7 @@
 
                 UserService.updatePassword(this.oldPassword, this.newPassword)
                     .then(() => this.createAlert("Password Alterada", "A Password foi alterada com sucesso."))
-                    .catch(() => this.createAlert("Oops!...", "Houve um erro ao atualizar a Password. Tente novamente mais tarde ou verifique se todos os dados estão preenchidos."));
+                    .catch(() => this.createAlert("Oops!...", "Houve um erro ao atualizar a Password. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos."));
             },
 
             createAlert(title, message) {

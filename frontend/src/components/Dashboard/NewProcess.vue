@@ -117,7 +117,7 @@
                     })
                     .catch(err => {
                         console.log(err.response);
-                        this.createAlert("Oops!...","Houve um erro ao criar o novo processo. Tente novamente mais tarde, verifique se o processo já existe ou se todos os dados estão preenchidos.");
+                        this.createAlert("Oops!...","Houve um erro ao criar o novo processo. Tente novamente mais tarde, verifique se o processo já existe ou se todos os campos estão preenchidos.");
                     });
             },
             universityChosen() {
