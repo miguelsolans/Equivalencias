@@ -8,7 +8,8 @@
                 <v-row align="center" no-gutters>
                     <v-col class="mx-5">
                         <h4 style="color: #187653">Utilizador(a) {{ user.fullName }} </h4>
-                        <p> Username {{ user.username }} </p>
+                        <p v-if="user.admin">@{{ user.username }} <b>Administrador</b></p>
+                        <p v-if="!user.admin">@{{ user.username }} <b>Utilizador Standard</b></p>
                     </v-col>
                     <v-col class="mb-5" cols="2">
                         <v-avatar size="65px">
