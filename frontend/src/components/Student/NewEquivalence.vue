@@ -1,13 +1,21 @@
 <template>
-    <v-container>
+    <v-container class="pr-5">
+        <v-row >
+            <v-col cols="6" sm="6">
+                <h5 class="text-left my-3 mx-4">* Campos de preenchimento obrigatório</h5>
+            </v-col>
+            <v-col cols="6" sm="6">
+                <p style="font-size:12px; color: #187653" class="text-right my-3 mx-3"><b>Regras: </b>Ex. Ano Letivo: 2019/2020; Ex. Percentagem: 50</p>
+            </v-col>
+        </v-row>
         <v-form>
             <v-container v-if="!manualInput">
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="6" sm="6">
                         <v-autocomplete
                             color="#187653"
                             v-model="equivalencia.ucRealizada" 
-                            label="UC Realizada" 
+                            label="UC Realizada *" 
                             type="text" 
                             :items="ucOrigem" 
                             item-text="ucRealizada"
@@ -16,13 +24,14 @@
                             filled 
                             rounded 
                             hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
                         <v-autocomplete
                             color="#187653"
                             :disabled="disabledInput"
-                            label="UC Equivalente"
+                            label="UC Equivalente *"
                             v-model="equivalencia.ucEquiv"
                             type="text"
                             :items="ucDestino"
@@ -31,64 +40,70 @@
                             filled 
                             rounded
                             hide-details
+                            clearable
                         />
                     </v-col>
                 </v-row>
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="6" sm="6">
                         <v-text-field
                             class="mb-2"
                             color="#187653"
-                            label="Ano Letivo de Conclusão" 
+                            label="Ano Letivo de Conclusão *" 
                             v-model="equivalencia.anoLetivo" 
                             :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v)]"
                             dense
                             filled
                             rounded
+                            clearable
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
                         <v-select
                             color="#187653"
-                            label="Semestre da UC Equivalente" 
+                            label="Semestre da UC Equivalente *" 
                             v-model="equivalencia.semUcEquiv" 
                             :items="['1º Semestre', '2º Semestre']" 
-                            :rules="[v => !!v || 'Escolha o semestre da UC equivalente']" 
                             dense
                             filled
                             rounded
+                            clearable
                             hide-details
                         />
                     </v-col>
                 </v-row>
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653" 
-                            label="Nota Obtida" 
+                            label="Nota Obtida *" 
                             v-model="equivalencia.nota" 
                             :rules="gradeRules"
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653"
-                            label="ECTS" 
+                            label="ECTS *" 
                             v-model="equivalencia.ects" 
                             :disabled="disabledInput" 
-                            :rules="[v => /[0-9]+/.test(v) || 'Deve especificar os créditos da UC realizada']"
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653"
-                            label="Percentagem da Equivalência" 
+                            label="Percentagem da Equivalência *" 
                             v-model="equivalencia.percent" 
                             :disabled="disabledInput" 
                             :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
@@ -96,108 +111,312 @@
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                 </v-row>
+                <v-autocomplete
+                    class="d-flex d-sm-none"
+                    color="#187653"
+                    v-model="equivalencia.ucRealizada" 
+                    label="UC Realizada *" 
+                    type="text" 
+                    :items="ucOrigem" 
+                    item-text="ucRealizada"
+                    @change="subjectChosen"
+                    dense
+                    filled 
+                    rounded 
+                    hide-details
+                    clearable
+                />
+                <v-autocomplete
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    :disabled="disabledInput"
+                    label="UC Equivalente *"
+                    v-model="equivalencia.ucEquiv"
+                    type="text"
+                    :items="ucDestino"
+                    item-text="ucEquiv"
+                    dense 
+                    filled 
+                    rounded
+                    hide-details
+                    clearable
+                />
+                <v-text-field
+                    class="d-flex d-sm-none mt-5"
+                    color="#187653"
+                    label="Ano Letivo de Conclusão *" 
+                    v-model="equivalencia.anoLetivo" 
+                    :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v)]"
+                    dense
+                    filled
+                    rounded
+                    clearable
+                    hide-details
+                />
+                <v-select
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    label="Semestre da UC Equivalente *" 
+                    v-model="equivalencia.semUcEquiv" 
+                    :items="['1º Semestre', '2º Semestre']" 
+                    dense
+                    filled
+                    rounded
+                    clearable
+                    hide-details
+                />
+                <v-row >
+                    <v-col cols="6" sm="6">
+                        <v-text-field
+                            color="#187653"
+                            class="d-flex d-sm-none mt-5"
+                            label="Nota Obtida *" 
+                            v-model="equivalencia.nota" 
+                            :rules="gradeRules"
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                            clearable
+                        />
+                    </v-col>
+                    <v-col cols="6" sm="6">
+                        <v-text-field
+                            color="#187653"
+                            label="ECTS *"
+                            class="d-flex d-sm-none mt-5"
+                            v-model="equivalencia.ects" 
+                            :disabled="disabledInput" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                            clearable
+                        />
+                    </v-col>
+                </v-row>
+                <v-text-field
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    label="Percentagem da Equivalência *" 
+                    v-model="equivalencia.percent" 
+                    :disabled="disabledInput" 
+                    :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
+                    append-icon="mdi-percent-outline"
+                    dense
+                    filled
+                    rounded
+                    hide-details
+                    clearable
+                />
             </v-container>
 
             <!-- Without Autocomplete -->
             <v-container v-else>
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="6" sm="6">
                         <v-text-field
                             color="#187653"
                             v-model="equivalencia.ucRealizada" 
-                            label="UC Realizada" 
+                            label="UC Realizada *" 
                             type="text" 
-                            :items="ucOrigem" 
-                            item-text="ucRealizada"
-                            @change="subjectChosen"
                             dense
                             filled 
                             rounded 
-                            :rules="[v => !!v || 'Especifique o nome da UC realizada']" 
                             hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
                         <v-text-field
+                            :disabled="disabledInput"
                             color="#187653"
-                            label="UC Equivalente"
+                            label="UC Equivalente *"
                             v-model="equivalencia.ucEquiv"
                             type="text"
-                            :items="ucDestino"
-                            item-text="ucEquiv"
                             dense 
                             filled 
                             rounded
                             hide-details
+                            clearable
                         />
                     </v-col>
                 </v-row>
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="6" sm="6">
                         <v-text-field
                             class="mb-2"
                             color="#187653"
-                            label="Ano Letivo de Conclusão" 
-                            v-model="equivalencia.anoLetivo"
-                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v) || 'Especifique o ano de conclusão da UC realizada corretamente (XXXX/XXXX)']"
+                            label="Ano Letivo de Conclusão *" 
+                            v-model="equivalencia.anoLetivo" 
+                            :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v)]"
                             dense
                             filled
                             rounded
+                            clearable
+                            hide-details
                         />
                     </v-col>
                     <v-col cols="6" sm="6">
-                        <v-select color="#187653" label="Semestre da UC Equivalente"
-                                v-model="equivalencia.semUcEquiv"
-                                :items="['1º Semestre', '2º Semestre']"
-                                :rules="[v => !!v || 'Escolha o semestre da UC equivalente']"
-                                dense
-                                filled
-                                rounded
-                                hide-details
+                        <v-select
+                            color="#187653"
+                            label="Semestre da UC Equivalente *" 
+                            v-model="equivalencia.semUcEquiv" 
+                            :items="['1º Semestre', '2º Semestre']" 
+                            dense
+                            filled
+                            rounded
+                            clearable
+                            hide-details
                         />
                     </v-col>
                 </v-row>
-                <v-row>
+                <v-row class="d-none d-sm-flex">
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653" 
-                            label="Nota Obtida" 
+                            label="Nota Obtida *" 
                             v-model="equivalencia.nota" 
                             :rules="gradeRules"
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653"
-                            label="ECTS" 
+                            label="ECTS *" 
                             v-model="equivalencia.ects" 
-                            :disabled="disabledInput"
-                            :rules="[v => /[0-9]+/.test(v) || 'Deve especificar os créditos da UC realizada']"
+                            :disabled="disabledInput" 
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                     <v-col cols="4" sm="4">
                         <v-text-field
                             color="#187653"
-                            label="Percentagem da Equivalência" 
+                            label="Percentagem da Equivalência *" 
                             v-model="equivalencia.percent" 
-                            :disabled="disabledInput"
+                            :disabled="disabledInput" 
                             :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
                             append-icon="mdi-percent-outline"
                             dense
                             filled
                             rounded
+                            hide-details
+                            clearable
                         />
                     </v-col>
                 </v-row>
+                <v-autocomplete
+                    class="d-flex d-sm-none"
+                    color="#187653"
+                    v-model="equivalencia.ucRealizada" 
+                    label="UC Realizada *" 
+                    type="text" 
+                    :items="ucOrigem" 
+                    item-text="ucRealizada"
+                    @change="subjectChosen"
+                    dense
+                    filled 
+                    rounded 
+                    hide-details
+                    clearable
+                />
+                <v-autocomplete
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    :disabled="disabledInput"
+                    label="UC Equivalente *"
+                    v-model="equivalencia.ucEquiv"
+                    type="text"
+                    :items="ucDestino"
+                    item-text="ucEquiv"
+                    dense 
+                    filled 
+                    rounded
+                    hide-details
+                    clearable
+                />
+                <v-text-field
+                    class="d-flex d-sm-none mt-5"
+                    color="#187653"
+                    label="Ano Letivo de Conclusão *" 
+                    v-model="equivalencia.anoLetivo" 
+                    :rules="[v => /[0-9]{4}\/[0-9]{4}/.test(v)]"
+                    dense
+                    filled
+                    rounded
+                    clearable
+                    hide-details
+                />
+                <v-select
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    label="Semestre da UC Equivalente *" 
+                    v-model="equivalencia.semUcEquiv" 
+                    :items="['1º Semestre', '2º Semestre']" 
+                    dense
+                    filled
+                    rounded
+                    clearable
+                    hide-details
+                />
+                <v-row >
+                    <v-col cols="6" sm="6">
+                        <v-text-field
+                            color="#187653"
+                            class="d-flex d-sm-none mt-5"
+                            label="Nota Obtida *" 
+                            v-model="equivalencia.nota" 
+                            :rules="gradeRules"
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                            clearable
+                        />
+                    </v-col>
+                    <v-col cols="6" sm="6">
+                        <v-text-field
+                            color="#187653"
+                            label="ECTS *"
+                            class="d-flex d-sm-none mt-5"
+                            v-model="equivalencia.ects" 
+                            :disabled="disabledInput" 
+                            dense
+                            filled
+                            rounded
+                            hide-details
+                            clearable
+                        />
+                    </v-col>
+                </v-row>
+                <v-text-field
+                    color="#187653"
+                    class="d-flex d-sm-none mt-5"
+                    label="Percentagem da Equivalência *" 
+                    v-model="equivalencia.percent" 
+                    :disabled="disabledInput" 
+                    :rules="[v => /[0-9]{1,3}/.test(v) || 'Especifique a percentagem de 0% a 100%']"
+                    append-icon="mdi-percent-outline"
+                    dense
+                    filled
+                    rounded
+                    hide-details
+                    clearable
+                />
             </v-container>
 
             <v-row class="text-right d-none d-sm-flex">
@@ -205,7 +424,7 @@
                     <v-switch
                         color="#187653" 
                         v-model="manualInput"
-                        class="ml-3 my-2"
+                        class="ml-3 mt-1"
                         label="Inserção Manual"
                     />
                 </v-col>

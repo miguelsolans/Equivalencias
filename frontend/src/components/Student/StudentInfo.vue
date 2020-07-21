@@ -31,7 +31,7 @@
                 </v-col>
             </v-row>
             <v-text-field
-                class="d-flex d-sm-none my-5"
+                class="d-flex d-sm-none"
                 color="#187653" 
                 label="Identificador do Processo *" 
                 v-model="process.processo" 
