@@ -34,23 +34,33 @@
             ></v-pagination>
         </div>
 
-        <v-dialog v-model="editModal">
-            <v-card>
-                <v-card-title>Editar Utilizador: {{this.userEdit.username}}</v-card-title>
+        <v-dialog v-model="editModal" retain-focus persistent max-width="600px">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title class="py-4 justify-center">
+                    <h3>Editar Dados do Utilizador</h3>
+                </v-card-title>
+                <v-divider></v-divider>
                 <v-card-text>
-                    <v-container>
+                    <v-card-text>
                         <v-form>
-                            <v-text-field v-model="userEdit.fullName" label="Nome Completo" type="text"/>
-                            <v-text-field v-model="userEdit.username" label="Username" type="text"/>
-                            <v-text-field v-model="userEdit.email" label="E-mail" type="email"/>
-                            <v-checkbox v-model="userEdit.admin" label="Administrador da Plataforma"></v-checkbox>
+                            <v-row class="d-none d-sm-flex mt-5">
+                                <v-col cols="6" sm="6">
+                                    <v-text-field color="#187653" v-model="userEdit.fullName" label="Nome Completo" type="text" filled rounded dense clearable/>
+                                </v-col>
+                                <v-col cols="6" sm="6">
+                                    <v-text-field color="#187653" v-model="userEdit.username" label="Username" type="text" filled rounded dense clearable/>
+                                </v-col>
+                            </v-row>
+                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.fullName" label="Nome Completo" type="text" filled rounded dense clearable/>
+                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.username" label="Username" type="text" filled rounded dense clearable/>
+                            <v-text-field color="#187653" v-model="userEdit.email" label="E-mail" type="email" filled rounded dense clearable/>
+                            <v-checkbox class="text-center" color="#187653" v-model="userEdit.admin" label="Administrador da Plataforma"></v-checkbox>
                         </v-form>
-                    </v-container>
+                    </v-card-text>
                 </v-card-text>
-                <v-card-actions>
-                    <v-spacer/>
-                    <v-btn color="blue darken-1" text @click="editModal = false">Fechar</v-btn>
-                    <v-btn color="blue darken-1" text @click="handleSubmit">Atualizar</v-btn>
+                <v-card-actions class="pt-0 justify-center">
+                    <v-btn color="#187653" text @click="editModal = false"><b>Voltar Atrás</b></v-btn>
+                    <v-btn  color="#34ac80" text @click="handleSubmit"><b>Atualizar</b></v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -60,7 +70,7 @@
                 <v-card-title class="justify-center">{{alert.title}}</v-card-title>
                 <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="green darken-1" text @click="alert.hideAlert()">Fechar</v-btn>
+                    <v-btn color="#187653" text @click="alert.hideAlert()">Fechar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -101,12 +111,12 @@
                     .then(response => {
                         console.log(response.data);
 
-                        this.createAlert("Conta Atualizada", `A conta de ${this.userEdit.fullName} foi atualizada com sucesso!`);
+                        this.createAlert("Conta Atualizada", `A conta de ${this.userEdit.fullName} foi atualizada com sucesso.`);
 
                         this.editModal = false;
                     }).catch(err => {
                         this.editModal = false;
-                        this.createAlert("Oops...!", `Não foi possível atualizar a conta de ${this.userEdit.fullName}. Tente novamente mais tarde.`);
+                        this.createAlert("Oops...!", `Não foi possível atualizar a conta de ${this.userEdit.fullName}. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos.`);
                         console.log(err)
                 });
             },
