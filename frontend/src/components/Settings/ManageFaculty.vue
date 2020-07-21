@@ -46,7 +46,7 @@
                     { text: "Nome", value: "nomeInstit" },
                     { text: "Operações", value: "actions", sortable: false}
                 ],
-                editModal: true,
+                editModal: false,
                 university: new University(0, "")
             }
         },
@@ -58,6 +58,7 @@
                 console.log(university.nomeInstit);
 
                 this.university = new University(university.codInstit, university.nomeInstit);
+
                 this.editModal = true;
             },
 
