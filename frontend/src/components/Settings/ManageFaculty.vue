@@ -30,27 +30,22 @@
                 circle
             ></v-pagination>
         </div>
-        <v-dialog v-model="editModal">
-            <v-card>
-                <v-card-title>Editar Instituição: {{this.university.nomeInstit}}</v-card-title>
+        <v-dialog v-model="editModal" retain-focus persistent max-width="600px">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title class="pt-5 py-4 justify-center">
+                    <h3>Editar Instituição</h3>
+                </v-card-title>
                 <v-card-text>
                     <v-container>
                         <v-form>
-                            <v-row>
-                                <v-col cols="6" sm="6">
-                                    <v-text-field color="#187653" v-model="university.codInstit" label="Código da Instituição" type="number" dense filled rounded hide-details/>
-                                </v-col>
-                                <v-col cols="6" sm="6">
-                                    <v-text-field color="#187653" v-model="university.nomeInstit" label="Nome da Instituição" type="text" dense filled rounded hide-details/>
-                                </v-col>
-                            </v-row>
+                            <v-text-field color="#187653" v-model="university.codInstit" label="Código da Instituição" type="text" dense filled rounded hide-details clearable/>
+                            <v-text-field class="mt-5" color="#187653" v-model="university.nomeInstit" label="Nome da Instituição" type="text" dense filled rounded hide-details clearable/>
                         </v-form>
                     </v-container>
                 </v-card-text>
-                <v-card-actions>
-                    <v-spacer/>
-                    <v-btn color="blue darken-1" text @click="editModal = false">Fechar</v-btn>
-                    <v-btn color="blue darken-1" text @click="handleSubmit">Atualizar</v-btn>
+                <v-card-actions class="pt-0 justify-center">
+                    <v-btn color="#187653" text @click="editModal = false"><b>Voltar Atrás</b></v-btn>
+                    <v-btn  color="#34ac80" text @click="handleSubmit"><b>Atualizar</b></v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>

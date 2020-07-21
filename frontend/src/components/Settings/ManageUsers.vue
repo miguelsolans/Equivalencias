@@ -36,14 +36,13 @@
 
         <v-dialog v-model="editModal" retain-focus persistent max-width="600px">
             <v-card style="font-family: Rubik, sans-serif;">
-                <v-card-title class="py-4 justify-center">
+                <v-card-title class="pt-5 py-4 justify-center">
                     <h3>Editar Dados do Utilizador</h3>
                 </v-card-title>
-                <v-divider></v-divider>
                 <v-card-text>
                     <v-card-text>
                         <v-form>
-                            <v-row class="d-none d-sm-flex mt-5">
+                            <v-row class="d-none d-sm-flex">
                                 <v-col cols="6" sm="6">
                                     <v-text-field color="#187653" v-model="userEdit.fullName" label="Nome Completo" type="text" filled rounded dense clearable/>
                                 </v-col>
