@@ -27,11 +27,6 @@
                 user: new User(),
                 oldUser: new User(),
                 readOnly: true,
-                updatePassword: {
-                    requested: false,
-                    currentPassword: '',
-                    newPassword: ''
-                }
             }
         },
         mounted() {
