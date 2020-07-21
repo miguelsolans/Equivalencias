@@ -9,7 +9,6 @@
             :page.sync="page"
             :pagination.sync="pagination"
             :items-per-page="itemsPerPage"
-            :search="search"
             hide-default-footer
             @page-count="pageCount = $event"
         >
@@ -85,9 +84,9 @@
                 editModal: false,
                 headers: [
                     { text: "Nome", value: "fullName"},
-                    { text: "Username", align: "center", value: "username"},
-                    { text: "E-mail", align: "center",  value: "email"},
-                    { text: "Tipo de Utilizador", align: "center", value: "typeUser"},
+                    { text: "Username", value: "username"},
+                    { text: "E-mail", value: "email"},
+                    { text: "Tipo de Utilizador", value: "typeUser"},
                     { text: "Operações", value: "actions", align: "center", sortable: false}
                 ],
             }

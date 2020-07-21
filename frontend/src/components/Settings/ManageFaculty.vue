@@ -1,25 +1,49 @@
 <template>
     <v-container>
-        <v-data-table class="table-striped" color="#187653" fixed-header :headers="headers" :items="universities" sort-by="codInstit">
-
+        <v-data-table 
+            class="table-striped" 
+            color="#187653" 
+            fixed-header 
+            :headers="headers" 
+            :items="universities" 
+            sort-by="codInstit"
+            :page.sync="page"
+            :pagination.sync="pagination"
+            :items-per-page="itemsPerPage"
+            hide-default-footer
+            @page-count="pageCount = $event"
+        >
             <template v-slot:item.actions="{ item }">
-                <v-icon small class="mr-2" @click="editUniversity(item)">
+                <v-icon color="#187653" small class="mr-2" @click="editUniversity(item)">
                     mdi-pencil
                 </v-icon>
-                <v-icon small @click="deleteUniversity(item)">
+                <v-icon color="#187653" small @click="deleteUniversity(item)">
                     mdi-delete
                 </v-icon>
             </template>
         </v-data-table>
-
+        <div class="my-5 text-center pt-2">
+            <v-pagination
+                color="#187653" 
+                v-model="page" 
+                :length="pageCount"
+                circle
+            ></v-pagination>
+        </div>
         <v-dialog v-model="editModal">
             <v-card>
                 <v-card-title>Editar Instituição: {{this.university.nomeInstit}}</v-card-title>
                 <v-card-text>
                     <v-container>
                         <v-form>
-                            <v-text-field v-model="university.codInstit" label="Código da Instituição" type="number"/>
-                            <v-text-field v-model="university.nomeInstit" label="Nome da Instituição" type="text"/>
+                            <v-row>
+                                <v-col cols="6" sm="6">
+                                    <v-text-field color="#187653" v-model="university.codInstit" label="Código da Instituição" type="number" dense filled rounded hide-details/>
+                                </v-col>
+                                <v-col cols="6" sm="6">
+                                    <v-text-field color="#187653" v-model="university.nomeInstit" label="Nome da Instituição" type="text" dense filled rounded hide-details/>
+                                </v-col>
+                            </v-row>
                         </v-form>
                     </v-container>
                 </v-card-text>
@@ -41,10 +65,13 @@
         props: ['universities'],
         data() {
             return {
+                page: 1,
+                pageCount: 0,
+                itemsPerPage: 10,
                 headers: [
                     { text: "Código", value: "codInstit" },
                     { text: "Nome", value: "nomeInstit" },
-                    { text: "Operações", value: "actions", sortable: false}
+                    { text: "Operações", value: "actions", align: "center", sortable: false}
                 ],
                 editModal: false,
                 university: new University(0, "")

@@ -1,10 +1,72 @@
 <template>
     <v-container>
         <v-form>
-            <v-text-field v-model="university.codInstit" label="Código da Instituição" type="number" required/>
-            <v-text-field v-model="university.nomeInstit" label="Nome da Instituição" type="text" required/>
-
-            <v-btn color="error" @click="handleSubmit">Registar Faculdade</v-btn>
+            <v-row class="d-none d-sm-flex">
+                <v-col cols="md">
+                    <v-text-field
+                        color="#187653"
+                        v-model="university.codInstit" 
+                        label="Código da Instituição" 
+                        type="number"
+                        dense
+                        filled
+                        rounded
+                        required
+                    />
+                </v-col>
+                <v-col cols="md">
+                    <v-text-field
+                        color="#187653"
+                        v-model="university.nomeInstit" 
+                        label="Nome da Instituição" 
+                        type="text"
+                        dense
+                        filled
+                        rounded
+                        required
+                    />
+                </v-col>
+                <div>
+                    <v-col cols="md" class="text-right my-2">
+                        <v-btn rounded align-center color="#187653" dark @click="handleSubmit">
+                            <div class="text-capitalize">
+                                <strong>Registar Faculdade</strong>
+                            </div>
+                        </v-btn>
+                    </v-col>
+                </div>
+            </v-row>
+            <v-row class="d-flex d-sm-none">
+                <v-text-field
+                    color="#187653"
+                    v-model="university.codInstit" 
+                    label="Código da Instituição" 
+                    type="number"
+                    dense
+                    filled
+                    rounded
+                    required
+                />
+                <v-text-field
+                    color="#187653"
+                    v-model="university.nomeInstit" 
+                    label="Nome da Instituição" 
+                    type="text"
+                    dense
+                    filled
+                    rounded
+                    required
+                />
+            </v-row>
+            <div class="d-flex d-sm-none">
+                <v-col cols="md" class="text-center">
+                    <v-btn rounded color="#187653" dark @click="handleSubmit">
+                        <div class="text-capitalize">
+                            <strong>Registar Faculdade</strong>
+                        </div>
+                    </v-btn>
+                </v-col>
+            </div>
         </v-form>
 
         <v-dialog v-model="alert.display" persistent max-width="350">
