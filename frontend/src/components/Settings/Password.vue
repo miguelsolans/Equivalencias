@@ -1,9 +1,51 @@
 <template>
     <v-container>
         <v-form>
-            <v-text-field v-model="oldPassword" label="Password Atual" :rules="oldPasswordRules"></v-text-field>
-            <v-text-field v-model="newPassword" label="Nova Password" hint="Pelo menos 8 caracteres" :rules="passwordRules"></v-text-field>
-            <v-btn color="error" @click="handleSubmit">Alterar Password</v-btn>
+            <v-row>
+                <v-col cols="md">
+                    <v-text-field
+                        color="#187653"
+                        v-model="oldPassword" 
+                        label="Password Atual" 
+                        :rules="oldPasswordRules"
+                        dense
+                        filled
+                        rounded
+                        clearable
+                    />
+                </v-col>
+                <v-col cols="md">
+                    <v-text-field
+                        color="#187653"
+                        v-model="newPassword" 
+                        label="Nova Password" 
+                        hint="Pelo menos 8 caracteres" 
+                        :rules="passwordRules"
+                        dense
+                        filled
+                        rounded
+                        clearable
+                    />
+                </v-col>
+                <div class="d-none d-sm-flex">
+                    <v-col cols="md" class="text-right my-2">
+                        <v-btn rounded align-center color="#187653" dark @click="handleSubmit">
+                            <div class="text-capitalize">
+                                <strong>Salvar Alterações</strong>
+                            </div>
+                        </v-btn>
+                    </v-col>
+                </div>
+            </v-row>
+            <div class="d-flex d-sm-none">
+                <v-col cols="md" class="text-center">
+                    <v-btn rounded color="#187653" dark @click="handleSubmit">
+                        <div class="text-capitalize">
+                            <strong>Salvar Alterações</strong>
+                        </div>
+                    </v-btn>
+                </v-col>
+            </div>
         </v-form>
         <v-dialog v-model="alert.display" persistent max-width="350">
             <v-card>
@@ -31,11 +73,11 @@
                 newPassword: '',
 
                 oldPasswordRules: [
-                    v => !!v || "Digite a sua password antiga"
+                    v => !!v || "Digite a sua Password Antiga"
                 ],
                 passwordRules: [
                     v => !!v || "Password não pode estar em branco",
-                    v => (v && v.length >= 8) || "A nova password deve ter pelo menos 8 caracteres"
+                    v => (v && v.length >= 8) || "A Nova Password deve ter pelo menos 8 caracteres"
                 ]
             }
         },
@@ -45,7 +87,7 @@
 
                 UserService.updatePassword(this.oldPassword, this.newPassword)
                     .then(() => this.createAlert("Password Alterada", "A Password foi alterada com sucesso."))
-                    .catch(() => this.createAlert("Password não foi Atualizada", "Não foi possível atualizar a Password. Tente novamente mais tarde."));
+                    .catch(() => this.createAlert("Oops!...", "Houve um erro ao atualizar a Password. Tente novamente mais tarde ou verifique se todos os dados estão preenchidos."));
             },
 
             createAlert(title, message) {
