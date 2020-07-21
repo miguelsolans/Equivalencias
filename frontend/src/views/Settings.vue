@@ -19,11 +19,11 @@
                 </v-row>
             </v-col>
         </v-row>
+
         <v-tabs centered show-arrows class="my-5" color="#187653">
             <v-tab>Gestão Conta e Segurança</v-tab>
             <v-tab :disabled="!user.admin">Gestão Utilizadores</v-tab>
             <v-tab :disabled="!user.admin">Gestão Faculdades</v-tab>
-
             <v-tab-item class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
@@ -32,7 +32,6 @@
                             <Account/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
-
                     <v-expansion-panel>
                         <v-expansion-panel-header>Segurança e Login</v-expansion-panel-header>
 
@@ -42,7 +41,7 @@
                     </v-expansion-panel>
                 </v-expansion-panels>
             </v-tab-item>
-            <v-tab-item v-if="user.admin">
+            <v-tab-item v-if="user.admin" class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
@@ -58,7 +57,7 @@
                     </v-expansion-panel>
                 </v-expansion-panels>
             </v-tab-item>
-            <v-tab-item v-if="user.admin">
+            <v-tab-item v-if="user.admin" class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
                         <v-expansion-panel-header>Faculdades Registadas</v-expansion-panel-header>
