@@ -20,7 +20,7 @@
                     </v-row>
                 </v-col>
             </v-row>
-            <v-row class="d-flex d-sm-none">
+            <v-row class="pl-2 d-flex d-sm-none">
                 <v-col cols="6" align="left">
                     <h1>Processo Equivalência</h1>
                     <p style="color: #187653">{{ process.processo }}</p>

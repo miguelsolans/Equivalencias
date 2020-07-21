@@ -141,9 +141,9 @@
                     />
                 </v-col>
                 <v-col cols="6">
-                    <v-btn rounded class="ml-5" color="#187653" dark @click="updateProcess">
+                    <v-btn rounded class="ml-5" color="#187653" :dark="!readOnly" @click="updateProcess" :disabled="readOnly">
                         <div class="text-capitalize mx-1">
-                            <strong>Salvar Alterações</strong>
+                            <strong>Guardar Alterações</strong>
                         </div>
                     </v-btn>
                 </v-col>
@@ -167,11 +167,12 @@
                     />
                 </v-col>
                 <v-col class="my-2">
-                    <v-btn 
+                    <v-btn
+                        :disabled="readOnly"
                         rounded 
                         class="ml-5" 
                         color="#187653" 
-                        dark 
+                        :dark="!readOnly"
                         fab
                         small
                         @click="updateProcess"

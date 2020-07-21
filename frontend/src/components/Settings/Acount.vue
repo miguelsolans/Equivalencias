@@ -1,11 +1,67 @@
 <template>
     <v-container>
         <v-form>
-            <v-text-field v-model="user.fullName" label="Nome do Utilizador" type="text" :disabled="readOnly"></v-text-field>
-            <v-text-field :disabled="readOnly || !user.admin" v-model="user.username" label="Username do Utilizador" type="text"></v-text-field>
-            <v-text-field v-model="user.email" label="E-mail do Utilizador" type="text" :disabled="readOnly"></v-text-field>
-            <v-checkbox v-model="user.admin" label="Administrador da Plataforma" :disabled="readOnly || !user.admin"></v-checkbox>
-            <v-btn color="teal" dark @click="handleSubmit" :disabled="readOnly">Guardar Alterações</v-btn>
+            <v-row class="d-none d-sm-flex">
+                <v-col cols="6" sm="6">
+                    <v-text-field
+                        color="#187653"
+                        v-model="user.fullName" 
+                        label="Nome do Utilizador" 
+                        type="text" 
+                        :disabled="readOnly"
+                        dense
+                        filled
+                        rounded
+                        clearable
+                    />
+                </v-col>
+                <v-col cols="6" sm="6">
+                    <v-text-field
+                        color="#187653"
+                        :disabled="readOnly || !user.admin" 
+                        v-model="user.username" 
+                        label="Username do Utilizador" 
+                        type="text"
+                        dense
+                        filled
+                        rounded
+                        clearable
+                    />
+                </v-col>
+            </v-row>
+
+            <v-row>
+                <v-col cols="md">
+                    <v-text-field 
+                        color="#187653"
+                        v-model="user.email" 
+                        label="E-mail do Utilizador" 
+                        type="text" 
+                        :disabled="readOnly"
+                        dense
+                        filled
+                        rounded
+                        clearable
+                    />
+                </v-col>
+                <v-col cols="md">
+                    <v-checkbox
+                        color="#187653"
+                        v-model="user.admin" 
+                        label="Administrador da Plataforma" 
+                        :disabled="readOnly || !user.admin"
+                    />
+                </v-col>
+                <div class="d-none d-sm-flex">
+                    <v-col cols="md" class="text-right my-2">
+                        <v-btn rounded align-center color="#187653" dark @click="handleSubmit" :disabled="readOnly">
+                            <div class="text-capitalize">
+                                <strong>Guardar Alterações</strong>
+                            </div>
+                        </v-btn>
+                    </v-col>
+                </div>
+            </v-row>
             <v-switch 
                 color="#187653" 
                 v-model="readOnly" 

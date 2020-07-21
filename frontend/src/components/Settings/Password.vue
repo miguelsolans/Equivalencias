@@ -31,7 +31,7 @@
                     <v-col cols="md" class="text-right my-2">
                         <v-btn rounded align-center color="#187653" dark @click="handleSubmit">
                             <div class="text-capitalize">
-                                <strong>Salvar Alterações</strong>
+                                <strong>Guardar Alterações</strong>
                             </div>
                         </v-btn>
                     </v-col>
@@ -41,7 +41,7 @@
                 <v-col cols="md" class="text-center">
                     <v-btn rounded color="#187653" dark @click="handleSubmit">
                         <div class="text-capitalize">
-                            <strong>Salvar Alterações</strong>
+                            <strong>Guardar Alterações</strong>
                         </div>
                     </v-btn>
                 </v-col>
