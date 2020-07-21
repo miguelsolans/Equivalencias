@@ -67,13 +67,37 @@
             <v-tab-item v-if="user.admin" class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Utilizadores Registados</v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account-multiple</v-icon> 
+                                Utilizadores Registados
+                            </b>
+                            Gestão de todos os Utilizadores Registados
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account-multiple</v-icon> 
+                                Utilizadores Registados
+                            </b>
+                        </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <ManageUsers :users="users" @removeUser="removeUser"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Registar Novo Utilizador</v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account-plus</v-icon> 
+                                Registar Utilizador
+                            </b>
+                            Registo de Novo Utilizador
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-account-plus</v-icon> 
+                                Registar Utilizador
+                            </b>
+                        </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <NewUser :users="users" @newUser="newUser"/>
                         </v-expansion-panel-content>
@@ -83,14 +107,37 @@
             <v-tab-item v-if="user.admin" class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Faculdades Registadas</v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-home</v-icon> 
+                                Faculdades Registadas
+                            </b>
+                            Gestão de todas as Faculdades Registadas
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-home</v-icon> 
+                                Faculdades Registadas
+                            </b>
+                        </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <ManageUniversities :universities="universities"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
-                        <v-expansion-panel-header>Registar Faculdade</v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-header class="d-none d-sm-flex">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-home-plus</v-icon> 
+                                Registar Faculdade
+                            </b>
+                            Registo de Nova Faculdade
+                        </v-expansion-panel-header>
+                        <v-expansion-panel-header class="d-flex d-sm-none">
+                            <b style="color: #187653">
+                                <v-icon color="#187653">mdi-home-plus</v-icon> 
+                                Registar Faculdade
+                            </b>
+                        </v-expansion-panel-header>                        <v-expansion-panel-content>
                             <NewFaculty :universities="universities" @newUniversity="newUniversity"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
