@@ -1,12 +1,13 @@
 <template>
     <v-container>
+        <h5 class="my-5 ml-2">* Campos de preenchimento obrigatório</h5>
         <v-form>
-            <v-row>
+            <v-row class="d-none d-sm-flex">
                 <v-col cols="md">
                     <v-text-field
                         color="#187653"
                         v-model="oldPassword" 
-                        label="Password Atual" 
+                        label="Password Atual *" 
                         :rules="oldPasswordRules"
                         dense
                         filled
@@ -18,7 +19,7 @@
                     <v-text-field
                         color="#187653"
                         v-model="newPassword" 
-                        label="Nova Password" 
+                        label="Nova Password *" 
                         hint="Pelo menos 8 caracteres" 
                         :rules="passwordRules"
                         dense
@@ -37,6 +38,29 @@
                     </v-col>
                 </div>
             </v-row>
+            <v-text-field
+                class="d-flex d-sm-none"
+                color="#187653"
+                v-model="oldPassword" 
+                label="Password Atual *" 
+                :rules="oldPasswordRules"
+                dense
+                filled
+                rounded
+                clearable
+            />
+            <v-text-field
+                class="d-flex d-sm-none"
+                color="#187653"
+                v-model="newPassword" 
+                label="Nova Password *" 
+                hint="Pelo menos 8 caracteres" 
+                :rules="passwordRules"
+                dense
+                filled
+                rounded
+                clearable
+            />
             <div class="d-flex d-sm-none">
                 <v-col cols="md" class="text-center">
                     <v-btn rounded color="#187653" dark @click="handleSubmit">
