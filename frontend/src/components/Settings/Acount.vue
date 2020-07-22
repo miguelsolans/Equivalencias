@@ -14,6 +14,7 @@
                         filled
                         rounded
                         clearable
+                        required
                     />
                 </v-col>
                 <v-col cols="6" sm="6">
@@ -27,6 +28,7 @@
                         filled
                         rounded
                         clearable
+                        required
                     />
                 </v-col>
                 <v-col cols="6" sm="6">
@@ -40,6 +42,7 @@
                         filled
                         rounded
                         clearable
+                        required
                     />
                 </v-col>
                 <v-col cols="6" sm="6">
@@ -73,6 +76,7 @@
                 filled
                 rounded
                 clearable
+                required
             />
             <v-text-field
                 class="d-flex d-sm-none"
@@ -85,6 +89,7 @@
                 filled
                 rounded
                 clearable
+                required
             />
             <v-text-field
                 color="#187653"
@@ -97,6 +102,7 @@
                 filled
                 rounded
                 clearable
+                required
             />
             <div class="d-flex d-sm-none">
                 <v-col cols="md" class="text-center">

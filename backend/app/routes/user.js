@@ -23,7 +23,7 @@ router.get('/logged', checkAuth, (req, res) => {
  * body {username}: account matching username
  * body {password}: account password
  */
-router.post('/login', async (req, res, next) => {
+router.post('/login', async (req, res) => {
 
     const userAuth = {
         username: req.body.username,
@@ -42,7 +42,6 @@ router.post('/login', async (req, res, next) => {
                 res.status(401).jsonp( {title: "error", message: "Invalid password!"} );
             } else {
                 const token = jwt.sign({
-                        // username: user.username
                         user: user._id
                     },
                     process.env.AUTH_SECRET, { expiresIn: process.env.AUTH_TOKEN_TIMETOLIVE },
@@ -75,6 +74,8 @@ router.put('/update', checkAuth, async (req, res) => {
     try {
         let data;
         if(req.decodedUser.admin) {
+            console.log("Is Admin");
+            console.log(`Permissions: ${req.body.admin}`);
             let user = req.body.username || req.decodedUser.username;
             data = await Users.updateInformation(user, req.body.fullName, req.body.email, req.body.admin);
         } else {

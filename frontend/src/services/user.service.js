@@ -173,7 +173,8 @@ class UserService {
     updateAccount(user) {
         return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
             fullName: user.fullName,
-            email: user.email
+            email: user.email,
+            admin: user.admin
         }, {
             headers: authHeader()
         });
