@@ -54,7 +54,7 @@
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <Account :user="user" @saveChanges="saveChanges"/>
+                            <Account :user="user" @saveAccountChanges="saveAccountChanges"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -134,7 +134,7 @@
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUniversities :universities="universities"/>
+                            <ManageUniversities :universities="universities"  @removeUniversity="removeUniversity"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -219,7 +219,7 @@
                         this.users.push(...response.data);
                     }).catch(err => console.log(err));
             },
-            saveChanges(user) {
+            saveAccountChanges(user) {
                 this.user = user;
             },
             newUser(user) {
@@ -234,6 +234,14 @@
                 this.users = this.users.filter( u => {
                     return u.username !== user.username
                 });
+            },
+            removeUniversity(university) {
+                console.group("Settings - Remove University");
+                console.log(university);
+                this.universities = this.universities.filter( u => {
+                    return u.codInstit !== university.codInstit
+                });
+                console.group();
             }
         }
     }

@@ -180,7 +180,8 @@
 
                         this.readOnly = true;
 
-                        this.$emit("saveChanges", this.editUser);
+                        this.$emit("saveAccountChanges", this.editUser);
+
                         console.log(data);
                     }).catch(err => {
                         this.createAlert("Oops!...", `Não foi possível atualizar o Utilizador ${this.editUser.fullName}.`);

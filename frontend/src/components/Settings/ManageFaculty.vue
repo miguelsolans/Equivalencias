@@ -8,7 +8,6 @@
             :items="universities" 
             sort-by="codInstit"
             :page.sync="page"
-            :pagination.sync="pagination"
             :items-per-page="itemsPerPage"
             hide-default-footer
             @page-count="pageCount = $event"
@@ -108,7 +107,8 @@
 
                 UserService.deleteUniversity(university.codInstit)
                     .then(response => {
-                        // TODO: Emit change to parent
+                        this.$emit('removeUniversity', response.data);
+
                         console.log(response);
                     }).catch(err => console.log(err));
             },
