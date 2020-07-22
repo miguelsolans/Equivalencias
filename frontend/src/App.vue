@@ -22,7 +22,7 @@
                 return this.$store.state.auth.status.loggedIn;
             },
             dashboardPage() {
-                return this.$route.name == "dashboard";
+                return this.$route.name === "dashboard";
             }
         },
         mounted() {

@@ -23,7 +23,7 @@
                         :to="{ name: 'process', params: { id: process._id } }"
                     >
                         <v-list-item-avatar v-if="process.avatar">
-                            <img :src="process.avatar"/>
+                            <img alt="Avatar do processo" :src="process.avatar"/>
                         </v-list-item-avatar>
                         <v-list-item-avatar v-else-if="!process.avatar" style="backgroundImage: linear-gradient(#3bb98a, #187653)" class="imgAvatar">
                             <span class="white--text">{{ firstUppercaseLetter(process.nomeAluno) }}{{ lastUppercaseLetter(process.nomeAluno) }}</span>
@@ -90,15 +90,15 @@
             firstUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
-                if(stringSplit[0][0] == stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
+                if(stringSplit[0][0] === stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
                 return regex.exec(stringSplit[0])[0];
             },
             // Função que obtém a última letra maiúscula do nome do Aluno
             lastUppercaseLetter: function(string) {
                 const regex = /\b[A-Z]/g;
                 const stringSplit = string.split(' ');
-                if(stringSplit[0][0] == stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
-                if(stringSplit.length == 1) return null;
+                if(stringSplit[0][0] === stringSplit[0][0].toLowerCase()) return stringSplit[0][0].toUpperCase();
+                if(stringSplit.length === 1) return null;
                 return regex.exec(stringSplit[stringSplit.length-1])[0];
             }      
         },

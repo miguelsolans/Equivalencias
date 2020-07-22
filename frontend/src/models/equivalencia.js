@@ -1,10 +1,9 @@
 export default class Equivalencia {
     /**
      * New Equivalence
-     * @param id: ID
      * @param semUcEquiv: SEMESTRE DE CONCLUSÃO DA UC EQUIVALENTE
-     * @param anoUcEquiv: ANO DE CONCLUSÃO DA UC EQUIVALENTE
      * @param ucEquiv: NOME DA UC EQUIVALENTE
+     * @param anoLetivo
      * @param percent: PERCENTAGEM
      * @param nota: NOTA DE 0..20 DA UC EQUIVALENTE
      * @param ects: NUMERO DE CRÉDITOS DA UC EQUIVALENTE REALIZADA
@@ -31,12 +30,5 @@ export default class Equivalencia {
         }
 
         return false;
-    }
-    /**
-     * Override Object Properties
-     * @returns {string}
-     */
-    override() {
-        return `ID ${this.id}\n${this.ucRealizada}`;
     }
 }

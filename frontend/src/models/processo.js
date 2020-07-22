@@ -7,7 +7,4 @@ export default class Processo {
         this.cursoProv = cursoProv;
     }
 
-    override() {
-        return `ID: ${this.processo}\nAlunoId: ${this.idAluno}\nNome: ${this.nomeAluno}\nInstitProv: ${this.instProv}\nCurso: ${this.cursoProv}`;
-    }
 }
