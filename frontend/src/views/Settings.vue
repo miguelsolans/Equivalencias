@@ -54,7 +54,7 @@
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <Account/>
+                            <Account :user="user" @saveChanges="saveChanges"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -218,6 +218,9 @@
                         console.log(response.data);
                         this.users.push(...response.data);
                     }).catch(err => console.log(err));
+            },
+            saveChanges(user) {
+                this.user = user;
             },
             newUser(user) {
                 console.log("Updating Users...");

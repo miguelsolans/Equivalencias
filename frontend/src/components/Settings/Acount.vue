@@ -6,7 +6,7 @@
                 <v-col cols="6" sm="6">
                     <v-text-field
                         color="#187653"
-                        v-model="user.fullName" 
+                        v-model="editUser.fullName"
                         label="Nome do Utilizador *" 
                         type="text" 
                         :disabled="readOnly"
@@ -21,7 +21,7 @@
                     <v-text-field
                         color="#187653"
                         :disabled="readOnly || !user.admin" 
-                        v-model="user.username" 
+                        v-model="editUser.username"
                         label="Username do Utilizador *" 
                         type="text"
                         dense
@@ -34,7 +34,7 @@
                 <v-col cols="6" sm="6">
                     <v-text-field
                         color="#187653"
-                        v-model="user.email" 
+                        v-model="editUser.email"
                         label="E-mail do Utilizador *" 
                         type="text" 
                         :disabled="readOnly"
@@ -50,7 +50,7 @@
                         <v-col class="py-0">
                             <v-checkbox
                                 color="#187653"
-                                v-model="user.admin" 
+                                v-model="editUser.admin"
                                 label="Administrador *" 
                                 :disabled="readOnly || !user.admin"
                             />
@@ -68,7 +68,7 @@
             <v-text-field
                 class="d-flex d-sm-none"
                 color="#187653"
-                v-model="user.fullName" 
+                v-model="editUser.fullName"
                 label="Nome do Utilizador *" 
                 type="text" 
                 :disabled="readOnly"
@@ -82,7 +82,7 @@
                 class="d-flex d-sm-none"
                 color="#187653"
                 :disabled="readOnly || !user.admin" 
-                v-model="user.username" 
+                v-model="editUser.username"
                 label="Username do Utilizador *" 
                 type="text"
                 dense
@@ -94,7 +94,7 @@
             <v-text-field
                 color="#187653"
                 class="d-flex d-sm-none"
-                v-model="user.email" 
+                v-model="editUser.email"
                 label="E-mail do Utilizador *" 
                 type="text" 
                 :disabled="readOnly"
@@ -143,10 +143,11 @@
 
     export default {
         name: "Account",
+        props: ["user"],
         data() {
             return {
                 alert: new Alert(0, "", "", {}, false),
-                user: new User(),
+                editUser: new User(),
                 oldUser: new User(),
                 readOnly: true,
             }
@@ -155,28 +156,34 @@
             UserService.getLoggedUser()
                 .then(response => {
                     let data = response.data;
-                    this.user = new User(data.username, data.fullName, data.admin, data.email);
-                    Object.assign(this.oldUser, this.user);
-                    console.table(this.user);
+
+                    this.editUser = new User(data.username, data.fullName, data.admin, data.email);
+
+                    Object.assign(this.oldUser, this.editUser);
+
                 }).catch(err => console.log(err));
         },
         methods: {
 
             rollback() {
-                Object.assign(this.user, this.oldUser);
+                Object.assign(this.editUser, this.oldUser);
             },
 
             handleSubmit(e) {
                 e.preventDefault();
                 console.log("Updating details...");
 
-                UserService.updateAccount(this.user)
+                UserService.updateAccount(this.editUser)
                     .then(response => {
                         let { data } = response;
-                        this.createAlert("Utilizador Atualizado", `O Utilizador ${this.user.fullName} foi atualizado com sucesso.`);
+                        this.createAlert("Utilizador Atualizado", `O Utilizador ${this.editUser.fullName} foi atualizado com sucesso.`);
+
+                        this.readOnly = true;
+
+                        this.$emit("saveChanges", this.editUser);
                         console.log(data);
                     }).catch(err => {
-                        this.createAlert("Oops!...", `Não foi possível atualizar o Utilizador ${this.user.fullName}.`);
+                        this.createAlert("Oops!...", `Não foi possível atualizar o Utilizador ${this.editUser.fullName}.`);
                         console.log(err)
                     });
             },
