@@ -36,7 +36,7 @@
         <v-tabs centered show-arrows class="my-5" color="#187653">
             <v-tab>Gestão Conta e Segurança</v-tab>
             <v-tab :disabled="!user.admin">Gestão Utilizadores</v-tab>
-            <v-tab :disabled="!user.admin">Gestão Faculdades</v-tab>
+            <v-tab :disabled="!user.admin">Gestão Instituições</v-tab>
             <v-tab-item class="my-10">
                 <v-expansion-panels>
                     <v-expansion-panel>
@@ -123,14 +123,14 @@
                         <v-expansion-panel-header class="d-none d-sm-flex">
                             <b style="color: #187653">
                                 <v-icon color="#187653">mdi-home</v-icon> 
-                                Faculdades Registadas
+                                Instituições Registadas
                             </b>
-                            Gestão de todas as Faculdades Registadas
+                            Gestão de todas as Instituições Registadas
                         </v-expansion-panel-header>
                         <v-expansion-panel-header class="d-flex d-sm-none">
                             <b style="color: #187653">
                                 <v-icon color="#187653">mdi-home</v-icon> 
-                                Faculdades Registadas
+                                Instituições Registadas
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
@@ -141,14 +141,14 @@
                         <v-expansion-panel-header class="d-none d-sm-flex">
                             <b style="color: #187653">
                                 <v-icon color="#187653">mdi-home-plus</v-icon> 
-                                Registar Faculdade
+                                Registar Instituição
                             </b>
-                            Registo de Nova Faculdade
+                            Registo de Nova Instituição
                         </v-expansion-panel-header>
                         <v-expansion-panel-header class="d-flex d-sm-none">
                             <b style="color: #187653">
                                 <v-icon color="#187653">mdi-home-plus</v-icon> 
-                                Registar Faculdade
+                                Registar Instituição
                             </b>
                         </v-expansion-panel-header>                        
                         <v-expansion-panel-content>

@@ -33,7 +33,7 @@
                     <v-col cols="md" class="text-right my-2">
                         <v-btn rounded align-center color="#187653" dark @click="handleSubmit">
                             <div class="text-capitalize">
-                                <strong>Registar Faculdade</strong>
+                                <strong>Registar Instituição</strong>
                             </div>
                         </v-btn>
                     </v-col>
@@ -67,19 +67,21 @@
                 <v-col cols="md" class="text-center">
                     <v-btn rounded color="#187653" dark @click="handleSubmit">
                         <div class="text-capitalize">
-                            <strong>Registar Faculdade</strong>
+                            <strong>Registar Instituição</strong>
                         </div>
                     </v-btn>
                 </v-col>
             </div>
         </v-form>
 
-        <v-dialog v-model="alert.display" persistent max-width="350">
-            <v-card>
-                <v-card-title class="justify-center">{{alert.title}}</v-card-title>
-                <v-card-text  class="text-justify">{{alert.message}}</v-card-text>
+        <v-dialog v-model="alert.display" retain-focus persistent max-width="350">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title style="font-weight: bold;" class="justify-center">
+                    {{alert.title}}
+                </v-card-title>
+                <v-card-text class="text-justify">{{alert.message}}</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="#187653" text @click="alert.hideAlert()">Fechar</v-btn>
+                    <v-btn color="#187653" text @click="alert.hideAlert()"><b>Fechar</b></v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -110,12 +112,12 @@
 
                         this.$emit('newUniversity', response.data);
 
-                        this.createAlert("Faculdade Adicionada", `A Faculdade ${this.university.nomeInstit} foi adicionada com sucesso`);
+                        this.createAlert("Instituição Criada", `A Instituição ${this.university.nomeInstit} foi adicionada com sucesso.`);
 
                         this.resetForm();
                     })
                     .catch(err => {
-                        this.createAlert("Erro!", "Não foi possível registar a faculdade. Verifique se o código da faculdade é único.")
+                        this.createAlert("Oops!...", "Houve um erro ao criar a Nova Instituição. Tente novamente mais tarde, verifique se o código da Instituição é único ou se todos os campos estão preenchidos.")
                         console.log(err.response.data)
                     });
             },

@@ -49,12 +49,27 @@
                 </v-card-actions>
             </v-card>
         </v-dialog>
+
+        <v-dialog v-model="alert.display" retain-focus persistent max-width="350">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title style="font-weight: bold;" class="justify-center">
+                    {{alert.title}}
+                </v-card-title>
+                <v-card-text class="text-justify">{{alert.message}}</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="#187653" text @click="alert.hideAlert()"><b>Fechar</b></v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </v-container>
 </template>
 
 <script>
     import UserService from '../../services/user.service';
     import University from '../../models/university';
+    import Alert from '../../models/alert';
+
     export default {
         name: "ManageFaculty",
         props: ['universities'],
@@ -63,6 +78,7 @@
                 page: 1,
                 pageCount: 0,
                 itemsPerPage: 10,
+                alert: new Alert(0, "", "", {}, false),
                 headers: [
                     { text: "Código", value: "codInstit" },
                     { text: "Nome", value: "nomeInstit" },
