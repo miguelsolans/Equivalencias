@@ -114,17 +114,32 @@
                 label="Modo de Leitura"
             />
         </v-form>
+
+        <v-dialog v-model="alert.display" retain-focus persistent max-width="350">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title style="font-weight: bold;" class="justify-center">
+                    {{alert.title}}
+                </v-card-title>
+                <v-card-text class="text-justify">{{alert.message}}</v-card-text>
+                <v-card-actions class="justify-center">
+                    <v-btn color="#187653" text @click="alert.hideAlert()"><b>Fechar</b></v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </v-container>
 </template>
 
 <script>
     import User from '../../models/user';
     import UserService from '../../services/user.service';
+    import Alert from "../../models/alert";
 
     export default {
         name: "Account",
         data() {
             return {
+                alert: new Alert(0, "", "", {}, false),
                 user: new User(),
                 oldUser: new User(),
                 readOnly: true,
@@ -152,9 +167,19 @@
                 UserService.updateAccount(this.user)
                     .then(response => {
                         let { data } = response;
-
+                        this.createAlert("Utilizador Atualizado", `O Utilizador ${this.user.fullName} foi atualizado com sucesso.`);
                         console.log(data);
-                    }).catch(err => console.log(err));
+                    }).catch(err => {
+                        this.createAlert("Oops!...", `Não foi possível atualizar o Utilizador ${this.user.fullName}.`);
+                        console.log(err)
+                    });
+            },
+
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
