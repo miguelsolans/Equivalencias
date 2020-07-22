@@ -44,7 +44,7 @@
                     </v-container>
                 </v-card-text>
                 <v-card-actions class="pt-0 justify-center">
-                    <v-btn color="#187653" text @click="editModal = false"><b>Voltar Atrás</b></v-btn>
+                    <v-btn color="#187653" text @click="editModal = false"><b>Fechar</b></v-btn>
                     <v-btn  color="#34ac80" text @click="handleSubmit"><b>Atualizar</b></v-btn>
                 </v-card-actions>
             </v-card>

@@ -25,7 +25,7 @@
               <v-card-title class="headline">Terminar Sessão?</v-card-title>
               <v-card-text>Todos as suas alterações não guardadas serão perdidas.</v-card-text>
               <v-card-actions class="justify-center">
-                  <v-btn color="#187653" text @click="logoutAlert = false">Voltar Atrás</v-btn>
+                  <v-btn color="#187653" text @click="logoutAlert = false">Fechar</v-btn>
                   <v-btn color="red darken-1" text @click="handleLogout">Terminar Sessão</v-btn>
               </v-card-actions>
           </v-card>

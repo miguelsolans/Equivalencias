@@ -81,13 +81,15 @@
             <v-spacer></v-spacer>
         </v-app-bar>
 
-        <v-dialog v-model="logoutAlert" persistent max-width="350">
-            <v-card>
-                <v-card-title class="justify-center">Terminar Sessão?</v-card-title>
+        <v-dialog v-model="logoutAlert" retain-focus persistent max-width="350">
+            <v-card style="font-family: Rubik, sans-serif;">
+                <v-card-title style="font-weight: bold;" class="justify-center">
+                    Terminar Sessão?
+                </v-card-title>
                 <v-card-text class="text-justify">Todos as suas alterações não guardadas serão perdidas.</v-card-text>
                 <v-card-actions class="justify-center">
-                    <v-btn color="#187653" text @click="logoutAlert = false">Voltar Atrás</v-btn>
-                    <v-btn color="red darken-1" text @click="handleLogout">Terminar Sessão</v-btn>
+                    <v-btn color="#187653" text @click="logoutAlert = false"><b>Fechar</b></v-btn>
+                    <v-btn color="red darken-1" text @click="handleLogout"><b>Terminar Sessão</b></v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
