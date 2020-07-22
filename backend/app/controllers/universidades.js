@@ -25,7 +25,12 @@ module.exports.getUniversityCourses = (id) => {
     return Universidade.findById(id, { Cursos: 1 });
 };
 
-module.exports.addCourse = (codInstit, { codCurso, nomeCurso}) => {
+module.exports.editUniversity = (id, {codInstit, nomeInstit}) => {
+    return Universidade.findOneAndUpdate({codInstit: id}, { codInstit: codInstit, nomeInstit: nomeInstit}, {
+        runValidators: true
+    });
+};
 
-	
+module.exports.deleteUniversity = (id) => {
+    return Universidade.findOneAndDelete({codInstit: id});
 };

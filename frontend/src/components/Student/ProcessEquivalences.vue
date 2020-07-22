@@ -5,8 +5,23 @@
             color="#187653"
             fixed-header
             :headers="headers"
-            :items="equivalencias">
+            :items="equivalencias"
+            :page.sync="page"
+            :pagination.sync="pagination"
+            :items-per-page="itemsPerPage"
+            :search="search"
+            hide-default-footer
+            @page-count="pageCount = $event"
+        >
         </v-data-table>
+        <div class="my-5 text-center pt-2">
+            <v-pagination
+                color="#187653" 
+                v-model="page" 
+                :length="pageCount"
+                circle
+            ></v-pagination>
+        </div>
     </v-container>
 </template>
 
@@ -17,6 +32,9 @@
         props: ["equivalencias"],
         data() {
             return {
+                page: 1,
+                pageCount: 0,
+                itemsPerPage: 5,
                 // Table Configuration
                 headers: [
                     {text: "UC Equivalente", value: "ucEquiv"},

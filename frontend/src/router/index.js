@@ -43,7 +43,8 @@ const routes = [
         component: () => import('../views/Settings'),
         meta: {
             requiresAuth: true,
-            title: 'Definições'
+            title: 'Definições',
+            favicon: 'frontend/public/favicon.ico'
         }
     }
 ];

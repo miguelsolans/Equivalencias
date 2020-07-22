@@ -1,4 +1,9 @@
-const jwt = require('jsonwebtoken');
+/* Middlware for user authentication and route protection
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
+const jwt   = require('jsonwebtoken');
 const Users = require('../controllers/users');
 const Error = require('../utils/error');
 
@@ -24,28 +29,6 @@ module.exports = async (req, res, next) => {
 
             next();
         }
-
-
-        // console.log(decodedToken);
-        /*Users.findById(decodedToken.user)
-            .then(user => {
-                if(!user){
-                    res.jsonp( {title: "Error!", message: "Invalid credentials"} );
-                } else {
-                    req.decodedUser = {
-                        username: user.username,
-                        fullName: user.fullName,
-                        email: user.email,
-                        admin: user.admin
-                    };
-
-                    console.log(`${req.decodedUser.username} logged on`);
-
-                    next();
-                }
-            })
-            .catch(err => res.status(401).jsonp(err));*/
-
     } catch(err) {
         let error = new Error(401, "Error!", "Authentication Failed");
         error.setErrorStack(err);

@@ -7,8 +7,8 @@ const userStorage = JSON.parse(localStorage.getItem('user'));
 // const token = this.$cookies.get('userToken');
 
 const initialSate = userStorage
-    ? { status: { loggedIn: true}, userStorage }
-    : {status: { loggedIn: false}, user: null };
+    ? { status: { loggedIn: true}, user: userStorage }
+    : { status: { loggedIn: false}, user: null };
 
 export const auth = {
     namespaced: true,

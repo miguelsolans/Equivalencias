@@ -1,6 +1,7 @@
 const express       = require('express');
 const router        = express.Router();
 const checkAuth     = require('../middleware/checkAuth');
+const isAdmin       = require('../middleware/userAdmin');
 const Universidades = require('../controllers/universidades');
 const Processos     = require('../controllers/processos');
 
@@ -10,7 +11,7 @@ const Processos     = require('../controllers/processos');
  * query {course}: Course name, returns available subjects
  * query {subject}: Subject name, returns similar processes for smart fields
  */
-router.get('/',  checkAuth, (req, res) => {
+router.get('/', checkAuth, (req, res) => {
 
     const query = req.query;
     console.log("UNIVERSIDADES GET / ");
@@ -40,7 +41,12 @@ router.get('/',  checkAuth, (req, res) => {
 
 });
 
-router.post('/', checkAuth, (req, res) => {
+/**
+ * Create a new University
+ * body {codInstit} unique University identifier
+ * body {nomeInstit} University name
+ */
+router.post('/', checkAuth, isAdmin, (req, res) => {
     console.log("UNIVERSIDADES POST / ");
 
     const university = {
@@ -50,7 +56,36 @@ router.post('/', checkAuth, (req, res) => {
 
     Universidades.addNew(university)
         .then(data => res.status(201).jsonp(data))
-        .catch(err => res.status(401).jsonp(err));
+        .catch(err => {
+            console.log(err);
+            res.status(400).jsonp(err)
+        });
+});
+
+
+router.delete('/:id', checkAuth, isAdmin, (req, res) => {
+    console.log("UNIVERSIDADES DELETE / ");
+
+    let id = req.params.id;
+
+    Universidades.deleteUniversity(id)
+        .then(data => res.status(200).jsonp(data))
+        .catch(err => res.status(400).jsonp(err));
+});
+
+
+router.put('/:id', checkAuth, (req, res) => {
+    console.log("UNIVERSIDADES PUT /");
+
+    let codInstit = req.params.id;
+    let data = {
+        codInstit: req.body.codInstit,
+        nomeInstit: req.body.nomeInstit
+    }
+
+    Universidades.editUniversity(codInstit, data)
+        .then(data => res.status(201).jsonp(data))
+        .catch(err => res.status(400).jsonp(err));
 });
 
 module.exports = router;

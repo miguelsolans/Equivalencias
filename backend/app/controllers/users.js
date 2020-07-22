@@ -1,3 +1,9 @@
+/*
+ * Controller of Universidades collection
+ * Author: Diogo Araújo
+ * Author: Diogo Nogueira
+ * Author: Miguel Solans
+ */
 const User = require('../models/user');
 
 module.exports.findById = (id) => {
@@ -6,7 +12,9 @@ module.exports.findById = (id) => {
 
 module.exports.updateInformation = (username, fullName, email, admin) => {
 
-    return User.findOneAndUpdate({username: username}, {fullName: fullName, email: email, admin: admin});
+    return User.findOneAndUpdate({username: username}, {fullName: fullName, email: email, admin: admin}, {
+        runValidators: true
+    });
 };
 
 module.exports.getUsers = () => {
@@ -41,5 +49,7 @@ module.exports.destroyUser = (username) => {
 };
 
 module.exports.updateUsername = (username, newUsername) => {
-    return User.findOneAndUpdate({ username: username}, { username: newUsername }, { "fields": { "password": false }});
+    return User.findOneAndUpdate({ username: username}, { username: newUsername }, { "fields": { "password": false }}, {
+        runValidators: true
+    });
 }

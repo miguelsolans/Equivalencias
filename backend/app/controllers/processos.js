@@ -32,6 +32,8 @@ module.exports.updateProcess = (id, {processo, idAluno, nomeAluno, instProv, cur
         nomeAluno: nomeAluno,
         instProv: instProv,
         cursoProv: cursoProv
+    }, {
+        runValidators: true
     });
 };
 
@@ -69,7 +71,9 @@ module.exports.newDocument = (id, { filename, generatedBy }) => {
         generatedBy: generatedBy
     };
     // New document
-    return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } });
+    return Processo.findOneAndUpdate({ _id: id}, { $push: { documentation: newDocument } }, {
+        runValidators: true
+    });
 };
 
 module.exports.listDocumentation = (id) => {

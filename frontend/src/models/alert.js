@@ -5,11 +5,20 @@ export default class Alert {
         this.message = message;
         this.stack = stack;
         this.display = false;
-        this.isError = false;
+        this.isError = isError;
+        this.type = "";
     }
 
     setStack(stack) {
         this.stack = stack;
+    }
+
+    setTitle(title) {
+        this.title = title;
+    }
+
+    setMessage(message) {
+        this.message = message;
     }
 
     setHttpCode(code) {
@@ -22,5 +31,9 @@ export default class Alert {
 
     hideAlert() {
         this.display = false;
+    }
+
+    getType() {
+        return this.isError ? 'error' : 'info';
     }
 }

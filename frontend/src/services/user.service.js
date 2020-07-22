@@ -42,6 +42,12 @@ class UserService {
         });
     }
 
+    updateUniversity(id, university) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/universidade/${id}`, university, {
+            headers: authHeader()
+        });
+    }
+
     /**
      * Register a new University
      * @param university
@@ -129,6 +135,12 @@ class UserService {
         });
     }
 
+    deleteUniversity(id) {
+        return axios.delete(`${process.env.VUE_APP_API_SERVER}/universidade/${id}`, {
+            headers: authHeader()
+        });
+    }
+
 
     //
     // User Endpoint
@@ -167,7 +179,8 @@ class UserService {
     updateAccount(user) {
         return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
             fullName: user.fullName,
-            email: user.email
+            email: user.email,
+            admin: user.admin
         }, {
             headers: authHeader()
         });
@@ -186,6 +199,24 @@ class UserService {
             email: user.email,
             password: user.password,
             admin: user.admin
+        });
+    }
+
+    deleteUser(username) {
+        return axios.delete(`${process.env.VUE_APP_API_SERVER}/user/${username}`, {
+            headers: authHeader()
+        });
+    }
+
+    editUser(user) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/user/update`, {
+            fullName: user.fullName,
+            username: user.username,
+            email: user.email,
+            password: user.password,
+            admin: user.admin
+        }, {
+            headers: authHeader()
         });
     }
 }

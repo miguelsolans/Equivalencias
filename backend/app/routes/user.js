@@ -1,11 +1,10 @@
-const express = require('express');
-const router  = express.Router();
-const bcrypt  = require('bcryptjs');
-const jwt     = require('jsonwebtoken');
-const Users = require('../controllers/users');
-
+const express   = require('express');
+const router    = express.Router();
+const bcrypt    = require('bcryptjs');
+const jwt       = require('jsonwebtoken');
+const Users     = require('../controllers/users');
 const checkAuth = require('../middleware/checkAuth');
-const isAdmin = require('../middleware/userAdmin');
+const isAdmin   = require('../middleware/userAdmin');
 
 /**
  * Get a Certain user by its ID
@@ -24,7 +23,7 @@ router.get('/logged', checkAuth, (req, res) => {
  * body {username}: account matching username
  * body {password}: account password
  */
-router.post('/login', async (req, res, next) => {
+router.post('/login', async (req, res) => {
 
     const userAuth = {
         username: req.body.username,
@@ -43,7 +42,6 @@ router.post('/login', async (req, res, next) => {
                 res.status(401).jsonp( {title: "error", message: "Invalid password!"} );
             } else {
                 const token = jwt.sign({
-                        // username: user.username
                         user: user._id
                     },
                     process.env.AUTH_SECRET, { expiresIn: process.env.AUTH_TOKEN_TIMETOLIVE },
@@ -72,12 +70,14 @@ router.post('/login', async (req, res, next) => {
  * body {email}: Account e-mail address
  */
 router.put('/update', checkAuth, async (req, res) => {
-    console.log("POST / Update Account");
 
     try {
         let data;
         if(req.decodedUser.admin) {
-            data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, req.body.admin);
+            console.log("Is Admin");
+            console.log(`Permissions: ${req.body.admin}`);
+            let user = req.body.username || req.decodedUser.username;
+            data = await Users.updateInformation(user, req.body.fullName, req.body.email, req.body.admin);
         } else {
             data = await Users.updateInformation(req.decodedUser.username, req.body.fullName, req.body.email, false);
         }
@@ -171,9 +171,9 @@ router.put('/password', checkAuth, async (req, res) => {
  * Delete an account. Will not work if the current account is set to admin
  * body {username}: account username
  */
-router.delete('/', checkAuth, isAdmin, (req, res) => {
+router.delete('/:username', checkAuth, isAdmin, (req, res) => {
 
-    Users.destroyUser(req.body.username)
+    Users.destroyUser(req.params.username)
         .then(data => res.jsonp(data))
         .catch(err => res.jsonp(err));
 });
