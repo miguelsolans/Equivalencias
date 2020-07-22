@@ -54,7 +54,7 @@
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <Account :user="user" @saveChanges="saveChanges"/>
+                            <Account :user="user" @saveAccountChanges="saveAccountChanges"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -134,7 +134,7 @@
                             </b>
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
-                            <ManageUniversities :universities="universities"/>
+                            <ManageUniversities :universities="universities"  @removeUniversity="removeUniversity"/>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
                     <v-expansion-panel>
@@ -185,7 +185,6 @@
             this.getLoggedUser();
 
             if(this.isAdmin) {
-                console.log("Admin Logged on");
                 this.getUniversities();
                 this.getUsers();
             }
@@ -219,20 +218,23 @@
                         this.users.push(...response.data);
                     }).catch(err => console.log(err));
             },
-            saveChanges(user) {
+            saveAccountChanges(user) {
                 this.user = user;
             },
             newUser(user) {
-                console.log("Updating Users...");
                 this.users.push(user);
             },
             newUniversity(university) {
-                console.log("Updating universities...");
                 this.universities.push(university);
             },
             removeUser(user) {
                 this.users = this.users.filter( u => {
                     return u.username !== user.username
+                });
+            },
+            removeUniversity(university) {
+                this.universities = this.universities.filter( u => {
+                    return u.codInstit !== university.codInstit
                 });
             }
         }

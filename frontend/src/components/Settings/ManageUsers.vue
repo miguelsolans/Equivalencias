@@ -7,7 +7,6 @@
             :headers="headers" 
             :items="users"
             :page.sync="page"
-            :pagination.sync="pagination"
             :items-per-page="itemsPerPage"
             hide-default-footer
             @page-count="pageCount = $event"
@@ -110,10 +109,13 @@
                 e.preventDefault();
 
                 UserService.editUser(this.userEdit)
-                    .then(response => {
-                        console.log(response.data);
+                    .then(() => {
 
                         this.createAlert("Utilizador Atualizado", `A conta do Utilizador ${this.userEdit.fullName} foi atualizado com sucesso.`);
+
+                        let index = this.users.findIndex((u => u._id === this.userEdit._id));
+                        this.users[index] = this.userEdit;
+
 
                         this.editModal = false;
                     }).catch(err => {
@@ -123,7 +125,6 @@
                 });
             },
             editUser(item) {
-                console.log("Editing User");
 
                 this.editModal = true;
 

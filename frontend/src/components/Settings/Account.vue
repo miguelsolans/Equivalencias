@@ -171,7 +171,6 @@
 
             handleSubmit(e) {
                 e.preventDefault();
-                console.log("Updating details...");
 
                 UserService.updateAccount(this.editUser)
                     .then(response => {
@@ -180,7 +179,8 @@
 
                         this.readOnly = true;
 
-                        this.$emit("saveChanges", this.editUser);
+                        this.$emit("saveAccountChanges", this.editUser);
+
                         console.log(data);
                     }).catch(err => {
                         this.createAlert("Oops!...", `Não foi possível atualizar o Utilizador ${this.editUser.fullName}.`);
@@ -199,7 +199,4 @@
 </script>
 
 <style scoped>
-    .avatar {
-        max-width: 150px;
-    }
 </style>

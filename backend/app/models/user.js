@@ -20,7 +20,7 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Introduza um e-mail válido!']
+        match: [/^\w+([.-]?\w+)*@\w+([\.]?\w+)*(\.\w{2,3})+$/, 'Introduza um e-mail válido!']
     },
     admin: {
         type: Boolean,

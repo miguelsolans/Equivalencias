@@ -525,7 +525,6 @@
                     .then(response => {
                         let data = response.data;
                         if(data.length > 0) {
-                            console.log("Updating...");
                             console.log(data);
                             this.ucDestino.push(... data);
                             this.equivalencia.ects = data.ects;

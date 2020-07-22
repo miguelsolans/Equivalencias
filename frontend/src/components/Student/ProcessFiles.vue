@@ -29,6 +29,7 @@
                                 <v-icon>mdi-file-pdf</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
+
                                 <v-list-item-subtitle>
                                     <span style="font-weight: bold">Data e Hora de Criação: </span>
                                     {{ file.generatedAt | moment('DD/MM/YYYY, HH:mm')}}
@@ -41,20 +42,17 @@
                                     </span>
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
+
                             </v-list-item-content>
-                            <v-list-title 
-                                class="text-right align-self-center"
-                            >
-                                <span
-                                    style="color:#187653; font-weight: bold"
-                                >
+
+                            <v-list-item-icon>
+                                <v-list-item-action-text style="color:#187653; font-weight: bold;">
                                     Download
-                                </span>
-                                <v-list-item-avatar>
-                                    <v-icon color="#187653">mdi-download</v-icon>
-                                </v-list-item-avatar>
-                            </v-list-title>
+                                </v-list-item-action-text>
+                                <v-icon color="#187653">mdi-download</v-icon>
+                            </v-list-item-icon>
                         </v-list-item>
+
                         <v-list-item
                             class="d-flex d-sm-none"
                             :key="file.filename" 
@@ -77,7 +75,7 @@
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
-                            <v-list-title 
+                            <v-list-title
                                 class="text-right align-self-center"
                             >
                                 <v-list-item-avatar>

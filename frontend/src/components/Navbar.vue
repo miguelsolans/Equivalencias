@@ -9,7 +9,7 @@
         >
             <v-spacer></v-spacer>
             <v-toolbar-title style="width: 160px">
-                <a href="/"><img class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/></a>
+                <a href="/"><img alt="Logótipo do projeto" class="imgLogo pt-1" src="../assets/images/Logo Branco.png"/></a>
             </v-toolbar-title>
 
             <v-spacer></v-spacer>
@@ -105,7 +105,7 @@
         },
         computed: {
             dashboardPage() {
-                return this.$route.name == "dashboard";
+                return this.$route.name === "dashboard";
             }
         },
         data: () => ({
