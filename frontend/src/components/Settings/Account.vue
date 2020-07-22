@@ -199,7 +199,4 @@
 </script>
 
 <style scoped>
-    .avatar {
-        max-width: 150px;
-    }
 </style>
