@@ -162,7 +162,7 @@
 </template>
 
 <script>
-    import Account from '../components/Settings/Acount';
+    import Account from '../components/Settings/Account';
     import Password from '../components/Settings/Password';
 
     import ManageUsers from '../components/Settings/ManageUsers';
