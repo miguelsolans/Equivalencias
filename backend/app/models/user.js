@@ -10,7 +10,7 @@ const userScheme = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        minLength: 3
+        minlength: 3
     },
     password: {
         type: String,
@@ -30,7 +30,7 @@ const userScheme = new mongoose.Schema({
     fullName: {
         type: String,
         required: true,
-        minLength: 3
+        minlength: 3
     }
 });
 

@@ -12,7 +12,9 @@ module.exports.findById = (id) => {
 
 module.exports.updateInformation = (username, fullName, email, admin) => {
 
-    return User.findOneAndUpdate({username: username}, {fullName: fullName, email: email, admin: admin});
+    return User.findOneAndUpdate({username: username}, {fullName: fullName, email: email, admin: admin}, {
+        runValidators: true
+    });
 };
 
 module.exports.getUsers = () => {
