@@ -7,7 +7,6 @@
             :headers="headers"
             :items="equivalencias"
             :page.sync="page"
-            :pagination.sync="pagination"
             :items-per-page="itemsPerPage"
             :search="search"
             hide-default-footer

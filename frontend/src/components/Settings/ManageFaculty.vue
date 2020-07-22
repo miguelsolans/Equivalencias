@@ -8,7 +8,6 @@
             :items="universities" 
             sort-by="codInstit"
             :page.sync="page"
-            :pagination.sync="pagination"
             :items-per-page="itemsPerPage"
             hide-default-footer
             @page-count="pageCount = $event"
@@ -94,8 +93,6 @@
         },
         methods: {
             editUniversity(university) {
-                console.log("Edit University");
-                console.log(university.nomeInstit);
 
                 this.university = new University(university.codInstit, university.nomeInstit);
                 this.oldId = university.codInstit;
@@ -104,12 +101,11 @@
             },
 
             deleteUniversity(university) {
-                console.log("Delete University");
 
                 UserService.deleteUniversity(university.codInstit)
                     .then(response => {
-                        // TODO: Emit change to parent
-                        console.log(response);
+                        this.$emit('removeUniversity', response.data);
+
                     }).catch(err => console.log(err));
             },
             handleSubmit(e) {
@@ -117,7 +113,6 @@
 
                 UserService.updateUniversity(this.oldId, this.university)
                     .then(() => {
-                        console.log("Updated");
 
                         this.editModal = false;
                         this.createAlert("Informação Atualizada", `A faculdade ${this.university.nomeInstit} foi atualizada com sucesso.`);
