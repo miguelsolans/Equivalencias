@@ -222,7 +222,6 @@
                         if(this.course.courses.length > 0) {
                             this.course.disableAutocomplete = false;
                         } else {
-                            console.log("No Courses... Please input a new one");
                             this.course.disableAutocomplete = false;
                             this.course.enableInput = true;
                         }

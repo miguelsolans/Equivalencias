@@ -171,7 +171,6 @@
 
             handleSubmit(e) {
                 e.preventDefault();
-                console.log("Updating details...");
 
                 UserService.updateAccount(this.editUser)
                     .then(response => {

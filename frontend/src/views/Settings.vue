@@ -185,7 +185,6 @@
             this.getLoggedUser();
 
             if(this.isAdmin) {
-                console.log("Admin Logged on");
                 this.getUniversities();
                 this.getUsers();
             }
@@ -223,11 +222,9 @@
                 this.user = user;
             },
             newUser(user) {
-                console.log("Updating Users...");
                 this.users.push(user);
             },
             newUniversity(university) {
-                console.log("Updating universities...");
                 this.universities.push(university);
             },
             removeUser(user) {
@@ -236,12 +233,9 @@
                 });
             },
             removeUniversity(university) {
-                console.group("Settings - Remove University");
-                console.log(university);
                 this.universities = this.universities.filter( u => {
                     return u.codInstit !== university.codInstit
                 });
-                console.group();
             }
         }
     }

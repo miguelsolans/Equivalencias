@@ -112,7 +112,6 @@
         methods: {
             // Router Events
             newEquivalence(equivalence) {
-                console.log("/student Parent new Equivalence");
                 this.process.equivalencias.push(equivalence);
             },
             rollback() {

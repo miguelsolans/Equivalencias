@@ -222,7 +222,6 @@
             }
         },
         mounted() {
-            console.log("init data component");
             this.fetchUniversities();
         },
         methods: {

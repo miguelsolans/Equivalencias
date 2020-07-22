@@ -110,7 +110,6 @@
 
                 UserService.editUser(this.userEdit)
                     .then(() => {
-                        console.group("ManageUsers");
 
                         this.createAlert("Utilizador Atualizado", `A conta do Utilizador ${this.userEdit.fullName} foi atualizado com sucesso.`);
 
@@ -119,7 +118,6 @@
 
 
                         this.editModal = false;
-                        console.groupEnd();
                     }).catch(err => {
                         this.editModal = false;
                         this.createAlert("Oops...!", `Não foi possível atualizar a conta do Utilizador ${this.userEdit.fullName}. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos.`);
@@ -127,7 +125,6 @@
                 });
             },
             editUser(item) {
-                console.log("Editing User");
 
                 this.editModal = true;
 
