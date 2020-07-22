@@ -42,6 +42,12 @@ class UserService {
         });
     }
 
+    updateUniversity(id, university) {
+        return axios.put(`${process.env.VUE_APP_API_SERVER}/universidade/${id}`, university, {
+            headers: authHeader()
+        });
+    }
+
     /**
      * Register a new University
      * @param university

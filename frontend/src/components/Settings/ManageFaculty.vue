@@ -86,7 +86,8 @@
                     { text: "Operações", value: "actions", align: "center", sortable: false}
                 ],
                 editModal: false,
-                university: new University(0, "")
+                university: new University(0, ""),
+                oldId: 0
             }
         },
         mounted() {
@@ -97,6 +98,7 @@
                 console.log(university.nomeInstit);
 
                 this.university = new University(university.codInstit, university.nomeInstit);
+                this.oldId = university.codInstit;
 
                 this.editModal = true;
             },
@@ -113,8 +115,23 @@
             handleSubmit(e) {
                 e.preventDefault();
 
-                UserService.upda
-                // TODO: API Request
+                UserService.updateUniversity(this.oldId, this.university)
+                    .then(() => {
+                        console.log("Updated");
+
+                        this.editModal = false;
+                        this.createAlert("Informação Atualizada", `A faculdade ${this.university.nomeInstit} foi atualizada com sucesso.`);
+                    }).catch(() => {
+
+                        this.editModal = false;
+                        this.createAlert("Oops!...", `Não foi possível atualizar as informações da faculdade ${this.university.nomeInstit}. Tente novamente mais tarde!`);
+                });
+            },
+            createAlert(title, message) {
+                this.alert.setTitle(title);
+                this.alert.setMessage(message);
+
+                this.alert.displayAlert();
             }
         }
     }
