@@ -19,7 +19,7 @@
                 </v-col>
             </v-row>
             <v-row class="text-right d-none d-sm-flex">
-                <v-col cols="6" sm="6">
+                <v-col cols="6" sm="6" class="pb-0">
                     <v-checkbox color="#187653" v-model="user.admin" label="Conta Administrador *" required/>
                 </v-col>
                 <v-col cols="6" sm="6">
