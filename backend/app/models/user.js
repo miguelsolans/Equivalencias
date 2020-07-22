@@ -9,7 +9,8 @@ const userScheme = new mongoose.Schema({
     username: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        minLength: 3
     },
     password: {
         type: String,
@@ -18,7 +19,8 @@ const userScheme = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Introduza um e-mail válido!']
     },
     admin: {
         type: Boolean,
@@ -27,7 +29,8 @@ const userScheme = new mongoose.Schema({
     },
     fullName: {
         type: String,
-        required: true
+        required: true,
+        minLength: 3
     }
 });
 
