@@ -73,4 +73,19 @@ router.delete('/:id', checkAuth, isAdmin, (req, res) => {
         .catch(err => res.status(400).jsonp(err));
 });
 
+
+router.put('/:id', checkAuth, (req, res) => {
+    console.log("UNIVERSIDADES PUT /");
+
+    let codInstit = req.params.id;
+    let data = {
+        codInstit: req.body.codInstit,
+        nomeInstit: req.body.nomeInstit
+    }
+
+    Universidades.editUniversity(codInstit, data)
+        .then(data => res.status(201).jsonp(data))
+        .catch(err => res.status(400).jsonp(err));
+});
+
 module.exports = router;
