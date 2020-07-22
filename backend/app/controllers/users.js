@@ -49,5 +49,7 @@ module.exports.destroyUser = (username) => {
 };
 
 module.exports.updateUsername = (username, newUsername) => {
-    return User.findOneAndUpdate({ username: username}, { username: newUsername }, { "fields": { "password": false }});
+    return User.findOneAndUpdate({ username: username}, { username: newUsername }, { "fields": { "password": false }}, {
+        runValidators: true
+    });
 }
