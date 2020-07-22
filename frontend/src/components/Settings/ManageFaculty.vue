@@ -35,11 +35,12 @@
                 <v-card-title class="pt-5 py-4 justify-center">
                     <h3>Editar Instituição</h3>
                 </v-card-title>
-                <v-card-text>
+                <h5 class="mt-5 mx-12">* Campos de preenchimento obrigatório</h5>
+                <v-card-text class="my-4">
                     <v-container>
                         <v-form>
-                            <v-text-field color="#187653" v-model="university.codInstit" label="Código da Instituição" type="text" dense filled rounded hide-details clearable/>
-                            <v-text-field class="mt-5" color="#187653" v-model="university.nomeInstit" label="Nome da Instituição" type="text" dense filled rounded hide-details clearable/>
+                            <v-text-field color="#187653" v-model="university.codInstit" label="Código da Instituição *" type="text" dense filled rounded hide-details clearable/>
+                            <v-text-field class="mt-5" color="#187653" v-model="university.nomeInstit" label="Nome da Instituição *" type="text" dense filled rounded hide-details clearable/>
                         </v-form>
                     </v-container>
                 </v-card-text>

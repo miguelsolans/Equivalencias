@@ -39,20 +39,21 @@
                 <v-card-title class="pt-5 py-4 justify-center">
                     <h3>Editar Dados do Utilizador</h3>
                 </v-card-title>
+                <h5 class="mt-5 mx-12">* Campos de preenchimento obrigatório</h5>
                 <v-card-text>
                     <v-card-text>
                         <v-form>
                             <v-row class="d-none d-sm-flex">
                                 <v-col cols="6" sm="6">
-                                    <v-text-field color="#187653" v-model="userEdit.fullName" label="Nome Completo" type="text" filled rounded dense clearable/>
+                                    <v-text-field color="#187653" v-model="userEdit.fullName" label="Nome Completo *" type="text" filled rounded dense clearable/>
                                 </v-col>
                                 <v-col cols="6" sm="6">
-                                    <v-text-field color="#187653" v-model="userEdit.username" label="Username" type="text" filled rounded dense clearable/>
+                                    <v-text-field color="#187653" v-model="userEdit.username" label="Username *" type="text" filled rounded dense clearable/>
                                 </v-col>
                             </v-row>
-                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.fullName" label="Nome Completo" type="text" filled rounded dense clearable/>
-                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.username" label="Username" type="text" filled rounded dense clearable/>
-                            <v-text-field color="#187653" v-model="userEdit.email" label="E-mail" type="email" filled rounded dense clearable/>
+                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.fullName" label="Nome Completo *" type="text" filled rounded dense clearable/>
+                            <v-text-field class="d-flex d-sm-none" color="#187653" v-model="userEdit.username" label="Username *" type="text" filled rounded dense clearable/>
+                            <v-text-field color="#187653" v-model="userEdit.email" label="E-mail *" type="email" filled rounded dense clearable/>
                             <v-checkbox class="text-center" color="#187653" v-model="userEdit.admin" label="Administrador da Plataforma"></v-checkbox>
                         </v-form>
                     </v-card-text>
@@ -112,12 +113,12 @@
                     .then(response => {
                         console.log(response.data);
 
-                        this.createAlert("Conta Atualizada", `A conta de ${this.userEdit.fullName} foi atualizada com sucesso.`);
+                        this.createAlert("Utilizador Atualizado", `A conta do Utilizador ${this.userEdit.fullName} foi atualizado com sucesso.`);
 
                         this.editModal = false;
                     }).catch(err => {
                         this.editModal = false;
-                        this.createAlert("Oops...!", `Não foi possível atualizar a conta de ${this.userEdit.fullName}. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos.`);
+                        this.createAlert("Oops...!", `Não foi possível atualizar a conta do Utilizador ${this.userEdit.fullName}. Tente novamente mais tarde ou verifique se todos os campos estão preenchidos.`);
                         console.log(err)
                 });
             },
