@@ -1,0 +1,11 @@
+[{
+  "_id": {
+    "$oid": "5f0643bd9f0302047afb7281"
+  },
+  "admin": true,
+  "username": "admin",
+  "password": "$2a$10$T.S3odonziOx4wmaW6AMVe.tdILw2GolyD9JIrw.GtlYhu61lW/iC",
+  "email": "admin@mantis.com",
+  "fullName": "Administrador do Serviço",
+  "__v": 0
+}]

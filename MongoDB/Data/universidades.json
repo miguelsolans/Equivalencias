@@ -1,0 +1,985 @@
+[{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b4"
+  },
+  "codInstit": 140,
+  "nomeInstit": "Universidade dos Açores - Faculdade de Ciências Agrárias e do Ambiente"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b5"
+  },
+  "codInstit": 150,
+  "nomeInstit": "Universidade dos Açores - Faculdade de Ciências Sociais e Humanas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b6"
+  },
+  "codInstit": 160,
+  "nomeInstit": "Universidade dos Açores - Faculdade de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b7"
+  },
+  "codInstit": 170,
+  "nomeInstit": "Universidade dos Açores - Faculdade de Economia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b8"
+  },
+  "codInstit": 200,
+  "nomeInstit": "Universidade do Algarve"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080b9"
+  },
+  "codInstit": 201,
+  "nomeInstit": "Universidade do Algarve - Faculdade de Ciências Humanas e Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ba"
+  },
+  "codInstit": 203,
+  "nomeInstit": "Universidade do Algarve - Faculdade de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080bb"
+  },
+  "codInstit": 204,
+  "nomeInstit": "Universidade do Algarve - Faculdade de Economia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080bc"
+  },
+  "codInstit": 300,
+  "nomeInstit": "Universidade de Aveiro"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080bd"
+  },
+  "codInstit": 400,
+  "nomeInstit": "Universidade da Beira Interior"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080be"
+  },
+  "codInstit": 501,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080bf"
+  },
+  "codInstit": 502,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Direito"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c0"
+  },
+  "codInstit": 503,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Economia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c1"
+  },
+  "codInstit": 504,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Farmácia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c2"
+  },
+  "codInstit": 505,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Letras"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c3"
+  },
+  "codInstit": 506,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Medicina"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c4"
+  },
+  "codInstit": 507,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Psicologia e de Ciências da Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c5"
+  },
+  "codInstit": 508,
+  "nomeInstit": "Universidade de Coimbra - Faculdade de Ciências do Desporto e Educação Física"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c6"
+  },
+  "codInstit": 602,
+  "nomeInstit": "Universidade de Évora - Escola de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c7"
+  },
+  "codInstit": 603,
+  "nomeInstit": "Universidade de Évora - Escola de Artes"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c8"
+  },
+  "codInstit": 604,
+  "nomeInstit": "Universidade de Évora - Escola de Ciências Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080c9"
+  },
+  "codInstit": 901,
+  "nomeInstit": "Universidade Nova de Lisboa - Faculdade de Ciências Médicas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ca"
+  },
+  "codInstit": 902,
+  "nomeInstit": "Universidade Nova de Lisboa - Faculdade de Ciências Sociais e Humanas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080cb"
+  },
+  "codInstit": 903,
+  "nomeInstit": "Universidade Nova de Lisboa - Faculdade de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080cc"
+  },
+  "codInstit": 904,
+  "nomeInstit": "Universidade Nova de Lisboa - Faculdade de Economia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080cd"
+  },
+  "codInstit": 906,
+  "nomeInstit": "Universidade Nova de Lisboa - Instituto Superior de Estatística e Gestão de Informação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ce"
+  },
+  "codInstit": 911,
+  "nomeInstit": "Universidade Nova de Lisboa - Faculdade de Direito"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080cf"
+  },
+  "codInstit": 1000,
+  "nomeInstit": "Universidade do Minho"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d0"
+  },
+  "codInstit": 1101,
+  "nomeInstit": "Universidade do Porto - Faculdade de Ciências da Nutrição e da Alimentação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d1"
+  },
+  "codInstit": 1102,
+  "nomeInstit": "Universidade do Porto - Faculdade de Arquitetura"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d2"
+  },
+  "codInstit": 1103,
+  "nomeInstit": "Universidade do Porto - Faculdade de Ciências"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d3"
+  },
+  "codInstit": 1104,
+  "nomeInstit": "Universidade do Porto - Faculdade de Economia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d4"
+  },
+  "codInstit": 1105,
+  "nomeInstit": "Universidade do Porto - Faculdade de Engenharia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d5"
+  },
+  "codInstit": 1106,
+  "nomeInstit": "Universidade do Porto - Faculdade de Farmácia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d6"
+  },
+  "codInstit": 1107,
+  "nomeInstit": "Universidade do Porto - Faculdade de Letras"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d7"
+  },
+  "codInstit": 1108,
+  "nomeInstit": "Universidade do Porto - Faculdade de Medicina"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d8"
+  },
+  "codInstit": 1109,
+  "nomeInstit": "Universidade do Porto - Faculdade de Psicologia e de Ciências da Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080d9"
+  },
+  "codInstit": 1110,
+  "nomeInstit": "Universidade do Porto - Instituto de Ciências Biomédicas Abel Salazar"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080da"
+  },
+  "codInstit": 1111,
+  "nomeInstit": "Universidade do Porto - Faculdade de Desporto"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080db"
+  },
+  "codInstit": 1113,
+  "nomeInstit": "Universidade do Porto - Faculdade de Medicina Dentária"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080dc"
+  },
+  "codInstit": 1114,
+  "nomeInstit": "Universidade do Porto - Faculdade de Direito"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080dd"
+  },
+  "codInstit": 1201,
+  "nomeInstit": "Universidade de Trás-os-Montes e Alto Douro - Escola de Ciências Agrárias e Veterinárias"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080de"
+  },
+  "codInstit": 1202,
+  "nomeInstit": "Universidade de Trás-os-Montes e Alto Douro - Escola de Ciências Humanas e Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080df"
+  },
+  "codInstit": 1203,
+  "nomeInstit": "Universidade de Trás-os-Montes e Alto Douro - Escola de Ciências e Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e0"
+  },
+  "codInstit": 1204,
+  "nomeInstit": "Universidade de Trás-os-Montes e Alto Douro - Escola de Ciências da Vida e do Ambiente"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e1"
+  },
+  "codInstit": 1306,
+  "nomeInstit": "Universidade da Madeira - Faculdade de Artes e Humanidades"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e2"
+  },
+  "codInstit": 1307,
+  "nomeInstit": "Universidade da Madeira - Faculdade de Ciências Exatas e da Engenharia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e3"
+  },
+  "codInstit": 1308,
+  "nomeInstit": "Universidade da Madeira - Faculdade de Ciências Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e4"
+  },
+  "codInstit": 1309,
+  "nomeInstit": "Universidade da Madeira - Faculdade de Ciências da Vida"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e5"
+  },
+  "codInstit": 1320,
+  "nomeInstit": "Universidade da Madeira - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e6"
+  },
+  "codInstit": 1321,
+  "nomeInstit": "Universidade da Madeira - Escola Superior de Tecnologias e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e7"
+  },
+  "codInstit": 1501,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Arquitetura"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e8"
+  },
+  "codInstit": 1502,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Belas-Artes"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080e9"
+  },
+  "codInstit": 1503,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Ciências"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ea"
+  },
+  "codInstit": 1504,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Direito"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080eb"
+  },
+  "codInstit": 1505,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Farmácia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ec"
+  },
+  "codInstit": 1506,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Letras"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ed"
+  },
+  "codInstit": 1507,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Medicina"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ee"
+  },
+  "codInstit": 1508,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Medicina Dentária"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ef"
+  },
+  "codInstit": 1509,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Medicina Veterinária"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f0"
+  },
+  "codInstit": 1510,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Motricidade Humana"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f1"
+  },
+  "codInstit": 1511,
+  "nomeInstit": "Universidade de Lisboa - Faculdade de Psicologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f2"
+  },
+  "codInstit": 1513,
+  "nomeInstit": "Universidade de Lisboa - Instituto de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f3"
+  },
+  "codInstit": 1514,
+  "nomeInstit": "Universidade de Lisboa - Instituto de Geografia e Ordenamento do Território"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f4"
+  },
+  "codInstit": 1515,
+  "nomeInstit": "Universidade de Lisboa - Instituto Superior de Agronomia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f5"
+  },
+  "codInstit": 1516,
+  "nomeInstit": "Universidade de Lisboa - Instituto Superior de Ciências Sociais e Políticas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f6"
+  },
+  "codInstit": 1517,
+  "nomeInstit": "Universidade de Lisboa - Instituto Superior de Economia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f7"
+  },
+  "codInstit": 1518,
+  "nomeInstit": "Universidade de Lisboa - Instituto Superior Técnico"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f8"
+  },
+  "codInstit": 1519,
+  "nomeInstit": "Universidade de Lisboa - Instituto Superior Técnico (Tagus Park)"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080f9"
+  },
+  "codInstit": 3011,
+  "nomeInstit": "Universidade de Aveiro - Instituto Superior de Contabilidade e Administração de Aveiro"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080fa"
+  },
+  "codInstit": 3012,
+  "nomeInstit": "Universidade de Aveiro - Escola Superior de Tecnologia e Gestão de Águeda"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080fb"
+  },
+  "codInstit": 3013,
+  "nomeInstit": "Universidade de Aveiro - Escola Superior de Saúde de Aveiro"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080fc"
+  },
+  "codInstit": 3014,
+  "nomeInstit": "Universidade de Aveiro - Escola Superior de Design, Gestão e Tecnologia da Produção de Aveiro-Norte"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080fd"
+  },
+  "codInstit": 3021,
+  "nomeInstit": "Instituto Politécnico de Beja - Escola Superior Agrária"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080fe"
+  },
+  "codInstit": 3022,
+  "nomeInstit": "Instituto Politécnico de Beja - Escola Superior de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a510080ff"
+  },
+  "codInstit": 3023,
+  "nomeInstit": "Instituto Politécnico de Beja - Escola Superior de Tecnologia e de Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008100"
+  },
+  "codInstit": 3031,
+  "nomeInstit": "Instituto Politécnico do Cávado e do Ave - Escola Superior de Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008101"
+  },
+  "codInstit": 3032,
+  "nomeInstit": "Instituto Politécnico do Cávado e do Ave - Escola Superior de Tecnologia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008102"
+  },
+  "codInstit": 3033,
+  "nomeInstit": "Instituto Politécnico do Cávado e do Ave - Escola Superior de Design"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008103"
+  },
+  "codInstit": 3034,
+  "nomeInstit": "Instituto Politécnico do Cávado e do Ave - Escola Superior de Hotelaria e Turismo"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008104"
+  },
+  "codInstit": 3041,
+  "nomeInstit": "Instituto Politécnico de Bragança - Escola Superior Agrária de Bragança"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008105"
+  },
+  "codInstit": 3042,
+  "nomeInstit": "Instituto Politécnico de Bragança - Escola Superior de Educação de Bragança"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008106"
+  },
+  "codInstit": 3043,
+  "nomeInstit": "Instituto Politécnico de Bragança - Escola Superior de Tecnologia e de Gestão de Bragança"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008107"
+  },
+  "codInstit": 3045,
+  "nomeInstit": "Instituto Politécnico de Bragança - Escola Superior de Comunicação, Administração e Turismo de Mirandela"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008108"
+  },
+  "codInstit": 3051,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior Agrária de Castelo Branco"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008109"
+  },
+  "codInstit": 3052,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior de Educação de Castelo Branco"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810a"
+  },
+  "codInstit": 3053,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior de Tecnologia de Castelo Branco"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810b"
+  },
+  "codInstit": 3054,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior de Gestão de Idanha-a-Nova"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810c"
+  },
+  "codInstit": 3055,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior de Artes Aplicadas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810d"
+  },
+  "codInstit": 3061,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Escola Superior Agrária de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810e"
+  },
+  "codInstit": 3062,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Escola Superior de Educação de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100810f"
+  },
+  "codInstit": 3063,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Instituto Superior de Contabilidade e Administração de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008110"
+  },
+  "codInstit": 3064,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Instituto Superior de Engenharia de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008111"
+  },
+  "codInstit": 3065,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Escola Superior de Tecnologia e Gestão de Oliveira do Hospital"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008112"
+  },
+  "codInstit": 3081,
+  "nomeInstit": "Universidade do Algarve - Escola Superior de Educação e Comunicação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008113"
+  },
+  "codInstit": 3082,
+  "nomeInstit": "Universidade do Algarve - Escola Superior de Gestão, Hotelaria e Turismo"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008114"
+  },
+  "codInstit": 3083,
+  "nomeInstit": "Universidade do Algarve - Instituto Superior de Engenharia"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008115"
+  },
+  "codInstit": 3087,
+  "nomeInstit": "Universidade do Algarve - Escola Superior de Gestão, Hotelaria e Turismo (Portimão)"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008116"
+  },
+  "codInstit": 3091,
+  "nomeInstit": "Instituto Politécnico da Guarda - Escola Superior de Educação, Comunicação e Desporto"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008117"
+  },
+  "codInstit": 3092,
+  "nomeInstit": "Instituto Politécnico da Guarda - Escola Superior de Tecnologia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008118"
+  },
+  "codInstit": 3095,
+  "nomeInstit": "Instituto Politécnico da Guarda - Escola Superior de Turismo e Hotelaria"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008119"
+  },
+  "codInstit": 3101,
+  "nomeInstit": "Instituto Politécnico de Leiria - Escola Superior de Educação e Ciências Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811a"
+  },
+  "codInstit": 3102,
+  "nomeInstit": "Instituto Politécnico de Leiria - Escola Superior de Tecnologia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811b"
+  },
+  "codInstit": 3103,
+  "nomeInstit": "Instituto Politécnico de Leiria - Escola Superior de Artes e Design"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811c"
+  },
+  "codInstit": 3105,
+  "nomeInstit": "Instituto Politécnico de Leiria - Escola Superior de Turismo e Tecnologia do Mar"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811d"
+  },
+  "codInstit": 3112,
+  "nomeInstit": "Instituto Politécnico de Lisboa - Escola Superior de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811e"
+  },
+  "codInstit": 3113,
+  "nomeInstit": "Instituto Politécnico de Lisboa - Escola Superior de Comunicação Social"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100811f"
+  },
+  "codInstit": 3117,
+  "nomeInstit": "Instituto Politécnico de Lisboa - Instituto Superior de Contabilidade e Administração de Lisboa"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008120"
+  },
+  "codInstit": 3118,
+  "nomeInstit": "Instituto Politécnico de Lisboa - Instituto Superior de Engenharia de Lisboa"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008121"
+  },
+  "codInstit": 3121,
+  "nomeInstit": "Instituto Politécnico de Portalegre - Escola Superior de Educação e Ciências Sociais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008122"
+  },
+  "codInstit": 3122,
+  "nomeInstit": "Instituto Politécnico de Portalegre - Escola Superior de Tecnologia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008123"
+  },
+  "codInstit": 3123,
+  "nomeInstit": "Instituto Politécnico de Portalegre - Escola Superior Agrária de Elvas"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008124"
+  },
+  "codInstit": 3131,
+  "nomeInstit": "Instituto Politécnico do Porto - Escola Superior de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008125"
+  },
+  "codInstit": 3134,
+  "nomeInstit": "Instituto Politécnico do Porto - Instituto Superior de Contabilidade e Administração do Porto"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008126"
+  },
+  "codInstit": 3135,
+  "nomeInstit": "Instituto Politécnico do Porto - Instituto Superior de Engenharia do Porto"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008127"
+  },
+  "codInstit": 3138,
+  "nomeInstit": "Instituto Politécnico do Porto - Escola Superior de Tecnologia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008128"
+  },
+  "codInstit": 3139,
+  "nomeInstit": "Instituto Politécnico do Porto - Escola Superior de Hotelaria e Turismo"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008129"
+  },
+  "codInstit": 3141,
+  "nomeInstit": "Instituto Politécnico de Santarém - Escola Superior Agrária de Santarém"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812a"
+  },
+  "codInstit": 3142,
+  "nomeInstit": "Instituto Politécnico de Santarém - Escola Superior de Educação de Santarém"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812b"
+  },
+  "codInstit": 3143,
+  "nomeInstit": "Instituto Politécnico de Santarém - Escola Superior de Gestão e Tecnologia de Santarém"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812c"
+  },
+  "codInstit": 3145,
+  "nomeInstit": "Instituto Politécnico de Santarém - Escola Superior de Desporto de Rio Maior"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812d"
+  },
+  "codInstit": 3151,
+  "nomeInstit": "Instituto Politécnico de Setúbal - Escola Superior de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812e"
+  },
+  "codInstit": 3152,
+  "nomeInstit": "Instituto Politécnico de Setúbal - Escola Superior de Tecnologia de Setúbal"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100812f"
+  },
+  "codInstit": 3153,
+  "nomeInstit": "Instituto Politécnico de Setúbal - Escola Superior de Ciências Empresariais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008130"
+  },
+  "codInstit": 3154,
+  "nomeInstit": "Instituto Politécnico de Setúbal - Escola Superior de Tecnologia do Barreiro"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008131"
+  },
+  "codInstit": 3155,
+  "nomeInstit": "Instituto Politécnico de Setúbal - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008132"
+  },
+  "codInstit": 3161,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior Agrária"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008133"
+  },
+  "codInstit": 3162,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior de Educação"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008134"
+  },
+  "codInstit": 3163,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior de Tecnologia e Gestão"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008135"
+  },
+  "codInstit": 3164,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior de Ciências Empresariais"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008136"
+  },
+  "codInstit": 3165,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior de Desporto e Lazer"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008137"
+  },
+  "codInstit": 3181,
+  "nomeInstit": "Instituto Politécnico de Viseu - Escola Superior de Educação de Viseu"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008138"
+  },
+  "codInstit": 3182,
+  "nomeInstit": "Instituto Politécnico de Viseu - Escola Superior de Tecnologia e Gestão de Viseu"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008139"
+  },
+  "codInstit": 3185,
+  "nomeInstit": "Instituto Politécnico de Viseu - Escola Superior Agrária de Viseu"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813a"
+  },
+  "codInstit": 3186,
+  "nomeInstit": "Instituto Politécnico de Viseu - Escola Superior de Tecnologia e Gestão de Lamego"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813b"
+  },
+  "codInstit": 3241,
+  "nomeInstit": "Instituto Politécnico de Tomar - Escola Superior de Gestão de Tomar"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813c"
+  },
+  "codInstit": 3242,
+  "nomeInstit": "Instituto Politécnico de Tomar - Escola Superior de Tecnologia de Tomar"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813d"
+  },
+  "codInstit": 3243,
+  "nomeInstit": "Instituto Politécnico de Tomar - Escola Superior de Tecnologia de Abrantes"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813e"
+  },
+  "codInstit": 3331,
+  "nomeInstit": "Instituto Politécnico do Porto - Escola Superior de Media Artes e Design"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100813f"
+  },
+  "codInstit": 5402,
+  "nomeInstit": "Universidade do Porto - Faculdade de Belas-Artes"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008140"
+  },
+  "codInstit": 6800,
+  "nomeInstit": "ISCTE - Instituto Universitário de Lisboa"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008141"
+  },
+  "codInstit": 7001,
+  "nomeInstit": "Escola Superior de Enfermagem de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008142"
+  },
+  "codInstit": 7002,
+  "nomeInstit": "Escola Superior de Enfermagem de Lisboa"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008143"
+  },
+  "codInstit": 7003,
+  "nomeInstit": "Escola Superior de Enfermagem do Porto"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008144"
+  },
+  "codInstit": 7005,
+  "nomeInstit": "Instituto Politécnico de Beja - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008145"
+  },
+  "codInstit": 7010,
+  "nomeInstit": "Universidade do Minho - Escola Superior de Enfermagem"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008146"
+  },
+  "codInstit": 7015,
+  "nomeInstit": "Instituto Politécnico de Bragança - Escola Superior de Saúde de Bragança"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008147"
+  },
+  "codInstit": 7020,
+  "nomeInstit": "Instituto Politécnico de Castelo Branco - Escola Superior de Saúde Dr. Lopes Dias"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008148"
+  },
+  "codInstit": 7030,
+  "nomeInstit": "Universidade de Évora - Escola Superior de Enfermagem de São João de Deus"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008149"
+  },
+  "codInstit": 7035,
+  "nomeInstit": "Universidade do Algarve - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814a"
+  },
+  "codInstit": 7040,
+  "nomeInstit": "Instituto Politécnico da Guarda - Escola Superior de Saúde da Guarda"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814b"
+  },
+  "codInstit": 7045,
+  "nomeInstit": "Instituto Politécnico de Leiria - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814c"
+  },
+  "codInstit": 7055,
+  "nomeInstit": "Instituto Politécnico de Portalegre - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814d"
+  },
+  "codInstit": 7065,
+  "nomeInstit": "Instituto Politécnico de Santarém - Escola Superior de Saúde de Santarém"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814e"
+  },
+  "codInstit": 7075,
+  "nomeInstit": "Instituto Politécnico de Viana do Castelo - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a5100814f"
+  },
+  "codInstit": 7080,
+  "nomeInstit": "Universidade de Trás-os-Montes e Alto Douro - Escola Superior de Saúde"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008150"
+  },
+  "codInstit": 7085,
+  "nomeInstit": "Instituto Politécnico de Viseu - Escola Superior de Saúde de Viseu"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008151"
+  },
+  "codInstit": 7092,
+  "nomeInstit": "Universidade dos Açores - Escola Superior de Saúde - Angra do Heroísmo"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008152"
+  },
+  "codInstit": 7093,
+  "nomeInstit": "Universidade dos Açores - Escola Superior de Saúde - Ponta Delgada"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008153"
+  },
+  "codInstit": 7105,
+  "nomeInstit": "Escola Superior Náutica Infante D. Henrique"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008154"
+  },
+  "codInstit": 7110,
+  "nomeInstit": "Escola Superior de Hotelaria e Turismo do Estoril"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008155"
+  },
+  "codInstit": 7210,
+  "nomeInstit": "Instituto Politécnico de Coimbra - Escola Superior de Tecnologia da Saúde de Coimbra"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008156"
+  },
+  "codInstit": 7220,
+  "nomeInstit": "Instituto Politécnico de Lisboa - Escola Superior de Tecnologia da Saúde de Lisboa"
+},{
+  "_id": {
+    "$oid": "5e5eb2e87f8cbd3a51008157"
+  },
+  "codInstit": 7230,
+  "nomeInstit": "Instituto Politécnico do Porto - Escola Superior de Saúde"
+}]
