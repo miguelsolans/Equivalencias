@@ -45,12 +45,18 @@
 
                             </v-list-item-content>
 
-                            <v-list-item-icon>
-                                <v-list-item-action-text style="color:#187653; font-weight: bold;">
+                            <v-list-title 
+                                class="text-right align-self-center"
+                            >
+                                <span
+                                    style="color:#187653; font-weight: bold"
+                                >
                                     Download
-                                </v-list-item-action-text>
-                                <v-icon color="#187653">mdi-download</v-icon>
-                            </v-list-item-icon>
+                                </span>
+                                <v-list-item-avatar>
+                                    <v-icon color="#187653">mdi-download</v-icon>
+                                </v-list-item-avatar>
+                            </v-list-title>
                         </v-list-item>
 
                         <v-list-item
