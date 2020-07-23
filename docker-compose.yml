@@ -6,7 +6,7 @@ services:
         restart: always            
         env_file: 
             - ./Environment/gateway-variables.env
-        build: ./ServerAPI
+        build: ./backend
         ports: 
             - "7332:7332"
         volumes:
@@ -18,16 +18,19 @@ services:
         restart: always
         env_file: 
             - ./Environment/frontend-variables.env
-        build: ./equiv-frontend
+        build: ./frontend
         ports: 
             - "7333:7333"
-        volumes: 
+        volumes:
             - ./mantis/frontend
         depends_on: 
             - backend
     mongo:
         container_name: mantis-mongo
         image: mongo
+        command: mongod --port 7331
+        volumes:
+            - ./MongoDB/init.js:/docker-entrypoint-initdb.d/init.js:ro
         ports: 
             - "7331:7331"
         volumes:

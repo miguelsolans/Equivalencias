@@ -1,0 +1,7178 @@
+[{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10790"
+  },
+  "processo": "INT-SAUM/2018/4424",
+  "idAluno": "A34900",
+  "nomeAluno": "Cecília Soares",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Direito",
+  "data": {
+    "$date": "2018-03-14T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5aa9664d4eea9f038bd30648"
+      },
+      "ucEquiv": "Opção Uminho (2ºano-2ºsem MIEI)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Direitos Fundamentais"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10791"
+  },
+  "processo": "INT-SAUM/2018/13551",
+  "idAluno": "A86579",
+  "nomeAluno": "Ivo Alexandre Pereira Baixo",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Engenharia Física",
+  "data": {
+    "$date": "2018-09-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5ba4b79c67eb8bf1c0e80746"
+      },
+      "ucEquiv": "",
+      "percent": null,
+      "nota": null,
+      "ects": 6,
+      "ucRealizada": "Cálculo EC A"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b7c467eb8bf1c0e80747"
+      },
+      "ucEquiv": "Cálculo",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Cálculo EC A"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b82867eb8bf1c0e80748"
+      },
+      "ucEquiv": "Álgebra Linear",
+      "percent": 1,
+      "nota": 19,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica EC"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b8a167eb8bf1c0e80749"
+      },
+      "ucEquiv": "Tópicos de Física Moderna",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Introdução à Física Experimental"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b8d767eb8bf1c0e8074a"
+      },
+      "ucEquiv": "Programação Funcional",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b95367eb8bf1c0e8074b"
+      },
+      "ucEquiv": "Análise",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Cálculo Vectorial"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4b99467eb8bf1c0e8074c"
+      },
+      "ucEquiv": "Laboratórios de Informática II",
+      "percent": 1,
+      "nota": 18,
+      "ects": 6,
+      "ucRealizada": "Linguagens para Computação Numérica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10792"
+  },
+  "processo": "jcr/teste",
+  "idAluno": "A4140",
+  "nomeAluno": "José Carlos Ramalho",
+  "instProv": "ESSMM - Viana do Castelo",
+  "cursoProv": "Secundário",
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5a48f7ed6e23431717041d5c"
+      },
+      "ucEquiv": "Programação Imperativa",
+      "percent": 1,
+      "nota": 18,
+      "ects": 6,
+      "ucRealizada": "Linguagens de Programação"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10793"
+  },
+  "processo": "INT-SAUM/2017/20513",
+  "idAluno": "A86272",
+  "nomeAluno": "João Coutinho",
+  "instProv": "Instituto Superior Técnico",
+  "cursoProv": "Lic. Eng. Informática e de Computadores",
+  "equivalencias": [
+    {
+      "ucRealizada": "Fundamentos da Programação",
+      "ects": 6,
+      "nota": 13,
+      "percent": 1,
+      "ucEquiv": "Laboratórios de Informática II (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Matemática Discreta",
+      "ects": 4.5,
+      "nota": 11,
+      "percent": 1,
+      "ucEquiv": "Tópicos de Matemática Discreta (1ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Mecânica e Ondas",
+      "ects": 6,
+      "nota": 14,
+      "percent": 1,
+      "ucEquiv": "Tópicos de Física Moderna (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Cálculo Diferencial e Integral",
+      "ects": 6,
+      "nota": 14,
+      "percent": 1,
+      "ucEquiv": "Cálculo (1ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Introdução à Arquitetura de Computadores",
+      "ects": 7.5,
+      "nota": 10,
+      "percent": 1,
+      "ucEquiv": "Sistemas de Computação (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Introdução à Engenharia Informática",
+      "ects": 3,
+      "nota": 17,
+      "percent": 1,
+      "ucEquiv": "Opção UMinho (2ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Introdução aos Algoritmos e Estruturas de Dados",
+      "ects": 7.5,
+      "nota": 13,
+      "percent": 1,
+      "ucEquiv": "Programação Imperativa (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Lógica para Programação",
+      "ects": 7.5,
+      "nota": 13,
+      "percent": 1,
+      "ucEquiv": "Lógica (1ºano - 2ºsem)"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10794"
+  },
+  "processo": "INT-SAUM/2018/13550",
+  "idAluno": "A84414",
+  "nomeAluno": "João Pedro Gonçalves Correia",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Engenharia e Gestão Industrial (MI)",
+  "data": {
+    "$date": "2018-09-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5ba4c59981c749f52e50125a"
+      },
+      "semUcEquiv": "",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c5b681c749f52e50125b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c6bf81c749f52e50125c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II",
+      "percent": 0.5,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Algoritmia e Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c6fc81c749f52e50125d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II",
+      "percent": 0.5,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Ambientes e Contextos de Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c74e81c749f52e50125e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c7a681c749f52e50125f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c7f581c749f52e501260"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5ba4c89d81c749f52e501261"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Introdução à Engenharia Económica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10795"
+  },
+  "processo": "INT-SAUM/2017/13409",
+  "idAluno": "A82888",
+  "nomeAluno": "Luís Filipe Abreu",
+  "instProv": "Instituto Politécnico de Bragança",
+  "cursoProv": "Engenharia de Energias Renováveis",
+  "data": {
+    "$date": "2018-03-14T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5aa96736a65c0703ee8c8577"
+      },
+      "ucEquiv": "Cálculo",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5aa9675fa65c0703ee8c8578"
+      },
+      "ucEquiv": "Análise",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Matemática II"
+    },
+    {
+      "_id": {
+        "$oid": "5aa96790a65c0703ee8c8579"
+      },
+      "ucEquiv": "Métodos Numéricos e Otimização Não Linear",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Métodos Numéricos"
+    },
+    {
+      "_id": {
+        "$oid": "5aa967baa65c0703ee8c857a"
+      },
+      "ucEquiv": "Eletromagnetismo",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Eletromagnetismo e Máquinas Elétricas"
+    },
+    {
+      "_id": {
+        "$oid": "5aa967d6a65c0703ee8c857b"
+      },
+      "ucEquiv": "Estatística Aplicada",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Estatística"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10796"
+  },
+  "processo": "INT-SAUM/2018/14233",
+  "idAluno": "A84675",
+  "nomeAluno": "António Mendes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2018-09-27T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bad300eb617d205d310b8c1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5bad3045b617d205d310b8c2"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5bad3077b617d205d310b8c3"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5bad30aab617d205d310b8c4"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5bad30dbb617d205d310b8c5"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10797"
+  },
+  "processo": "INT-SAUM/2018/13304",
+  "idAluno": "PG37146",
+  "nomeAluno": "Ana Azevedo",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação",
+  "data": {
+    "$date": "2018-09-27T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bacc9f8b617d205d310b8bb"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I1 (OpI1)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Gestão de Redes"
+    },
+    {
+      "_id": {
+        "$oid": "5bacca32b617d205d310b8bc"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I2 (OpI2)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Visão por Computador"
+    },
+    {
+      "_id": {
+        "$oid": "5baccb11b617d205d310b8bd"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A1 (OpA1)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Administração e Exploração de Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5baccb2fb617d205d310b8be"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A2 (OpA2)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Análise de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5baccb58b617d205d310b8bf"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A3 (OpA3)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Interoperabilidade Semântica"
+    },
+    {
+      "_id": {
+        "$oid": "5baccb71b617d205d310b8c0"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A4 (OpA4)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Descoberta do Conhecimento"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10798"
+  },
+  "processo": "INT-SAUM/2017/19820",
+  "idAluno": "A86792",
+  "nomeAluno": "Guillermo Carreño",
+  "instProv": "Universidade de Salamanca",
+  "cursoProv": "Grado en Ingenieria Informática",
+  "equivalencias": [
+    {
+      "ucRealizada": "Algebra Lineal y Geometria",
+      "ects": 6,
+      "nota": 11,
+      "percent": 1,
+      "ucEquiv": "Álgebra Linear (1ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Estadística",
+      "ects": 6,
+      "nota": 10,
+      "percent": 1,
+      "ucEquiv": "Estatística Aplicada (2ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Programación I",
+      "ects": 6,
+      "nota": 10,
+      "percent": 0.5,
+      "ucEquiv": "Programação Imperativa (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Fundamentos Físicos",
+      "ects": 6,
+      "nota": 13.4,
+      "percent": 1,
+      "ucEquiv": "Tópicos de Física Moderna (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Computadores I",
+      "ects": 6,
+      "nota": 12.2,
+      "percent": 1,
+      "ucEquiv": "Sistemas de Computação (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Calculo",
+      "ects": 6,
+      "nota": 10,
+      "percent": 1,
+      "ucEquiv": "Cálculo (1ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Álgebra Computacional",
+      "ects": 6,
+      "nota": 12.6,
+      "percent": 1,
+      "ucEquiv": "Tópicos de Matemática Discreta (1ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Programación II",
+      "ects": 6,
+      "nota": 10,
+      "percent": 0.5,
+      "ucEquiv": "Programação Imperativa (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Organización y Gestión de Empresas",
+      "ects": 6,
+      "nota": 11.6,
+      "percent": 1,
+      "ucEquiv": "Opção UMinho (2ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Computadores II",
+      "ects": 6,
+      "nota": 11,
+      "percent": 0.5,
+      "ucEquiv": "Arquitetura de Computadores (2ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Diseño de Base de Datos",
+      "ects": 6,
+      "nota": 10.4,
+      "percent": 0.5,
+      "ucEquiv": "Bases de Dados (3ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Estructura de Datos y Algoritmos I",
+      "ects": 6,
+      "nota": 12.2,
+      "percent": 1,
+      "ucEquiv": "Laboratórios de Informática II (1ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Programación III",
+      "ects": 6,
+      "nota": 12.8,
+      "percent": 1,
+      "ucEquiv": "Programação Orientada aos Objetos (2ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Señales y Sistemas",
+      "ects": 6,
+      "nota": 10,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Sistemas Operativos I",
+      "ects": 6,
+      "nota": 11.6,
+      "percent": 1,
+      "ucEquiv": "Sistemas Operativos (2ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Sistemas de Bases de Datos",
+      "ects": 6,
+      "nota": 11.8,
+      "percent": 0.5,
+      "ucEquiv": "Bases de Dados (3ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Estructura de Datos y Algoritmos II",
+      "ects": 6,
+      "nota": 11,
+      "percent": 1,
+      "ucEquiv": "Laboratórios de Informática III (2ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Informática Teórica",
+      "ects": 6,
+      "nota": 10.4,
+      "percent": 1,
+      "ucEquiv": "Processamento de Linguagens (3ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Ingenieria de Software I",
+      "ects": 6,
+      "nota": 15,
+      "percent": 1,
+      "ucEquiv": "Desenvolvimento de Sistemas Software (3ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Sistemas Operativos II",
+      "ects": 6,
+      "nota": 10.4,
+      "percent": 1,
+      "ucEquiv": "Sistemas Distribuídos (3ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Interfaces Gráficas de Usuario",
+      "ects": 6,
+      "nota": 14,
+      "percent": 1,
+      "ucEquiv": "Sem equiv. (já considerada na equiv. a Programación III)"
+    },
+    {
+      "ucRealizada": "Programación Avanzada",
+      "ects": 6,
+      "nota": 11.6,
+      "percent": 1,
+      "ucEquiv": "UC2 - Paradigmas de Computação Paralela (4ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Ingenieria del Software II",
+      "ects": 6,
+      "nota": 13.4,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Interacción Persona-Ordenador",
+      "ects": 6,
+      "nota": 15,
+      "percent": 1,
+      "ucEquiv": "UC4 - Sistemas Interativos (4ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Arquitectura de Computadores",
+      "ects": 6,
+      "nota": 10.2,
+      "percent": 0.5,
+      "ucEquiv": "Arquitetura de Computadores (2ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Administracón de Sistemas",
+      "ects": 6,
+      "nota": 11.6,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Periféricos",
+      "ects": 6,
+      "nota": 12.4,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Animación Digital",
+      "ects": 6,
+      "nota": 18,
+      "percent": 1,
+      "ucEquiv": "Computação Gráfica (3ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Robótica",
+      "ects": 6,
+      "nota": 10,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Aspectos Legales y Profesionales de la Informática",
+      "ects": 6,
+      "nota": 17,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    },
+    {
+      "ucRealizada": "Fundamentos de Sistemas Inteligentes",
+      "ects": 6,
+      "nota": 10.8,
+      "percent": 1,
+      "ucEquiv": "Sistemas de Representação de Conhecimento e Raciocínio (3ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Gestión de Proyetos",
+      "ects": 6,
+      "nota": 15.6,
+      "percent": 1,
+      "ucEquiv": "UC3 - Gestão do Processo de Software (4ºano - 2ºsem)"
+    },
+    {
+      "ucRealizada": "Seguridad en Sistemas Informáticos",
+      "ects": 6,
+      "nota": 12.2,
+      "percent": 1,
+      "ucEquiv": "UC1 - Tecnologia Criptográfica (4ºano - 1ºsem)"
+    },
+    {
+      "ucRealizada": "Sistemas Distribuidos",
+      "ects": 6,
+      "nota": 10.6,
+      "percent": 0,
+      "ucEquiv": "Sem equiv."
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e10799"
+  },
+  "processo": "INT-SAUM/2018/14655",
+  "idAluno": "A42865",
+  "nomeAluno": "Mário Coelho",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Civil",
+  "data": {
+    "$date": "2018-10-04T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb5c2f61c44cd650b67b3b7"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5c3411c44cd650b67b3b8"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5c3cb1c44cd650b67b3b9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Cálculo A"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5c4301c44cd650b67b3ba"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Física B"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5c4b41c44cd650b67b3bb"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Introdução aos Sistemas Dinâmicos (ISD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Complementos de Análise Matemática - A"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e1841c44cd650b67b3bc"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Informática A"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e2141c44cd650b67b3bd"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Métodos Numéricos D"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e27b1c44cd650b67b3be"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Eletromagnetismo B"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e2e81c44cd650b67b3bf"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Métodos Estatísticos A"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e3421c44cd650b67b3c0"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5e3a21c44cd650b67b3c1"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Introdução à Engenharia e Técnicas de Representação"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73c527496b425f0238eb5"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 4,
+      "ucRealizada": "Análise de Custos"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079a"
+  },
+  "processo": "INT-SAUM/2018/14287",
+  "idAluno": "A89982",
+  "nomeAluno": "Joel Ferreira",
+  "instProv": "Instituto Politécnico de Viana do Castelo (IPVC)",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-09-26T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bac0463564d6d15d3c56f0b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bac0488564d6d15d3c56f0c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bac04b7564d6d15d3c56f0d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7,
+      "ucRealizada": "Algoritmos e Estruturas de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5bac04f8564d6d15d3c56f0e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Arquiteturas e Sistemas de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5bac0521564d6d15d3c56f0f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 7,
+      "ucRealizada": "Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5bac054e564d6d15d3c56f10"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5bac0578564d6d15d3c56f11"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Estatística"
+    },
+    {
+      "_id": {
+        "$oid": "5bac05a2564d6d15d3c56f12"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 0.5,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Matemática Discreta I"
+    },
+    {
+      "_id": {
+        "$oid": "5bac05c2564d6d15d3c56f13"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 0.5,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Matemática Discreta II"
+    },
+    {
+      "_id": {
+        "$oid": "5bac05f6564d6d15d3c56f14"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 11,
+      "ects": 3,
+      "ucRealizada": "Princípios de Gestão Empresarial"
+    },
+    {
+      "_id": {
+        "$oid": "5bac0612564d6d15d3c56f15"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 14,
+      "ects": 3,
+      "ucRealizada": "Technical English"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079b"
+  },
+  "processo": "INT-SAUM/2018/14559",
+  "idAluno": "A84220",
+  "nomeAluno": "Pedro Gomes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação",
+  "data": {
+    "$date": "2018-10-04T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb5ecb047bb636812d94a87"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ecc947bb636812d94a88"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ecfa47bb636812d94a89"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ed1647bb636812d94a8a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ed3c47bb636812d94a8b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Opção UMinho"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ed5e47bb636812d94a8c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ed7b47bb636812d94a8d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5eda447bb636812d94a8e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5bb5ede747bb636812d94a8f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079c"
+  },
+  "processo": "INT-SAUM_2018_13877",
+  "idAluno": "PG37148",
+  "nomeAluno": "Bruno Pereira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática",
+  "data": {
+    "$date": "2018-09-26T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5babed1fb6c87512e40d6ec8"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EI"
+    },
+    {
+      "_id": {
+        "$oid": "5babeda9b6c87512e40d6ec9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5babee7747b5a213dcb067da"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5babee9347b5a213dcb067db"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5babeebd47b5a213dcb067dc"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Elementos de Engenharia de Sistemas (EES)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Elementos de Engenharia de Sistemas"
+    },
+    {
+      "_id": {
+        "$oid": "5babeeed47b5a213dcb067dd"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática I"
+    },
+    {
+      "_id": {
+        "$oid": "5babef0c47b5a213dcb067de"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5babef3147b5a213dcb067df"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5babef5847b5a213dcb067e0"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5babef7747b5a213dcb067e1"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Lógica EI"
+    },
+    {
+      "_id": {
+        "$oid": "5babef9947b5a213dcb067e2"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5babefbd47b5a213dcb067e3"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática II"
+    },
+    {
+      "_id": {
+        "$oid": "5babeff547b5a213dcb067e4"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Introdução aos Sistemas Dinâmicos (ISD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Introdução aos Sistemas Dinâmicos"
+    },
+    {
+      "_id": {
+        "$oid": "5babf02347b5a213dcb067e5"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5babf04547b5a213dcb067e6"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Engenharia Económica"
+    },
+    {
+      "_id": {
+        "$oid": "5babf06d47b5a213dcb067e7"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Arquitetura de Computadores (AC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5babf09747b5a213dcb067e8"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Comunicação de Dados (CD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Comunicação de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5babf0c047b5a213dcb067e9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Algoritmos e Complexidade (AlgC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Algoritmos e Complexidade"
+    },
+    {
+      "_id": {
+        "$oid": "5babf0e147b5a213dcb067ea"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5babf10b47b5a213dcb067eb"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Programação Orientada aos Objetos"
+    },
+    {
+      "_id": {
+        "$oid": "5babf13547b5a213dcb067ec"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo"
+    },
+    {
+      "_id": {
+        "$oid": "5babf16247b5a213dcb067ed"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Opção UMinho"
+    },
+    {
+      "_id": {
+        "$oid": "5babf18347b5a213dcb067ee"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Cálculo de Programas (CP)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Cálculo de Programas"
+    },
+    {
+      "_id": {
+        "$oid": "5babf1af47b5a213dcb067ef"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Laboratórios de Informática III (LIIII)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática III"
+    },
+    {
+      "_id": {
+        "$oid": "5babf1dd47b5a213dcb067f0"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5babf20147b5a213dcb067f1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Desenvolvimento de Sistemas de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5babfa8d47b5a213dcb067f2"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Modelos Determinísticos de Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5babfaa747b5a213dcb067f3"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Sistemas Distribuídos (SD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas Distribuídos"
+    },
+    {
+      "_id": {
+        "$oid": "5babfac247b5a213dcb067f4"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Redes de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5babfaeb47b5a213dcb067f5"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Métodos Numéricos e Otimização não Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5babfb1647b5a213dcb067f6"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Sistemas de Representação de Conhecimento e Raciocínio (SRCR)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Representação de Conhecimento e Raciocínio"
+    },
+    {
+      "_id": {
+        "$oid": "5babfb3047b5a213dcb067f7"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Computação Gráfica (CG)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Computação Gráfica"
+    },
+    {
+      "_id": {
+        "$oid": "5babfb5847b5a213dcb067f8"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Estocásticos de Investigação Operacional (MEIO)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Modelos Estocásticos de Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5babfb7547b5a213dcb067f9"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Comunicações por Computador (CC)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Comunicações por Computador"
+    },
+    {
+      "_id": {
+        "$oid": "5babfb8c47b5a213dcb067fa"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Processamento de Linguagens (PL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Processamento de Linguagens"
+    },
+    {
+      "_id": {
+        "$oid": "5babfbad47b5a213dcb067fb"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Laboratórios de Informática IV (LIIV)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática IV"
+    },
+    {
+      "_id": {
+        "$oid": "5babfd03564d6d15d3c56f09"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I1 (OpI1)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Opção I1"
+    },
+    {
+      "_id": {
+        "$oid": "5babfd1c564d6d15d3c56f0a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I2 (OpI2)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Opção I2"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079d"
+  },
+  "processo": "INT-SAUM/2018/14837",
+  "idAluno": "A89983",
+  "nomeAluno": "Paulo Lima",
+  "instProv": "Universidade de Coimbra",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb7278f65ef5a2d8b172884"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5bb727bf65ef5a2d8b172885"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bb727f065ef5a2d8b172886"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática II"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7282165ef5a2d8b172887"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Estruturas Discretas"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7285c65ef5a2d8b172888"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Introdução à Programação e Resolução de Problemas"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7288465ef5a2d8b172889"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Princípios de Programação Procedimental"
+    },
+    {
+      "_id": {
+        "$oid": "5bb728c965ef5a2d8b17288a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Tópicos de Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5bb728f965ef5a2d8b17288b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 0.5,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7291b65ef5a2d8b17288c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 0.5,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Tecnologia dos Computadores"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079e"
+  },
+  "processo": "INT-SAUM/2018/14734",
+  "idAluno": "A84618",
+  "nomeAluno": "Lino Costa",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia e Sistemas de Gestão de Informação",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb72a9665ef5a2d8b17288d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EI"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72ab465ef5a2d8b17288e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e1079f"
+  },
+  "processo": "INT-SAUM/2018/14419",
+  "idAluno": "A84467",
+  "nomeAluno": "Jorge Costa",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb72bb765ef5a2d8b17288f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72bd365ef5a2d8b172890"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72bfd65ef5a2d8b172891"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72c1d65ef5a2d8b172892"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72c4c65ef5a2d8b172893"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72cb565ef5a2d8b172894"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a0"
+  },
+  "processo": "INT-SAUM/2018/14560",
+  "idAluno": "A86475",
+  "nomeAluno": "Paulo Pereira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb72dce65ef5a2d8b172895"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72de765ef5a2d8b172896"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72e0865ef5a2d8b172897"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72e2665ef5a2d8b172898"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72e4165ef5a2d8b172899"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72e5d65ef5a2d8b17289a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72e7d65ef5a2d8b17289b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5bb72ea965ef5a2d8b17289c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a1"
+  },
+  "processo": "INT-SAUM/2018/14291",
+  "idAluno": "A89978",
+  "nomeAluno": "Vasco Oliveira",
+  "instProv": "Instituto Politécnico de Beja",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb7e16965ef5a2d8b17289d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e18f65ef5a2d8b17289e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Física Aplicada à Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e1b065ef5a2d8b17289f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Sistemas Digitais"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e1ea65ef5a2d8b1728a0"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Introdução à Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e21a65ef5a2d8b1728a1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Arquitetura de Computadores (AC)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e23f65ef5a2d8b1728a2"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e26b65ef5a2d8b1728a3"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Probabilidade e Estatística"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e29465ef5a2d8b1728a4"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Bases de Dados I"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e31465ef5a2d8b1728a5"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 4,
+      "ucRealizada": "Laboratório Integrado I"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e34065ef5a2d8b1728a6"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Lógica Computacional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e36f65ef5a2d8b1728a7"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Introdução à Engenharia Informática"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a2"
+  },
+  "processo": "INT-SAUM/2018/14824",
+  "idAluno": "A84288",
+  "nomeAluno": "José Santos",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação",
+  "data": {
+    "$date": "2018-10-05T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bb7e64165ef5a2d8b1728a8"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e65a65ef5a2d8b1728a9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e67365ef5a2d8b1728aa"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e68b65ef5a2d8b1728ab"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e6b165ef5a2d8b1728ac"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e6d265ef5a2d8b1728ad"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5bb7e6f565ef5a2d8b1728ae"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a3"
+  },
+  "processo": "INT-SAUM/2018/15557",
+  "idAluno": "A89514",
+  "nomeAluno": "Gonçalo Medeiros",
+  "instProv": "Faculdade de Ciências da Universidade de Lisboa",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bcc352a728bf5067010170d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Algoritmos e Complexidade (AlgC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Algoritmos e Estruturas de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc354b728bf5067010170e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Elementos de Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc357c728bf5067010170f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Física A"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc35ba728bf50670101710"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Introdução às Probabilidades e Estatística"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc35fd728bf50670101711"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Laboratórios de Informática III (LIIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Laboratório de Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc3642728bf50670101712"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Arquitetura de Sistemas Computacionais"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc365f728bf50670101713"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc3690728bf50670101714"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Introdução à Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc36b8728bf50670101715"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Lógica de Primeira Ordem"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc36eb728bf50670101716"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 18,
+      "ects": 6,
+      "ucRealizada": "Produção de Documentos Técnicos"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc370f728bf50670101717"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Informática na Ótica do Utilizador"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a4"
+  },
+  "processo": "INT-SAUM/2018/14846",
+  "idAluno": "A69856",
+  "nomeAluno": "Manuel Carvalho",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Eletrónica Industrial e Computadores",
+  "data": {
+    "$date": "2018-10-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bcc3f61728bf50670101718"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc3f80728bf50670101719"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica EE"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc3fa3728bf5067010171a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Programação de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc3fca728bf5067010171b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Complementos de Programação de Computadores"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a5"
+  },
+  "processo": "INT-SAUM/2018/16625",
+  "idAluno": "A89482",
+  "nomeAluno": "Simão Brito",
+  "instProv": "Faculdade de Ciências e Tecnologia, Universidade Nova de Lisboa",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bcc41ac728bf5067010171c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc41d5728bf5067010171d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc434b728bf5067010171e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Laboratórios de Informática III (LIIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 9,
+      "ucRealizada": "Introdução à Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc436a728bf5067010171f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Sistemas Lógicos"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc439f728bf50670101720"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 9,
+      "ucRealizada": "Programação Orientada aos Objetos"
+    },
+    {
+      "_id": {
+        "$oid": "5bcc43e3728bf50670101721"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 3,
+      "ucRealizada": "Competências Transversais para Ciências e Tecnologia"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a6"
+  },
+  "processo": "jcr-off-record",
+  "idAluno": "A42865",
+  "nomeAluno": "Mário Coelho",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Civil",
+  "data": {
+    "$date": "2018-10-29T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bd73d067496b425f0238eb6"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73d217496b425f0238eb7"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73d4d7496b425f0238eb8"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática II"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73d707496b425f0238eb9"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Física I"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73db27496b425f0238eba"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 3,
+      "ucRealizada": "Informática "
+    },
+    {
+      "_id": {
+        "$oid": "5bd73e0f7496b425f0238ebb"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 4,
+      "ucRealizada": "Análise de Custos"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73e347496b425f0238ebc"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 4,
+      "ucRealizada": "Métodos Estatísticos"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73e897496b425f0238ebd"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Física II"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73f1f7496b425f0238ebe"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 14,
+      "ects": 1,
+      "ucRealizada": "Opção Cultural I"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73f237496b425f0238ebf"
+      },
+      "semUcEquiv": "",
+      "anoUcEquiv": "",
+      "ucEquiv": "Opção A4 (OpA4)",
+      "percent": null,
+      "nota": null,
+      "ects": null,
+      "ucRealizada": ""
+    },
+    {
+      "_id": {
+        "$oid": "5bd73f3b7496b425f0238ec0"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 14,
+      "ects": 1,
+      "ucRealizada": "Opção Cultural II"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73f677496b425f0238ec1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Métodos Numéricos"
+    },
+    {
+      "_id": {
+        "$oid": "5bd73f9a7496b425f0238ec2"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 4,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5be410028a240752fe0ce91b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Introdução aos Sistemas Dinâmicos (ISD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática IV"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a7"
+  },
+  "processo": "INT-SAUM/2018/16122",
+  "idAluno": "A89476",
+  "nomeAluno": "Bruno Carvalho",
+  "instProv": "Instituto Superior de Engenharia do Porto",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-31T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bda1e706a92cd300c3bf127"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1ed16a92cd300c3bf128"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Algoritmia e Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1f366a92cd300c3bf129"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1f606a92cd300c3bf12a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Engenharia de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1f896a92cd300c3bf12b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 8,
+      "ucRealizada": "Laboratório / Projeto I"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1fcf6a92cd300c3bf12c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Matemática Computacional"
+    },
+    {
+      "_id": {
+        "$oid": "5bda1ffd6a92cd300c3bf12d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5bda20316a92cd300c3bf12e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Princípios da Computação"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a8"
+  },
+  "processo": "\t INT-SAUM/2018/15658",
+  "idAluno": "A89979",
+  "nomeAluno": "André Amorim",
+  "instProv": "Universidade de Aveiro",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-31T00:00:00Z"
+  },
+  "equivalencias": []
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107a9"
+  },
+  "processo": "INT-SAUM/2018/15658",
+  "idAluno": "A89979",
+  "nomeAluno": "André Amorim",
+  "instProv": "Universidade de Aveiro",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-10-31T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bda240d6a92cd300c3bf130"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5bda24386a92cd300c3bf131"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Introdução à Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5bda245e6a92cd300c3bf132"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Programação Orientada aos Objetos"
+    },
+    {
+      "_id": {
+        "$oid": "5bda24896a92cd300c3bf133"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Modelação e Análise de Sistemas"
+    },
+    {
+      "_id": {
+        "$oid": "5bda24b76a92cd300c3bf134"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Introdução às Tecnologias Web"
+    },
+    {
+      "_id": {
+        "$oid": "5bda24da6a92cd300c3bf135"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Fundamentos de Programação"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107aa"
+  },
+  "processo": "INT-SAUM/2018/14672",
+  "idAluno": "A89981",
+  "nomeAluno": "Diogo Ribeiro",
+  "instProv": "Instituto Superior de Engenharia de Coimbra",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-11-01T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bdac0a06a92cd300c3bf136"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5bdac0b96a92cd300c3bf137"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Análise Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5bdb0edd6a92cd300c3bf138"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas Digitais"
+    },
+    {
+      "_id": {
+        "$oid": "5bdb0efe6a92cd300c3bf139"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Gestão"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ab"
+  },
+  "processo": "INT-SAUM/2018/13984",
+  "idAluno": "A74032",
+  "nomeAluno": "Miguel Silva",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Engenharia Eletrónica e Computadores",
+  "data": {
+    "$date": "2018-11-08T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5be41b3577d7d85341ea6025"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5be41b7277d7d85341ea6026"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Programação de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5be41b8f77d7d85341ea6027"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5be41baf77d7d85341ea6028"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Complementos de Programação de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5be41be477d7d85341ea6029"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Matemática Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5be41c5f77d7d85341ea602a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Arquitetura e Tecnologias de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5be41c8777d7d85341ea602b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Arquitetura de Computadores (AC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Arquitetura e Tecnologias de Computadores II"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ac"
+  },
+  "processo": "INT-SAUM/2018/15050",
+  "idAluno": "A89980",
+  "nomeAluno": "Joan Rodriguez",
+  "instProv": "Universidad de Carabobo, Venezuela",
+  "cursoProv": "Engenharia Mecânica",
+  "data": {
+    "$date": "2018-11-21T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5bf58ab4624d5097ca10c3fb"
+      },
+      "semUcEquiv": "",
+      "anoUcEquiv": "",
+      "ucEquiv": "Opção A4 (OpA4)",
+      "percent": null,
+      "nota": null,
+      "ects": null,
+      "ucRealizada": "Analisis M"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58ae0624d5097ca10c3fc"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Analisis Matemático I"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58b0b624d5097ca10c3fd"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 4,
+      "ucRealizada": "Física I"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58b46624d5097ca10c3fe"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 4,
+      "ucRealizada": "Analisis Matemático II"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58b6f624d5097ca10c3ff"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 0.5,
+      "nota": 10,
+      "ects": 3.5,
+      "ucRealizada": "Funciones Vectoriales"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58ba5624d5097ca10c400"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 3.5,
+      "ucRealizada": "Algebra Lineal"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58c05624d5097ca10c401"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 0.5,
+      "nota": 11,
+      "ects": 3.5,
+      "ucRealizada": "Física II"
+    },
+    {
+      "_id": {
+        "$oid": "5bf58c36624d5097ca10c402"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 0.5,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Electrotecnia"
+    },
+    {
+      "_id": {
+        "$oid": "5bf5c46a624d5097ca10c403"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 4.5,
+      "ucRealizada": "Computación para Ingenieros"
+    },
+    {
+      "_id": {
+        "$oid": "5bf5c4a6624d5097ca10c404"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 3,
+      "ucRealizada": "Ingenieria Económica"
+    },
+    {
+      "_id": {
+        "$oid": "5bf5c4e2624d5097ca10c405"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 15,
+      "ects": 3,
+      "ucRealizada": "Inglês I"
+    },
+    {
+      "_id": {
+        "$oid": "5bf5c505624d5097ca10c406"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.25,
+      "nota": 15,
+      "ects": 1.5,
+      "ucRealizada": "Creatividad e Inventiva"
+    },
+    {
+      "_id": {
+        "$oid": "5bf5c57b624d5097ca10c407"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.25,
+      "nota": 16,
+      "ects": 1.5,
+      "ucRealizada": "Razonamiento Verbal y Solución de Problemas"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ad"
+  },
+  "processo": "INT-SAUM/2018/18383",
+  "idAluno": "A82098",
+  "nomeAluno": "Melânia Pereira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2018-12-16T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c162f1ae9f4040776096138"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c162f5ae9f4040776096139"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c162f8fe9f404077609613a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5c162fbce9f404077609613b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5c162ff1e9f404077609613c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c163011e9f404077609613d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c16303be9f404077609613e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5c163064e9f404077609613f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5c1630a5e9f4040776096140"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Introdução aos Sistemas Dinâmicos (ISD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Complementos de Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c1630d4e9f4040776096141"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c163121e9f4040776096142"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Métodos Numéricos e Otimização Não Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5c16314ce9f4040776096143"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ae"
+  },
+  "processo": "INT-SAUM/2018/18110",
+  "idAluno": "A81667",
+  "nomeAluno": "Daniel Faria",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2018-12-16T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c1633a6e9f4040776096144"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c1633d9e9f4040776096145"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c1633fbe9f4040776096146"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5c163419e9f4040776096147"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5c16343ae9f4040776096148"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5c163466e9f4040776096149"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c163484e9f404077609614a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c1634a6e9f404077609614b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5c1634c6e9f404077609614c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c1634e6e9f404077609614d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Métodos Numéricos e Otimização Não Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5c16350ee9f404077609614e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107af"
+  },
+  "processo": "INT-SAUM/2018/18314",
+  "idAluno": "A85676",
+  "nomeAluno": "João Silva",
+  "instProv": "Universidade Fernando Pessoa",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2018-12-16T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c163864e9f404077609614f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 7,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5c16388ae9f4040776096150"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 7,
+      "ucRealizada": "Física"
+    },
+    {
+      "_id": {
+        "$oid": "5c1638bee9f4040776096151"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 0.5,
+      "nota": 16,
+      "ects": 3,
+      "ucRealizada": "Gramática da Comunicação"
+    },
+    {
+      "_id": {
+        "$oid": "5c1638dae9f4040776096152"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 3,
+      "ucRealizada": "Inglês"
+    },
+    {
+      "_id": {
+        "$oid": "5c163900e9f4040776096153"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Introdução à Algoritmia e Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5c163928e9f4040776096154"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 7,
+      "ucRealizada": "Matemática I"
+    },
+    {
+      "_id": {
+        "$oid": "5c163944e9f4040776096155"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 7,
+      "ucRealizada": "Matemática II"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b0"
+  },
+  "processo": "INT-SAUM/2019/308",
+  "idAluno": "A81195",
+  "nomeAluno": "Tiago Barata",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2019-02-14T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c652be1c628db4c7fa60b14"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c652c0ac628db4c7fa60b15"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c652c97c628db4c7fa60b16"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5c652ce7c628db4c7fa60b17"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5c652d15c628db4c7fa60b18"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c652d54c628db4c7fa60b19"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5c652d8dc628db4c7fa60b1a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5c652ddac628db4c7fa60b1b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Métodos Numéricos e Otimização Não Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5c652e1ec628db4c7fa60b1c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b1"
+  },
+  "processo": "INT-SAUM/2019/1351",
+  "idAluno": "A81104",
+  "nomeAluno": "José Marinho",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Medicina",
+  "data": {
+    "$date": "2019-02-14T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c652fd5c628db4c7fa60b1d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5c652ffbc628db4c7fa60b1e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5c653033c628db4c7fa60b1f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática II"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b2"
+  },
+  "processo": "INT-SAUM/2019/816",
+  "idAluno": "A90468",
+  "nomeAluno": "Rui Armada",
+  "instProv": "Instituto Politécnico de Viana do Castelo",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2019-02-14T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5c6536b4c628db4c7fa60b20"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 7,
+      "ucRealizada": "Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5c6536f1c628db4c7fa60b21"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 3,
+      "ucRealizada": "Technical English"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b3"
+  },
+  "processo": "INT-SAUM/2019/2008",
+  "idAluno": "A82098",
+  "nomeAluno": "Melânia Pereira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2019-02-18T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d1b2e791e18841cf0f989d1"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Paradigmas de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d1b2ec858a7ca58a134f736"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Paradigmas de Programação I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b4"
+  },
+  "processo": "PEDIDO-2019-001",
+  "idAluno": "A85846",
+  "nomeAluno": "João Tadeu Torres",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia e Gestão de Sistemas de Informação",
+  "data": {
+    "$date": "2019-09-10T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d7740ea9296c437074eab81"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5d7741149296c437074eab82"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d7741f49296c437074eab83"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 10,
+      "ucRealizada": "Fundamentos da Programação de Computadorees"
+    },
+    {
+      "_id": {
+        "$oid": "5d7742a09296c437074eab84"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Introdução à Economia"
+    },
+    {
+      "_id": {
+        "$oid": "5d7742eb9296c437074eab85"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d77435f9296c437074eab86"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d7743b49296c437074eab87"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Fundamentos de Organização e Gestão"
+    },
+    {
+      "_id": {
+        "$oid": "5d77442f9296c437074eab88"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5d7744659296c437074eab89"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5d7744a79296c437074eab8a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d7744fd9296c437074eab8b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Fundamentos de Física para Tecnologias de Informação"
+    },
+    {
+      "_id": {
+        "$oid": "5d7745729296c437074eab8c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Introdução às Redes de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5d77460d9296c437074eab8d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Laboratórios de Informática IV (LIIV)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 10,
+      "ucRealizada": "Desenvolvimento de Aplicações Informáticas"
+    },
+    {
+      "_id": {
+        "$oid": "5d7746909296c437074eab8e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Estocásticos de Investigação Operacional (MEIO)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5d7746cc9296c437074eab8f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Métodos Estatísticos"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b5"
+  },
+  "processo": "INT-SAUM/2019/10536",
+  "idAluno": "A83614",
+  "nomeAluno": "Joana Sousa",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-09-22T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d87c21fef69091efe47e6f1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c23cef69091efe47e6f2"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c26bef69091efe47e6f3"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c28eef69091efe47e6f4"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c2b4ef69091efe47e6f5"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c2e5ef69091efe47e6f6"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c318ef69091efe47e6f7"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c35aef69091efe47e6f8"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c3a9ef69091efe47e6f9"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Lógica CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c497ef69091efe47e6fa"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Comunicações e Redes"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b6"
+  },
+  "processo": "INT-SAUM/2019/10153",
+  "idAluno": "A80376",
+  "nomeAluno": "Pedro Pereira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Física",
+  "data": {
+    "$date": "2019-09-22T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d87c7f4ef69091efe47e6fb"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Introdução à Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c822ef69091efe47e6fc"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c849ef69091efe47e6fd"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Cálculo EC"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c8ddef69091efe47e6fe"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Cálculo Vetorial"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c96def69091efe47e6ff"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Introdução aos Sistemas Dinâmicos (ISD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Análise Complexa"
+    },
+    {
+      "_id": {
+        "$oid": "5d87c9dbef69091efe47e700"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Eletromagnetismo"
+    },
+    {
+      "_id": {
+        "$oid": "5d87ca3bef69091efe47e701"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 20,
+      "ects": 6,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d87cab6ef69091efe47e702"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Linguagens para Computação Numérica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b7"
+  },
+  "processo": "INT-SAUM/2019/10258",
+  "idAluno": "A87980",
+  "nomeAluno": "José Reis",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-09-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d88729bef69091efe47e703"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8872c8ef69091efe47e704"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d88732aef69091efe47e705"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d887354ef69091efe47e706"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5d887371ef69091efe47e707"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d8873a8ef69091efe47e708"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d8873cfef69091efe47e709"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d887439ef69091efe47e70a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b8"
+  },
+  "processo": "INT-SAUM/2019/10359",
+  "idAluno": "A87978",
+  "nomeAluno": "Tiago Cunha",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-09-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8875d4ef69091efe47e70b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8875e9ef69091efe47e70c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d88761bef69091efe47e70d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d887639ef69091efe47e70e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d88764fef69091efe47e70f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d887671ef69091efe47e710"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d88767bef69091efe47e711"
+      },
+      "semUcEquiv": "",
+      "anoUcEquiv": "",
+      "ucEquiv": "Opção A4 (OpA4)",
+      "percent": null,
+      "nota": null,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d887692ef69091efe47e712"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d8876bfef69091efe47e713"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107b9"
+  },
+  "processo": "INT-SAUM/2019/10356",
+  "idAluno": "A89138",
+  "nomeAluno": "Rui Fernandes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Física",
+  "data": {
+    "$date": "2019-09-24T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8a7c3bef69091efe47e714"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Cálculo EC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8a7c60ef69091efe47e715"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica EC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8a7c87ef69091efe47e716"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Introdução à Física Experimental"
+    },
+    {
+      "_id": {
+        "$oid": "5d8a7cb2ef69091efe47e717"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5d8a7cdeef69091efe47e718"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Cálculo Vetorial"
+    },
+    {
+      "_id": {
+        "$oid": "5d8a7d17ef69091efe47e719"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Linguagens para Computação Numérica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ba"
+  },
+  "processo": "INT-SAUM/2019/9515",
+  "idAluno": "pg41093",
+  "nomeAluno": "Pedro Silva",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-09-25T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8b3069ef69091efe47e71a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b309aef69091efe47e71b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b30c3ef69091efe47e71c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b30eaef69091efe47e71d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b310bef69091efe47e71e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b312eef69091efe47e71f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3172ef69091efe47e720"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b31abef69091efe47e721"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b31e2ef69091efe47e722"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3267ef69091efe47e723"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Lógica CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3332ef69091efe47e724"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Análise Numérica"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3371ef69091efe47e725"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Algoritmos e Complexidade (AlgC)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Algoritmos e Complexidade"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b33daef69091efe47e726"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Comunicações e Redes"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b348cef69091efe47e727"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Laboratórios de Informática III (LIIII)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia II"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b34fbef69091efe47e728"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Cálculo de Programas (CP)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Cálculo de Programas"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3535ef69091efe47e729"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Orientada a Objetos"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b356bef69091efe47e72a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3594ef69091efe47e72b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3611ef69091efe47e72c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Probabilidades e Aplicações"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3643ef69091efe47e72d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Processamento de Linguagens (PL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Processamento de Linguagens e Compiladores"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3674ef69091efe47e72e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Computação Gráfica (CG)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Computação Gráfica"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b37adef69091efe47e72f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Laboratórios de Informática IV (LIIV)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Projeto"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3a5def69091efe47e730"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A1 (OpA1)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Gramáticas na Compreensão de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3a96ef69091efe47e731"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A2 (OpA2)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Processamento e Representação de Informação"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3ad2ef69091efe47e732"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A3 (OpA3)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Scripting no Processamento de Linguagem Natural"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3afeef69091efe47e733"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção A4 (OpA4)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Descoberta de Conhecimento"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3b2fef69091efe47e734"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I1 (OpI1)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Análise de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3b59ef69091efe47e735"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I2 (OpI2)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Administração e Exploração de Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d8b3b92ef69091efe47e736"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção B1 (OpB1)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Interoperabilidade Semântica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107bb"
+  },
+  "processo": "INT-SAUM/2019/10309",
+  "idAluno": "A74813",
+  "nomeAluno": "André Sousa",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática",
+  "data": {
+    "$date": "2019-09-26T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8c701aef69091efe47e737"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7041ef69091efe47e738"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Computação Gráfica (CG)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Computação Gráfica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107bc"
+  },
+  "processo": "INT-SAUM/2019/10353",
+  "idAluno": "A75119",
+  "nomeAluno": "Adriana Gonçalves",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática",
+  "data": {
+    "$date": "2019-09-26T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8c7177ef69091efe47e739"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Modelos Determinísticos de Investigação Operacional"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107bd"
+  },
+  "processo": "INT-SAUM/2019/10363",
+  "idAluno": "A76420",
+  "nomeAluno": "Tiago Ribeiro",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2019-09-26T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d8c7344ef69091efe47e73a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Cálculo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c736fef69091efe47e73b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7396ef69091efe47e73c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c75d9ef69091efe47e73d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c760fef69091efe47e73e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7652ef69091efe47e73f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c767eef69091efe47e740"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c76bcef69091efe47e741"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7703ef69091efe47e742"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Métodos Numéricos e Otimização não Linear (MNONL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Métodos Numéricos e Otimização Não Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7741ef69091efe47e743"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c783fef69091efe47e744"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7909ef69091efe47e745"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Tecnologias de Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c795aef69091efe47e746"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Sistemas Distribuídos (SD)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Sistemas Distribuídos"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c79beef69091efe47e747"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Engenharia Económica"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c79eaef69091efe47e748"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7a0eef69091efe47e749"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7a33ef69091efe47e74a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5d8c7a52ef69091efe47e74b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107be"
+  },
+  "processo": "INT-SAUM/2019/10416",
+  "idAluno": "A93761",
+  "nomeAluno": "João Moreira",
+  "instProv": "Instituto Politécnico de Bragança",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2019-10-02T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d9446baef69091efe47e74c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5d9446d5ef69091efe47e74d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Cálculo I"
+    },
+    {
+      "_id": {
+        "$oid": "5d9446f7ef69091efe47e74e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 6,
+      "ucRealizada": "Física"
+    },
+    {
+      "_id": {
+        "$oid": "5d944716ef69091efe47e74f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d94473fef69091efe47e750"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5d944772ef69091efe47e751"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Cálculo II"
+    },
+    {
+      "_id": {
+        "$oid": "5d944795ef69091efe47e752"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Engenharia de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5d9447b6ef69091efe47e753"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Matemática Discreta"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107bf"
+  },
+  "processo": "INT-SAUM/2019/10421",
+  "idAluno": "A85846",
+  "nomeAluno": "João Tadeu Torres",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia e Gestão de Sistemas de Informação",
+  "data": {
+    "$date": "2019-10-02T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d944c63ef69091efe47e754"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5d944c7bef69091efe47e755"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d944c9eef69091efe47e756"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 10,
+      "ucRealizada": "Fundamentos da Programação de Computadorees"
+    },
+    {
+      "_id": {
+        "$oid": "5d944cceef69091efe47e757"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Introdução à Economia"
+    },
+    {
+      "_id": {
+        "$oid": "5d944ceeef69091efe47e758"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d944d0aef69091efe47e759"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d944d2eef69091efe47e75a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Fundamentos de Organização e Gestão"
+    },
+    {
+      "_id": {
+        "$oid": "5d944d56ef69091efe47e75b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Bases de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d944d72ef69091efe47e75c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Sistemas Operativos"
+    },
+    {
+      "_id": {
+        "$oid": "5d944d95ef69091efe47e75d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5d944db4ef69091efe47e75e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Fundamentos de Física para Tecnologias de Informação"
+    },
+    {
+      "_id": {
+        "$oid": "5d944df1ef69091efe47e75f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Processo e Metodologias de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5d944e12ef69091efe47e760"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "Introdução às Redes de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5d944e37ef69091efe47e761"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I1 (OpI1)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 10,
+      "ucRealizada": "Programação para a Web"
+    },
+    {
+      "_id": {
+        "$oid": "5d944e63ef69091efe47e762"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Estocásticos de Investigação Operacional (MEIO)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5d944e85ef69091efe47e763"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Métodos Estatísticos"
+    },
+    {
+      "_id": {
+        "$oid": "5d944ea8ef69091efe47e764"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Laboratórios de Informática IV (LIIV)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 10,
+      "ucRealizada": "Desenvolvimento de Aplicações Informáticas"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c0"
+  },
+  "processo": "INT-SAUM/2019/10422",
+  "idAluno": "A87961",
+  "nomeAluno": "José Manso",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-02T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d94566aef69091efe47e765"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d945681ef69091efe47e766"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d94569bef69091efe47e767"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d9456b5ef69091efe47e768"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d9456d0ef69091efe47e769"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d9456f8ef69091efe47e76a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d945715ef69091efe47e76b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5d945735ef69091efe47e76c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c1"
+  },
+  "processo": "INT-SAUM/2019/10423",
+  "idAluno": "A85829",
+  "nomeAluno": "Meriem Khammassi",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia e Gestão de Sistemas de Informação",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d95927fef69091efe47e76d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EI"
+    },
+    {
+      "_id": {
+        "$oid": "5d959291ef69091efe47e76e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d9592b2ef69091efe47e76f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d9592d8ef69091efe47e770"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Elementos de Engenharia de Sistemas (EES)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Elementos de Engenharia de Sistemas"
+    },
+    {
+      "_id": {
+        "$oid": "5d959301ef69091efe47e771"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática I"
+    },
+    {
+      "_id": {
+        "$oid": "5d959324ef69091efe47e772"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5d95934eef69091efe47e773"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática II"
+    },
+    {
+      "_id": {
+        "$oid": "5d959375ef69091efe47e774"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Introdução à Economia"
+    },
+    {
+      "_id": {
+        "$oid": "5d959392ef69091efe47e775"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Fundamentos de Organização e Gestão"
+    },
+    {
+      "_id": {
+        "$oid": "5d9593b7ef69091efe47e776"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Bases de Dados (BD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Bases de Dados"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c2"
+  },
+  "processo": "INT-SAUM/2019/10529",
+  "idAluno": "A87956",
+  "nomeAluno": "Joana Oliveira",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d959561ef69091efe47e777"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d959587ef69091efe47e778"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d9595abef69091efe47e779"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d9595caef69091efe47e77a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d9595f2ef69091efe47e77b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c3"
+  },
+  "processo": "INT-SAUM/2019/10530",
+  "idAluno": "A87960",
+  "nomeAluno": "Rita Gomes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d959774ef69091efe47e77c"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d959788ef69091efe47e77d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d9597a7ef69091efe47e77e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d9597c1ef69091efe47e77f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d9597dbef69091efe47e780"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d959805ef69091efe47e781"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c4"
+  },
+  "processo": "INT-SAUM/2019/10531",
+  "idAluno": "A90234",
+  "nomeAluno": "Ana Rebelo",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d959931ef69091efe47e782"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Tópicos de Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5d959947ef69091efe47e783"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d95995cef69091efe47e784"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d959972ef69091efe47e785"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c5"
+  },
+  "processo": "INT-SAUM/2019/10636",
+  "idAluno": "A89244",
+  "nomeAluno": "Francisco Fernandes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia e Gestão de Sistemas de Informação",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d959b40ef69091efe47e786"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear"
+    },
+    {
+      "_id": {
+        "$oid": "5d959b54ef69091efe47e787"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d959b70ef69091efe47e788"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Engenharia Económica (EE)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Introdução à Economia"
+    },
+    {
+      "_id": {
+        "$oid": "5d959b87ef69091efe47e789"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d959ba3ef69091efe47e78a"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 10,
+      "ucRealizada": "Fundamentos da Programação de Computadorees"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c6"
+  },
+  "processo": "INT-SAUM/2019/10656",
+  "idAluno": "A91682",
+  "nomeAluno": "Robert Azabo",
+  "instProv": "Instituto Politécnico de Castelo Branco e Universidade da Beira Interior",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2019-10-03T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d95c69fef69091efe47e78b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Arquitetura de Computadores II"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c6c3ef69091efe47e78c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Física e Informação"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c6deef69091efe47e78d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 6,
+      "ucRealizada": "Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c6ffef69091efe47e78e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Matemática Computacional II"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c71fef69091efe47e78f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 6,
+      "ucRealizada": "Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c758ef69091efe47e790"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Laboratórios de Informática III (LIIII)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c776ef69091efe47e791"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c7a2ef69091efe47e792"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Algoritmos e Estruturas de Dados"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c7d5ef69091efe47e793"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5.5,
+      "ucRealizada": "Matemática para Informáticos I"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c81bef69091efe47e794"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 4,
+      "ucRealizada": "Inglês Técnico I e Inglês Técnico II"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c871ef69091efe47e795"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I1 (OpI1)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Interfaces Pessoa-Máquina"
+    },
+    {
+      "_id": {
+        "$oid": "5d95c897ef69091efe47e796"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "4",
+      "ucEquiv": "Opção I2 (OpI2)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 6,
+      "ucRealizada": "Composição Web"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c7"
+  },
+  "processo": "INT-SAUM/2019/10675",
+  "idAluno": "A55987",
+  "nomeAluno": "Carlos Rodrigues",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática (Reingresso)",
+  "data": {
+    "$date": "2019-10-09T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d9d8720ef69091efe47e797"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Elementos de Engenharia de Sistemas (EES)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Elementos de Engenharia de Sistemas"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d873def69091efe47e798"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática I (LII)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Informática I"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d875def69091efe47e799"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d879eef69091efe47e79a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 17,
+      "ects": 5,
+      "ucRealizada": "OPCAO 1 EM BASES METODOLOGICAS DA PSICOLOGIA"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c8"
+  },
+  "processo": "INT-SAUM/2019/10688",
+  "idAluno": "A87983",
+  "nomeAluno": "Pedro Pinto",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-09T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d9d89beef69091efe47e79b"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d89d6ef69091efe47e79c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Opção Uminho"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d89edef69091efe47e79d"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8a0bef69091efe47e79e"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Laboratório de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107c9"
+  },
+  "processo": "INT-SAUM/2019/10728",
+  "idAluno": "A72122",
+  "nomeAluno": "Bruno Santos",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia de Telecomunicações e Informática",
+  "data": {
+    "$date": "2019-10-09T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5d9d8cd1ef69091efe47e79f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8ceaef69091efe47e7a0"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8d07ef69091efe47e7a1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Elementos de Engenharia de Sistemas (EES)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Elementos de Engenharia de Sistemas"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8d1fef69091efe47e7a2"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8d4aef69091efe47e7a3"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8d70ef69091efe47e7a4"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8d8bef69091efe47e7a5"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8dabef69091efe47e7a6"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Estatística Aplicada"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8dcdef69091efe47e7a7"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 7.5,
+      "ucRealizada": "Métodos de Programação II"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8df1ef69091efe47e7a8"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação I"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8e1eef69091efe47e7a9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Modelos Determinísticos de Investigação Operacional (MDIO)",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Investigação Operacional"
+    },
+    {
+      "_id": {
+        "$oid": "5d9d8e41ef69091efe47e7aa"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 10,
+      "ucRealizada": "Paradigmas de Programação II"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ca"
+  },
+  "processo": "INT-SAUM/2019/10762",
+  "idAluno": "A88000",
+  "nomeAluno": "Gerson Junior",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Ciências da Computação ",
+  "data": {
+    "$date": "2019-10-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5daffac7b0c2a100cc8ddf8e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 7.5,
+      "ucRealizada": "Álgebra Linear CC"
+    },
+    {
+      "_id": {
+        "$oid": "5daffadeb0c2a100cc8ddf8f"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5daffaffb0c2a100cc8ddf90"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Funcional (PF)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Programação Funcional"
+    },
+    {
+      "_id": {
+        "$oid": "5daffb1fb0c2a100cc8ddf91"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Programação Imperativa (PI)",
+      "percent": 1,
+      "nota": 14,
+      "ects": 5,
+      "ucRealizada": "Programação Imperativa"
+    },
+    {
+      "_id": {
+        "$oid": "5daffb3db0c2a100cc8ddf92"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Laboratórios de Informática II (LIII)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Laboratórios de Algoritmia I"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107cb"
+  },
+  "processo": "INT-SAUM/2019/10763",
+  "idAluno": "A69853",
+  "nomeAluno": "Tiago Gomes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Informática",
+  "data": {
+    "$date": "2019-10-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5daffcb7b0c2a100cc8ddf93"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Tópicos de Física Moderna"
+    },
+    {
+      "_id": {
+        "$oid": "5daffd09b0c2a100cc8ddf94"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Lógica EI (L)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Lógica EI"
+    },
+    {
+      "_id": {
+        "$oid": "5daffd3ab0c2a100cc8ddf95"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Programação Orientada a Objetos"
+    },
+    {
+      "_id": {
+        "$oid": "5daffd61b0c2a100cc8ddf96"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Eletromagnetismo EE (E)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Eletromagnetismo EE"
+    },
+    {
+      "_id": {
+        "$oid": "5daffd9bb0c2a100cc8ddf97"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Sistemas de Representação de Conhecimento e Raciocínio (SRCR)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Sistemas de Representação de Conhecimento e Raciocínio"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107cc"
+  },
+  "processo": "INT-SAUM/2019/11107",
+  "idAluno": "A88321",
+  "nomeAluno": "Raul Parente",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Mestrado Integrado em Engenharia Biomédica",
+  "data": {
+    "$date": "2019-10-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5dafff49b0c2a100cc8ddf98"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 12,
+      "ects": 5,
+      "ucRealizada": "Cálculo"
+    },
+    {
+      "_id": {
+        "$oid": "5dafff65b0c2a100cc8ddf99"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear EE"
+    },
+    {
+      "_id": {
+        "$oid": "5dafff7eb0c2a100cc8ddf9a"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Análise (A)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise"
+    },
+    {
+      "_id": {
+        "$oid": "5dafff9cb0c2a100cc8ddf9b"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Física EE"
+    },
+    {
+      "_id": {
+        "$oid": "5dafffbeb0c2a100cc8ddf9c"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Desenho e Representação Gráfica"
+    },
+    {
+      "_id": {
+        "$oid": "5dafffecb0c2a100cc8ddf9d"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Estatística Biomédica"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107cd"
+  },
+  "processo": "INT-SAUM/2019/11123",
+  "idAluno": "A93872",
+  "nomeAluno": "Ana Canelas",
+  "instProv": "Instituto Superior de Engenharia do Porto",
+  "cursoProv": "Licenciatura em Engenharia Informática",
+  "data": {
+    "$date": "2019-10-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5db006dcb0c2a100cc8ddf9e"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5db00701b0c2a100cc8ddf9f"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Programação Orientada aos Objetos (POO)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Algoritmia e Programação"
+    },
+    {
+      "_id": {
+        "$oid": "5db00721b0c2a100cc8ddfa0"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Análise Matemática"
+    },
+    {
+      "_id": {
+        "$oid": "5db00752b0c2a100cc8ddfa1"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Desenvolvimento de Sistemas de Software (DSS)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 6,
+      "ucRealizada": "Engenharia de Software"
+    },
+    {
+      "_id": {
+        "$oid": "5db0078cb0c2a100cc8ddfa2"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 11,
+      "ects": 8,
+      "ucRealizada": "Laboratório / Projeto I"
+    },
+    {
+      "_id": {
+        "$oid": "5db007b8b0c2a100cc8ddfa3"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Estatística Aplicada (EA)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Matemática Computacional"
+    },
+    {
+      "_id": {
+        "$oid": "5db007e0b0c2a100cc8ddfa4"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Matemática Discreta (TMD)",
+      "percent": 1,
+      "nota": 16,
+      "ects": 5,
+      "ucRealizada": "Matemática Discreta"
+    },
+    {
+      "_id": {
+        "$oid": "5db0080ab0c2a100cc8ddfa5"
+      },
+      "semUcEquiv": "",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Sistemas Operativos (SO)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Princípios da Computação"
+    },
+    {
+      "_id": {
+        "$oid": "5db0082db0c2a100cc8ddfa6"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Sistemas de Computação (SC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 5,
+      "ucRealizada": "Arquitetura de Computadores"
+    },
+    {
+      "_id": {
+        "$oid": "5db0085eb0c2a100cc8ddfa7"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Algoritmos e Complexidade (AlgC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Estruturas da Informação"
+    },
+    {
+      "_id": {
+        "$oid": "5db00898b0c2a100cc8ddfa8"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "3",
+      "ucEquiv": "Redes de Computadores (RC)",
+      "percent": 1,
+      "nota": 10,
+      "ects": 6,
+      "ucRealizada": "Redes de Computadores"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107ce"
+  },
+  "processo": "INT-SAUM/2019/11559",
+  "idAluno": "A88539",
+  "nomeAluno": "Luís Fernandes",
+  "instProv": "Universidade do Minho",
+  "cursoProv": "Licenciatura em Bioquímica",
+  "data": {
+    "$date": "2019-10-23T00:00:00Z"
+  },
+  "equivalencias": [
+    {
+      "_id": {
+        "$oid": "5db01138b0c2a100cc8ddfa9"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Cálculo (C)",
+      "percent": 1,
+      "nota": 19,
+      "ects": 5,
+      "ucRealizada": "Cálculo EC"
+    },
+    {
+      "_id": {
+        "$oid": "5db0114cb0c2a100cc8ddfaa"
+      },
+      "semUcEquiv": "1",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Álgebra Linear EI (AL)",
+      "percent": 1,
+      "nota": 18,
+      "ects": 5,
+      "ucRealizada": "Álgebra Linear e Geometria Analítica"
+    },
+    {
+      "_id": {
+        "$oid": "5db01166b0c2a100cc8ddfab"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "1",
+      "ucEquiv": "Tópicos de Física Moderna (TFM)",
+      "percent": 1,
+      "nota": 13,
+      "ects": 5,
+      "ucRealizada": "Física I"
+    },
+    {
+      "_id": {
+        "$oid": "5db01188b0c2a100cc8ddfac"
+      },
+      "semUcEquiv": "2",
+      "anoUcEquiv": "2",
+      "ucEquiv": "Opção UMinho (Op)",
+      "percent": 1,
+      "nota": 15,
+      "ects": 5,
+      "ucRealizada": "Biologia Celular"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "5eb99560f1cf8663e7e107cf"
+  },
+  "processo": "13253",
+  "idAluno": "PG41841",
+  "nomeAluno": "Carlos Miguel Rebelo Solans",
+  "instProv": "Instituto Politécnico do Cávado e do Ave - Escola Superior de Tecnologia",
+  "cursoProv": "Licenciatura em Engenharia de Sistemas Informáticos",
+  "equivalencias": [
+    {
+      "createdAt": {
+        "$date": "2020-05-11T13:09:10.702Z"
+      },
+      "_id": {
+        "$oid": "5eb978db3dab3a4410dfd5bb"
+      },
+      "semUcEquiv": "2º Semestre",
+      "ucEquiv": "Desenvolvimento de Aplicações Web",
+      "anoLetivo": "2018/2019",
+      "percent": 1,
+      "nota": 18,
+      "ects": 3,
+      "ucRealizada": "Multimédia e Desenvolvimento Web",
+      "createdBy": "miguelsolans"
+    },
+    {
+      "createdAt": {
+        "$date": "2020-05-11T13:09:10.702Z"
+      },
+      "_id": {
+        "$oid": "5eb97b923dab3a4410dfd5bc"
+      },
+      "semUcEquiv": "1º Semestre",
+      "ucEquiv": "EmitEvent",
+      "anoLetivo": "2018/2019",
+      "percent": 1,
+      "nota": 12,
+      "ects": 1,
+      "ucRealizada": "EmitEvent",
+      "createdBy": "miguelsolans"
+    },
+    {
+      "createdAt": {
+        "$date": "2020-05-11T16:44:55.274Z"
+      },
+      "_id": {
+        "$oid": "5eb981d4bd37eb161ace57ea"
+      },
+      "semUcEquiv": "1º Semestre",
+      "ucEquiv": "sfsdf",
+      "anoLetivo": "2017/2018",
+      "percent": 1,
+      "nota": 13,
+      "ects": 1,
+      "ucRealizada": "asd",
+      "createdBy": "miguelsolans"
+    },
+    {
+      "createdAt": {
+        "$date": "2020-05-11T16:44:55.274Z"
+      },
+      "_id": {
+        "$oid": "5eb982edbd37eb161ace57eb"
+      },
+      "semUcEquiv": "1º Semestre",
+      "ucEquiv": "Engenharia de Requisitios",
+      "anoLetivo": "2018/2019",
+      "percent": 1,
+      "nota": 16,
+      "ects": 6,
+      "ucRealizada": "Engenharia de Software",
+      "createdBy": "miguelsolans"
+    }
+  ]
+}]

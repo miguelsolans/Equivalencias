@@ -1,0 +1,1 @@
+mongoimport --host mongodb://mantis-mongo:7331 --db equivalencia --collection users --type json --file /seed/users.json --jsonArray
