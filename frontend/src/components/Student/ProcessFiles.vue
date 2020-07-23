@@ -45,7 +45,7 @@
 
                             </v-list-item-content>
 
-                            <v-list-title 
+                            <div 
                                 class="text-right align-self-center"
                             >
                                 <span
@@ -56,7 +56,7 @@
                                 <v-list-item-avatar>
                                     <v-icon color="#187653">mdi-download</v-icon>
                                 </v-list-item-avatar>
-                            </v-list-title>
+                            </div>
                         </v-list-item>
 
                         <v-list-item
@@ -81,13 +81,13 @@
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
-                            <v-list-title
+                            <div
                                 class="text-right align-self-center"
                             >
                                 <v-list-item-avatar>
                                     <v-icon color="#187653">mdi-download</v-icon>
                                 </v-list-item-avatar>
-                            </v-list-title>
+                            </div>
                         </v-list-item>
                         <v-divider :key="index"></v-divider>
                     </template>
