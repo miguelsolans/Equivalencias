@@ -31,10 +31,9 @@ services:
         command: mongod --port 7331
         volumes:
             - ./MongoDB/init.js:/docker-entrypoint-initdb.d/init.js:ro
+            - data-volume:/data-db
         ports: 
             - "7331:7331"
-        #volumes:
-            #- data-volume:/data-db
             
     mongo-seed:
         build: ./MongoDB
