@@ -45,12 +45,18 @@
 
                             </v-list-item-content>
 
-                            <v-list-item-icon>
-                                <v-list-item-action-text style="color:#187653; font-weight: bold;">
+                            <div 
+                                class="text-right align-self-center"
+                            >
+                                <span
+                                    style="color:#187653; font-weight: bold"
+                                >
                                     Download
-                                </v-list-item-action-text>
-                                <v-icon color="#187653">mdi-download</v-icon>
-                            </v-list-item-icon>
+                                </span>
+                                <v-list-item-avatar>
+                                    <v-icon color="#187653">mdi-download</v-icon>
+                                </v-list-item-avatar>
+                            </div>
                         </v-list-item>
 
                         <v-list-item
@@ -75,13 +81,13 @@
                                     {{ file.generatedBy }}
                                 </v-list-item-subtitle>
                             </v-list-item-content>
-                            <v-list-title
+                            <div
                                 class="text-right align-self-center"
                             >
                                 <v-list-item-avatar>
                                     <v-icon color="#187653">mdi-download</v-icon>
                                 </v-list-item-avatar>
-                            </v-list-title>
+                            </div>
                         </v-list-item>
                         <v-divider :key="index"></v-divider>
                     </template>
