@@ -37,24 +37,14 @@
             <v-divider inset vertical></v-divider>
 
             <div class="text-center mx-1">
-                <v-btn
-                    rounded
-                    elevation="0"
-                    text
-                    color="#fff"
-                    dark
-                    href="/settings"
-                >
-                    <div
-                        class="text-capitalize
-                        mx-1 
-                        d-none 
-                        d-sm-flex"
-                    >
-                        <strong>Definições</strong>
-                    </div>
-                    <v-icon>mdi-cog</v-icon>
-                </v-btn>
+                <router-link to="/settings" style="text-decoration: none; color: inherit;">
+                    <v-btn rounded elevation="0" text color="#fff" dark>
+                        <div class="text-capitalize mx-1 d-none d-sm-flex">
+                            <strong>Definições</strong>
+                        </div>
+                        <v-icon>mdi-cog</v-icon>
+                    </v-btn>
+                </router-link>
             </div>
 
             <v-divider inset vertical></v-divider>
