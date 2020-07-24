@@ -421,6 +421,7 @@
                         v-model="manualInput"
                         class="ml-3 mt-1"
                         label="Inserção Manual"
+                        @change="changeDisableInput"
                     />
                 </v-col>
                 <v-col cols="6">
@@ -575,6 +576,10 @@
                 this.alert.setMessage(message);
 
                 this.alert.displayAlert();
+            },
+
+            changeDisableInput() {
+                this.disabledInput = !this.disabledInput;
             }
         }
     }
