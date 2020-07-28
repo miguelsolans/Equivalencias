@@ -2,15 +2,13 @@
    <img width="510" height="159" src="assets/images/logotipo/Logo.png">
 </p>
 
-
-
 # Mantis
 
-Equivalencias é um projeto de LEI, Laboratório de Engenharia Informática, uma componente inserida no plano de estudos do curso de Mestrado em Engenharia Informática na Universidade do Minho.
-Como tal, é pretendido o desenvolvimento de uma plataforma que permite agilizar o processo de atribuição de equivalências aos alunos que pretendem ingressar no curso de um determinado departamento, designada por Mantis. 
-É um sistema composto por vários microserviços, entre servidor Frontend desenvolvido recorrendo ao VueJS com a Framework Vuetify, e um backend desenvolvido em NodeJS. A aplicação possui pressistência de dados em NoSQL, o MongoDB.
+Mantis a COTS Software built for a curricular unit called Laboratory of Software Engineering, inserted on the plan of studies of the MSc Degree of Computer Engineer at the University of Minho. Besides being a project for a Curricular Unit, the Software is meant to be used on real context at the Technology Department at the same University.
+As such, the present platform allows speeding up the equivalence attribution to students coming from outside of the Computer Engineer degree, or even outside University of Minho.
+This system is built on two micro-services, using NodeJS at its core, both Backend and Frontendwise with a Client framework called VueJS with Vuetify. All data is stored on a NoSQL database system, MongoDB.
 
-Toda a arquitetura deste sistema encontra-se discutida na [Wiki](https://github.com/miguelsolans/equivalencias/wiki) deste mesmo repositório, que pode ser encontrada [aqui](https://github.com/miguelsolans/equivalencias/wiki), bem como [instruções de instalação](https://github.com/miguelsolans/Equivalencias/wiki/About#deploy-do-sistema), de utilização e rotas de API do Backend.
+The detailed System Architecture and API endpoints can be found on the very own [Wiki](https://github.com/miguelsolans/equivalencias/wiki) of this repository.
 
 ## Development Team
 
